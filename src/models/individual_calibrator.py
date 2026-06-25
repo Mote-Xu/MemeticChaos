@@ -396,6 +396,7 @@ def _compute_loss(sim_result: dict, observation: BehavioralObservation) -> float
 
 
 def calibrate_from_observation(observation: BehavioralObservation,
+                               method: str = "direct",
                                n_iterations: int = 800,
                                population_size: int = 40) -> IndividualChaosProfile:
     """从行为观测反推个体混沌参数。
@@ -412,7 +413,213 @@ def calibrate_from_observation(observation: BehavioralObservation,
     """
     np.random.seed(42)
 
-    # ── Parameter bounds ───────────────────────
+    if method == "direct":
+        return _calibrate_direct(observation)
+    else:
+        return _calibrate_genetic(observation, n_iterations, population_size)
+
+
+def _calibrate_direct(observation: BehavioralObservation) -> IndividualChaosProfile:
+    """直接启发式校准 — 从观测信号到参数的直接映射。
+
+    不依赖仿真或遗传算法。用规则直接从信号推断参数。
+    更简单、更快、更透明——代价是分辨率较低。
+    """
+    # ── Chaos position estimation ─────────────
+    chaos_votes = []
+    chaos_weights = []
+
+    # Self-report is the strongest signal
+    if observation.self_reported_chaos is not None:
+        chaos_votes.append(observation.self_reported_chaos)
+        chaos_weights.append(3.0)
+
+    # Proxy signals
+    if observation.chaos_proxy_signals:
+        proxy = observation.chaos_proxy_signals
+
+        if "orderly_expression_ratio" in proxy:
+            # High orderly expression → positive chaos (order-leaning)
+            mapped = proxy["orderly_expression_ratio"] * 1.2 - 0.1  # map [0,1] → [-0.1, 1.1]
+            chaos_votes.append(np.clip(mapped, -1, 1))
+            chaos_weights.append(1.5)
+
+        if "narrative_consistency" in proxy:
+            # High consistency → leaning toward order or chaos depending on other signals
+            mapped = proxy["narrative_consistency"] * 0.8 - 0.1
+            chaos_votes.append(np.clip(mapped, -1, 1))
+            chaos_weights.append(1.0)
+
+        if "trolling_frequency" in proxy:
+            tf = proxy["trolling_frequency"]
+            if tf > 0.15:
+                # High trolling → negative chaos (chaos-leaning)
+                chaos_votes.append(-tf * 2.0)
+                chaos_weights.append(1.5)
+
+        if "contradiction_frequency" in proxy:
+            cf = proxy["contradiction_frequency"]
+            # High contradiction → oscillating around neutral but with negative bias
+            mapped = -cf * 1.5
+            chaos_votes.append(np.clip(mapped, -1, 1))
+            chaos_weights.append(1.0)
+
+    # Meme participation pattern
+    if observation.meme_participation:
+        early_count = 0
+        late_count = 0
+        resist_count = 0
+        total = len(observation.meme_participation)
+
+        for p in observation.meme_participation.values():
+            if p in (MemeParticipation.EARLY_ADOPTER, MemeParticipation.EARLY_MAJORITY):
+                early_count += 1
+            elif p in (MemeParticipation.LAGGARD, MemeParticipation.LATE_MAJORITY):
+                late_count += 1
+            elif p == MemeParticipation.RESISTER:
+                resist_count += 1
+
+        if total > 0:
+            early_ratio = early_count / total
+            resist_ratio = resist_count / total
+
+            # Early adopters → slightly order-leaning
+            if early_ratio > 0.5:
+                chaos_votes.append(0.4)
+                chaos_weights.append(1.0)
+            # Resisters → slightly chaos-leaning
+            if resist_ratio > 0.3:
+                chaos_votes.append(-0.3)
+                chaos_weights.append(1.0)
+
+    # Weighted chaos estimate
+    if chaos_votes:
+        chaos_est = float(np.average(chaos_votes, weights=chaos_weights))
+        chaos_std = float(np.std(chaos_votes))
+    else:
+        chaos_est = 0.0
+        chaos_std = 0.5
+
+    chaos_est = np.clip(chaos_est, -1.0, 1.0)
+
+    # ── Role classification ───────────────────
+    role_scores = {"normal": 0.3, "builder": 0.0, "injector": 0.0, "lurker": 0.0}
+
+    if observation.chaos_proxy_signals:
+        proxy = observation.chaos_proxy_signals
+
+        # Builder signals: high orderly + high consistency + low trolling
+        if proxy.get("orderly_expression_ratio", 0) > 0.6 and \
+           proxy.get("narrative_consistency", 0) > 0.6 and \
+           proxy.get("trolling_frequency", 1) < 0.15:
+            role_scores["builder"] += 0.4
+
+        # Injector signals: high trolling + low consistency
+        if proxy.get("trolling_frequency", 0) > 0.15:
+            role_scores["injector"] += proxy["trolling_frequency"] * 1.5
+        if proxy.get("contradiction_frequency", 0) > 0.4:
+            role_scores["injector"] += 0.3
+
+        # Lurker signals: very low expression across the board
+        if proxy.get("orderly_expression_ratio", 0.5) < 0.3 and \
+           proxy.get("trolling_frequency", 0) < 0.1:
+            role_scores["lurker"] += 0.5
+
+    # Meme participation → role clues
+    if observation.meme_participation:
+        never_count = sum(1 for p in observation.meme_participation.values()
+                        if p == MemeParticipation.NEVER)
+        total = len(observation.meme_participation)
+        if total > 0 and never_count / total > 0.6:
+            role_scores["lurker"] += 0.4
+
+        resist_count = sum(1 for p in observation.meme_participation.values()
+                         if p == MemeParticipation.RESISTER)
+        if total > 0 and resist_count / total > 0.3:
+            role_scores["injector"] += 0.3
+
+    # Normalize role probabilities
+    total_score = sum(role_scores.values()) + 1e-10
+    role_probs = {r: round(s / total_score, 3) for r, s in role_scores.items()}
+    most_likely_role = max(role_probs, key=role_probs.get)
+
+    # ── Resilience estimation ─────────────────
+    resilience = 0.5  # default
+    if observation.self_reported_resilience is not None:
+        resilience = observation.self_reported_resilience
+    elif observation.chaos_proxy_signals:
+        # Narrative consistency + low contradiction → higher resilience
+        nc = observation.chaos_proxy_signals.get("narrative_consistency", 0.5)
+        cf = observation.chaos_proxy_signals.get("contradiction_frequency", 0.3)
+        resilience = np.clip(nc * 0.7 + (1 - cf) * 0.3, 0.1, 0.95)
+
+    # ── Influence estimation ──────────────────
+    influence = 0.1  # default
+    if observation.avg_influence_exerted is not None:
+        influence = observation.avg_influence_exerted
+    elif observation.chaos_proxy_signals:
+        oe = observation.chaos_proxy_signals.get("orderly_expression_ratio", 0.5)
+        tf = observation.chaos_proxy_signals.get("trolling_frequency", 0.05)
+        influence = np.clip(oe * 0.15 + tf * 0.2, 0.02, 0.5)
+
+    # ── Participation pattern ─────────────────
+    if chaos_est > 0.25:
+        predicted_pattern = "early_adopter"
+    elif chaos_est > -0.25:
+        predicted_pattern = "follower"
+    else:
+        predicted_pattern = "resister"
+
+    # ── Stability ─────────────────────────────
+    if chaos_std < 0.15:
+        stability = "stable"
+    elif chaos_std < 0.35:
+        stability = "oscillating"
+    else:
+        stability = "drifting"
+
+    # ── Confidence ────────────────────────────
+    n_signals = len([v for v in [
+        observation.self_reported_chaos,
+        observation.chaos_proxy_signals,
+        observation.meme_participation,
+        observation.sentiment_trajectory is not None,
+    ] if v])
+    data_score = min(1.0, n_signals / 4)
+    agreement_score = 1.0 - min(1.0, chaos_std / 0.5)
+    confidence = 0.4 * data_score + 0.4 * agreement_score + 0.2 * (1.0 if most_likely_role != "normal" else 0.5)
+
+    # ── Caveats ───────────────────────────────
+    caveats = []
+    if n_signals < 3:
+        caveats.append("观测信号不足，校准结果高度不确定")
+    if confidence < 0.5:
+        caveats.append("置信度较低，建议收集更多行为数据后重新校准")
+    if observation.self_reported_chaos is None:
+        caveats.append("缺少自我报告锚点，混沌位置估计主要依赖代理信号")
+    caveats.append("此剖面是对内部混沌结构的概率推断，不是确定性描述")
+    caveats.append("其他主体的小真实永远是不可穿透的黑箱")
+
+    return IndividualChaosProfile(
+        chaos_position_est=round(chaos_est, 3),
+        chaos_position_std=round(chaos_std, 3),
+        resilience_est=round(resilience, 3),
+        influence_est=round(influence, 3),
+        role_probabilities=role_probs,
+        most_likely_role=most_likely_role,
+        predicted_participation_pattern=predicted_pattern,
+        susceptibility_est=round(0.5 + 0.3 * chaos_est, 3),
+        chaos_stability=stability,
+        calibration_method="DirectHeuristic (rule-based mapping)",
+        confidence=round(np.clip(confidence, 0.1, 0.95), 3),
+        caveats=caveats,
+    )
+
+
+def _calibrate_genetic(observation: BehavioralObservation,
+                       n_iterations: int = 800,
+                       population_size: int = 40) -> IndividualChaosProfile:
+    """遗传算法校准 — 仿真驱动的参数搜索。"""
     bounds = {
         "chaos_position": (-1.0, 1.0),
         "resilience": (0.1, 0.95),
@@ -649,7 +856,7 @@ def calibrate_from_scenario(scenario: str) -> IndividualChaosProfile:
     if scenario not in scenarios:
         raise ValueError(f"Unknown scenario: {scenario}. Choose from: {list(scenarios.keys())}")
 
-    return calibrate_from_observation(scenarios[scenario])
+    return calibrate_from_observation(scenarios[scenario], method="direct")
 
 
 # ═══════════════════════════════════════════════
