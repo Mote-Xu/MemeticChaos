@@ -204,7 +204,7 @@ def simulate_individual(params: dict, n_steps: int = 100,
     Returns:
         {chaos_traj, vitality_traj, meme_state_traj, participation_record}
     """
-    np.random.seed(params.get("seed", 42))
+    np.random.seed(42)  # Deterministic evaluation for same params
 
     chaos = params.get("chaos_position", np.random.uniform(-0.5, 0.5))
     resilience = params.get("resilience", 0.5)
@@ -230,6 +230,9 @@ def simulate_individual(params: dict, n_steps: int = 100,
     # External meme influence (simulated neighbors)
     neighbor_chaos = np.random.uniform(-0.3, 0.3)  # average neighbor chaos
 
+    # Homeostatic anchor: agent has an intrinsic chaos position it returns to
+    intrinsic_chaos = chaos  # the agent's "natural" position
+
     chaos_traj = []
     vitality_traj = []
     meme_state_traj = []
@@ -240,6 +243,11 @@ def simulate_individual(params: dict, n_steps: int = 100,
     infected_since = -1
 
     for step in range(n_steps):
+        # 0. Homeostatic pull: agent returns to its intrinsic position
+        # Resilience controls how strongly the agent maintains its own nature
+        homeostatic_strength = 0.02 * resilience
+        chaos += homeostatic_strength * (intrinsic_chaos - chaos)
+
         # 1. Entropy drift
         drift = entropy_rate * (1.0 - resilience)
         if role == ChaosRole.ORDER_BUILDER:
@@ -351,8 +359,14 @@ def _compute_loss(sim_result: dict, observation: BehavioralObservation) -> float
 
     # Self-report anchors
     if observation.self_reported_chaos is not None:
-        loss += (observation.self_reported_chaos - sim_result["final_chaos"]) ** 2 * 2
-        n_terms += 2  # double weight for self-report
+        # Compare to mean chaos over trajectory (more stable than final value)
+        mean_chaos = float(np.mean(sim_result["chaos_traj"]))
+        loss += (observation.self_reported_chaos - mean_chaos) ** 2 * 3
+        n_terms += 3  # high weight for self-report
+
+    if observation.self_reported_resilience is not None:
+        loss += (observation.self_reported_resilience - params.get("resilience", 0.5)) ** 2
+        n_terms += 1
 
     if observation.self_reported_vitality is not None:
         loss += (observation.self_reported_vitality - sim_result["final_vitality"]) ** 2
@@ -382,8 +396,8 @@ def _compute_loss(sim_result: dict, observation: BehavioralObservation) -> float
 
 
 def calibrate_from_observation(observation: BehavioralObservation,
-                               n_iterations: int = 2000,
-                               population_size: int = 50) -> IndividualChaosProfile:
+                               n_iterations: int = 800,
+                               population_size: int = 40) -> IndividualChaosProfile:
     """从行为观测反推个体混沌参数。
 
     使用简化遗传算法在参数空间中搜索最匹配的个体配置。
