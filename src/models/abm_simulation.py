@@ -306,7 +306,10 @@ def build_scale_free_network(n_agents: int, m: int = 3) -> list[list[int]]:
         邻接表
     """
     import networkx as nx
-    G = nx.barabasi_albert_graph(n_agents, m)
+    if n_agents <= 1:
+        return [[] for _ in range(n_agents)]
+    m_eff = min(m, n_agents - 1)
+    G = nx.barabasi_albert_graph(n_agents, m_eff)
     adj = [[] for _ in range(n_agents)]
     for u, v in G.edges():
         adj[u].append(v)

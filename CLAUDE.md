@@ -7,79 +7,87 @@
 利用 2020-2025 年中国互联网热梗的由来与演变数据，对人类集体情感的「混沌属性」进行建模。
 
 - **目标不是**预测下一个具体的热梗
-- **目标是**识别系统级别的吸引子（Attractors）和相变点（Phase Transitions），对大众喜恶倾向进行结构性预测
-- **扩展目标**：从外部行为信号反推个体混沌属性剖面（贝叶斯后验，概率性黑箱映射）
-- **核心产出**：模因相图（Meme Phase Diagram）——中国互联网集体情绪相图（2020-2025）
+- **目标是**识别系统级别的吸引子（Attractors）和相变点（Phase Transitions）
+- **扩展目标**：从外部行为信号反推个体混沌属性剖面（贝叶斯后验）
+- **核心产出**：模因相图（Meme Phase Diagram）——中国互联网集体情绪相图
 
 ## 哲学基础
 
-对齐「微尘哲学」核心元定律：
-- 集体情感默认处于熵增背景，混沌是底色，无法被消灭
-- 系统在「绝对混沌」（虚无、意义消散）和「绝对秩序」（僵化意识形态）之间振荡
-- 热梗可被视为集体情感系统在混沌中「建立局部秩序」的尝试
-- 其他主体的「小真实」是不可穿透的黑箱，个体校准器输出贝叶斯后验分布而非点估计
+对齐「微尘哲学」核心元定律：熵增常态 / 与混沌共存 / 小真实不可穿透
 
 ## 技术栈
 
-- **语言**: Python 3.12
-- **环境**: conda `MemeticChaos`
-- **核心库**: numpy, scipy, pandas, matplotlib, plotly, networkx, jupyter, jieba, scikit-learn, mesa, pytest
-- **仓库**: git@github.com:Mote-Xu/MemeticChaos.git
+Python 3.12 + conda `MemeticChaos` + numpy/scipy/pandas/networkx/matplotlib
+仓库：git@github.com:Mote-Xu/MemeticChaos.git
 
 ## 项目结构
 
 ```
 src/
 ├── data/
-│   └── curator.py                       # 策展数据管理 + SIR参数估算
+│   ├── curator.py                 # 策展数据管理 + SIR参数估算
+│   └── bilibili_pipeline.py       # B站字幕→SIRS-M真实拟合 (Gemini贡献)
 ├── models/
-│   ├── sir_meme.py                      # SIR/SIRS/双群体 模因传播模型
-│   ├── abm_simulation.py                # 300 Agent 无标度网络情感混沌仿真
-│   ├── attractor.py                     # Takens/RQA/Lyapunov/盆地检测
-│   └── individual_calibrator.py         # 个体混沌校准 (直接启发式 + GA, 贝叶斯后验)
+│   ├── sir_meme.py                # SIR/SIRS/双群体 + 参数拟合 + 混沌熵
+│   ├── abm_simulation.py          # 300 Agent 无标度网络仿真
+│   ├── attractor.py               # Takens/RQA/Lyapunov/盆地检测
+│   └── individual_calibrator.py   # 直接启发式+GA, 贝叶斯后验输出
 ├── analysis/
-│   ├── lifecycle.py                     # 生命周期剖面 + 跨类别对比
-│   ├── sentiment.py                     # 情感弧线分类 (5种)
-│   ├── phase_detect.py                  # 相变检测 (R₀/混沌轴/熵 三维)
-│   ├── phase_diagram.py                # 模因相图 ★核心产出★
-│   └── backtest.py                      # 历史回测验证 + 鲁棒性测试
+│   ├── lifecycle.py               # 生命周期剖面 + 跨类别对比
+│   ├── sentiment.py               # 情感弧线分类 (8种类型)
+│   ├── phase_detect.py            # 相变检测 (R₀/混沌轴/熵 三维)
+│   ├── phase_diagram.py          # ★模因相图 — 核心研究产出
+│   └── backtest.py                # 历史回测 + 鲁棒性验证
 └── viz/
-    └── plots.py                         # 可复用可视化函数库
-data/
-├── curated/memes_2020_2025.json        # 29个热梗完整策展
-└── scraped/                             # 爬虫补充数据 (gitignore)
-notebooks/                                # 数据探索 + SIR建模
-tests/test_sir_model.py                  # 24/24 通过
-outputs/figures/                          # 分析图表 (gitignore)
+    └── plots.py                   # 可复用可视化函数库
+data/curated/memes_2020_2025.json  # 29个热梗策展
+tests/test_sir_model.py            # 24/24 通过
 ```
 
-## 已实现能力
+## 功能清单（21项）
 
-| 模块 | 功能 | 状态 |
-|------|------|:--:|
-| SIR 模型 | 标准SIR/SIRS/双群体 + 参数拟合 + 混沌熵 | ✅ |
-| ABM 仿真 | 300 Agent 无标度网络: 传染/回音壁/混沌投放 | ✅ |
-| 吸引子检测 | Takens/RQA/Lyapunov/盆地 四件套 | ✅ |
-| 个体校准器 | 直接启发式 + GA, 贝叶斯后验分布输出 | ✅ |
-| 生命周期 | 29热梗剖面 + 4种类型 + 跨类别对比 | ✅ |
-| 情感分析 | 5种弧线分类 + 情感熵 + 混沌关联 | ✅ |
-| 相变检测 | R₀临界/混沌轴漂移/熵突变 三维 | ✅ |
-| 模因相图 ★ | 5相区+2盆地+5状态情绪状态机+4转移路径 | ✅ |
-| 验证层 | 时序回测/留一/鲁棒性 (盆地100%稳定) | ✅ |
+### 集体层
+1. SIR/SIRS/双群体 模因传播模拟
+2. 从时间序列反推 β, γ, R₀ (curve_fit)
+3. 定性描述 → 参数估算
+4. 300-Agent ABM 网络仿真
+5. 模因四分类 (脉冲/爆发/长尾/流产)
+6. Lyapunov指数 + RQA混沌检测
+7. 吸引子盆地识别
+8. 生命周期提取 (萌芽/高峰/衰退)
+9. 8种情感弧线分类 + 情感熵
+10. R₀/混沌轴/熵 三维相变检测
+11. ★模因相图 (5相区+2盆地+情绪状态机)
+12. 历史回测验证 (时序切分+留一)
+13. 吸引子鲁棒性测试
+14. B站字幕→SIRS-M拟合管道
+
+### 个体层
+15. 行为信号→混沌后验分布
+16. 角色类型推断 (builder/injector/normal/lurker)
+17. 模因行为预测 (early_adopter/follower/resister)
+18. 4种场景模板一键校准
+
+### 数据与验证
+19. 29热梗策展数据管理 (筛选/排序/统计)
+20. 24单元测试
+21. 跨类别统计对比
 
 ## 关键发现
 
-- 两个吸引子盆地 **100% 鲁棒**（删30%热梗/20%噪声仍存在）→ 真吸引子
-- R₀=1 是模因传播临界相变点
-- 2021年混沌轴剧烈负漂 (-0.88) + 预测力暴跌 (0.722→0.389) → 确认结构性相变
-- 留一验证 chaos MAE=0.186 (2.7x 随机基线)，类别准确率 58.6% (2.9x 基线)
-- 解构自嘲类情感熵最高 (0.713)，攻击发泄最靠近绝对混沌 (-0.62)
-- 5 状态集体情绪状态机：建构性解构→攻击性宣泄→虚无退却→建构性解构（循环）
+- 两个吸引子盆地 100% 鲁棒验证 → 真吸引子
+- 2021年混沌轴 -0.88 漂移 + 预测力 0.722→0.389 → 结构性相变（GPT: 可能是吸引子重构）
+- 留一验证 chaos MAE=0.186 (2.7x随机基线)
+- 解构自嘲类情感熵最高(0.713)，攻击发泄最靠近绝对混沌(-0.62)
 
-## 待办
+## 外部审查
 
-- [ ] B站 22个视频字幕数据接入 SIR 真实参数拟合
-- [ ] 百度指数/微博热搜自动采集管道
-- [ ] 个体校准器真实用户行为数据验证
-- [ ] 跨平台验证 (B站/微博/知乎/抖音)
-- [ ] PROJECT_BLUEPRINT.md（对外AI交接文档）
+- GPT：模因相图=核心IP，2021相变=论文主线
+- Gemini：贡献 bilibili_pipeline.py
+- 审查记录：CODE_REVIEW_FINDINGS.md
+
+## 当前卡点
+
+- B站22个视频字幕转文字中 → 接入可得到第一个真实R₀
+- ABM/Attractor/Calibrator 缺 formal tests
+- 跨平台验证未开始

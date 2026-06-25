@@ -541,7 +541,8 @@ def detect_phase_transition(param_sweeps: list[dict]) -> Optional[dict]:
     """
     R0s = [s["params"].R0 for s in param_sweeps]
     for i in range(len(R0s) - 1):
-        if (R0s[i] - 1.0) * (R0s[i + 1] - 1.0) < 0:
+        product = (R0s[i] - 1.0) * (R0s[i + 1] - 1.0)
+        if product < 0 or (product == 0 and (R0s[i] != 1.0 or R0s[i+1] != 1.0)):
             return {
                 "transition_at": i,
                 "pre_R0": R0s[i],

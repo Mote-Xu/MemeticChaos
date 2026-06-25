@@ -72,6 +72,10 @@ def classify_sentiment_arc(phases: list[dict]) -> ArcType:
     if sign_changes >= 2:
         return "oscillating"
 
+    # Stable: very little change across all phases
+    if abs(diff) < 0.03 and abs(mid_diff) < 0.03:
+        return "stable"
+
     # Monotonic
     if all(d >= -0.01 for d in diffs):
         return "monotonic_up"
@@ -83,9 +87,6 @@ def classify_sentiment_arc(phases: list[dict]) -> ArcType:
         return "inverted_U" if first_half > second_half else "rise_fall"
     elif mid_diff < -0.05:
         return "U_shape" if second_half > first_half else "fall_rise"
-
-    if abs(diff) < 0.03:
-        return "stable"
 
     return "rise_fall" if diff < 0 else "fall_rise"
 
