@@ -1,0 +1,32 @@
+# Private info
+PRIVATE.md
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# Conda
+environment.yml
+
+# Outputs
+outputs/
+
+# Scraped data (raw, not curated)
+data/scraped/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
