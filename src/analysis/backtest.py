@@ -26,7 +26,9 @@ from src.models.sir_meme import (
     SIRParams, estimate_params_from_lifecycle, solve_sir,
     classify_meme_type,
 )
-from src.analysis.phase_diagram import build_state_points, MemeStatePoint
+from src.analysis.phase_diagram import (
+    build_state_points, MemeStatePoint, detect_attractor_basins,
+)
 
 
 # ═══════════════════════════════════════════════
@@ -330,7 +332,7 @@ def test_basin_robustness(curator: MemeCurator = None,
             subset = [curator.memes[i] for i in keep_idx]
 
             # Recompute basins
-            sub_points = build_state_points_from_memes(subset)
+            sub_points = build_state_points(memes=subset)
             sub_basins = detect_attractor_basins(sub_points)
 
             basin_counts.append(len(sub_basins))
@@ -364,7 +366,7 @@ def test_basin_robustness(curator: MemeCurator = None,
                 # Create a modified entry
                 noisy_memes.append(_make_noisy_meme(m, noisy_chaos))
 
-            noisy_points = build_state_points_from_memes(noisy_memes)
+            noisy_points = build_state_points(memes=noisy_memes)
             noisy_basins = detect_attractor_basins(noisy_points)
             basin_counts.append(len(noisy_basins))
 
@@ -383,49 +385,6 @@ def test_basin_robustness(curator: MemeCurator = None,
         ))
 
     return results
-
-
-def build_state_points_from_memes(memes: list[MemeEntry]) -> list[MemeStatePoint]:
-    """从 MemeEntry 列表构建状态点（用于扰动后的子集）。"""
-    from src.models.sir_meme import estimate_params_from_lifecycle, solve_sir, compute_entropy_curve, classify_meme_type
-
-    points = []
-    for m in memes:
-        lc = m.lifecycle
-        pm = m.propagation_model
-        dur_months = lc.get("duration_months", 3)
-        if dur_months >= 999:
-            dur_months = 18
-        dur_days = dur_months * 30
-        circle_count = len(pm.get("circle_layers", []))
-        if circle_count >= 5:
-            total_infected = 0.75
-        elif circle_count >= 3:
-            total_infected = 0.50
-        else:
-            total_infected = 0.25
-
-        params = estimate_params_from_lifecycle(
-            peak_day=dur_days * 0.3,
-            total_infected=total_infected,
-            duration_days=dur_days,
-        )
-        result = solve_sir(params)
-        classification = classify_meme_type(result)
-        H = compute_entropy_curve(result)
-
-        points.append(MemeStatePoint(
-            name=m.name, category=m.category, year=m.year,
-            R0=float(params.R0),
-            chaos_position=float(m.chaos_position),
-            entropy_max=float(np.max(H)),
-            entropy_mean=float(np.mean(H)),
-            duration_days=dur_days,
-            peak_infected=float(result.peak_infected),
-            meme_type=classification["type"],
-            lifecycle_status=lc.get("status", "unknown"),
-        ))
-    return points
 
 
 def _make_noisy_meme(meme: MemeEntry, noisy_chaos: float) -> MemeEntry:

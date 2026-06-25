@@ -424,25 +424,16 @@ def estimate_params_from_lifecycle(
     # Gamma ≈ 1 / (duration / 2) — 恢复率近似为有效传播时长一半的倒数
     gamma_est = 2.0 / max(duration_days, 1.0)
 
-    # R0 ≈ 1 / (1 - total_infected) 当 total_infected 较小时
-    # 更精确的估算：对于 SIR 模型, final_size = 1 - exp(-R0 * final_size)
-    # 使用数值求解
+    # R₀ estimation from SIR final size equation:
+    # R∞ = 1 - exp(-R₀ × R∞)  (assuming S₀ ≈ 1)
+    # → R₀ = -ln(1 - R∞) / R∞   (analytical solution)
     target = total_infected
     if target >= 0.99:
         R0_est = 10.0
-    elif target <= 0.01:
-        R0_est = 0.5
+    elif target <= 0.001:
+        R0_est = 0.1
     else:
-        # Binary search for R0
-        lo, hi = 0.01, 20.0
-        for _ in range(50):
-            mid = (lo + hi) / 2
-            final_size = 1.0 - np.exp(-mid * target)
-            if final_size < target:
-                lo = mid
-            else:
-                hi = mid
-        R0_est = (lo + hi) / 2
+        R0_est = -np.log(1.0 - target) / target
 
     beta_est = R0_est * gamma_est
 

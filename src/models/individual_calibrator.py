@@ -348,7 +348,8 @@ def simulate_individual(params: dict, n_steps: int = 100,
 # Inverse problem: observation → parameter inference
 # ═══════════════════════════════════════════════
 
-def _compute_loss(sim_result: dict, observation: BehavioralObservation) -> float:
+def _compute_loss(sim_result: dict, observation: BehavioralObservation,
+                  params: dict = None) -> float:
     """计算仿真结果与观测之间的损失。
 
     Loss 越小 → 参数越匹配观测。
@@ -841,7 +842,7 @@ def _evaluate_individual(params: dict, observation: BehavioralObservation,
                          meme_events: list[dict]) -> float:
     """评估单个参数组合的损失。"""
     sim_result = simulate_individual(params, n_steps=100, meme_events=meme_events)
-    return _compute_loss(sim_result, observation)
+    return _compute_loss(sim_result, observation, params)
 
 
 # ═══════════════════════════════════════════════

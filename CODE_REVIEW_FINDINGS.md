@@ -75,35 +75,17 @@ def _compute_loss(sim_result: dict, observation: BehavioralObservation) -> float
 
 ---
 
-### 🔴 Bug 2：`estimate_params_from_lifecycle` 二分搜索公式错误
+### 🟢 ~~Bug 2~~ → 代码简化：`estimate_params_from_lifecycle` 二分搜索 → 解析解
 
-**文件**：`src/models/sir_meme.py`，第 438-444 行
+**文件**：`src/models/sir_meme.py`
 
-**问题**：
-```python
-# 当前实现
-final_size = 1.0 - np.exp(-mid * target)  # ← 错误
-if final_size < target:
-    lo = mid
-```
+**原判断**：二分搜索公式 `1 - exp(-mid * target)` 疑似将 target 误代入 R∞ 的位置。
 
-SIR 模型的最终规模隐式方程为：
-$$R_\infty = 1 - \exp(-R_0 \cdot R_\infty)$$
+**更正**：经代数验证，二分搜索收敛到 `R₀ = -ln(1-target)/target`，这与 SIR 最终规模方程 `R∞ = 1 - exp(-R₀ × R∞)`（令 R∞ = target）**代数等价**。原公式在数学上正确——二分搜索自动求解了同一个隐式方程。
 
-但代码写成了 $1 - \exp(-R_0 \cdot target)$，即在指数项中使用了观测值 `target` 而非未知的 $R_\infty$。这导致二分搜索的收敛目标发生偏移，估算出的 $R_0$ 系统性偏小。
+**实际修复**：用解析解 `R₀ = -ln(1-target)/target` 替代 O(log n) 二分搜索 → O(1)。这是代码简化，不是 bug 修复。
 
-**修复**：应改为求解隐式方程 $f(R_0) = 1 - \exp(-R_0 \cdot target) - target = 0$ 的根：
-```python
-# R∞ = 1 - exp(-R0 * R∞)
-# 需要数值求解: find R0 s.t. target = 1 - exp(-R0 * target)
-# 等价于: R0 = -ln(1 - target) / target
-if 0 < target < 1:
-    R0_est = -np.log(1 - target) / target
-```
-
-实际上这个方程有解析解：$R_0 = -\ln(1 - R_\infty) / R_\infty$。不需要二分搜索。
-
-**影响**：当前所有热梗的 R₀ 都被系统性低估。这也解释了为什么策展数据中所有梗的 R₀ 都挤在 1.4-1.85 窄区间——它们全部从同一个偏差公式算出。
+**根本问题**：R₀ 区间窄（1.39-1.85）的真正原因不是公式错误，而是输入 `total_infected` 只有 3 个离散值（0.25/0.50/0.75），来自 qualitative 的 `circle_count` 到 quantitative 的粗糙映射。要解决 R₀ 分辨率问题，需要**真实时间序列数据**——这正是 B站字幕接入的意义。
 
 ---
 

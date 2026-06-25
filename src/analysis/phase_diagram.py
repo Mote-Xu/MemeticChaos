@@ -96,16 +96,26 @@ class PhaseDiagram:
 # State point construction
 # ═══════════════════════════════════════════════
 
-def build_state_points(curator: MemeCurator = None) -> list[MemeStatePoint]:
+def build_state_points(curator: MemeCurator = None,
+                       memes: list = None) -> list[MemeStatePoint]:
     """从策展数据构建所有热梗的相图状态点。
 
     每个热梗 → SIR 参数估算 → 求解 → 提取 R₀/chaos/entropy。
+
+    Args:
+        curator: MemeCurator 实例（与 memes 二选一）
+        memes: 直接传入 MemeEntry 列表（用于扰动后子集）
     """
-    if curator is None:
+    if memes is not None:
+        meme_list = memes
+    elif curator is not None:
+        meme_list = curator.memes
+    else:
         curator = MemeCurator()
+        meme_list = curator.memes
 
     points = []
-    for meme in curator.memes:
+    for meme in meme_list:
         lc = meme.lifecycle
         pm = meme.propagation_model
 
