@@ -141,45 +141,74 @@ class IndividualChaosProfile:
     不是确定性断言。
     """
 
-    # ── 核心参数估计 ──
-    chaos_position_est: float          # 最概然混沌位置 (-1 到 +1)
-    chaos_position_std: float          # 估计不确定性
-    resilience_est: float              # 韧性估计
-    influence_est: float               # 影响力估计
+    # ── 后验分布（核心输出）──
+    chaos_posterior: dict[str, float] = field(default_factory=dict)
+    # {"-1.0~-0.6": 0.05, "-0.6~-0.2": 0.31, "-0.2~+0.2": 0.47, "+0.2~+0.6": 0.12, "+0.6~+1.0": 0.05}
+    # GPT建议：逆问题多解，输出后验分布比单点估计科学得多
 
-    # ── 角色分类 ──
-    role_probabilities: dict[str, float]  # {normal, builder, injector, lurker}
-    most_likely_role: str
+    # ── 点估计（从后验推导，保留兼容）──
+    chaos_position_est: float = 0.0       # 后验均值
+    chaos_position_std: float = 0.5       # 后验标准差
+    resilience_est: float = 0.5
+    influence_est: float = 0.1
+
+    # ── 角色后验 ──
+    role_probabilities: dict[str, float] = field(default_factory=dict)
+    most_likely_role: str = "normal"
 
     # ── 模因行为预测 ──
-    predicted_participation_pattern: str  # "early_adopter" | "follower" | "resister"
-    susceptibility_est: float             # 对模因的易感性
+    predicted_participation_pattern: str = "follower"
+    susceptibility_est: float = 0.5
 
     # ── 混沌动力学 ──
-    chaos_stability: str              # "stable" | "oscillating" | "drifting"
+    chaos_stability: str = "stable"
 
     # ── 元信息 ──
-    calibration_method: str           # 使用的校准方法
-    confidence: float = 0.5           # 整体置信度 (0-1)
+    calibration_method: str = "unknown"
+    confidence: float = 0.5
     caveats: list[str] = field(default_factory=list)
     predicted_entropy_trajectory: Optional[np.ndarray] = None
-    # 关键警示：提醒用户这是概率推断，不是确定事实
 
     def summary(self) -> str:
         lines = [
             f"=== 个体混沌属性剖面 ===",
+            f"",
+            f"── 后验分布（核心输出）──",
+        ]
+        if self.chaos_posterior:
+            for bin_label, prob in self.chaos_posterior.items():
+                bar = "█" * int(prob * 30)
+                lines.append(f"  chaos {bin_label:12s}: {prob:.0%} {bar}")
+        else:
+            lines.append(f"  (后验分布未计算)")
+
+        lines.extend([
+            f"",
+            f"── 点估计（从后验推导）──",
             f"混沌位置: {self.chaos_position_est:+.2f} ± {self.chaos_position_std:.2f}",
             f"韧性: {self.resilience_est:.2f} | 影响力: {self.influence_est:.3f}",
+            f"",
+            f"── 角色后验 ──",
             f"最可能角色: {self.most_likely_role}",
-            f"  角色概率: {self.role_probabilities}",
+        ])
+        for role, prob in sorted(self.role_probabilities.items(), key=lambda x: x[1], reverse=True):
+            bar = "█" * int(prob * 20)
+            lines.append(f"  {role:10s}: {prob:.0%} {bar}")
+
+        lines.extend([
+            f"",
+            f"── 行为预测 ──",
             f"模因参与模式: {self.predicted_participation_pattern}",
             f"模因易感性: {self.susceptibility_est:.2f}",
             f"混沌稳定性: {self.chaos_stability}",
+            f"",
+            f"── 元信息 ──",
             f"置信度: {self.confidence:.1%}",
             f"校准方法: {self.calibration_method}",
-        ]
+        ])
         if self.caveats:
-            lines.append("--- 警示 ---")
+            lines.append("")
+            lines.append("── 警示 ──")
             for c in self.caveats:
                 lines.append(f"  ⚠ {c}")
         return "\n".join(lines)
@@ -600,15 +629,55 @@ def _calibrate_direct(observation: BehavioralObservation) -> IndividualChaosProf
     caveats.append("此剖面是对内部混沌结构的概率推断，不是确定性描述")
     caveats.append("其他主体的小真实永远是不可穿透的黑箱")
 
+    # ── Posterior distribution construction ────
+    # Build a binned posterior from the weighted chaos votes
+    bins = [(-1.0, -0.6), (-0.6, -0.2), (-0.2, 0.2), (0.2, 0.6), (0.6, 1.0)]
+    bin_labels = [
+        "-1.0~-0.6", "-0.6~-0.2", "-0.2~+0.2", "+0.2~+0.6", "+0.6~+1.0"
+    ]
+    bin_descriptions = [
+        "极端混沌：接近绝对混沌，系统接近瓦解",
+        "偏混沌：倾向于混沌投放或虚无退却",
+        "中性区：无明显混沌/秩序倾向",
+        "偏秩序：主动建立局部秩序，健康方向",
+        "极端秩序：接近绝对秩序，可能僵化",
+    ]
+
+    # Gaussian kernel centered at each vote, weighted by vote weight
+    posterior_raw = np.zeros(len(bins))
+    for vote, weight in zip(chaos_votes, chaos_weights):
+        for i, (lo, hi) in enumerate(bins):
+            center = (lo + hi) / 2
+            # Gaussian contribution
+            posterior_raw[i] += weight * np.exp(-((vote - center) ** 2) / (2 * 0.15 ** 2))
+
+    # Normalize
+    posterior_raw /= posterior_raw.sum() + 1e-10
+    chaos_posterior = {
+        f"{label} ({desc})": round(float(p), 4)
+        for label, desc, p in zip(bin_labels, bin_descriptions, posterior_raw)
+        if p > 0.01  # filter negligible bins
+    }
+
+    # Derive point estimate from posterior (weighted mean of bin centers)
+    bin_centers = np.array([(lo + hi) / 2 for lo, hi in bins])
+    chaos_est_from_posterior = float(np.sum(posterior_raw * bin_centers))
+    chaos_std_from_posterior = float(np.sqrt(
+        np.sum(posterior_raw * (bin_centers - chaos_est_from_posterior) ** 2)
+    ))
+
+    caveats.insert(0, "逆问题多解：相同外部行为可能对应不同内部状态。后验分布比点估计更诚实。")
+
     return IndividualChaosProfile(
-        chaos_position_est=round(chaos_est, 3),
-        chaos_position_std=round(chaos_std, 3),
+        chaos_posterior=chaos_posterior,
+        chaos_position_est=round(chaos_est_from_posterior, 3),
+        chaos_position_std=round(chaos_std_from_posterior, 3),
         resilience_est=round(resilience, 3),
         influence_est=round(influence, 3),
         role_probabilities=role_probs,
         most_likely_role=most_likely_role,
         predicted_participation_pattern=predicted_pattern,
-        susceptibility_est=round(0.5 + 0.3 * chaos_est, 3),
+        susceptibility_est=round(0.5 + 0.3 * chaos_est_from_posterior, 3),
         chaos_stability=stability,
         calibration_method="DirectHeuristic (rule-based mapping)",
         confidence=round(np.clip(confidence, 0.1, 0.95), 3),
