@@ -101,7 +101,10 @@ body { font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; background:#0f
   <!-- 混沌轴时间线 + 回放 -->
   <div class="card full-width">
     <h2>📈 集体混沌轴 2015-2025</h2>
-    <div class="chart chart-lg" id="chaosChart"></div>
+    <div style="position:relative">
+      <div class="chart chart-lg" id="chaosChart"></div>
+      <div id="playCursor" style="position:absolute;top:15px;left:99%;width:2px;height:calc(100% - 65px);background:#ffb74d;pointer-events:none;transition:left 0.15s linear;z-index:10;box-shadow:0 0 8px rgba(255,183,77,0.6)"></div>
+    </div>
     <div class="playback-bar">
       <button onclick="playbackControl('prev')" title="上个月">⏮</button>
       <button id="playBtn" onclick="playbackControl('play')">▶</button>
@@ -187,6 +190,17 @@ function updatePlayback(idx) {
   document.getElementById('pbHHI').textContent = `HHI: ${(historyData.hhi?.[idx]||0).toFixed(3)}`;
   document.getElementById('pbEntropy').textContent = `熵: ${(historyData.entropy?.[idx]||0).toFixed(3)}`;
   document.getElementById('scrubber').value = idx;
+  // Move CSS cursor
+  const cursor = document.getElementById('playCursor');
+  if (cursor) {
+    const gridLeft = 50;  // matches ECharts grid left
+    const gridRight = 20; // matches ECharts grid right
+    const chartWidth = cursor.parentElement.clientWidth;
+    const gridWidth = chartWidth - gridLeft - gridRight;
+    const pct = gridLeft + (idx / (n - 1)) * gridWidth;
+    cursor.style.left = pct + 'px';
+    cursor.style.opacity = '1';
+  }
 }
 
 function playbackControl(action, value) {
