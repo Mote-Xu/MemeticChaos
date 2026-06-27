@@ -221,7 +221,10 @@ async function renderCharts() {
 
   playbackIdx = months.length - 1;
 
-  // Chaos chart with markLine for playback
+  // Build cursor data: all null except current position
+  const cursorData = new Array(months.length).fill(null);
+  cursorData[months.length - 1] = chaos[months.length - 1];
+
   window._chaosChart = echarts.init(document.getElementById('chaosChart'));
   window._chaosChart.setOption({
     tooltip: { trigger:'axis' },
@@ -229,13 +232,16 @@ async function renderCharts() {
     xAxis: { type:'category', data:months, axisLabel:{fontSize:8,rotate:45,interval:11}, splitLine:{show:false} },
     yAxis: { name:'混沌轴', axisLabel:{fontSize:9}, splitLine:{lineStyle:{color:'#2a2a3e'}} },
     series: [
-      { type:'line', data:chaos, smooth:true, lineStyle:{width:1.5,color:'#64b5f6'},
+      { name:'chaos', type:'line', data:chaos, smooth:true, lineStyle:{width:1.5,color:'#64b5f6'},
         areaStyle:{color:{type:'linear',x:0,y:0,x2:0,y2:1,colorStops:[
           {offset:0,color:'rgba(100,181,246,0.15)'},{offset:1,color:'rgba(239,83,80,0.05)'}]}} },
-      { type:'line', data:[], lineStyle:{color:'#ffb74d',width:3,type:'dashed'},
-        markLine:{ silent:true, symbol:'none', data:[{yAxis:0}], lineStyle:{color:'#555',type:'dashed'} } }
+      { name:'cursor', type:'scatter', data:cursorData, symbol:'pin', symbolSize:30,
+        itemStyle:{color:'#ffb74d',borderColor:'#fff',borderWidth:1} },
+      { name:'zero', type:'line', data:[], lineStyle:{color:'#555',type:'dashed',width:0.5},
+        markLine:{silent:true,symbol:'none',data:[{yAxis:0}],lineStyle:{color:'#555',type:'dashed'}} }
     ]
   });
+  window._cursorSeries = 1; // index of cursor series
 
   // Phase chart
   window._phaseChart = echarts.init(document.getElementById('phaseChart'));
@@ -286,10 +292,13 @@ function updatePlaybackInfo(idx) {
   document.getElementById('pbEntropy').textContent = `熵: ${ent.toFixed(3)}`;
   document.getElementById('scrubber').value = idx;
 
-  // Update markLine on chaos chart
+  // Update cursor point on chaos chart
   if (window._chaosChart) {
+    const n = historyData.months.length;
+    const cursorData = new Array(n).fill(null);
+    cursorData[idx] = historyData.chaos_axis[idx];
     window._chaosChart.setOption({
-      series: [{},{ markLine:{ data:[{xAxis:idx,label:{show:true,formatter:m,fontSize:9,color:'#ffb74d'}}]} }]
+      series: [{}, { data: cursorData }]
     });
   }
 }
