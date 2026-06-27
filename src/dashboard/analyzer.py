@@ -77,8 +77,31 @@ def _find_meme_data(topic: str) -> dict:
         if result["narrative"]:
             break
 
-    # 3. Category mapping
-    from src.models.order_form_predictor import TREND_TO_MEME
+    # 3. Category mapping (inline to avoid Flask import issues)
+    TREND_TO_MEME = {
+        "打工人": ("打工人", "解构自嘲"), "内卷": ("内卷 / 卷", "身份认同"),
+        "躺平": ("躺平", "虚无退却"), "普信男": ("普信男", "攻击发泄"),
+        "普信": ("普信男", "攻击发泄"), "小镇做题家": ("小镇做题家", "身份认同"),
+        "摆烂": ("摆烂", "虚无退却"), "润": ("润", "虚无退却"),
+        "后浪": ("后浪", "身份认同"), "鸡你太美": ("鸡你太美", "纯粹娱乐"),
+        "科目三": ("科目三", "纯粹娱乐"), "孔乙己的长衫": ("孔乙己的长衫", "身份认同"),
+        "精神状态": ("精神状态良好", "解构自嘲"), "雪糕刺客": ("XX刺客", "攻击发泄"),
+        "遥遥领先": ("遥遥领先", "纯粹娱乐"), "遥遥领先 华为": ("遥遥领先", "纯粹娱乐"),
+        "吗喽": ("吗喽", "解构自嘲"), "鼠鼠": ("鼠鼠", "解构自嘲"),
+        "牛马": ("牛马", "解构自嘲"), "i人 e人": ("i人/e人", "身份认同"),
+        "情绪价值": ("情绪价值", "身份认同"), "原生家庭": ("原生家庭", "身份认同"),
+        "尊嘟假嘟": ("尊嘟假嘟", "纯粹娱乐"), "凡尔赛": ("凡尔赛", "纯粹娱乐"),
+        "元宇宙": ("元宇宙", "纯粹娱乐"), "citywalk": ("citywalk", "纯粹娱乐"),
+        "芭比Q": ("芭比Q", "纯粹娱乐"), "栓Q": ("栓Q", "纯粹娱乐"),
+        "美拉德": ("美拉德", "纯粹娱乐"), "南方小土豆": ("南方小土豆", "纯粹娱乐"),
+        "破防": ("破防", "解构自嘲"), "社恐": ("社恐", "解构自嘲"),
+        "社死": ("社死", "解构自嘲"), "精神内耗": ("精神内耗", "虚无退却"),
+        "不结婚": ("四不/不婚不育", "虚无退却"), "不婚不育": ("四不/不婚不育", "虚无退却"),
+        "专家建议": ("建议专家不要建议", "攻击发泄"),
+        "建议专家不要建议": ("建议专家不要建议", "攻击发泄"),
+        "显眼": ("显眼包", "纯粹娱乐"), "显眼包": ("显眼包", "纯粹娱乐"),
+        "发疯文学 梗": ("发疯文学", "解构自嘲"), "多巴胺穿搭": ("多巴胺穿搭", "纯粹娱乐"),
+    }
     for trend_kw, (meme_name, cat) in TREND_TO_MEME.items():
         if topic in meme_name or topic in trend_kw:
             result["category"] = cat
@@ -111,7 +134,7 @@ def _find_meme_data(topic: str) -> dict:
     if result["category"] and scores_path.exists():
         with open(scores_path, "r", encoding="utf-8") as f:
             scores = json.load(f)
-        from src.models.order_form_predictor import TREND_TO_MEME
+        # TREND_TO_MEME already defined above
         for trend_kw, (meme_name, cat) in TREND_TO_MEME.items():
             if cat == result["category"] and topic not in meme_name:
                 if meme_name in scores:

@@ -1060,6 +1060,28 @@ def main():
         json.dump(state_json, f, ensure_ascii=False, indent=2)
     print(f"[Dashboard状态] 已保存 → {state_path}")
 
+    # Also save full history for the dashboard timeline
+    history_json = {
+        "months": [s.month for s in states],
+        "chaos_axis": [float(s.chaos_axis) for s in states],
+        "total_attention": [float(s.total_attention) for s in states],
+        "hhi": [float(s.attention_hhi) for s in states],
+        "entropy": [float(s.cat_entropy) for s in states],
+        "constraint": {
+            lbl: [float(s.constraint[i]) for s in states]
+            for i, lbl in enumerate(CONSTRAINT_LABELS)
+        },
+        "dominant_category": [s.dominant_cat for s in states],
+        "cat_dist": {
+            cat: [float(s.cat_dist[i]) for s in states]
+            for i, cat in enumerate(CATEGORY_NAMES)
+        },
+    }
+    history_path = PROCESSED_DIR / "dashboard_history.json"
+    with open(history_path, "w", encoding="utf-8") as f:
+        json.dump(history_json, f, ensure_ascii=False)
+    print(f"[Dashboard历史] 已保存 → {history_path} ({len(states)} 个月)")
+
     # Save model if requested
     if args.save_model:
         import pickle

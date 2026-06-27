@@ -31,6 +31,36 @@ PROCESSED_DIR = ROOT / "data/processed"
 COLLECTOR_DIR = ROOT / "data/collector"
 
 app = Flask(__name__, template_folder=str(Path(__file__).parent / "templates"))
+DASHBOARD_TOKEN = os.environ.get("DASHBOARD_TOKEN", "")
+
+# ═══════════════════════════════════════
+# Auth
+# ═══════════════════════════════════════
+
+@app.before_request
+def check_auth():
+    """如果设置了 DASHBOARD_TOKEN, 所有请求需要 token 验证."""
+    if not DASHBOARD_TOKEN:
+        return None  # 未设 token, 允许所有访问
+
+    # Check cookie first, then query param
+    token = request.cookies.get("mc_token") or request.args.get("token", "")
+    if token == DASHBOARD_TOKEN:
+        return None  # Valid
+
+    # Return 401 for API, redirect for HTML
+    if request.path.startswith("/api/"):
+        return jsonify({"error": "unauthorized", "hint": "?token=YOUR_TOKEN"}), 401
+    return "<h2>🔒 MemeticChaos</h2><p>需要访问令牌。</p><p>在 URL 后加 <code>?token=你的令牌</code></p>", 401
+
+
+@app.after_request
+def set_auth_cookie(response):
+    """验证通过后设置 cookie, 后续请求不需要 ?token=."""
+    if DASHBOARD_TOKEN and request.args.get("token") == DASHBOARD_TOKEN:
+        response.set_cookie("mc_token", DASHBOARD_TOKEN, max_age=60*60*24*30, httponly=True)
+    return response
+
 
 # ═══════════════════════════════════════
 # Data loaders (cached)
@@ -157,44 +187,9 @@ def get_forecast_data() -> dict:
 
 
 def _generate_forecast_on_demand() -> dict:
-    """无报告文件时实时生成."""
-    try:
-        from src.models.order_form_predictor import (
-            OrderFormPredictor, build_monthly_states, load_external_field,
-            load_meme_trends, load_all_narratives,
-        )
-        ext_field = load_external_field()
-        meme_trends = load_meme_trends()
-        narratives = load_all_narratives()
-        all_months = set()
-        for d in ext_field.values():
-            all_months.update(d.keys())
-        for d in meme_trends.values():
-            all_months.update(d.keys())
-        months = sorted(m for m in all_months if "2015" <= m[:4] <= "2025")
-        states = build_monthly_states(ext_field, meme_trends, narratives, months)
-        predictor = OrderFormPredictor(lookback=6, horizon=1)
-        predictor.fit(states)
-        predictor.fit_order_forms(states)
-        forecasts = predictor.forecast(states, n_months=6)
-        latest = states[-1]
-
-        return {
-            "current_state": {
-                "chaos_axis": latest.chaos_axis,
-                "dominant_category": latest.dominant_cat,
-                "attention_hhi": f"{latest.attention_hhi:.3f}",
-                "cat_entropy": f"{latest.cat_entropy:.3f}",
-                "constraint": {CONSTRAINT_LABELS[i]: float(latest.constraint[i]) for i in range(5)},
-                "cat_dist": {CATEGORY_NAMES[i]: float(latest.cat_dist[i]) for i in range(5)},
-            },
-            "forecasts": forecasts,
-            "order_forms": predictor._order_forms["names"] if predictor._order_forms else [],
-            "model_perf": {},
-            "narrative_summary": "",
-        }
-    except Exception as e:
-        return {"error": str(e), "current_state": {}, "forecasts": [], "order_forms": []}
+    """无报告文件时实时生成 (仅 fallback, 通常用 JSON 文件)."""
+    return {"error": "live generation disabled, run predictor cron first",
+            "current_state": {}, "forecasts": [], "order_forms": []}
 
 
 # ═══════════════════════════════════════
@@ -240,36 +235,12 @@ def api_forecast():
 
 @app.route("/api/history")
 def api_history():
-    """历史混沌轴 + 约束场时间序列."""
-    try:
-        from src.models.order_form_predictor import (
-            build_monthly_states, load_external_field, load_meme_trends, load_all_narratives,
-        )
-        ext_field = load_external_field()
-        meme_trends = load_meme_trends()
-        narratives = load_all_narratives()
-        all_months = set()
-        for d in ext_field.values():
-            all_months.update(d.keys())
-        for d in meme_trends.values():
-            all_months.update(d.keys())
-        months = sorted(m for m in all_months if "2015" <= m[:4] <= "2025")
-        states = build_monthly_states(ext_field, meme_trends, narratives, months)
-
-        return jsonify({
-            "months": [s.month for s in states],
-            "chaos_axis": [float(s.chaos_axis) for s in states],
-            "total_attention": [float(s.total_attention) for s in states],
-            "hhi": [float(s.attention_hhi) for s in states],
-            "entropy": [float(s.cat_entropy) for s in states],
-            "constraint": {
-                CONSTRAINT_LABELS[i]: [float(s.constraint[i]) for s in states]
-                for i in range(5)
-            } if hasattr(states[0], 'constraint') else {},
-            "dominant_category": [s.dominant_cat for s in states],
-        })
-    except Exception as e:
-        return jsonify({"error": str(e), "months": [], "chaos_axis": []})
+    """历史混沌轴 + 约束场时间序列 (从预计算文件读取)."""
+    history_path = PROCESSED_DIR / "dashboard_history.json"
+    if history_path.exists():
+        with open(history_path, "r", encoding="utf-8") as f:
+            return jsonify(json.load(f))
+    return jsonify({"error": "no history data yet", "months": [], "chaos_axis": []})
 
 
 @app.route("/api/memes")
@@ -298,7 +269,7 @@ def api_memes():
                 except json.JSONDecodeError:
                     continue
 
-        for name, count in meme_counts.most_common(20):
+        for name, count in sorted(meme_counts.items(), key=lambda x: -x[1])[:20]:
             memes.append({
                 "name": name,
                 "signal_count": count,
@@ -360,7 +331,7 @@ def api_analyze():
         return jsonify({"error": "请提供 ?topic= 参数"}), 400
 
     try:
-        from src.dashboard.analyzer import analyze_topic
+        from analyzer import analyze_topic
         result = analyze_topic(topic)
         return jsonify(result)
     except Exception as e:
@@ -388,7 +359,7 @@ def api_hot_topics():
                         meme_counts[sig.get("meme_name", "?")] += 1
                 except json.JSONDecodeError:
                     continue
-        topics = [{"name": n, "count": c} for n, c in meme_counts.most_common(10)]
+        topics = [{"name": n, "count": c} for n, c in sorted(meme_counts.items(), key=lambda x: -x[1])[:10]]
 
     # Fallback: Google Trends top
     if not topics:
