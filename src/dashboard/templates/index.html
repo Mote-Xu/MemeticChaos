@@ -2,57 +2,85 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MemeticChaos — 集体情感系统 Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>MemeticChaos — 集体情感系统</title>
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; background:#0f0f14; color:#e0e0e0; }
-.header { background:linear-gradient(135deg, #1a1a2e, #16213e); padding:16px 24px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #2a2a3e; }
-.header h1 { font-size:1.4em; color:#64b5f6; }
-.header .updated { font-size:0.8em; color:#888; }
-.grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:16px; max-width:1600px; margin:0 auto; }
-.card { background:#1a1a2e; border-radius:8px; padding:16px; border:1px solid #2a2a3e; }
-.card h2 { font-size:1.1em; color:#90caf9; margin-bottom:12px; border-bottom:1px solid #2a2a3e; padding-bottom:8px; }
+.header { background:linear-gradient(135deg, #1a1a2e, #16213e); padding:12px 16px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #2a2a3e; flex-wrap:wrap; gap:8px; }
+.header h1 { font-size:1.3em; color:#64b5f6; }
+.header .updated { font-size:0.75em; color:#888; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:12px; max-width:1600px; margin:0 auto; }
+.card { background:#1a1a2e; border-radius:8px; padding:14px; border:1px solid #2a2a3e; }
+.card h2 { font-size:1em; color:#90caf9; margin-bottom:10px; border-bottom:1px solid #2a2a3e; padding-bottom:6px; display:flex; justify-content:space-between; align-items:center; }
+.card h2 .badge { font-size:0.7em; background:#1976d2; color:white; padding:2px 8px; border-radius:10px; }
 .full-width { grid-column:1 / -1; }
-.chart { width:100%; height:350px; }
-.chart-lg { height:400px; }
-.state-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(120px,1fr)); gap:10px; }
-.state-item { text-align:center; padding:10px; background:#16213e; border-radius:6px; }
-.state-item .label { font-size:0.75em; color:#888; }
-.state-item .value { font-size:1.3em; font-weight:bold; margin-top:4px; }
+.chart { width:100%; height:320px; }
+.chart-lg { height:380px; }
+.state-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(100px,1fr)); gap:8px; }
+.state-item { text-align:center; padding:8px; background:#16213e; border-radius:6px; }
+.state-item .label { font-size:0.7em; color:#888; }
+.state-item .value { font-size:1.15em; font-weight:bold; margin-top:2px; }
 .value.positive { color:#64b5f6; }
 .value.negative { color:#ef5350; }
 .value.neutral { color:#ffb74d; }
-.bar-container { margin:4px 0; display:flex; align-items:center; gap:8px; }
-.bar-label { width:90px; font-size:0.8em; text-align:right; }
-.bar-track { flex:1; height:16px; background:#16213e; border-radius:8px; overflow:hidden; }
-.bar-fill { height:100%; border-radius:8px; transition:width 0.5s; }
-.meme-list { max-height:300px; overflow-y:auto; }
-.meme-row { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #1a1a2e; font-size:0.85em; }
-.meme-row .name { color:#90caf9; }
+.bar-container { margin:3px 0; display:flex; align-items:center; gap:6px; }
+.bar-label { width:80px; font-size:0.75em; text-align:right; }
+.bar-track { flex:1; height:14px; background:#16213e; border-radius:7px; overflow:hidden; }
+.bar-fill { height:100%; border-radius:7px; transition:width 0.5s; }
+.meme-list { max-height:250px; overflow-y:auto; }
+.meme-row { display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #1a1a2e; font-size:0.8em; }
+.meme-row .name { color:#90caf9; cursor:pointer; }
+.meme-row .name:hover { color:#64b5f6; }
 .meme-row .count { color:#888; }
-.narrative-text { line-height:1.7; font-size:0.9em; color:#ccc; max-height:200px; overflow-y:auto; }
-.forecast-table { width:100%; border-collapse:collapse; font-size:0.85em; }
-.forecast-table th { background:#16213e; padding:8px; text-align:left; color:#90caf9; }
-.forecast-table td { padding:8px; border-bottom:1px solid #1a1a2e; }
-.query-box { display:flex; gap:8px; margin-bottom:12px; }
-.query-box input { flex:1; padding:10px 14px; background:#16213e; border:1px solid #2a2a3e; border-radius:6px; color:#e0e0e0; font-size:0.95em; }
-.query-box button { padding:10px 20px; background:#1976d2; border:none; border-radius:6px; color:white; cursor:pointer; font-size:0.95em; }
+.narrative-text { line-height:1.7; font-size:0.85em; color:#ccc; max-height:180px; overflow-y:auto; }
+.forecast-table { width:100%; border-collapse:collapse; font-size:0.8em; }
+.forecast-table th { background:#16213e; padding:6px 8px; text-align:left; color:#90caf9; }
+.forecast-table td { padding:6px 8px; border-bottom:1px solid #1a1a2e; }
+.query-box { display:flex; gap:6px; margin:8px 0; }
+.query-box input { flex:1; padding:8px 12px; background:#16213e; border:1px solid #2a2a3e; border-radius:6px; color:#e0e0e0; font-size:0.9em; }
+.query-box button { padding:8px 16px; background:#1976d2; border:none; border-radius:6px; color:white; cursor:pointer; font-size:0.9em; white-space:nowrap; }
 .query-box button:hover { background:#1565c0; }
-.hot-topics { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
-.hot-tag { padding:6px 14px; background:#16213e; border:1px solid #2a2a3e; border-radius:16px; cursor:pointer; font-size:0.85em; color:#90caf9; transition:all 0.2s; }
-.hot-tag:hover { background:#1976d2; color:white; border-color:#1976d2; }
-.analysis-result { margin-top:12px; padding:12px; background:#16213e; border-radius:6px; line-height:1.7; font-size:0.9em; display:none; }
-.loading { text-align:center; color:#888; padding:20px; }
-.error { color:#ef5350; }
-@media (max-width:800px) { .grid { grid-template-columns:1fr; } }
+.hot-topics { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; }
+.hot-tag { padding:5px 12px; background:#16213e; border:1px solid #2a2a3e; border-radius:14px; cursor:pointer; font-size:0.8em; color:#90caf9; transition:all 0.2s; }
+.hot-tag:hover { background:#1976d2; color:white; }
+.analysis-result { margin-top:10px; padding:10px; background:#16213e; border-radius:6px; line-height:1.7; font-size:0.85em; display:none; }
+.loading { text-align:center; color:#888; padding:16px; }
+
+/* ── Playback controls ── */
+.playback-bar { display:flex; align-items:center; gap:8px; padding:8px 0; flex-wrap:wrap; }
+.playback-bar button { padding:6px 12px; background:#1976d2; border:none; border-radius:4px; color:white; cursor:pointer; font-size:0.8em; min-width:36px; }
+.playback-bar button:hover { background:#1565c0; }
+.playback-bar button.active { background:#ef5350; }
+.playback-bar input[type=range] { flex:1; min-width:100px; accent-color:#1976d2; }
+.playback-bar .playback-month { font-size:0.85em; color:#90caf9; min-width:55px; font-weight:bold; }
+.playback-bar select { padding:4px 8px; background:#16213e; border:1px solid #2a2a3e; color:#e0e0e0; border-radius:4px; font-size:0.8em; }
+.playback-info { display:flex; gap:12px; flex-wrap:wrap; font-size:0.75em; color:#888; margin-top:4px; }
+
+/* ── Mobile ── */
+@media (max-width:800px) {
+  .grid { grid-template-columns:1fr; padding:8px; gap:8px; }
+  .header h1 { font-size:1.1em; }
+  .chart { height:250px; }
+  .chart-lg { height:280px; }
+  .state-grid { grid-template-columns:repeat(3,1fr); }
+  .bar-label { width:60px; font-size:0.7em; }
+  .forecast-table { font-size:0.7em; }
+  .forecast-table th, .forecast-table td { padding:4px; }
+  .playback-bar { gap:4px; }
+}
+@media (max-width:480px) {
+  .state-grid { grid-template-columns:repeat(2,1fr); }
+  .chart { height:200px; }
+  .chart-lg { height:220px; }
+}
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>🌀 MemeticChaos — 中国互联网集体情感系统</h1>
+  <h1>🌀 MemeticChaos</h1>
   <span class="updated" id="updateTime">加载中...</span>
 </div>
 
@@ -60,65 +88,72 @@ body { font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; background:#0f
 
   <!-- 当前状态 -->
   <div class="card">
-    <h2>📍 当前状态</h2>
-    <div class="state-grid" id="currentState">
-      <div class="loading">加载中...</div>
-    </div>
+    <h2>📍 当前状态 <span class="badge" id="stateMonth">-</span></h2>
+    <div class="state-grid" id="currentState"><div class="loading">加载中...</div></div>
   </div>
 
   <!-- 约束场 -->
   <div class="card">
-    <h2>🎯 集体约束场</h2>
-    <div id="constraintBars">
-      <div class="loading">加载中...</div>
-    </div>
+    <h2>🎯 约束场</h2>
+    <div id="constraintBars"><div class="loading">加载中...</div></div>
   </div>
 
-  <!-- 混沌轴时间线 -->
+  <!-- 混沌轴时间线 + 回放 -->
   <div class="card full-width">
     <h2>📈 集体混沌轴 2015-2025</h2>
     <div class="chart chart-lg" id="chaosChart"></div>
+    <div class="playback-bar">
+      <button onclick="playbackControl('prev')" title="上个月">⏮</button>
+      <button id="playBtn" onclick="playbackControl('play')">▶</button>
+      <button onclick="playbackControl('next')" title="下个月">⏭</button>
+      <input type="range" id="scrubber" min="0" max="100" value="100" oninput="playbackControl('scrub', this.value)">
+      <span class="playback-month" id="playbackMonth">-</span>
+      <select onchange="playbackControl('speed', this.value)" title="播放速度">
+        <option value="200">1x</option>
+        <option value="100">2x</option>
+        <option value="50">4x</option>
+        <option value="25">8x</option>
+      </select>
+    </div>
+    <div class="playback-info">
+      <span id="pbChaos">混沌: -</span>
+      <span id="pbCat">类别: -</span>
+      <span id="pbHHI">HHI: -</span>
+      <span id="pbEntropy">熵: -</span>
+    </div>
   </div>
 
   <!-- 相空间轨迹 -->
   <div class="card">
-    <h2>🗺️ 秩序形态相空间</h2>
+    <h2>🗺️ 相空间轨迹</h2>
     <div class="chart" id="phaseChart"></div>
   </div>
 
-  <!-- 未来预测 -->
+  <!-- 预测 -->
   <div class="card">
-    <h2>🔮 未来 6 个月预测</h2>
-    <div id="forecastTable">
-      <div class="loading">加载中...</div>
-    </div>
+    <h2>🔮 未来预测</h2>
+    <div id="forecastTable"><div class="loading">加载中...</div></div>
   </div>
 
   <!-- 活跃梗 -->
   <div class="card">
-    <h2>🔥 活跃模因信号 (7天)</h2>
-    <div class="meme-list" id="memeList">
-      <div class="loading">加载中...</div>
-    </div>
+    <h2>🔥 活跃信号</h2>
+    <div class="meme-list" id="memeList"><div class="loading">加载中...</div></div>
   </div>
 
-  <!-- LLM 叙事摘要 -->
+  <!-- LLM 叙事 -->
   <div class="card">
-    <h2>🤖 LLM 月度叙事摘要</h2>
-    <div class="narrative-text" id="narrativeText">
-      <div class="loading">加载中...</div>
-    </div>
+    <h2>🤖 月度叙事</h2>
+    <div class="narrative-text" id="narrativeText"><div class="loading">加载中...</div></div>
   </div>
 
-  <!-- 精细建模查询 -->
+  <!-- 精细查询 -->
   <div class="card full-width">
-    <h2>🔍 精细建模查询</h2>
-    <div class="hot-topics" id="hotTopics">
-      <div class="loading">加载热门话题...</div>
-    </div>
+    <h2>🔍 精细建模</h2>
+    <div class="hot-topics" id="hotTopics"><div class="loading">加载中...</div></div>
     <div class="query-box">
-      <input type="text" id="topicInput" placeholder="输入话题名称，如：躺平、后浪、内卷、润...">
-      <button onclick="analyzeTopic()">深度分析</button>
+      <input type="text" id="topicInput" placeholder="输入话题，如：躺平、后浪、内卷、润...">
+      <button onclick="analyzeTopic()">分析</button>
     </div>
     <div class="analysis-result" id="analysisResult"></div>
   </div>
@@ -126,11 +161,11 @@ body { font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; background:#0f
 </div>
 
 <script>
-// ═══════════════════════════════════════
-// API helpers
-// ═══════════════════════════════════════
-
 const API = '/api';
+let historyData = null;
+let playbackTimer = null;
+let playbackIdx = 0;
+let playbackSpeed = 200;
 
 async function fetchJSON(url) {
   const resp = await fetch(url);
@@ -138,42 +173,23 @@ async function fetchJSON(url) {
 }
 
 // ═══════════════════════════════════════
-// Render functions
+// State + Constraint
 // ═══════════════════════════════════════
 
 async function renderCurrentState() {
   const data = await fetchJSON(API + '/state');
   const el = document.getElementById('currentState');
   if (data.error) { el.innerHTML = '<div class="error">加载失败</div>'; return; }
-
   const chaos = data.chaos_axis || 0;
   const cls = chaos > 0.1 ? 'positive' : chaos < -0.15 ? 'negative' : 'neutral';
-
+  document.getElementById('stateMonth').textContent = data.month || '?';
   el.innerHTML = `
-    <div class="state-item">
-      <div class="label">月份</div>
-      <div class="value neutral">${data.month || '?'}</div>
-    </div>
-    <div class="state-item">
-      <div class="label">混沌轴</div>
-      <div class="value ${cls}">${chaos.toFixed(3)}</div>
-    </div>
-    <div class="state-item">
-      <div class="label">主导类别</div>
-      <div class="value neutral">${data.dominant_category || '?'}</div>
-    </div>
-    <div class="state-item">
-      <div class="label">活跃梗数</div>
-      <div class="value neutral">${data.active_meme_count || 0}</div>
-    </div>
-    <div class="state-item">
-      <div class="label">注意力 HHI</div>
-      <div class="value neutral">${(data.attention_hhi || 0).toFixed(3)}</div>
-    </div>
-    <div class="state-item">
-      <div class="label">叙事熵</div>
-      <div class="value neutral">${(data.cat_entropy || 0).toFixed(3)}</div>
-    </div>
+    <div class="state-item"><div class="label">混沌轴</div><div class="value ${cls}">${chaos.toFixed(3)}</div></div>
+    <div class="state-item"><div class="label">主导类别</div><div class="value neutral">${data.dominant_category||'?'}</div></div>
+    <div class="state-item"><div class="label">活跃梗</div><div class="value neutral">${data.active_meme_count||0}</div></div>
+    <div class="state-item"><div class="label">HHI</div><div class="value neutral">${(data.attention_hhi||0).toFixed(3)}</div></div>
+    <div class="state-item"><div class="label">叙事熵</div><div class="value neutral">${(data.cat_entropy||0).toFixed(3)}</div></div>
+    <div class="state-item"><div class="label">注意力</div><div class="value neutral">${(data.total_attention||0).toFixed(0)}</div></div>
   `;
 }
 
@@ -181,131 +197,182 @@ async function renderConstraintBars() {
   const data = await fetchJSON(API + '/state');
   const el = document.getElementById('constraintBars');
   if (!data.constraint) { el.innerHTML = '<div class="error">无数据</div>'; return; }
-
   const colors = ['#64b5f6','#ffb74d','#ef5350','#66bb6a','#ce93d8'];
-  const entries = Object.entries(data.constraint);
-  el.innerHTML = entries.map(([label, val], i) => `
+  el.innerHTML = Object.entries(data.constraint).map(([l,v],i) => `
     <div class="bar-container">
-      <span class="bar-label">${label}</span>
-      <div class="bar-track">
-        <div class="bar-fill" style="width:${val*100}%;background:${colors[i]}"></div>
-      </div>
-      <span style="font-size:0.8em;width:40px">${val.toFixed(2)}</span>
-    </div>
-  `).join('');
+      <span class="bar-label">${l}</span><div class="bar-track"><div class="bar-fill" style="width:${v*100}%;background:${colors[i]}"></div></div>
+      <span style="font-size:0.75em;width:36px">${v.toFixed(2)}</span>
+    </div>`).join('');
 }
+
+// ═══════════════════════════════════════
+// Charts + Playback
+// ═══════════════════════════════════════
 
 async function renderCharts() {
-  const history = await fetchJSON(API + '/history');
-  if (history.error || !history.months.length) return;
+  historyData = await fetchJSON(API + '/history');
+  if (historyData.error || !historyData.months.length) return;
 
-  const months = history.months;
-  const chaos = history.chaos_axis;
-  const hhi = history.hhi || [];
-  const entropy = history.entropy || [];
+  const months = historyData.months;
+  const chaos = historyData.chaos_axis;
+  const hhi = historyData.hhi || [];
+  const entropy = historyData.entropy || [];
+  const categories = historyData.dominant_category || [];
 
-  // Chaos axis chart
-  const chaosChart = echarts.init(document.getElementById('chaosChart'));
-  chaosChart.setOption({
-    tooltip: { trigger: 'axis' },
-    grid: { left: 50, right: 20, top: 20, bottom: 40 },
-    xAxis: { type:'category', data: months, axisLabel:{fontSize:9,rotate:45},
-      splitLine:{show:false} },
-    yAxis: { name:'混沌轴', axisLabel:{fontSize:10},
-      splitLine:{lineStyle:{color:'#2a2a3e'}} },
-    visualMap: { show:false, dimension:1, pieces:[
-      {lt:0, color:'#ef5350'}, {gte:0, color:'#64b5f6'}
-    ]},
-    series: [{
-      type:'line', data: chaos, smooth: true, lineStyle:{width:1.5},
-      areaStyle:{opacity:0.15},
-      markLine:{ silent:true, symbol:'none', data:[{yAxis:0}],
-        lineStyle:{color:'#555',type:'dashed'} }
-    }]
+  playbackIdx = months.length - 1;
+
+  // Chaos chart with markLine for playback
+  window._chaosChart = echarts.init(document.getElementById('chaosChart'));
+  window._chaosChart.setOption({
+    tooltip: { trigger:'axis' },
+    grid: { left:50, right:20, top:15, bottom:50 },
+    xAxis: { type:'category', data:months, axisLabel:{fontSize:8,rotate:45,interval:11}, splitLine:{show:false} },
+    yAxis: { name:'混沌轴', axisLabel:{fontSize:9}, splitLine:{lineStyle:{color:'#2a2a3e'}} },
+    series: [
+      { type:'line', data:chaos, smooth:true, lineStyle:{width:1.5,color:'#64b5f6'},
+        areaStyle:{color:{type:'linear',x:0,y:0,x2:0,y2:1,colorStops:[
+          {offset:0,color:'rgba(100,181,246,0.15)'},{offset:1,color:'rgba(239,83,80,0.05)'}]}} },
+      { type:'line', data:[], lineStyle:{color:'#ffb74d',width:3,type:'dashed'},
+        markLine:{ silent:true, symbol:'none', data:[{yAxis:0}], lineStyle:{color:'#555',type:'dashed'} } }
+    ]
   });
 
-  // Phase space chart (chaos × HHI × entropy as bubble size)
-  const phaseChart = echarts.init(document.getElementById('phaseChart'));
-  // Scatter with year coloring
-  const yearData = {};
-  months.forEach((m, i) => {
+  // Phase chart
+  window._phaseChart = echarts.init(document.getElementById('phaseChart'));
+  const yrData = {};
+  months.forEach((m,i) => {
     const yr = m.substring(0,4);
-    if (!yearData[yr]) yearData[yr] = [];
-    yearData[yr].push([chaos[i] || 0, (hhi[i] || 0.1) * 100, entropy[i] || 0, m]);
+    if (!yrData[yr]) yrData[yr] = [];
+    yrData[yr].push([chaos[i]||0, (hhi[i]||0.1)*100, entropy[i]||0, m]);
   });
   const colors = ['#64b5f6','#ffb74d','#ef5350','#66bb6a','#ce93d8','#4dd0e1','#ff8a65','#7986cb','#4db6ac','#f06292','#ba68c8'];
-  const series = Object.entries(yearData).map(([yr, pts], idx) => ({
-    name: yr, type:'scatter', data: pts,
-    symbolSize: d => Math.max(5, d[2] * 5),
-    itemStyle: { color: colors[idx % colors.length], opacity: 0.7 },
-  }));
-  phaseChart.setOption({
-    tooltip: { trigger:'item', formatter: d => `${d.value[3]}<br/>混沌:${d.value[0].toFixed(3)}<br/>HHI:${(d.value[1]/100).toFixed(3)}` },
-    grid: { left:50, right:20, top:20, bottom:30 },
+  window._phaseChart.setOption({
+    tooltip: { trigger:'item', formatter:d => `${d.value[3]}<br/>混沌:${d.value[0].toFixed(3)}<br/>HHI:${(d.value[1]/100).toFixed(3)}` },
+    grid: { left:50, right:20, top:15, bottom:30 },
     xAxis: { name:'混沌轴', splitLine:{lineStyle:{color:'#2a2a3e'}} },
-    yAxis: { name:'HHI × 100', splitLine:{lineStyle:{color:'#2a2a3e'}} },
-    legend: { bottom:0, textStyle:{color:'#888',fontSize:9} },
-    series: series,
+    yAxis: { name:'HHI×100', splitLine:{lineStyle:{color:'#2a2a3e'}} },
+    legend: { bottom:0, textStyle:{color:'#888',fontSize:8} },
+    series: Object.entries(yrData).map(([yr,pts],idx) => ({
+      name:yr, type:'scatter', data:pts,
+      symbolSize:d => Math.max(5, d[2]*5),
+      itemStyle:{ color:colors[idx%colors.length], opacity:0.7 },
+    }))
   });
 
-  window.addEventListener('resize', () => { chaosChart.resize(); phaseChart.resize(); });
+  // Init scrubber
+  const scrubber = document.getElementById('scrubber');
+  scrubber.max = months.length - 1;
+  scrubber.value = months.length - 1;
+  updatePlaybackInfo(months.length - 1);
+
+  window.addEventListener('resize', () => {
+    window._chaosChart?.resize();
+    window._phaseChart?.resize();
+  });
 }
+
+function updatePlaybackInfo(idx) {
+  if (!historyData) return;
+  const m = historyData.months[idx];
+  const c = historyData.chaos_axis[idx];
+  const cats = historyData.dominant_category?.[idx] || '?';
+  const hhi = historyData.hhi?.[idx] || 0;
+  const ent = historyData.entropy?.[idx] || 0;
+
+  document.getElementById('playbackMonth').textContent = m;
+  document.getElementById('pbChaos').textContent = `混沌: ${c?.toFixed(3)||'?'}`;
+  document.getElementById('pbCat').textContent = `类别: ${cats}`;
+  document.getElementById('pbHHI').textContent = `HHI: ${hhi.toFixed(3)}`;
+  document.getElementById('pbEntropy').textContent = `熵: ${ent.toFixed(3)}`;
+  document.getElementById('scrubber').value = idx;
+
+  // Update markLine on chaos chart
+  if (window._chaosChart) {
+    window._chaosChart.setOption({
+      series: [{},{ markLine:{ data:[{xAxis:idx,label:{show:true,formatter:m,fontSize:9,color:'#ffb74d'}}]} }]
+    });
+  }
+}
+
+function playbackControl(action, value) {
+  if (!historyData) return;
+  const n = historyData.months.length;
+
+  if (action === 'play') {
+    const btn = document.getElementById('playBtn');
+    if (playbackTimer) {
+      clearInterval(playbackTimer); playbackTimer = null;
+      btn.textContent = '▶'; btn.classList.remove('active');
+      return;
+    }
+    btn.textContent = '⏸'; btn.classList.add('active');
+    if (playbackIdx >= n - 1) playbackIdx = 0;
+    playbackTimer = setInterval(() => {
+      playbackIdx++;
+      if (playbackIdx >= n) { playbackIdx = 0; }
+      updatePlaybackInfo(playbackIdx);
+    }, playbackSpeed);
+  } else if (action === 'prev') {
+    stopPlayback();
+    playbackIdx = Math.max(0, playbackIdx - 1);
+    updatePlaybackInfo(playbackIdx);
+  } else if (action === 'next') {
+    stopPlayback();
+    playbackIdx = Math.min(n - 1, playbackIdx + 1);
+    updatePlaybackInfo(playbackIdx);
+  } else if (action === 'scrub') {
+    stopPlayback();
+    playbackIdx = parseInt(value);
+    updatePlaybackInfo(playbackIdx);
+  } else if (action === 'speed') {
+    playbackSpeed = parseInt(value);
+    if (playbackTimer) { stopPlayback(); playbackControl('play'); }
+  }
+}
+
+function stopPlayback() {
+  if (playbackTimer) { clearInterval(playbackTimer); playbackTimer = null; }
+  const btn = document.getElementById('playBtn');
+  if (btn) { btn.textContent = '▶'; btn.classList.remove('active'); }
+}
+
+// ═══════════════════════════════════════
+// Forecast + Memes + Narrative
+// ═══════════════════════════════════════
 
 async function renderForecast() {
   const data = await fetchJSON(API + '/forecast');
   const el = document.getElementById('forecastTable');
-  if (!data.forecasts || !data.forecasts.length) {
-    el.innerHTML = '<div class="loading">暂无预测数据</div>'; return;
-  }
-
-  let html = '<table class="forecast-table"><tr><th>月份</th><th>混沌轴</th><th>秩序形态</th><th>HHI</th><th>主导类别</th></tr>';
+  if (!data.forecasts?.length) { el.innerHTML = '<div class="loading">暂无</div>'; return; }
+  let h = '<table class="forecast-table"><tr><th>月份</th><th>混沌轴</th><th>秩序形态</th><th>HHI</th></tr>';
   data.forecasts.forEach(f => {
-    const chaos = f.chaos_axis ? f.chaos_axis.toFixed(3) : '?';
-    const cls = f.chaos_axis > 0.1 ? 'positive' : f.chaos_axis < -0.15 ? 'negative' : 'neutral';
-    html += `<tr>
-      <td>${f.month}</td>
-      <td class="${cls}">${chaos}</td>
-      <td style="font-size:0.8em">${f.order_form?.name || '?'}</td>
-      <td>${f.hhi?.toFixed(3) || '?'}</td>
-      <td>${f.dominant_cat || '?'}</td>
-    </tr>`;
+    const cls = (f.chaos_axis||0) > 0.1 ? 'positive' : (f.chaos_axis||0) < -0.15 ? 'negative' : 'neutral';
+    h += `<tr><td>${f.month}</td><td class="${cls}">${(f.chaos_axis||0).toFixed(3)}</td>
+      <td style="font-size:0.75em">${f.order_form?.name||'?'}</td><td>${(f.hhi||0).toFixed(3)}</td></tr>`;
   });
-  html += '</table>';
-  el.innerHTML = html;
+  el.innerHTML = h + '</table>';
 }
 
 async function renderMemes() {
   const data = await fetchJSON(API + '/memes');
   const el = document.getElementById('memeList');
-  if (!data.memes || !data.memes.length) {
-    el.innerHTML = '<div class="loading">暂无实时信号</div>'; return;
-  }
-
+  if (!data.memes?.length) { el.innerHTML = '<div class="loading">暂无实时信号</div>'; return; }
   el.innerHTML = data.memes.map(m => `
-    <div class="meme-row">
-      <span class="name">${m.name}</span>
-      <span class="count">${m.signal_count} 次 | ${(m.platforms||[]).join(',')}</span>
-    </div>
-  `).join('');
+    <div class="meme-row"><span class="name" onclick="quickAnalyze('${m.name}')">${m.name}</span>
+    <span class="count">${m.signal_count}次 | ${(m.platforms||[]).join(',')}</span></div>`).join('');
 }
 
 async function renderNarrative() {
   const data = await fetchJSON(API + '/narrative');
-  const el = document.getElementById('narrativeText');
-  const summary = data.summary || '暂无叙事摘要';
-  el.innerHTML = summary;
+  document.getElementById('narrativeText').innerHTML = data.summary || '暂无叙事摘要';
 }
 
 async function renderHotTopics() {
   const data = await fetchJSON(API + '/hot_topics');
   const el = document.getElementById('hotTopics');
-  if (!data.topics || !data.topics.length) {
-    el.innerHTML = '<span style="color:#888">暂无热门话题</span>'; return;
-  }
-
+  if (!data.topics?.length) { el.innerHTML = '<span style="color:#888">暂无</span>'; return; }
   el.innerHTML = data.topics.map(t => `
-    <span class="hot-tag" onclick="quickAnalyze('${t.name}')">${t.name} (${t.count||t.attention||'?'})</span>
-  `).join('');
+    <span class="hot-tag" onclick="quickAnalyze('${t.name}')">${t.name} (${t.count||t.attention||'?'})</span>`).join('');
 }
 
 // ═══════════════════════════════════════
@@ -321,77 +388,47 @@ async function analyzeTopic() {
   const topic = document.getElementById('topicInput').value.trim();
   const el = document.getElementById('analysisResult');
   if (!topic) { el.style.display='none'; return; }
-
   el.style.display = 'block';
   el.innerHTML = '<div class="loading">分析中...</div>';
-
   try {
     const data = await fetchJSON(API + '/analyze?topic=' + encodeURIComponent(topic));
-    if (data.error) {
-      el.innerHTML = `<div class="error">${data.error}</div>`;
-      return;
+    if (data.error) { el.innerHTML = `<div class="error">${data.error}</div>`; return; }
+    let html = `<h3 style="color:#90caf9;margin-bottom:6px">🔍 ${data.topic}</h3>`;
+    if (data.category) html += `<p><strong>类别:</strong> ${data.category}</p>`;
+    if (Object.keys(data.constraint_profile||{}).length) {
+      html += '<p>'+Object.entries(data.constraint_profile).map(([k,v])=>`<span style="display:inline-block;margin:2px 6px;font-size:0.8em">${k}: ${v.toFixed(2)}</span>`).join('')+'</p>';
     }
-
-    let html = `<h3 style="color:#90caf9;margin-bottom:8px">🔍 ${data.topic} — 深度分析</h3>`;
-
-    if (data.category) {
-      html += `<p><strong>类别:</strong> ${data.category}</p>`;
+    if (data.trends_summary?.data) {
+      html += `<p>峰值 ${data.trends_summary.peak_value?.toFixed(0)} @ ${data.trends_summary.peak_month}, 趋势: ${data.trends_summary.trend}</p>`;
     }
-
-    if (Object.keys(data.constraint_profile).length) {
-      html += '<p><strong>约束场 profile:</strong></p>';
-      for (const [k,v] of Object.entries(data.constraint_profile)) {
-        html += `<span style="display:inline-block;margin:2px 8px;font-size:0.85em">${k}: ${v.toFixed(2)}</span>`;
-      }
+    if (data.similar_memes?.length) {
+      html += '<p><strong>同类:</strong> '+data.similar_memes.map(m=>m.name).join(', ')+'</p>';
     }
-
-    if (data.trends_summary && data.trends_summary.data) {
-      html += '<p><strong>注意力趋势:</strong> ' +
-        `峰值 ${data.trends_summary.peak_value.toFixed(0)} @ ${data.trends_summary.peak_month}, ` +
-        `趋势: ${data.trends_summary.trend}</p>`;
-      // Mini chart
-      html += '<div id="miniTrendChart" style="width:100%;height:120px;margin:8px 0"></div>';
-    }
-
-    if (data.similar_memes && data.similar_memes.length) {
-      html += '<p><strong>同类梗:</strong> ' +
-        data.similar_memes.map(m => m.name).join(', ') + '</p>';
-    }
-
     if (data.deep_analysis) {
-      html += `<div style="margin-top:12px;padding:12px;background:#1a1a2e;border-radius:6px;line-height:1.8">
-        <strong>🤖 LLM 深度解读:</strong><br>${data.deep_analysis}
-      </div>`;
+      html += `<div style="margin-top:8px;padding:10px;background:#1a1a2e;border-radius:6px;line-height:1.8"><strong>🤖 LLM 解读:</strong><br>${data.deep_analysis}</div>`;
     }
-
     el.innerHTML = html;
-
-    // Render mini trend chart
-    if (data.trends_summary && data.trends_summary.data) {
+    // Mini trend chart
+    if (data.trends_summary?.data) {
       setTimeout(() => {
-        const chartEl = document.getElementById('miniTrendChart');
-        if (!chartEl) return;
-        const c = echarts.init(chartEl);
+        const cEl = document.getElementById('miniTrendChart');
+        if (!cEl) return;
         const d = data.trends_summary.data;
-        c.setOption({
-          grid: { left:40, right:10, top:5, bottom:20 },
-          xAxis: { type:'category', data: d.map(x=>x.month), axisLabel:{fontSize:8,rotate:45}, show:false },
-          yAxis: { splitLine:{lineStyle:{color:'#2a2a3e'}}, axisLabel:{fontSize:8} },
-          series: [{ type:'line', data: d.map(x=>x.value), smooth:true,
-            lineStyle:{color:'#ffb74d',width:1.5}, areaStyle:{color:'rgba(255,183,77,0.15)'} }]
+        echarts.init(cEl).setOption({
+          grid:{left:40,right:10,top:5,bottom:20},
+          xAxis:{type:'category',data:d.map(x=>x.month),axisLabel:{fontSize:7},show:false},
+          yAxis:{splitLine:{lineStyle:{color:'#2a2a3e'}},axisLabel:{fontSize:7}},
+          series:[{type:'line',data:d.map(x=>x.value),smooth:true,lineStyle:{color:'#ffb74d',width:1.5},areaStyle:{color:'rgba(255,183,77,0.15)'}}]
         });
-      }, 100);
+      },100);
     }
   } catch(e) {
     el.innerHTML = `<div class="error">请求失败: ${e.message}</div>`;
   }
 }
 
-// Enter key triggers analysis
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('topicInput').addEventListener('keydown', e => {
-    if (e.key === 'Enter') analyzeTopic();
-  });
+  document.getElementById('topicInput').addEventListener('keydown', e => { if (e.key==='Enter') analyzeTopic(); });
 });
 
 // ═══════════════════════════════════════
@@ -400,20 +437,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function init() {
   await Promise.all([
-    renderCurrentState(),
-    renderConstraintBars(),
-    renderCharts(),
-    renderForecast(),
-    renderMemes(),
-    renderNarrative(),
-    renderHotTopics(),
+    renderCurrentState(), renderConstraintBars(), renderCharts(),
+    renderForecast(), renderMemes(), renderNarrative(), renderHotTopics(),
   ]);
-  document.getElementById('updateTime').textContent =
-    '更新: ' + new Date().toLocaleString('zh-CN');
+  document.getElementById('updateTime').textContent = '更新: ' + new Date().toLocaleString('zh-CN');
 }
-
 init();
-// Auto-refresh every 5 minutes
 setInterval(init, 300000);
 </script>
 </body>
