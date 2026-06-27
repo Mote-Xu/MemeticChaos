@@ -146,6 +146,7 @@ def step_report(trajectories: list, scrape_result: dict):
     # 最新采集
     signals = scrape_result.get("signals", [])
     print(f"\n[采集] 微博 {scrape_result.get('weibo_count', 0)} 条 | "
+          f"百度 {scrape_result.get('baidu_count', 0)} 条 | "
           f"知乎 {scrape_result.get('zhihu_count', 0)} 条 | "
           f"检测到 {len(signals)} 条模因信号")
 
@@ -174,11 +175,22 @@ def step_report(trajectories: list, scrape_result: dict):
         print(f"  #{item['rank']} {item['title'][:50]} ({item['hot_score']})")
 
 
+def step_discover_new_memes():
+    """Step 4: 新梗发现 — 从采集数据中检测候选 → LLM叙事 → 概念打分."""
+    print("\n[新梗发现]")
+    try:
+        from src.data.signal_pipeline import run_pipeline
+        run_pipeline(max_new=2, force=False)
+    except Exception as e:
+        print(f"  新梗发现失败: {e}")
+
+
 def run_once():
-    """执行一次完整的采集→更新→报告循环。"""
+    """执行一次完整的采集→更新→报告→新梗发现循环。"""
     result = step_scrape()
     trajectories = step_update_trajectories(result)
     step_report(trajectories, result)
+    step_discover_new_memes()
 
 
 def run_watch(interval_sec: int):
