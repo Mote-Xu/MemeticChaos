@@ -93,64 +93,96 @@ def fetch_weibo_hot_search() -> list[dict]:
 
 
 # ═══════════════════════════════════════════════
-# 2. 知乎热榜爬虫
+# 2. 知乎热榜爬虫 (401 → 已降级, 需 cookie 才能用)
 # ═══════════════════════════════════════════════
 
 def fetch_zhihu_hot_list() -> list[dict]:
-    """抓取知乎热榜。尝试多个公开接口。"""
-    import urllib.request, urllib.error, re
+    """抓取知乎热榜。知乎 API 需要登录 cookie, 公开接口已封锁 (401).
+
+    如果设置了 ZHIHU_COOKIE 环境变量则使用 cookie 请求,
+    否则返回空列表 (静默降级).
+    """
+    import urllib.request, urllib.error, re, os
+
+    cookie = os.environ.get("ZHIHU_COOKIE", "")
 
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Accept": "text/html,application/json",
+        "Accept": "application/json",
     }
+    if cookie:
+        headers["Cookie"] = cookie
 
-    # 尝试多个已知端点
-    endpoints = [
-        "https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=50",
-    ]
-    for url in endpoints:
-        try:
-            req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=10) as resp:
-                data = json.loads(resp.read().decode("utf-8"))
-            items = []
-            for i, item in enumerate(data.get("data", [])):
-                target = item.get("target", {})
-                items.append({
-                    "rank": i + 1,
-                    "title": target.get("title", "").strip(),
-                    "hot_score": 0,
-                    "url": target.get("url", ""),
-                    "platform": "zhihu",
-                })
-            if items:
-                return items
-        except Exception:
-            continue
-
-    # Fallback: parse zhihu.com/hot HTML
+    # API endpoint (needs auth)
+    api_url = "https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=50"
     try:
-        req = urllib.request.Request("https://www.zhihu.com/hot", headers=headers)
+        req = urllib.request.Request(api_url, headers=headers)
         with urllib.request.urlopen(req, timeout=10) as resp:
-            html = resp.read().decode("utf-8")
-        # Extract titles from HTML
-        titles = re.findall(r'"title-area"[^>]*>([^<]+)<', html)
+            data = json.loads(resp.read().decode("utf-8"))
         items = []
-        for i, t in enumerate(titles[:50]):
+        for i, item in enumerate(data.get("data", [])):
+            target = item.get("target", {})
             items.append({
                 "rank": i + 1,
-                "title": t.strip(),
+                "title": target.get("title", "").strip(),
                 "hot_score": 0,
-                "url": "",
+                "url": target.get("url", ""),
                 "platform": "zhihu",
             })
         if items:
             return items
+    except urllib.error.HTTPError as e:
+        if e.code == 401 and not cookie:
+            return []  # Silent degrade: no cookie available
     except Exception:
         pass
 
     return []
+
+
+# ═══════════════════════════════════════════════
+# 2.5 百度热搜爬虫 (替代知乎)
+# ═══════════════════════════════════════════════
+
+def fetch_baidu_hot_search() -> list[dict]:
+    """抓取百度热搜榜 (公开接口, 无需 key).
+
+    返回: [{"rank": 1, "title": "...", "hot_score": 0, "url": "...", "platform": "baidu"}, ...]
+    """
+    import urllib.request, urllib.error, re
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    }
+
+    url = "https://top.baidu.com/board?tab=realtime"
+    try:
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            html = resp.read().decode("utf-8")
+
+        # Extract hot search items from Baidu's JSON-in-HTML
+        # Pattern: "word":"title","hotScore":"12345"
+        items = []
+        words = re.findall(r'"word":"([^"]+)"', html)
+        hot_scores = re.findall(r'"hotScore":"(\d+)"', html)
+        urls = re.findall(r'"url":"([^"]*)"', html)
+
+        for i, word in enumerate(words[:50]):
+            score = int(hot_scores[i]) if i < len(hot_scores) else 0
+            link = urls[i] if i < len(urls) else ""
+            if word.strip():
+                items.append({
+                    "rank": i + 1,
+                    "title": word.strip(),
+                    "hot_score": score,
+                    "url": link,
+                    "platform": "baidu",
+                })
+        return items
+    except Exception as e:
+        print(f"[百度] 抓取失败: {e}")
+        return []
 
 
 # ═══════════════════════════════════════════════
@@ -196,17 +228,23 @@ def detect_meme_signals(hot_items: list[dict]) -> list[dict]:
 # ═══════════════════════════════════════════════
 
 def scrape_all() -> dict:
-    """执行一次完整采集：微博 + 知乎 → 检测模因信号 → 缓存。"""
+    """执行一次完整采集：微博 + 百度 + 知乎 → 检测模因信号 → 缓存。"""
     print(f"[采集] {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     # 抓取
     weibo_items = fetch_weibo_hot_search()
     print(f"  微博: {len(weibo_items)} 条热搜")
 
-    zhihu_items = fetch_zhihu_hot_list()
-    print(f"  知乎: {len(zhihu_items)} 条热榜")
+    baidu_items = fetch_baidu_hot_search()
+    print(f"  百度: {len(baidu_items)} 条热搜")
 
-    all_items = weibo_items + zhihu_items
+    zhihu_items = fetch_zhihu_hot_list()
+    if zhihu_items:
+        print(f"  知乎: {len(zhihu_items)} 条热榜")
+    else:
+        print(f"  知乎: 无 (需 ZHIHU_COOKIE)")
+
+    all_items = weibo_items + baidu_items + zhihu_items
 
     # 信号检测
     signals = detect_meme_signals(all_items)
@@ -222,11 +260,16 @@ def scrape_all() -> dict:
     result = {
         "timestamp": timestamp,
         "weibo_count": len(weibo_items),
+        "baidu_count": len(baidu_items),
         "zhihu_count": len(zhihu_items),
         "signals": signals,
         "weibo_top10": [
             {"rank": w["rank"], "title": w["title"], "hot_score": w["hot_score"]}
             for w in weibo_items[:10]
+        ],
+        "baidu_top10": [
+            {"rank": b["rank"], "title": b["title"], "hot_score": b["hot_score"]}
+            for b in baidu_items[:10]
         ],
         "zhihu_top10": [
             {"rank": z["rank"], "title": z["title"], "hot_score": z["hot_score"]}
