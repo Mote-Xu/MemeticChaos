@@ -1,0 +1,27 @@
+{
+  "meme_name": "i人 e人",
+  "peak_month": "2024-01",
+  "peak_value": 42,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2023-08 至 2023-12",
+      "description": "梗从2023年8月开始萌芽，搜索热度逐步上升，10月后进入快速增长期，12月达到33，为爆发蓄力。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2024-01",
+      "description": "2024年1月达到搜索峰值42，成为全网热议焦点，标志着梗的全面爆发。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2024-02 至 2025-12",
+      "description": "峰值后热度迅速回落，2024年2月降至19，随后在10-20区间波动，2025年10-11月出现小幅复燃（20、26），但整体呈长期衰退趋势。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 21,
+  "resurgence_detected": true,
+  "narrative_summary": "该梗经历快速爆发后进入长期波动衰退，并在2025年末出现一次明显复燃，呈现典型的复燃波动型生命周期。",
+  "social_context_hint": "2024年初峰值可能关联MBTI人格测试在社交媒体上的持续走红，以及年轻人对自我标签化、社交身份认同的讨论热潮；2025年末复燃或与年终社交场景、职场性格话题的周期性回归有关。"
+}

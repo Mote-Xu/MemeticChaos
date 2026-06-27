@@ -166,7 +166,7 @@ class MemeCurator:
         使用 estimate_params_from_lifecycle 从 qualitative 数据估算
         beta, gamma, R₀。
         """
-        from src.models.sir_meme import estimate_params_from_lifecycle
+        from src.models.sir_meme import estimate_params_from_lifecycle, estimate_total_infected
 
         estimations = []
         for m in self.memes:
@@ -180,14 +180,17 @@ class MemeCurator:
             pm = m.propagation_model
             R0_qual = pm.get("estimated_R0", 1.0)
 
-            # Estimate total infected from propagation scale
+            # Estimate total infected: continuous from lifecycle features
             circle_count = len(pm.get("circle_layers", []))
-            if circle_count >= 5:
-                total_infected_est = 0.75
-            elif circle_count >= 3:
-                total_infected_est = 0.50
+            # Extract peak intensity from sentiment_arc
+            sa = m.sentiment_arc
+            if sa and len(sa) > 0:
+                peak_intensity = max(p.get("intensity", 0.5) for p in sa)
             else:
-                total_infected_est = 0.25
+                peak_intensity = 0.5
+            total_infected_est = estimate_total_infected(
+                circle_count, peak_intensity, duration_months
+            )
 
             params = estimate_params_from_lifecycle(
                 peak_day=duration_days * 0.3,  # peak at ~30% of lifecycle

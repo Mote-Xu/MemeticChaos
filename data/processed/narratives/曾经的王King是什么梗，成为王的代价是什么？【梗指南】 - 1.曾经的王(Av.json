@@ -1,0 +1,94 @@
+{
+  "meme_name": "曾经的王",
+  "origin": {
+    "time": "2023年",
+    "platform": "B站",
+    "trigger_event": "博主龙龙（原名王祖坡）因一张EXO合照中的空位被网友虚构故事线，结合AI技术塑造为被资本雪藏的虚拟偶像",
+    "precursor": null
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": "2023年初",
+      "description": "一张EXO合照中有一个空位，网友将博主龙龙的照片P到空位上，形成反差感，开始小规模整活",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": [
+        "龙龙（王祖坡）"
+      ]
+    },
+    {
+      "phase": "爆发",
+      "time_range": "2023年中",
+      "description": "AI技术普及后，网友为龙龙虚构完整故事线：被S.M.公司雪藏、合约不平等、资料被抹除等，配合真情实感发言，梗迅速传播",
+      "key_platforms": [
+        "B站",
+        "微博"
+      ],
+      "key_figures": [
+        "网友（AI创作者、故事线编造者）"
+      ]
+    },
+    {
+      "phase": "泛化",
+      "time_range": "2023年下半年",
+      "description": "梗从虚构故事扩展到对资本压制的讽刺，网友挖掘所谓“机密文件”，包括发布会、MV、后台合照等，形成集体创作",
+      "key_platforms": [
+        "B站",
+        "微博",
+        "贴吧"
+      ],
+      "key_figures": [
+        "粉丝群体"
+      ]
+    },
+    {
+      "phase": "固化",
+      "time_range": "2023年末",
+      "description": "梗成为固定网络迷因，龙龙被塑造成“被资本血藏的顶流”，左眼遮住发型被解读为“被抹去前半生”，形成完整叙事",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": [
+        "龙龙",
+        "粉丝"
+      ]
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "被资本血藏的顶流",
+      "time": "2023年中",
+      "relationship": "衍生"
+    },
+    {
+      "variant_name": "EXO第13人",
+      "time": "2023年中",
+      "relationship": "衍生"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "对资本压制艺人的不满情绪",
+      "对偶像工业的讽刺",
+      "集体创作和玩梗的娱乐需求"
+    ],
+    "target_audience": "B站年轻用户、K-pop粉丝、网络迷因爱好者",
+    "political_sensitivity": "低",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "对博主龙龙照片的P图整活",
+    "current_meaning": "讽刺资本雪藏艺人、虚构偶像故事的集体创作梗",
+    "drift_direction": "从简单P图整活变为具有讽刺意味的虚构叙事"
+  },
+  "narrative_quality": {
+    "information_richness": "中",
+    "key_insight": "该梗的传播核心在于网友通过AI和虚构故事线，将一张普通合照中的空位塑造成被资本抹去的偶像，体现了网络集体创作和反讽资本的能力"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"曾经的王\",\n  \"origin\": {\n    \"time\": \"2023年\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"博主龙龙（原名王祖坡）因一张EXO合照中的空位被网友虚构故事线，结合AI技术塑造为被资本雪藏的虚拟偶像\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2023年初\",\n      \"description\": \"一张EXO合照中有一个空位，网友将博主龙龙的照片P到空位上，形成反差感，开始小规模整活\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"龙龙（王祖坡）\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2023年中\",\n      \"description\": \"AI技术普及后，网友为龙龙虚构完整故事线：被S.M.公司雪藏、合约不平等、资料被抹除等，配合真情实感发言，梗迅速传播\",\n      \"key_platforms\": [\"B站\", \"微博\"],\n      \"key_figures\": [\"网友（AI创作者、故事线编造者）\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2023年下半年\",\n      \"description\": \"梗从虚构故事扩展到对资本压制的讽刺，网友挖掘所谓“机密文件”，包括发布会、MV、后台合照等，形成集体创作\",\n      \"key_platforms\": [\"B站\", \"微博\", \"贴吧\"],\n      \"key_figures\": [\"粉丝群体\"]\n    },\n    {\n      \"phase\": \"固化\",\n      \"time_range\": \"2023年末\",\n      \"description\": \"梗成为固定网络迷因，龙龙被塑造成“被资本血藏的顶流”，左眼遮住发型被解读为“被抹去前半生”，形成完整叙事\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"龙龙\", \"粉丝\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"被资本血藏的顶流\",\n      \"time\": \"2023年中\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"EXO第13人\",\n      \"time\": \"2023年中\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"对资本压制艺人的不满情绪\", \"对偶像工业的讽刺\", \"集体创作和玩梗的娱乐需求\"],\n    \"target_audience\": \"B站年轻用户、K-pop粉丝、网络迷因爱好者\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"对博主龙龙照片的P图整活\",\n    \"current_meaning\": \"讽刺资本雪藏艺人、虚构偶像故事的集体创作梗\",\n    \"drift_direction\": \"从简单P图整活变为具有讽刺意味的虚构叙事\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗的传播核心在于网友通过AI和虚构故事线，将一张普通合照中的空位塑造成被资本抹去的偶像，体现了网络集体创作和反讽资本的能力\"\n  }\n}",
+  "video_name": "曾经的王King是什么梗，成为王的代价是什么？【梗指南】 - 1.曾经的王(Av116538585645160,P1)",
+  "transcript_chars": 684,
+  "duration_sec": 191.168
+}

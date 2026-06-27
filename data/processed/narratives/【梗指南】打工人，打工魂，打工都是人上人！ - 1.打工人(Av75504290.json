@@ -1,0 +1,63 @@
+{
+  "meme_name": "打工人",
+  "origin": {
+    "time": null,
+    "platform": null,
+    "trigger_event": null,
+    "precursor": "打工仔"
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": null,
+      "description": "由“打工仔”演变而来，最初作为上班族的自嘲用语",
+      "key_platforms": null,
+      "key_figures": [
+        "抽象带篮子"
+      ]
+    },
+    {
+      "phase": "爆发",
+      "time_range": null,
+      "description": "经过抽象带篮子的影响和传播，逐渐被越来越多人使用",
+      "key_platforms": null,
+      "key_figures": [
+        "抽象带篮子"
+      ]
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "打工人，打工魂，打工都是人上人",
+      "time": null,
+      "relationship": "衍生"
+    },
+    {
+      "variant_name": "早安打工人",
+      "time": null,
+      "relationship": "衍生"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "上班族对工作压力的自嘲",
+      "社畜文化"
+    ],
+    "target_audience": "上班族、年轻打工人",
+    "political_sensitivity": "低",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "对打工仔的贬义或中性称呼",
+    "current_meaning": "上班族的自嘲，带有苦中作乐、自我激励的意味",
+    "drift_direction": "从贬义/中性变为自嘲与反讽"
+  },
+  "narrative_quality": {
+    "information_richness": "低",
+    "key_insight": "该梗由“打工仔”演变而来，经抽象带篮子传播后广泛流行，并衍生出“打工人，打工魂，打工都是人上人”等变体。"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"打工人\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": null,\n    \"trigger_event\": null,\n    \"precursor\": \"打工仔\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": null,\n      \"description\": \"由“打工仔”演变而来，最初作为上班族的自嘲用语\",\n      \"key_platforms\": null,\n      \"key_figures\": [\"抽象带篮子\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": null,\n      \"description\": \"经过抽象带篮子的影响和传播，逐渐被越来越多人使用\",\n      \"key_platforms\": null,\n      \"key_figures\": [\"抽象带篮子\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"打工人，打工魂，打工都是人上人\",\n      \"time\": null,\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"早安打工人\",\n      \"time\": null,\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"上班族对工作压力的自嘲\", \"社畜文化\"],\n    \"target_audience\": \"上班族、年轻打工人\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"对打工仔的贬义或中性称呼\",\n    \"current_meaning\": \"上班族的自嘲，带有苦中作乐、自我激励的意味\",\n    \"drift_direction\": \"从贬义/中性变为自嘲与反讽\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该梗由“打工仔”演变而来，经抽象带篮子传播后广泛流行，并衍生出“打工人，打工魂，打工都是人上人”等变体。\"\n  }\n}",
+  "video_name": "【梗指南】打工人，打工魂，打工都是人上人！ - 1.打工人(Av755042907,P1)",
+  "transcript_chars": 270,
+  "duration_sec": 69.162833
+}

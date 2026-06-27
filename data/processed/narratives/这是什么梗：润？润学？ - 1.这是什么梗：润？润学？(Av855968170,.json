@@ -1,0 +1,48 @@
+{
+  "meme_name": "润",
+  "origin": {
+    "time": null,
+    "platform": null,
+    "trigger_event": null,
+    "precursor": "跑"
+  },
+  "spread_phases": [
+    {
+      "phase": "泛化",
+      "time_range": null,
+      "description": "该词从最初表示'跑'、'离开'，逐渐被网友用于表达逃离过度内卷和压抑的工作生活环境，使用场景扩展到离职、转行、追星爬墙、脱坑退坑等，近期更频繁作为'移民'的替代词出现。",
+      "key_platforms": [
+        "互联网（未具体指明）"
+      ],
+      "key_figures": null
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "润学",
+      "time": null,
+      "relationship": "衍生（指研究如何移民的学问或策略）"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "过度内卷和内耗的工作生活环境"
+    ],
+    "target_audience": "面临内卷和压力的网友",
+    "political_sensitivity": "中",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "跑，奔跑",
+    "current_meaning": "离开某地、工作转行、追星爬墙、脱坑退坑，尤其作为移民的替代词",
+    "drift_direction": "从具体动作变为泛指各种形式的离开/逃离"
+  },
+  "narrative_quality": {
+    "information_richness": "低",
+    "key_insight": "该视频指出'润'作为'跑'的谐音，其含义从字面奔跑泛化为逃离内卷环境，并成为移民的替代词，且出现了'润学'这一衍生概念。"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"润\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": null,\n    \"trigger_event\": null,\n    \"precursor\": \"跑\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": null,\n      \"description\": \"该词从最初表示'跑'、'离开'，逐渐被网友用于表达逃离过度内卷和压抑的工作生活环境，使用场景扩展到离职、转行、追星爬墙、脱坑退坑等，近期更频繁作为'移民'的替代词出现。\",\n      \"key_platforms\": [\"互联网（未具体指明）\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"润学\",\n      \"time\": null,\n      \"relationship\": \"衍生（指研究如何移民的学问或策略）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"过度内卷和内耗的工作生活环境\"],\n    \"target_audience\": \"面临内卷和压力的网友\",\n    \"political_sensitivity\": \"中\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"跑，奔跑\",\n    \"current_meaning\": \"离开某地、工作转行、追星爬墙、脱坑退坑，尤其作为移民的替代词\",\n    \"drift_direction\": \"从具体动作变为泛指各种形式的离开/逃离\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该视频指出'润'作为'跑'的谐音，其含义从字面奔跑泛化为逃离内卷环境，并成为移民的替代词，且出现了'润学'这一衍生概念。\"\n  }\n}",
+  "video_name": "这是什么梗：润？润学？ - 1.这是什么梗：润？润学？(Av855968170,P1)",
+  "transcript_chars": 166,
+  "duration_sec": 34.133333
+}

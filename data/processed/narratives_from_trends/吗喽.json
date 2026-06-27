@@ -1,0 +1,27 @@
+{
+  "meme_name": "吗喽",
+  "peak_month": "2024-08",
+  "peak_value": 4,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2023-11至2024-07",
+      "description": "梗在2023年11月萌芽，搜索热度维持在2-3的低位，呈现缓慢积累态势，尚未引起广泛关注。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2024-08",
+      "description": "2024年8月搜索热度突然升至4，达到整个周期的最高点，表明该梗在当月被大量传播和使用。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2024-09",
+      "description": "2024年9月热度骤降至1，几乎归零，说明该梗迅速失去关注度，进入衰退期。"
+    }
+  ],
+  "curve_shape": "长尾",
+  "estimated_duration_months": 11,
+  "resurgence_detected": false,
+  "narrative_summary": "该梗经历近10个月的低位酝酿后，在2024年8月短暂爆发达到峰值，随后迅速消退，呈现典型的长尾衰减模式。",
+  "social_context_hint": "峰值出现在2024年8月，可能关联暑期社会情绪释放或特定网络事件（如职场自嘲、生活压力表达），‘吗喽’作为自嘲式身份标签在年轻人中短暂流行。"
+}

@@ -1,0 +1,27 @@
+{
+  "meme_name": "专家建议",
+  "peak_month": "2019-11",
+  "peak_value": 100,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2018-12 至 2019-10",
+      "description": "搜索关注度从57逐步上升，公众对‘专家建议’话题开始产生兴趣，但尚未形成大规模讨论。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2019-11",
+      "description": "搜索关注度达到历史最高值100，可能因某次引发争议的专家言论或集中报道导致舆论爆发。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2019-12 至 2025-12",
+      "description": "峰值后关注度大幅下降，但长期维持在较高水平（近12月均值74），并在2025年9-12月出现明显复燃（从41升至94），呈现波动性衰退。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 85,
+  "resurgence_detected": true,
+  "narrative_summary": "该梗在2019年底达到顶峰后长期保持高热度，并在2025年秋季再次显著回升，形成典型的复燃波动模式。",
+  "social_context_hint": "2019年峰值可能关联当时‘专家建议’频繁引发公众反感的舆论事件（如生活建议脱离实际）；2025年复燃可能对应经济压力或社会信任危机下对专家话语的集体嘲讽与反思。"
+}

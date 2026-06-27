@@ -1,0 +1,27 @@
+{
+  "meme_name": "普信",
+  "peak_month": "2025-11",
+  "peak_value": 100,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2019-12 至 2021-04",
+      "description": "梗从2019年底萌芽，初始关注度较高（68），随后波动下降，进入潜伏期，关注度在40-50区间徘徊，为后续爆发蓄力。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2025-10 至 2025-11",
+      "description": "2025年10月关注度突然跃升至67，11月达到历史峰值100，形成陡峭的爆发尖峰，表明该梗在特定事件或语境下被大规模重新激活。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2025-12",
+      "description": "峰值后迅速回落至42，接近长期均值，显示热度快速消退，但未归零，表明梗已沉淀为网络常用语。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 73,
+  "resurgence_detected": true,
+  "narrative_summary": "该梗经历长期低水平潜伏后，在2025年末因社会事件触发二次爆发，形成陡峭的复燃型峰值，随后快速回落至常态。",
+  "social_context_hint": "2025年11月峰值可能关联当年重大社会议题或娱乐事件（如性别议题讨论、综艺节目争议或网络舆论事件），使‘普信’一词被重新赋予批判性语境。"
+}

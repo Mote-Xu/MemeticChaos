@@ -1,0 +1,27 @@
+{
+  "meme_name": "不结婚",
+  "peak_month": "2025-11",
+  "peak_value": 100,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2017-02 至 2025-10",
+      "description": "长期低位波动，偶有脉冲式关注（如2017-02=77、2022-02=71），但未形成持续上升趋势，属于社会议题的潜伏期。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2025-10 至 2025-11",
+      "description": "关注度急剧攀升，2025-10=70，2025-11达到峰值100，可能由特定事件或政策讨论引爆。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2025-12 及之后",
+      "description": "数据截至2025-12，峰值后迅速回落，但近12月均值44.7显示仍有较高基础关注度，可能进入长尾衰退。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 107,
+  "resurgence_detected": true,
+  "narrative_summary": "该梗经历长达8年的低水平潜伏，在2025年末突然爆发达到历史峰值，呈现典型的‘长期酝酿+短期引爆’复燃模式。",
+  "social_context_hint": "2025年峰值可能关联中国人口负增长加剧、婚育政策调整或经济下行压力下‘不婚主义’社会讨论集中爆发。"
+}

@@ -1,0 +1,65 @@
+{
+  "meme_name": "鸡你太美",
+  "origin": {
+    "time": "2018年",
+    "platform": "B站",
+    "trigger_event": "偶像练习生蔡徐坤在自我介绍时演唱歌曲《只因你太美》，因歌词唱得太快，空耳成“鸡你太美”",
+    "precursor": "《只因你太美》歌曲"
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": "2018年",
+      "description": "蔡徐坤在《偶像练习生》中自我介绍演唱《只因你太美》，因发音模糊被网友空耳为“鸡你太美”，开始在B站等平台作为鬼畜素材传播",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": [
+        "蔡徐坤"
+      ]
+    },
+    {
+      "phase": "爆发",
+      "time_range": "2023年",
+      "description": "蔡徐坤被爆出与女性发生关系并导致女方怀孕堕胎，聊天记录显示其母亲采取恐吓、安装监控等手段，引发舆论热议，“鸡你太美”被改编为“鸡你胎没”用于嘲讽",
+      "key_platforms": [
+        "微博",
+        "B站"
+      ],
+      "key_figures": [
+        "蔡徐坤",
+        "蔡徐坤母亲"
+      ]
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "鸡你胎没",
+      "time": "2023年",
+      "relationship": "衍生"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "蔡徐坤被曝出恋情及堕胎事件",
+      "公众对偶像私德的双标嘲讽",
+      "对明星公关手段的讽刺"
+    ],
+    "target_audience": "网络年轻用户、B站鬼畜区观众、蔡徐坤黑粉及路人",
+    "political_sensitivity": "无",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "对歌曲《只因你太美》的空耳恶搞，指代蔡徐坤的唱功或形象",
+    "current_meaning": "嘲讽蔡徐坤被曝出导致女方怀孕堕胎的丑闻",
+    "drift_direction": "从单纯恶搞变为针对具体丑闻的讽刺攻击"
+  },
+  "narrative_quality": {
+    "information_richness": "中",
+    "key_insight": "该梗在2023年因蔡徐坤堕胎丑闻被重新激活并变异为“鸡你胎没”，体现了网络梗从娱乐恶搞到道德审判的语义漂移"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"鸡你太美\",\n  \"origin\": {\n    \"time\": \"2018年\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"偶像练习生蔡徐坤在自我介绍时演唱歌曲《只因你太美》，因歌词唱得太快，空耳成“鸡你太美”\",\n    \"precursor\": \"《只因你太美》歌曲\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2018年\",\n      \"description\": \"蔡徐坤在《偶像练习生》中自我介绍演唱《只因你太美》，因发音模糊被网友空耳为“鸡你太美”，开始在B站等平台作为鬼畜素材传播\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"蔡徐坤\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2023年\",\n      \"description\": \"蔡徐坤被爆出与女性发生关系并导致女方怀孕堕胎，聊天记录显示其母亲采取恐吓、安装监控等手段，引发舆论热议，“鸡你太美”被改编为“鸡你胎没”用于嘲讽\",\n      \"key_platforms\": [\"微博\", \"B站\"],\n      \"key_figures\": [\"蔡徐坤\", \"蔡徐坤母亲\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"鸡你胎没\",\n      \"time\": \"2023年\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"蔡徐坤被曝出恋情及堕胎事件\", \"公众对偶像私德的双标嘲讽\", \"对明星公关手段的讽刺\"],\n    \"target_audience\": \"网络年轻用户、B站鬼畜区观众、蔡徐坤黑粉及路人\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"对歌曲《只因你太美》的空耳恶搞，指代蔡徐坤的唱功或形象\",\n    \"current_meaning\": \"嘲讽蔡徐坤被曝出导致女方怀孕堕胎的丑闻\",\n    \"drift_direction\": \"从单纯恶搞变为针对具体丑闻的讽刺攻击\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗在2023年因蔡徐坤堕胎丑闻被重新激活并变异为“鸡你胎没”，体现了网络梗从娱乐恶搞到道德审判的语义漂移\"\n  }\n}",
+  "video_name": "鸡你胎没是什么梗【梗指南】 - 1.鸡你胎没是什么梗【梗指南】(Av827681606,P1)",
+  "transcript_chars": 532,
+  "duration_sec": 132.970667
+}

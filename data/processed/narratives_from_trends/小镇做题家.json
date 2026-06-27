@@ -1,0 +1,27 @@
+{
+  "meme_name": "小镇做题家",
+  "peak_month": "2022-07",
+  "peak_value": 55,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2016-06 至 2022-06",
+      "description": "长期潜伏期，搜索量极低但持续存在，反映该词在特定群体中缓慢酝酿。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2022-07",
+      "description": "搜索量急剧攀升至55，形成脉冲式爆发，表明该梗在短时间内获得广泛关注。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2022-08 至 2022-09",
+      "description": "搜索量断崖式下跌至5和9，随后长期低迷，符合典型脉冲式衰退特征。"
+    }
+  ],
+  "curve_shape": "脉冲",
+  "estimated_duration_months": 4,
+  "resurgence_detected": false,
+  "narrative_summary": "该梗经历长达六年的低活跃度萌芽期后，于2022年7月突然爆发达到峰值，随后迅速消退，未出现复燃，属于典型的脉冲式传播模式。",
+  "social_context_hint": "2022年7月峰值可能关联当年中国高校毕业生就业压力加剧、社会对教育公平与阶层流动的讨论升温，以及相关公共事件（如明星考编争议）引发的舆论聚焦。"
+}

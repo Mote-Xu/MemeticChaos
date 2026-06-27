@@ -1,0 +1,27 @@
+{
+  "meme_name": "元宇宙",
+  "peak_month": "2021-11",
+  "peak_value": 100,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2021-06 至 2021-10",
+      "description": "概念从科技圈小范围讨论开始，搜索量从3快速攀升至39，预示即将爆发。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2021-11 至 2022-02",
+      "description": "达到搜索顶峰100，随后在50-78高位震荡，资本与媒体狂热炒作，全民热议。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2022-03 至 2023-03",
+      "description": "搜索量从34持续下滑至23，热度消退，泡沫破裂，公众兴趣转向其他概念。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 24,
+  "resurgence_detected": true,
+  "narrative_summary": "元宇宙经历2021年底的爆炸式爆发后迅速衰退，但在2025年底出现小幅复燃，形成典型的复燃波动型曲线。",
+  "social_context_hint": "2021年峰值对应Facebook改名Meta、疫情催生虚拟经济幻想，以及资本疯狂追捧；2025年复燃可能与AI+空间计算等新技术融合有关。"
+}

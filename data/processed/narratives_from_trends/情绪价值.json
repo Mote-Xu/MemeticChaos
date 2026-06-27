@@ -1,0 +1,27 @@
+{
+  "meme_name": "情绪价值",
+  "peak_month": "2025-11",
+  "peak_value": 100,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2019-01 至 2025-09",
+      "description": "长期低水平波动，关注度在19-41之间徘徊，属于概念萌芽与缓慢渗透期，尚未形成广泛传播。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2025-10 至 2025-11",
+      "description": "关注度急剧攀升，从2025-10的67飙升至2025-11的100，达到历史峰值，呈现爆发式增长。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2025-12",
+      "description": "峰值后迅速回落至27，关注度骤降，符合长尾型衰退特征，但未完全归零。"
+    }
+  ],
+  "curve_shape": "长尾",
+  "estimated_duration_months": 84,
+  "resurgence_detected": false,
+  "narrative_summary": "该梗经历了长达近7年的低关注度萌芽期，在2025年末突然爆发达到顶峰，随后快速衰退，属于典型的‘长尾爆发型’传播模式。",
+  "social_context_hint": "2025年末的爆发可能关联社会对心理健康、人际关系质量及消费主义反思的集中讨论，或与特定网络事件、流行文化作品引发的情感共鸣有关。"
+}

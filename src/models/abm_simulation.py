@@ -385,6 +385,8 @@ def run_simulation(config: ABMConfig = None) -> ABMResult:
         config = ABMConfig()
 
     np.random.seed(42)
+    import random as py_random
+    py_random.seed(42)  # seed networkx's RNG via stdlib random
 
     # ── Build network ──────────────────────────
     if config.network_type == "scale_free":
@@ -415,11 +417,13 @@ def run_simulation(config: ABMConfig = None) -> ABMResult:
         chaos_positions[iid] = np.random.uniform(-0.7, -0.3) # injectors start chaotic
 
     meme_states = np.array([MemeState.SUSCEPTIBLE] * n)
-    # Initial infected
-    n_initial = max(1, int(n * config.initial_infected_fraction))
-    initial_infected = np.random.choice(n, n_initial, replace=False)
-    for iid in initial_infected:
-        meme_states[iid] = MemeState.INFECTED
+    # Initial infected (allow zero when fraction = 0)
+    n_initial_raw = int(n * config.initial_infected_fraction)
+    n_initial = max(0, n_initial_raw) if config.initial_infected_fraction == 0.0 else max(1, n_initial_raw)
+    if n_initial > 0:
+        initial_infected = np.random.choice(n, n_initial, replace=False)
+        for iid in initial_infected:
+            meme_states[iid] = MemeState.INFECTED
 
     vitalities = np.random.uniform(0.5, 1.0, n)
     resiliences = np.random.beta(3, 3, n)

@@ -1,0 +1,27 @@
+{
+  "meme_name": "遥遥领先 华为",
+  "peak_month": "2017-04",
+  "peak_value": 30,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2017-04 至 2023-08",
+      "description": "梗在2017年4月首次出现并达到初始峰值，随后长期处于低关注度状态，但并未完全消失，为后续复燃埋下伏笔。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2017-04",
+      "description": "2017年4月达到历史最高搜索峰值（30），可能与华为某款产品发布或营销事件相关，形成首次爆发。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2023-09 至 2025-10",
+      "description": "2023年9月出现明显复燃（23），随后进入缓慢衰退期，至2025年10月降至12，但仍高于长期低谷水平，呈现长尾衰减。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 102,
+  "resurgence_detected": true,
+  "narrative_summary": "该梗经历早期爆发后长期沉寂，在2023年因华为Mate 60系列发布等事件强势复燃，随后进入缓慢衰退的长尾阶段。",
+  "social_context_hint": "2017年峰值可能对应华为P10或Mate 10发布时的营销口号；2023年复燃与华为突破芯片封锁、发布Mate 60系列引发的民族情绪和‘遥遥领先’成为网络热词密切相关。"
+}

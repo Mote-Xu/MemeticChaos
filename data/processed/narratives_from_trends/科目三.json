@@ -1,0 +1,27 @@
+{
+  "meme_name": "科目三",
+  "peak_month": "2025-11",
+  "peak_value": 56,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2016-12 至 2023-11",
+      "description": "长期低水平波动，搜索热度在6-16之间徘徊，梗处于小众或地域性传播阶段，未进入大众视野。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2023-12 至 2025-11",
+      "description": "2023年12月首次爆发至35，随后回落，2025年11月达到历史最高56，形成二次复燃峰值，表明梗经历重新包装或跨平台传播。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2025-12 及之后",
+      "description": "2025年12月数据未给出但标记为衰退，峰值后热度快速下降，符合复燃后消退特征。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 82,
+  "resurgence_detected": true,
+  "narrative_summary": "科目三经历了长达7年的低热度潜伏期，在2023年底突然爆发，并在2025年底达到二次高峰，呈现典型的复燃波动模式。",
+  "social_context_hint": "2023年底的首次爆发可能与短视频平台舞蹈挑战（如广西科目三）的病毒式传播有关；2025年11月的更高峰值可能关联重大事件或跨文化改编（如国际明星模仿、综艺节目助推）。"
+}

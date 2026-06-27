@@ -1,0 +1,62 @@
+{
+  "meme_name": "轻松绷住",
+  "origin": {
+    "time": "2024年（视频发布时间为2024年，梗出现于该年）",
+    "platform": "B站",
+    "trigger_event": "《熊出没》动画中熊二决定去城市生活的情节引发网友共鸣，熊大表情包被广泛使用",
+    "precursor": null
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": "2024年初",
+      "description": "《熊出没》动画中熊二向熊大坦白要去城市生活，熊大做出无奈表情的片段被截取为表情包，在评论区频繁出现",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": [
+        "《熊出没》官方"
+      ]
+    },
+    {
+      "phase": "爆发",
+      "time_range": "2024年（视频发布前后）",
+      "description": "表情包走红后，官方顺势推出‘轻松绷住’教程视频，教网友如何模仿熊大的表情和姿势，引发大量二创和模仿",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": [
+        "《熊出没》官方"
+      ]
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "轻松绷住教程",
+      "time": "2024年",
+      "relationship": "衍生（官方将表情包转化为可模仿的姿势教程）"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "对城市生活与乡村生活对比的调侃",
+      "对‘外国的月亮更圆’心态的讽刺"
+    ],
+    "target_audience": "B站年轻用户、动画爱好者、网络冲浪人群",
+    "political_sensitivity": "无",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "熊大对熊二想去城市生活的无奈表情，表达‘绷不住’的搞笑反应",
+    "current_meaning": "一种刻意保持淡定、看透一切的表情和姿势，用于表达‘我忍住了不笑’或‘我无所谓’",
+    "drift_direction": "从具体动画情节中的无奈表情泛化为一种通用的‘绷住’姿势梗"
+  },
+  "narrative_quality": {
+    "information_richness": "中",
+    "key_insight": "该梗的传播核心在于官方主动下场制作教程，将表情包转化为可模仿的姿势，从而推动二次传播"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"轻松绷住\",\n  \"origin\": {\n    \"time\": \"2024年（视频发布时间为2024年，梗出现于该年）\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"《熊出没》动画中熊二决定去城市生活的情节引发网友共鸣，熊大表情包被广泛使用\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2024年初\",\n      \"description\": \"《熊出没》动画中熊二向熊大坦白要去城市生活，熊大做出无奈表情的片段被截取为表情包，在评论区频繁出现\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"《熊出没》官方\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2024年（视频发布前后）\",\n      \"description\": \"表情包走红后，官方顺势推出‘轻松绷住’教程视频，教网友如何模仿熊大的表情和姿势，引发大量二创和模仿\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"《熊出没》官方\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"轻松绷住教程\",\n      \"time\": \"2024年\",\n      \"relationship\": \"衍生（官方将表情包转化为可模仿的姿势教程）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"对城市生活与乡村生活对比的调侃\", \"对‘外国的月亮更圆’心态的讽刺\"],\n    \"target_audience\": \"B站年轻用户、动画爱好者、网络冲浪人群\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"熊大对熊二想去城市生活的无奈表情，表达‘绷不住’的搞笑反应\",\n    \"current_meaning\": \"一种刻意保持淡定、看透一切的表情和姿势，用于表达‘我忍住了不笑’或‘我无所谓’\",\n    \"drift_direction\": \"从具体动画情节中的无奈表情泛化为一种通用的‘绷住’姿势梗\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗的传播核心在于官方主动下场制作教程，将表情包转化为可模仿的姿势，从而推动二次传播\"\n  }\n}",
+  "video_name": "熊出没官方整活！轻松绷住是什么梗？【网梗指南】 - 1.熊出没官方整活！轻松绷住是什么梗？【网梗指南】(Av116649936033272,P1)",
+  "transcript_chars": 742,
+  "duration_sec": 169.20415
+}

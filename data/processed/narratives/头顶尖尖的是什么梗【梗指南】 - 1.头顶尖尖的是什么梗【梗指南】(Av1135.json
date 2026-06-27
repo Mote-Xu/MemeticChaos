@@ -1,0 +1,81 @@
+{
+  "meme_name": "头顶尖尖的",
+  "origin": {
+    "time": "2022年左右",
+    "platform": "B站",
+    "trigger_event": "健身博主长熟阿诺（常熟阿诺）在直播中因药物过量导致头部形状变化，被观众提问后产生的一段自辩言论",
+    "precursor": null
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": "2022年",
+      "description": "常熟阿诺在直播中回应观众关于其头顶形状的提问，说出了一段逻辑混乱、反复质问的经典言论，被录屏传播",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": [
+        "常熟阿诺"
+      ]
+    },
+    {
+      "phase": "爆发",
+      "time_range": "2022年-2023年",
+      "description": "该片段被B站用户剪辑并广泛传播，成为鬼畜和搞笑素材，用于调侃逻辑混乱或糖分超标的对话场景",
+      "key_platforms": [
+        "B站",
+        "抖音",
+        "微博"
+      ],
+      "key_figures": [
+        "常熟阿诺",
+        "B站鬼畜区UP主"
+      ]
+    },
+    {
+      "phase": "泛化",
+      "time_range": "2023年至今",
+      "description": "“头顶尖尖的”被用来调侃任何逻辑不通、左右脑互搏的言论，或形容人因药物、激素等导致的外形变化",
+      "key_platforms": [
+        "B站",
+        "抖音",
+        "贴吧"
+      ],
+      "key_figures": null
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "脑袋尖尖的",
+      "time": "2022年",
+      "relationship": "衍生（同义变体）"
+    },
+    {
+      "variant_name": "常熟阿诺式反问",
+      "time": "2022年",
+      "relationship": "衍生（指代其独特的反问句式）"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "对健身圈药物滥用现象的调侃",
+      "对逻辑混乱、自相矛盾言论的嘲讽"
+    ],
+    "target_audience": "B站用户、健身爱好者、网络迷因爱好者",
+    "political_sensitivity": "无",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "指常熟阿诺因药物导致头顶形状变尖的事实",
+    "current_meaning": "泛指逻辑混乱、自相矛盾的言论或行为",
+    "drift_direction": "从具体外形描述变为抽象逻辑嘲讽"
+  },
+  "narrative_quality": {
+    "information_richness": "中",
+    "key_insight": "该梗的核心传播动力在于常熟阿诺直播中那段逻辑循环、自相矛盾的反问句式，被网友截取后成为鬼畜和调侃的经典素材"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"头顶尖尖的\",\n  \"origin\": {\n    \"time\": \"2022年左右\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"健身博主长熟阿诺（常熟阿诺）在直播中因药物过量导致头部形状变化，被观众提问后产生的一段自辩言论\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2022年\",\n      \"description\": \"常熟阿诺在直播中回应观众关于其头顶形状的提问，说出了一段逻辑混乱、反复质问的经典言论，被录屏传播\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"常熟阿诺\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2022年-2023年\",\n      \"description\": \"该片段被B站用户剪辑并广泛传播，成为鬼畜和搞笑素材，用于调侃逻辑混乱或糖分超标的对话场景\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"微博\"],\n      \"key_figures\": [\"常熟阿诺\", \"B站鬼畜区UP主\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2023年至今\",\n      \"description\": \"“头顶尖尖的”被用来调侃任何逻辑不通、左右脑互搏的言论，或形容人因药物、激素等导致的外形变化\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"贴吧\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"脑袋尖尖的\",\n      \"time\": \"2022年\",\n      \"relationship\": \"衍生（同义变体）\"\n    },\n    {\n      \"variant_name\": \"常熟阿诺式反问\",\n      \"time\": \"2022年\",\n      \"relationship\": \"衍生（指代其独特的反问句式）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"对健身圈药物滥用现象的调侃\", \"对逻辑混乱、自相矛盾言论的嘲讽\"],\n    \"target_audience\": \"B站用户、健身爱好者、网络迷因爱好者\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"指常熟阿诺因药物导致头顶形状变尖的事实\",\n    \"current_meaning\": \"泛指逻辑混乱、自相矛盾的言论或行为\",\n    \"drift_direction\": \"从具体外形描述变为抽象逻辑嘲讽\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗的核心传播动力在于常熟阿诺直播中那段逻辑循环、自相矛盾的反问句式，被网友截取后成为鬼畜和调侃的经典素材\"\n  }\n}",
+  "video_name": "头顶尖尖的是什么梗【梗指南】 - 1.头顶尖尖的是什么梗【梗指南】(Av113582960279932,P1)",
+  "transcript_chars": 717,
+  "duration_sec": 170.858667
+}

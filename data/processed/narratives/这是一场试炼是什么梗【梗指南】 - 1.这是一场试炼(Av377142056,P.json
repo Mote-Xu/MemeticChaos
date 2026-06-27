@@ -1,0 +1,75 @@
+{
+  "meme_name": "这是一场试炼",
+  "origin": {
+    "time": "2016年12月（动画《JOJO的奇妙冒险 黄金之风》第33集播出时间）",
+    "platform": "B站",
+    "trigger_event": null,
+    "precursor": null
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": "2016年12月",
+      "description": "动画《JOJO的奇妙冒险 黄金之风》第33集播出，迪亚波罗在人格切换前说出台词'这是一场试炼'，随后托比欧脱衣变身，该场景成为原始素材。",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": [
+        "动画制作组"
+      ]
+    },
+    {
+      "phase": "爆发",
+      "time_range": "2017年-2020年",
+      "description": "B站UP主开始制作'脱衣切换'二创视频，将迪亚波罗的脱衣动作与其他角色脱衣瞬间进行剪辑拼接，形成固定模板。",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": [
+        "B站二创UP主"
+      ]
+    },
+    {
+      "phase": "泛化",
+      "time_range": "2020年-2023年",
+      "description": "梗脱离JOJO圈层，被广泛用于任何角色脱衣或换装场景，成为通用'变身'梗，常配合'这是一场试炼'台词使用。",
+      "key_platforms": [
+        "B站",
+        "抖音",
+        "微博"
+      ],
+      "key_figures": [
+        "泛二次元用户"
+      ]
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "脱衣切换",
+      "time": "2017年",
+      "relationship": "衍生（将原台词与脱衣动作结合，形成固定剪辑模板）"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "JOJO系列动画的高人气与二创文化",
+      "脱衣/变身动作的视觉冲击力"
+    ],
+    "target_audience": "二次元爱好者、B站用户",
+    "political_sensitivity": "无",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "迪亚波罗在人格切换前对自己说的台词，表示即将面临的考验。",
+    "current_meaning": "用于角色脱衣或换装瞬间的调侃，表示'变身开始'或'认真模式开启'。",
+    "drift_direction": "从严肃台词变为搞笑/玩梗素材，从具体剧情变为泛指任何脱衣切换场景"
+  },
+  "narrative_quality": {
+    "information_richness": "低",
+    "key_insight": "该梗的核心是'脱衣切换'的剪辑模板，将迪亚波罗的脱衣动作与其他角色脱衣瞬间拼接，形成固定二创形式。"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"这是一场试炼\",\n  \"origin\": {\n    \"time\": \"2016年12月（动画《JOJO的奇妙冒险 黄金之风》第33集播出时间）\",\n    \"platform\": \"B站\",\n    \"trigger_event\": null,\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2016年12月\",\n      \"description\": \"动画《JOJO的奇妙冒险 黄金之风》第33集播出，迪亚波罗在人格切换前说出台词'这是一场试炼'，随后托比欧脱衣变身，该场景成为原始素材。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"动画制作组\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2017年-2020年\",\n      \"description\": \"B站UP主开始制作'脱衣切换'二创视频，将迪亚波罗的脱衣动作与其他角色脱衣瞬间进行剪辑拼接，形成固定模板。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"B站二创UP主\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2020年-2023年\",\n      \"description\": \"梗脱离JOJO圈层，被广泛用于任何角色脱衣或换装场景，成为通用'变身'梗，常配合'这是一场试炼'台词使用。\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"微博\"],\n      \"key_figures\": [\"泛二次元用户\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"脱衣切换\",\n      \"time\": \"2017年\",\n      \"relationship\": \"衍生（将原台词与脱衣动作结合，形成固定剪辑模板）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"JOJO系列动画的高人气与二创文化\", \"脱衣/变身动作的视觉冲击力\"],\n    \"target_audience\": \"二次元爱好者、B站用户\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"迪亚波罗在人格切换前对自己说的台词，表示即将面临的考验。\",\n    \"current_meaning\": \"用于角色脱衣或换装瞬间的调侃，表示'变身开始'或'认真模式开启'。\",\n    \"drift_direction\": \"从严肃台词变为搞笑/玩梗素材，从具体剧情变为泛指任何脱衣切换场景\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该梗的核心是'脱衣切换'的剪辑模板，将迪亚波罗的脱衣动作与其他角色脱衣瞬间拼接，形成固定二创形式。\"\n  }\n}",
+  "video_name": "这是一场试炼是什么梗【梗指南】 - 1.这是一场试炼(Av377142056,P1)",
+  "transcript_chars": 193,
+  "duration_sec": 89.493333
+}

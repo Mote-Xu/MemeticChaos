@@ -1,0 +1,1612 @@
+[
+  {
+    "meme_name": "GO学长瓦学弟",
+    "origin": {
+      "time": "2020年左右",
+      "platform": "B站/贴吧",
+      "trigger_event": "《CS:GO》与《Valorant》玩家群体之间的长期对抗与互相嘲讽",
+      "precursor": "CS玩家自称或被称为“GO学长”，Valorant玩家被称为“瓦学弟”"
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": "2020年-2021年",
+        "description": "随着《Valorant》国服上线，CS玩家与Valorant玩家在社区中开始互相嘲讽，出现“GO学长”“瓦学弟”等称呼，最初带有攻击性。",
+        "key_platforms": [
+          "贴吧",
+          "B站"
+        ],
+        "key_figures": null
+      },
+      {
+        "phase": "爆发",
+        "time_range": "2022年-2023年",
+        "description": "“笨蛋奶妈事件”等具体事件出圈，使“瓦学弟性压抑”标签广泛传播；博主“逼逼”的社会实验系列视频进一步强化双方标签，梗从骂战变为调侃。",
+        "key_platforms": [
+          "B站",
+          "抖音"
+        ],
+        "key_figures": [
+          "逼逼（博主）"
+        ]
+      },
+      {
+        "phase": "固化",
+        "time_range": "2023年至今",
+        "description": "梗成为固定网络用语，用于调侃CS和Valorant玩家群体，并衍生出“西格马男人”“性压抑群体”等标签，双方玩家也主动使用该梗自嘲。",
+        "key_platforms": [
+          "B站",
+          "抖音",
+          "微博"
+        ],
+        "key_figures": null
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "瓦学弟性压抑",
+        "time": "2022年",
+        "relationship": "衍生（从群体称呼变为特定标签，强调Valorant玩家在游戏中的性压抑表现）"
+      },
+      {
+        "variant_name": "GO学长西格马男人",
+        "time": "2022年",
+        "relationship": "衍生（对应瓦学弟标签，强调CS玩家的硬核/男性气质）"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "FPS游戏玩家群体之间的鄙视链",
+        "《Valorant》作为后来者挑战《CS:GO》经典地位",
+        "游戏社区中女玩家稀少导致的“性压抑”调侃氛围"
+      ],
+      "target_audience": "FPS游戏玩家，尤其是CS:GO和Valorant玩家",
+      "political_sensitivity": "无",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "CS玩家（GO学长）与Valorant玩家（瓦学弟）之间的互相嘲讽称呼",
+      "current_meaning": "用于调侃两个游戏玩家群体的固定网络梗，带有自嘲和幽默色彩，不再具有强烈攻击性",
+      "drift_direction": "从攻击性称呼变为调侃性标签，并衍生出更具体的性格标签（性压抑、西格马男人）"
+    },
+    "narrative_quality": {
+      "information_richness": "中",
+      "key_insight": "该梗从玩家群体间的攻击性称呼，经过具体事件（笨蛋奶妈事件）和博主创作（逼逼的社会实验）的推动，演变为双方共同使用的调侃梗，并固化为带有标签化的网络文化符号。"
+    },
+    "raw_llm_output": "```json\n{\n  \"meme_name\": \"GO学长瓦学弟\",\n  \"origin\": {\n    \"time\": \"2020年左右\",\n    \"platform\": \"B站/贴吧\",\n    \"trigger_event\": \"《CS:GO》与《Valorant》玩家群体之间的长期对抗与互相嘲讽\",\n    \"precursor\": \"CS玩家自称或被称为“GO学长”，Valorant玩家被称为“瓦学弟”\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2020年-2021年\",\n      \"description\": \"随着《Valorant》国服上线，CS玩家与Valorant玩家在社区中开始互相嘲讽，出现“GO学长”“瓦学弟”等称呼，最初带有攻击性。\",\n      \"key_platforms\": [\"贴吧\", \"B站\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2022年-2023年\",\n      \"description\": \"“笨蛋奶妈事件”等具体事件出圈，使“瓦学弟性压抑”标签广泛传播；博主“逼逼”的社会实验系列视频进一步强化双方标签，梗从骂战变为调侃。\",\n      \"key_platforms\": [\"B站\", \"抖音\"],\n      \"key_figures\": [\"逼逼（博主）\"]\n    },\n    {\n      \"phase\": \"固化\",\n      \"time_range\": \"2023年至今\",\n      \"description\": \"梗成为固定网络用语，用于调侃CS和Valorant玩家群体，并衍生出“西格马男人”“性压抑群体”等标签，双方玩家也主动使用该梗自嘲。\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"微博\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"瓦学弟性压抑\",\n      \"time\": \"2022年\",\n      \"relationship\": \"衍生（从群体称呼变为特定标签，强调Valorant玩家在游戏中的性压抑表现）\"\n    },\n    {\n      \"variant_name\": \"GO学长西格马男人\",\n      \"time\": \"2022年\",\n      \"relationship\": \"衍生（对应瓦学弟标签，强调CS玩家的硬核/男性气质）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\n      \"FPS游戏玩家群体之间的鄙视链\",\n      \"《Valorant》作为后来者挑战《CS:GO》经典地位\",\n      \"游戏社区中女玩家稀少导致的“性压抑”调侃氛围\"\n    ],\n    \"target_audience\": \"FPS游戏玩家，尤其是CS:GO和Valorant玩家\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"CS玩家（GO学长）与Valorant玩家（瓦学弟）之间的互相嘲讽称呼\",\n    \"current_meaning\": \"用于调侃两个游戏玩家群体的固定网络梗，带有自嘲和幽默色彩，不再具有强烈攻击性\",\n    \"drift_direction\": \"从攻击性称呼变为调侃性标签，并衍生出更具体的性格标签（性压抑、西格马男人）\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗从玩家群体间的攻击性称呼，经过具体事件（笨蛋奶妈事件）和博主创作（逼逼的社会实验）的推动，演变为双方共同使用的调侃梗，并固化为带有标签化的网络文化符号。\"\n  }\n}\n```",
+    "video_name": "GO学长瓦学弟是什么梗【梗指南】 - 1.GO学长瓦学弟是什么梗【梗指南】(Av114376270940510,P1)",
+    "transcript_chars": 797,
+    "duration_sec": 256.213333
+  },
+  {
+    "meme_name": "升天",
+    "origin": {
+      "time": "2022年",
+      "platform": "B站",
+      "trigger_event": "游戏《主播女孩重度依赖》的流行",
+      "precursor": null
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": "2022年",
+        "description": "出自游戏《主播女孩重度依赖》，角色糖糖（超天酱）在直播结束语中使用“升天”一词，作为下播的固定语癖。",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": [
+          "糖糖（超天酱）"
+        ]
+      },
+      {
+        "phase": "爆发",
+        "time_range": "2022年",
+        "description": "被网友广泛用于弹幕中，尤其是阴间视频或令人震撼的片段，表达“这段让我有升天的感觉”或赞赏之意，类似KKSK。",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": null
+      }
+    ],
+    "mutations": [],
+    "social_context": {
+      "triggers": [
+        "游戏《主播女孩重度依赖》的二次元文化热潮",
+        "网友对阴间视频或夸张内容的娱乐化表达需求"
+      ],
+      "target_audience": "B站用户、游戏玩家、二次元文化爱好者",
+      "political_sensitivity": "无",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "游戏角色下播时的结束语，指天使回归天上",
+      "current_meaning": "对视频片段表达极度赞赏或震撼，类似“爽到升天”",
+      "drift_direction": "从具体游戏用语泛化为网络弹幕中的赞赏表达"
+    },
+    "narrative_quality": {
+      "information_richness": "低",
+      "key_insight": "该梗源自游戏《主播女孩重度依赖》中角色超天酱的下播语癖，后被网友用于弹幕表达对阴间视频片段的赞赏。"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"升天\",\n  \"origin\": {\n    \"time\": \"2022年\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"游戏《主播女孩重度依赖》的流行\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2022年\",\n      \"description\": \"出自游戏《主播女孩重度依赖》，角色糖糖（超天酱）在直播结束语中使用“升天”一词，作为下播的固定语癖。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"糖糖（超天酱）\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2022年\",\n      \"description\": \"被网友广泛用于弹幕中，尤其是阴间视频或令人震撼的片段，表达“这段让我有升天的感觉”或赞赏之意，类似KKSK。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [],\n  \"social_context\": {\n    \"triggers\": [\"游戏《主播女孩重度依赖》的二次元文化热潮\", \"网友对阴间视频或夸张内容的娱乐化表达需求\"],\n    \"target_audience\": \"B站用户、游戏玩家、二次元文化爱好者\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"游戏角色下播时的结束语，指天使回归天上\",\n    \"current_meaning\": \"对视频片段表达极度赞赏或震撼，类似“爽到升天”\",\n    \"drift_direction\": \"从具体游戏用语泛化为网络弹幕中的赞赏表达\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该梗源自游戏《主播女孩重度依赖》中角色超天酱的下播语癖，后被网友用于弹幕表达对阴间视频片段的赞赏。\"\n  }\n}",
+    "video_name": "†升天†是什么梗【梗指南】 - 1.†升天†(Av766596315,P1)",
+    "transcript_chars": 192,
+    "duration_sec": 72.597333
+  },
+  {
+    "meme_name": "打工人",
+    "origin": {
+      "time": null,
+      "platform": null,
+      "trigger_event": null,
+      "precursor": "打工仔"
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": null,
+        "description": "由“打工仔”演变而来，最初作为上班族的自嘲用语",
+        "key_platforms": null,
+        "key_figures": [
+          "抽象带篮子"
+        ]
+      },
+      {
+        "phase": "爆发",
+        "time_range": null,
+        "description": "经过抽象带篮子的影响和传播，逐渐被越来越多人使用",
+        "key_platforms": null,
+        "key_figures": [
+          "抽象带篮子"
+        ]
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "打工人，打工魂，打工都是人上人",
+        "time": null,
+        "relationship": "衍生"
+      },
+      {
+        "variant_name": "早安打工人",
+        "time": null,
+        "relationship": "衍生"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "上班族对工作压力的自嘲",
+        "社畜文化"
+      ],
+      "target_audience": "上班族、年轻打工人",
+      "political_sensitivity": "低",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "对打工仔的贬义或中性称呼",
+      "current_meaning": "上班族的自嘲，带有苦中作乐、自我激励的意味",
+      "drift_direction": "从贬义/中性变为自嘲与反讽"
+    },
+    "narrative_quality": {
+      "information_richness": "低",
+      "key_insight": "该梗由“打工仔”演变而来，经抽象带篮子传播后广泛流行，并衍生出“打工人，打工魂，打工都是人上人”等变体。"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"打工人\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": null,\n    \"trigger_event\": null,\n    \"precursor\": \"打工仔\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": null,\n      \"description\": \"由“打工仔”演变而来，最初作为上班族的自嘲用语\",\n      \"key_platforms\": null,\n      \"key_figures\": [\"抽象带篮子\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": null,\n      \"description\": \"经过抽象带篮子的影响和传播，逐渐被越来越多人使用\",\n      \"key_platforms\": null,\n      \"key_figures\": [\"抽象带篮子\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"打工人，打工魂，打工都是人上人\",\n      \"time\": null,\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"早安打工人\",\n      \"time\": null,\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"上班族对工作压力的自嘲\", \"社畜文化\"],\n    \"target_audience\": \"上班族、年轻打工人\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"对打工仔的贬义或中性称呼\",\n    \"current_meaning\": \"上班族的自嘲，带有苦中作乐、自我激励的意味\",\n    \"drift_direction\": \"从贬义/中性变为自嘲与反讽\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该梗由“打工仔”演变而来，经抽象带篮子传播后广泛流行，并衍生出“打工人，打工魂，打工都是人上人”等变体。\"\n  }\n}",
+    "video_name": "【梗指南】打工人，打工魂，打工都是人上人！ - 1.打工人(Av755042907,P1)",
+    "transcript_chars": 270,
+    "duration_sec": 69.162833
+  },
+  {
+    "meme_name": "发疯文学",
+    "origin": {
+      "time": "2021年",
+      "platform": "网络（具体平台未明确）",
+      "trigger_event": "疫情导致大学生被封闭在学校，情绪压抑",
+      "precursor": "《甄嬛传》和《红楼梦》中林黛玉的说话方式"
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": "2021年",
+        "description": "网友模仿《甄嬛传》和《红楼梦》中林黛玉的说话方式，在网络上掀起一阵热潮",
+        "key_platforms": [
+          "网络（未具体说明）"
+        ],
+        "key_figures": null
+      },
+      {
+        "phase": "爆发",
+        "time_range": "最近（视频发布时间前后）",
+        "description": "因疫情被关在学校的大学生大量创作发疯文学，表达压抑情绪，并在社交媒体上广泛使用",
+        "key_platforms": [
+          "社交媒体（未具体说明）"
+        ],
+        "key_figures": null
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "人上人（人上人上哪有不疯的）",
+        "time": "最近",
+        "relationship": "衍生"
+      },
+      {
+        "variant_name": "精神稳定一分钟也很厉害",
+        "time": "最近",
+        "relationship": "衍生"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "疫情导致大学生被封闭在学校，情绪压抑"
+      ],
+      "target_audience": "大学生",
+      "political_sensitivity": "低",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "用极度夸张、无序、情绪饱满的文字句式来抒发强烈情绪的写作方式",
+      "current_meaning": "当代大学生表达精神压抑和情绪崩溃的流行文体",
+      "drift_direction": "从泛指情绪表达变为特指大学生疫情下的精神状态"
+    },
+    "narrative_quality": {
+      "information_richness": "中",
+      "key_insight": "发疯文学最早在2021年出现，源于模仿《甄嬛传》和《红楼梦》的说话方式，近期因疫情封闭大学生情绪压抑而再次爆发"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"发疯文学\",\n  \"origin\": {\n    \"time\": \"2021年\",\n    \"platform\": \"网络（具体平台未明确）\",\n    \"trigger_event\": \"疫情导致大学生被封闭在学校，情绪压抑\",\n    \"precursor\": \"《甄嬛传》和《红楼梦》中林黛玉的说话方式\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2021年\",\n      \"description\": \"网友模仿《甄嬛传》和《红楼梦》中林黛玉的说话方式，在网络上掀起一阵热潮\",\n      \"key_platforms\": [\"网络（未具体说明）\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"最近（视频发布时间前后）\",\n      \"description\": \"因疫情被关在学校的大学生大量创作发疯文学，表达压抑情绪，并在社交媒体上广泛使用\",\n      \"key_platforms\": [\"社交媒体（未具体说明）\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"人上人（人上人上哪有不疯的）\",\n      \"time\": \"最近\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"精神稳定一分钟也很厉害\",\n      \"time\": \"最近\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"疫情导致大学生被封闭在学校，情绪压抑\"],\n    \"target_audience\": \"大学生\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"用极度夸张、无序、情绪饱满的文字句式来抒发强烈情绪的写作方式\",\n    \"current_meaning\": \"当代大学生表达精神压抑和情绪崩溃的流行文体\",\n    \"drift_direction\": \"从泛指情绪表达变为特指大学生疫情下的精神状态\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"发疯文学最早在2021年出现，源于模仿《甄嬛传》和《红楼梦》的说话方式，近期因疫情封闭大学生情绪压抑而再次爆发\"\n  }\n}",
+    "video_name": "【梗百科】当代大学生的精神状态怎么了？发疯文学再次回归！ - 1.【梗百科】当代大学生的精神状态怎么了？发疯文学再次回归！(Av562273175,P1)",
+    "transcript_chars": 361,
+    "duration_sec": 95.36
+  },
+  {
+    "meme_name": "月薪喵",
+    "origin": {
+      "time": "2025年",
+      "platform": "B站",
+      "trigger_event": null,
+      "precursor": null
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": "2025年",
+        "description": "博主月薪喵参照自家宠物猫制作了系列表情包，最初在B站发布，内容为两只小猫的可爱动态表情。",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": [
+          "月薪喵"
+        ]
+      },
+      {
+        "phase": "爆发",
+        "time_range": "2025年之后",
+        "description": "表情包中一只小猫左右躲闪并捏着山峰的动作受到欢迎，可能借鉴了浩克的取责S.G.B.J.K.，并在怪情物语热度加持下火出圈，衍生出散位舞、迷和手势舞等变体。",
+        "key_platforms": [
+          "B站",
+          "外网"
+        ],
+        "key_figures": [
+          "胡尼克"
+        ]
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "散位舞",
+        "time": "2025年之后",
+        "relationship": "衍生"
+      },
+      {
+        "variant_name": "迷和手势舞",
+        "time": "2025年之后",
+        "relationship": "衍生"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "可爱宠物表情包的流行趋势",
+        "怪情物语的热度"
+      ],
+      "target_audience": "B站用户及网络表情包爱好者",
+      "political_sensitivity": "无",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "博主月薪喵参照自家宠物猫制作的表情包系列",
+      "current_meaning": "泛指该系列中一只小猫左右躲闪并捏着山峰的可爱动作表情包",
+      "drift_direction": "从具体系列名变为特指某个动作表情包"
+    },
+    "narrative_quality": {
+      "information_richness": "低",
+      "key_insight": "该表情包中捏山峰的动作可能借鉴了浩克的取责S.G.B.J.K.，并在怪情物语热度加持下火出圈。"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"月薪喵\",\n  \"origin\": {\n    \"time\": \"2025年\",\n    \"platform\": \"B站\",\n    \"trigger_event\": null,\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2025年\",\n      \"description\": \"博主月薪喵参照自家宠物猫制作了系列表情包，最初在B站发布，内容为两只小猫的可爱动态表情。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"月薪喵\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2025年之后\",\n      \"description\": \"表情包中一只小猫左右躲闪并捏着山峰的动作受到欢迎，可能借鉴了浩克的取责S.G.B.J.K.，并在怪情物语热度加持下火出圈，衍生出散位舞、迷和手势舞等变体。\",\n      \"key_platforms\": [\"B站\", \"外网\"],\n      \"key_figures\": [\"胡尼克\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"散位舞\",\n      \"time\": \"2025年之后\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"迷和手势舞\",\n      \"time\": \"2025年之后\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"可爱宠物表情包的流行趋势\", \"怪情物语的热度\"],\n    \"target_audience\": \"B站用户及网络表情包爱好者\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"博主月薪喵参照自家宠物猫制作的表情包系列\",\n    \"current_meaning\": \"泛指该系列中一只小猫左右躲闪并捏着山峰的可爱动作表情包\",\n    \"drift_direction\": \"从具体系列名变为特指某个动作表情包\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该表情包中捏山峰的动作可能借鉴了浩克的取责S.G.B.J.K.，并在怪情物语热度加持下火出圈。\"\n  }\n}",
+    "video_name": "【梗百科】月薪喵是啥？这个“散味舞”怎么来的？ - 1.月薪喵+字幕(Av116680051135929,P1)",
+    "transcript_chars": 408,
+    "duration_sec": 124.714626
+  },
+  {
+    "meme_name": "科目三",
+    "origin": {
+      "time": "2010年代",
+      "platform": "广西柳州地方文化",
+      "trigger_event": null,
+      "precursor": "入义13（疑似“入义13”为ASR错误，可能指“广西科目三”前身舞蹈）"
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": "2010年代",
+        "description": "广西柳州地区出现一种舞蹈，被称为“入义13”，是科目三舞蹈的原型。",
+        "key_platforms": [
+          "地方性传播"
+        ],
+        "key_figures": null
+      },
+      {
+        "phase": "爆发",
+        "time_range": "2022年",
+        "description": "以“科目三”为名在互联网暴火，常配曲为“似华辩苏”（ASR错误，可能指“似华辩苏”为某首歌曲），出现大量模仿视频。",
+        "key_platforms": [
+          "B站",
+          "抖音"
+        ],
+        "key_figures": [
+          "续谋（ASR错误，可能指某位舞者）",
+          "粉丝"
+        ]
+      },
+      {
+        "phase": "泛化",
+        "time_range": "2023年",
+        "description": "科目三再次进入大众视野，配曲改为“一笑江湖”，舞蹈热度席卷全球，出现“五统台湾”（ASR错误，可能指“舞统台湾”）等衍生说法。",
+        "key_platforms": [
+          "B站",
+          "抖音",
+          "YouTube",
+          "TikTok"
+        ],
+        "key_figures": [
+          "音区将军爱美麗（ASR错误，可能指某位海外博主）",
+          "英区不断（ASR错误，可能指英国地区博主）",
+          "春造绅画（ASR错误，可能指某位创作者）"
+        ]
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "舞统台湾",
+        "time": "2023年",
+        "relationship": "衍生（将舞蹈传播至台湾地区，被戏称为“舞统台湾”）"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "年轻人对广西地方文化的猎奇与模仿",
+        "全球短视频平台对舞蹈挑战的推动"
+      ],
+      "target_audience": "年轻网民，尤其是短视频用户",
+      "political_sensitivity": "低",
+      "backlash_events": [
+        "视频中提及中年人对年轻人舞蹈投来异样目光，形成代际反差"
+      ]
+    },
+    "semantic_drift": {
+      "original_meaning": "广西地方的一种舞蹈类型，源自当地文化",
+      "current_meaning": "一种全球流行的短视频舞蹈挑战，配乐为《一笑江湖》",
+      "drift_direction": "从地方性舞蹈演变为全球性网络迷因"
+    },
+    "narrative_quality": {
+      "information_richness": "中",
+      "key_insight": "科目三舞蹈的全球传播过程中，出现了中年旁观者与年轻舞者之间的代际反差，成为该梗传播中的有趣社会现象。"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"科目三\",\n  \"origin\": {\n    \"time\": \"2010年代\",\n    \"platform\": \"广西柳州地方文化\",\n    \"trigger_event\": null,\n    \"precursor\": \"入义13（疑似“入义13”为ASR错误，可能指“广西科目三”前身舞蹈）\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2010年代\",\n      \"description\": \"广西柳州地区出现一种舞蹈，被称为“入义13”，是科目三舞蹈的原型。\",\n      \"key_platforms\": [\"地方性传播\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2022年\",\n      \"description\": \"以“科目三”为名在互联网暴火，常配曲为“似华辩苏”（ASR错误，可能指“似华辩苏”为某首歌曲），出现大量模仿视频。\",\n      \"key_platforms\": [\"B站\", \"抖音\"],\n      \"key_figures\": [\"续谋（ASR错误，可能指某位舞者）\", \"粉丝\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2023年\",\n      \"description\": \"科目三再次进入大众视野，配曲改为“一笑江湖”，舞蹈热度席卷全球，出现“五统台湾”（ASR错误，可能指“舞统台湾”）等衍生说法。\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"YouTube\", \"TikTok\"],\n      \"key_figures\": [\"音区将军爱美麗（ASR错误，可能指某位海外博主）\", \"英区不断（ASR错误，可能指英国地区博主）\", \"春造绅画（ASR错误，可能指某位创作者）\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"舞统台湾\",\n      \"time\": \"2023年\",\n      \"relationship\": \"衍生（将舞蹈传播至台湾地区，被戏称为“舞统台湾”）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"年轻人对广西地方文化的猎奇与模仿\", \"全球短视频平台对舞蹈挑战的推动\"],\n    \"target_audience\": \"年轻网民，尤其是短视频用户\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": [\"视频中提及中年人对年轻人舞蹈投来异样目光，形成代际反差\"]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"广西地方的一种舞蹈类型，源自当地文化\",\n    \"current_meaning\": \"一种全球流行的短视频舞蹈挑战，配乐为《一笑江湖》\",\n    \"drift_direction\": \"从地方性舞蹈演变为全球性网络迷因\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"科目三舞蹈的全球传播过程中，出现了中年旁观者与年轻舞者之间的代际反差，成为该梗传播中的有趣社会现象。\"\n  }\n}",
+    "video_name": "【梗百科】科目三是啥梗？外国人听了也一起摇！？ - 1.【梗百科】科目三是啥梗？外国人听了也一起摇！？(Av918348115,P1)",
+    "transcript_chars": 480,
+    "duration_sec": 140.522667
+  },
+  {
+    "meme_name": "内卷",
+    "origin": {
+      "time": "2020年下半年",
+      "platform": "B站",
+      "trigger_event": "社会竞争加剧、教育内卷、职场内卷等现实背景",
+      "precursor": "学术概念'内卷化'（involution）"
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": "2020年9月-10月",
+        "description": "内卷一词从学术圈进入大众视野，最初在知乎、微博等平台讨论教育、职场竞争时被引用",
+        "key_platforms": [
+          "知乎",
+          "微博"
+        ],
+        "key_figures": null
+      },
+      {
+        "phase": "爆发",
+        "time_range": "2020年10月-12月",
+        "description": "B站大量UP主制作科普视频，如本视频《梗指南》系列，用通俗比喻（看电影、论文、补习班）解释内卷，引发广泛共鸣和传播",
+        "key_platforms": [
+          "B站",
+          "微博",
+          "微信朋友圈"
+        ],
+        "key_figures": [
+          "梗指南系列UP主"
+        ]
+      },
+      {
+        "phase": "泛化",
+        "time_range": "2021年全年",
+        "description": "内卷一词被用于描述各行各业过度竞争现象，含义从具体学术概念泛化为'非理性内部竞争'的代名词",
+        "key_platforms": [
+          "B站",
+          "抖音",
+          "小红书",
+          "知乎"
+        ],
+        "key_figures": null
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "卷",
+        "time": "2020年底",
+        "relationship": "衍生（动词化，如'太卷了''卷起来'）"
+      },
+      {
+        "variant_name": "反内卷",
+        "time": "2021年初",
+        "relationship": "反讽/收编（倡导躺平、拒绝内卷）"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "教育竞争白热化（如学区房、补习班）",
+        "职场996文化",
+        "社会阶层固化焦虑"
+      ],
+      "target_audience": "年轻网民（学生、职场新人）",
+      "political_sensitivity": "低",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "学术概念：系统内部无法产生质变的过度精细化发展",
+      "current_meaning": "泛指一切非理性的内部竞争，导致所有人付出更多却收益不变",
+      "drift_direction": "从学术术语变为日常流行语，含义从具体变为泛指"
+    },
+    "narrative_quality": {
+      "information_richness": "低",
+      "key_insight": "该视频用看电影、写论文、报补习班三个通俗比喻，成功将内卷概念从学术语境转化为大众可理解的日常场景，是推动该梗破圈传播的关键"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"内卷\",\n  \"origin\": {\n    \"time\": \"2020年下半年\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"社会竞争加剧、教育内卷、职场内卷等现实背景\",\n    \"precursor\": \"学术概念'内卷化'（involution）\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2020年9月-10月\",\n      \"description\": \"内卷一词从学术圈进入大众视野，最初在知乎、微博等平台讨论教育、职场竞争时被引用\",\n      \"key_platforms\": [\"知乎\", \"微博\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2020年10月-12月\",\n      \"description\": \"B站大量UP主制作科普视频，如本视频《梗指南》系列，用通俗比喻（看电影、论文、补习班）解释内卷，引发广泛共鸣和传播\",\n      \"key_platforms\": [\"B站\", \"微博\", \"微信朋友圈\"],\n      \"key_figures\": [\"梗指南系列UP主\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2021年全年\",\n      \"description\": \"内卷一词被用于描述各行各业过度竞争现象，含义从具体学术概念泛化为'非理性内部竞争'的代名词\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"小红书\", \"知乎\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"卷\",\n      \"time\": \"2020年底\",\n      \"relationship\": \"衍生（动词化，如'太卷了''卷起来'）\"\n    },\n    {\n      \"variant_name\": \"反内卷\",\n      \"time\": \"2021年初\",\n      \"relationship\": \"反讽/收编（倡导躺平、拒绝内卷）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"教育竞争白热化（如学区房、补习班）\", \"职场996文化\", \"社会阶层固化焦虑\"],\n    \"target_audience\": \"年轻网民（学生、职场新人）\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"学术概念：系统内部无法产生质变的过度精细化发展\",\n    \"current_meaning\": \"泛指一切非理性的内部竞争，导致所有人付出更多却收益不变\",\n    \"drift_direction\": \"从学术术语变为日常流行语，含义从具体变为泛指\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该视频用看电影、写论文、报补习班三个通俗比喻，成功将内卷概念从学术语境转化为大众可理解的日常场景，是推动该梗破圈传播的关键\"\n  }\n}",
+    "video_name": "内卷是什么梗【梗指南】 - 1.内卷(Av544430407,P1)",
+    "transcript_chars": 240,
+    "duration_sec": 47.616
+  },
+  {
+    "meme_name": "刘慈欣还是留了一手",
+    "origin": {
+      "time": null,
+      "platform": null,
+      "trigger_event": "网友看到一些过于甜蜜、不真实的恋爱或情侣互动视频，觉得比科幻小说还离谱",
+      "precursor": null
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": null,
+        "description": "网友在B站等平台看到一些展示极端甜蜜或女方对男方极好的情侣视频，感到不真实，开始用'刘慈欣还是留了一手'来调侃这类视频比科幻还科幻",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": null
+      },
+      {
+        "phase": "爆发",
+        "time_range": null,
+        "description": "该调侃句式被大量复制，用于评论各种夸张的情侣秀恩爱内容，并衍生出'三体还是写得太保守'、'这才是真正的科幻片'等变体",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": null
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "三体还是写得太保守",
+        "time": null,
+        "relationship": "衍生"
+      },
+      {
+        "variant_name": "这才是真正的科幻片",
+        "time": null,
+        "relationship": "衍生"
+      },
+      {
+        "variant_name": "科幻片是建立在合理逻辑上的，这种应该算玄幻片",
+        "time": null,
+        "relationship": "衍生"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "对网络上过度美化、不真实的情侣视频的质疑和调侃",
+        "对现实恋爱关系与网络虚构内容之间巨大反差的幽默表达"
+      ],
+      "target_audience": "B站用户、科幻爱好者、对网络秀恩爱内容持怀疑态度的年轻网民",
+      "political_sensitivity": "无",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "调侃某些情侣视频内容过于夸张、不真实，比刘慈欣的科幻小说还离谱",
+      "current_meaning": "泛指任何过于理想化、不切实际的内容（不限于情侣视频），用来表达'这比科幻还科幻'的讽刺",
+      "drift_direction": "从具体的情侣视频调侃泛化为对一切不真实内容的讽刺"
+    },
+    "narrative_quality": {
+      "information_richness": "低",
+      "key_insight": "该梗的核心逻辑是：用'刘慈欣还是留了一手'来讽刺某些情侣视频比科幻小说更不真实，甚至应该归为'玄幻片'"
+    },
+    "raw_llm_output": "```json\n{\n  \"meme_name\": \"刘慈欣还是留了一手\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": null,\n    \"trigger_event\": \"网友看到一些过于甜蜜、不真实的恋爱或情侣互动视频，觉得比科幻小说还离谱\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": null,\n      \"description\": \"网友在B站等平台看到一些展示极端甜蜜或女方对男方极好的情侣视频，感到不真实，开始用'刘慈欣还是留了一手'来调侃这类视频比科幻还科幻\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": null,\n      \"description\": \"该调侃句式被大量复制，用于评论各种夸张的情侣秀恩爱内容，并衍生出'三体还是写得太保守'、'这才是真正的科幻片'等变体\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"三体还是写得太保守\",\n      \"time\": null,\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"这才是真正的科幻片\",\n      \"time\": null,\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"科幻片是建立在合理逻辑上的，这种应该算玄幻片\",\n      \"time\": null,\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\n      \"对网络上过度美化、不真实的情侣视频的质疑和调侃\",\n      \"对现实恋爱关系与网络虚构内容之间巨大反差的幽默表达\"\n    ],\n    \"target_audience\": \"B站用户、科幻爱好者、对网络秀恩爱内容持怀疑态度的年轻网民\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"调侃某些情侣视频内容过于夸张、不真实，比刘慈欣的科幻小说还离谱\",\n    \"current_meaning\": \"泛指任何过于理想化、不切实际的内容（不限于情侣视频），用来表达'这比科幻还科幻'的讽刺\",\n    \"drift_direction\": \"从具体的情侣视频调侃泛化为对一切不真实内容的讽刺\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该梗的核心逻辑是：用'刘慈欣还是留了一手'来讽刺某些情侣视频比科幻小说更不真实，甚至应该归为'玄幻片'\"\n  }\n}\n```",
+    "video_name": "刘慈欣还是留了一手是什么梗【梗指南】 - 1.刘慈欣还是留了一手是什么梗【梗指南】(Av559582992,P1)",
+    "transcript_chars": 589,
+    "duration_sec": 108.608
+  },
+  {
+    "meme_name": "后浪",
+    "origin": {
+      "time": "2020年5月",
+      "platform": "B站",
+      "trigger_event": "B站在五四青年节前夕发布宣传片《后浪》",
+      "precursor": "长江后浪推前浪"
+    },
+    "spread_phases": [
+      {
+        "phase": "爆发",
+        "time_range": "2020年5月",
+        "description": "《后浪》视频发布后迅速走红，弹幕和评论中许多年轻人受到鼓舞，B站股价上涨，大量博主制作相关视频，衍生出‘前浪’‘飞浪’‘后厨’等梗。",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": [
+          "何冰（演员、视频演讲者）",
+          "B站官方"
+        ]
+      },
+      {
+        "phase": "变异",
+        "time_range": "2020年5月后",
+        "description": "视频引发争议，部分网友批评其画面充满消费主义，展示的生活超出普通年轻人承受能力，并与‘花呗给女儿过生日’广告等事件关联。后浪从最初指代年轻人，逐渐变为指代依靠家庭优渥条件实现消费自由的年轻群体。",
+        "key_platforms": [
+          "B站",
+          "微博",
+          "知乎"
+        ],
+        "key_figures": [
+          "多位计算视频中生活成本的博主"
+        ]
+      },
+      {
+        "phase": "固化",
+        "time_range": "2020年至今",
+        "description": "后浪成为固定网络用语，用于指代家境优越、消费自由的年轻人，常带有讽刺或批判意味。",
+        "key_platforms": [
+          "B站",
+          "微博",
+          "知乎",
+          "贴吧"
+        ],
+        "key_figures": []
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "前浪",
+        "time": "2020年5月",
+        "relationship": "衍生"
+      },
+      {
+        "variant_name": "飞浪",
+        "time": "2020年5月",
+        "relationship": "衍生"
+      },
+      {
+        "variant_name": "后厨",
+        "time": "2020年5月",
+        "relationship": "衍生"
+      },
+      {
+        "variant_name": "你所热爱的就是你的生活",
+        "time": "2020年5月",
+        "relationship": "衍生"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "五四青年节宣传片发布",
+        "消费主义与普通年轻人经济压力的对比",
+        "社会对教育、医疗、劳动权益、房价等问题的讨论"
+      ],
+      "target_audience": "B站用户、当代年轻人",
+      "political_sensitivity": "中",
+      "backlash_events": [
+        "网友批评视频展示的生活充满消费主义，超出普通年轻人承受能力",
+        "与‘花呗给女儿过生日’广告关联",
+        "被指缺乏五四运动的批判精神，更像心灵鸡汤"
+      ]
+    },
+    "semantic_drift": {
+      "original_meaning": "指代当代年轻人，表达赞美与羡慕，强调其拥有更好的物质条件和更自由的生活方式",
+      "current_meaning": "指代依靠家庭优渥条件实现消费自由的年轻群体，常含讽刺或批判意味",
+      "drift_direction": "从赞美变为讽刺，从泛指年轻人变为特指特定群体"
+    },
+    "narrative_quality": {
+      "information_richness": "高",
+      "key_insight": "后浪的传播过程暴露了不同群体之间的认知差异和现实鸿沟，从赞美视频演变为对消费主义和阶层分化的批判符号。"
+    },
+    "raw_llm_output": "```json\n{\n  \"meme_name\": \"后浪\",\n  \"origin\": {\n    \"time\": \"2020年5月\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"B站在五四青年节前夕发布宣传片《后浪》\",\n    \"precursor\": \"长江后浪推前浪\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2020年5月\",\n      \"description\": \"《后浪》视频发布后迅速走红，弹幕和评论中许多年轻人受到鼓舞，B站股价上涨，大量博主制作相关视频，衍生出‘前浪’‘飞浪’‘后厨’等梗。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"何冰（演员、视频演讲者）\", \"B站官方\"]\n    },\n    {\n      \"phase\": \"变异\",\n      \"time_range\": \"2020年5月后\",\n      \"description\": \"视频引发争议，部分网友批评其画面充满消费主义，展示的生活超出普通年轻人承受能力，并与‘花呗给女儿过生日’广告等事件关联。后浪从最初指代年轻人，逐渐变为指代依靠家庭优渥条件实现消费自由的年轻群体。\",\n      \"key_platforms\": [\"B站\", \"微博\", \"知乎\"],\n      \"key_figures\": [\"多位计算视频中生活成本的博主\"]\n    },\n    {\n      \"phase\": \"固化\",\n      \"time_range\": \"2020年至今\",\n      \"description\": \"后浪成为固定网络用语，用于指代家境优越、消费自由的年轻人，常带有讽刺或批判意味。\",\n      \"key_platforms\": [\"B站\", \"微博\", \"知乎\", \"贴吧\"],\n      \"key_figures\": []\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"前浪\",\n      \"time\": \"2020年5月\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"飞浪\",\n      \"time\": \"2020年5月\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"后厨\",\n      \"time\": \"2020年5月\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"你所热爱的就是你的生活\",\n      \"time\": \"2020年5月\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\n      \"五四青年节宣传片发布\",\n      \"消费主义与普通年轻人经济压力的对比\",\n      \"社会对教育、医疗、劳动权益、房价等问题的讨论\"\n    ],\n    \"target_audience\": \"B站用户、当代年轻人\",\n    \"political_sensitivity\": \"中\",\n    \"backlash_events\": [\n      \"网友批评视频展示的生活充满消费主义，超出普通年轻人承受能力\",\n      \"与‘花呗给女儿过生日’广告关联\",\n      \"被指缺乏五四运动的批判精神，更像心灵鸡汤\"\n    ]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"指代当代年轻人，表达赞美与羡慕，强调其拥有更好的物质条件和更自由的生活方式\",\n    \"current_meaning\": \"指代依靠家庭优渥条件实现消费自由的年轻群体，常含讽刺或批判意味\",\n    \"drift_direction\": \"从赞美变为讽刺，从泛指年轻人变为特指特定群体\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"高\",\n    \"key_insight\": \"后浪的传播过程暴露了不同群体之间的认知差异和现实鸿沟，从赞美视频演变为对消费主义和阶层分化的批判符号。\"\n  }\n}\n```",
+    "video_name": "后浪是什么梗【键政梗百科19】 - 1.后浪是什么梗【键政梗百科19】(Av114051346600730,P1)",
+    "transcript_chars": 812,
+    "duration_sec": 170.713424
+  },
+  {
+    "meme_name": "嘉豪",
+    "origin": {
+      "time": null,
+      "platform": null,
+      "trigger_event": null,
+      "precursor": null
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": null,
+        "description": "指一类为了吸引关注而刻意装酷、用力过猛的群体，通常爱戴黑口罩、模仿电音制作人表演，被网友戏称为‘爱录底克’（疑似‘电子音乐人’的谐音或误写）。",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": null
+      },
+      {
+        "phase": "固化",
+        "time_range": null,
+        "description": "梗的传播形成一种自指逻辑：当你嘲笑嘉豪时，本身也成为了嘉豪；而当你意识到自己成为嘉豪时，又失去了成为嘉豪的资格，由此进入‘四豪’（疑似‘死豪’或‘思豪’）的哲学循环。",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": null
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "四豪",
+        "time": null,
+        "relationship": "衍生（对嘉豪身份的元层次反思）"
+      },
+      {
+        "variant_name": "混豪种",
+        "time": null,
+        "relationship": "衍生（指真正具有嘉豪血统的混合体）"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "对网络装酷行为的嘲讽与解构"
+      ],
+      "target_audience": "B站年轻用户，尤其是关注网络亚文化和电音圈的群体",
+      "political_sensitivity": "无",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "指刻意装酷、用力过猛的群体",
+      "current_meaning": "演变为一种自我指涉的哲学概念，强调身份认同的悖论",
+      "drift_direction": "从具体群体标签变为抽象的身份哲学"
+    },
+    "narrative_quality": {
+      "information_richness": "低",
+      "key_insight": "该梗的核心传播机制在于‘当你嘲笑嘉豪时，你本身也成为了嘉豪’这一自反性逻辑，形成了类似‘套娃’的传播循环。"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"嘉豪\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": null,\n    \"trigger_event\": null,\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": null,\n      \"description\": \"指一类为了吸引关注而刻意装酷、用力过猛的群体，通常爱戴黑口罩、模仿电音制作人表演，被网友戏称为‘爱录底克’（疑似‘电子音乐人’的谐音或误写）。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"固化\",\n      \"time_range\": null,\n      \"description\": \"梗的传播形成一种自指逻辑：当你嘲笑嘉豪时，本身也成为了嘉豪；而当你意识到自己成为嘉豪时，又失去了成为嘉豪的资格，由此进入‘四豪’（疑似‘死豪’或‘思豪’）的哲学循环。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"四豪\",\n      \"time\": null,\n      \"relationship\": \"衍生（对嘉豪身份的元层次反思）\"\n    },\n    {\n      \"variant_name\": \"混豪种\",\n      \"time\": null,\n      \"relationship\": \"衍生（指真正具有嘉豪血统的混合体）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"对网络装酷行为的嘲讽与解构\"],\n    \"target_audience\": \"B站年轻用户，尤其是关注网络亚文化和电音圈的群体\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"指刻意装酷、用力过猛的群体\",\n    \"current_meaning\": \"演变为一种自我指涉的哲学概念，强调身份认同的悖论\",\n    \"drift_direction\": \"从具体群体标签变为抽象的身份哲学\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该梗的核心传播机制在于‘当你嘲笑嘉豪时，你本身也成为了嘉豪’这一自反性逻辑，形成了类似‘套娃’的传播循环。\"\n  }\n}",
+    "video_name": "嘉豪是什么梗？【十万个梗知识】 - 1.嘉豪是什么梗？【十万个梗知识】(Av116447082710084,P1)",
+    "transcript_chars": 371,
+    "duration_sec": 91.788639
+  },
+  {
+    "meme_name": "头顶尖尖的",
+    "origin": {
+      "time": "2022年左右",
+      "platform": "B站",
+      "trigger_event": "健身博主长熟阿诺（常熟阿诺）在直播中因药物过量导致头部形状变化，被观众提问后产生的一段自辩言论",
+      "precursor": null
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": "2022年",
+        "description": "常熟阿诺在直播中回应观众关于其头顶形状的提问，说出了一段逻辑混乱、反复质问的经典言论，被录屏传播",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": [
+          "常熟阿诺"
+        ]
+      },
+      {
+        "phase": "爆发",
+        "time_range": "2022年-2023年",
+        "description": "该片段被B站用户剪辑并广泛传播，成为鬼畜和搞笑素材，用于调侃逻辑混乱或糖分超标的对话场景",
+        "key_platforms": [
+          "B站",
+          "抖音",
+          "微博"
+        ],
+        "key_figures": [
+          "常熟阿诺",
+          "B站鬼畜区UP主"
+        ]
+      },
+      {
+        "phase": "泛化",
+        "time_range": "2023年至今",
+        "description": "“头顶尖尖的”被用来调侃任何逻辑不通、左右脑互搏的言论，或形容人因药物、激素等导致的外形变化",
+        "key_platforms": [
+          "B站",
+          "抖音",
+          "贴吧"
+        ],
+        "key_figures": null
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "脑袋尖尖的",
+        "time": "2022年",
+        "relationship": "衍生（同义变体）"
+      },
+      {
+        "variant_name": "常熟阿诺式反问",
+        "time": "2022年",
+        "relationship": "衍生（指代其独特的反问句式）"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "对健身圈药物滥用现象的调侃",
+        "对逻辑混乱、自相矛盾言论的嘲讽"
+      ],
+      "target_audience": "B站用户、健身爱好者、网络迷因爱好者",
+      "political_sensitivity": "无",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "指常熟阿诺因药物导致头顶形状变尖的事实",
+      "current_meaning": "泛指逻辑混乱、自相矛盾的言论或行为",
+      "drift_direction": "从具体外形描述变为抽象逻辑嘲讽"
+    },
+    "narrative_quality": {
+      "information_richness": "中",
+      "key_insight": "该梗的核心传播动力在于常熟阿诺直播中那段逻辑循环、自相矛盾的反问句式，被网友截取后成为鬼畜和调侃的经典素材"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"头顶尖尖的\",\n  \"origin\": {\n    \"time\": \"2022年左右\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"健身博主长熟阿诺（常熟阿诺）在直播中因药物过量导致头部形状变化，被观众提问后产生的一段自辩言论\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2022年\",\n      \"description\": \"常熟阿诺在直播中回应观众关于其头顶形状的提问，说出了一段逻辑混乱、反复质问的经典言论，被录屏传播\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"常熟阿诺\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2022年-2023年\",\n      \"description\": \"该片段被B站用户剪辑并广泛传播，成为鬼畜和搞笑素材，用于调侃逻辑混乱或糖分超标的对话场景\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"微博\"],\n      \"key_figures\": [\"常熟阿诺\", \"B站鬼畜区UP主\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2023年至今\",\n      \"description\": \"“头顶尖尖的”被用来调侃任何逻辑不通、左右脑互搏的言论，或形容人因药物、激素等导致的外形变化\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"贴吧\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"脑袋尖尖的\",\n      \"time\": \"2022年\",\n      \"relationship\": \"衍生（同义变体）\"\n    },\n    {\n      \"variant_name\": \"常熟阿诺式反问\",\n      \"time\": \"2022年\",\n      \"relationship\": \"衍生（指代其独特的反问句式）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"对健身圈药物滥用现象的调侃\", \"对逻辑混乱、自相矛盾言论的嘲讽\"],\n    \"target_audience\": \"B站用户、健身爱好者、网络迷因爱好者\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"指常熟阿诺因药物导致头顶形状变尖的事实\",\n    \"current_meaning\": \"泛指逻辑混乱、自相矛盾的言论或行为\",\n    \"drift_direction\": \"从具体外形描述变为抽象逻辑嘲讽\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗的核心传播动力在于常熟阿诺直播中那段逻辑循环、自相矛盾的反问句式，被网友截取后成为鬼畜和调侃的经典素材\"\n  }\n}",
+    "video_name": "头顶尖尖的是什么梗【梗指南】 - 1.头顶尖尖的是什么梗【梗指南】(Av113582960279932,P1)",
+    "transcript_chars": 717,
+    "duration_sec": 170.858667
+  },
+  {
+    "meme_name": "孔乙己的长衫",
+    "origin": {
+      "time": "2023年2月",
+      "platform": "B站",
+      "trigger_event": "高校毕业生就业压力增大，学历贬值与体面工作难求的社会矛盾",
+      "precursor": "孔乙己（鲁迅小说人物）"
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": "2023年2月",
+        "description": "B站UP主发布视频，将鲁迅小说中孔乙己不愿脱下长衫的意象与当代高学历毕业生求职困境类比，引发共鸣",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": [
+          "B站UP主（具体ID未提及）"
+        ]
+      },
+      {
+        "phase": "爆发",
+        "time_range": "2023年3月-4月",
+        "description": "视频被广泛转发，微博、知乎等平台大量讨论，成为社会热点话题，媒体跟进报道",
+        "key_platforms": [
+          "B站",
+          "微博",
+          "知乎"
+        ],
+        "key_figures": [
+          "普通网友",
+          "自媒体",
+          "主流媒体"
+        ]
+      },
+      {
+        "phase": "泛化",
+        "time_range": "2023年4月-5月",
+        "description": "梗从单纯描述学历困境扩展到泛指各种因身份、标签而无法放下身段的现象，出现多种变体",
+        "key_platforms": [
+          "微博",
+          "微信",
+          "抖音"
+        ],
+        "key_figures": [
+          "普通网友"
+        ]
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "脱不下的长衫",
+        "time": "2023年3月",
+        "relationship": "衍生（直接沿用原梗核心意象）"
+      },
+      {
+        "variant_name": "长衫焦虑",
+        "time": "2023年4月",
+        "relationship": "泛化（从具体学历扩展到身份焦虑）"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "高校毕业生就业难",
+        "学历贬值",
+        "体面工作与低薪劳动的矛盾",
+        "社会对高学历的期待压力"
+      ],
+      "target_audience": "高校毕业生、年轻职场人、高学历求职者",
+      "political_sensitivity": "低",
+      "backlash_events": [
+        "部分评论批评该梗为逃避现实找借口，鼓励脱下长衫务实就业"
+      ]
+    },
+    "semantic_drift": {
+      "original_meaning": "高学历毕业生因面子不愿从事低薪或体力劳动，陷入高不成低不就的困境",
+      "current_meaning": "泛指因身份、标签或社会期待而无法放下身段、接受现实的人或现象",
+      "drift_direction": "从具体学历困境泛化为更广泛的身份焦虑"
+    },
+    "narrative_quality": {
+      "information_richness": "中",
+      "key_insight": "该视频揭示了孔乙己长衫梗的核心矛盾：学历既是敲门砖，也是下不来的高台，反映了当代青年在理想与现实之间的挣扎"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"孔乙己的长衫\",\n  \"origin\": {\n    \"time\": \"2023年2月\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"高校毕业生就业压力增大，学历贬值与体面工作难求的社会矛盾\",\n    \"precursor\": \"孔乙己（鲁迅小说人物）\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2023年2月\",\n      \"description\": \"B站UP主发布视频，将鲁迅小说中孔乙己不愿脱下长衫的意象与当代高学历毕业生求职困境类比，引发共鸣\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"B站UP主（具体ID未提及）\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2023年3月-4月\",\n      \"description\": \"视频被广泛转发，微博、知乎等平台大量讨论，成为社会热点话题，媒体跟进报道\",\n      \"key_platforms\": [\"B站\", \"微博\", \"知乎\"],\n      \"key_figures\": [\"普通网友\", \"自媒体\", \"主流媒体\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2023年4月-5月\",\n      \"description\": \"梗从单纯描述学历困境扩展到泛指各种因身份、标签而无法放下身段的现象，出现多种变体\",\n      \"key_platforms\": [\"微博\", \"微信\", \"抖音\"],\n      \"key_figures\": [\"普通网友\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"脱不下的长衫\",\n      \"time\": \"2023年3月\",\n      \"relationship\": \"衍生（直接沿用原梗核心意象）\"\n    },\n    {\n      \"variant_name\": \"长衫焦虑\",\n      \"time\": \"2023年4月\",\n      \"relationship\": \"泛化（从具体学历扩展到身份焦虑）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"高校毕业生就业难\", \"学历贬值\", \"体面工作与低薪劳动的矛盾\", \"社会对高学历的期待压力\"],\n    \"target_audience\": \"高校毕业生、年轻职场人、高学历求职者\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": [\"部分评论批评该梗为逃避现实找借口，鼓励脱下长衫务实就业\"]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"高学历毕业生因面子不愿从事低薪或体力劳动，陷入高不成低不就的困境\",\n    \"current_meaning\": \"泛指因身份、标签或社会期待而无法放下身段、接受现实的人或现象\",\n    \"drift_direction\": \"从具体学历困境泛化为更广泛的身份焦虑\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该视频揭示了孔乙己长衫梗的核心矛盾：学历既是敲门砖，也是下不来的高台，反映了当代青年在理想与现实之间的挣扎\"\n  }\n}",
+    "video_name": "孔乙己的长衫是什么梗【梗指南】 - 1.孔乙己的长衫是什么梗【梗指南】(Av865741661,P1)",
+    "transcript_chars": 591,
+    "duration_sec": 116.8
+  },
+  {
+    "meme_name": "小镇做题家",
+    "origin": {
+      "time": "2020年10月",
+      "platform": "豆瓣",
+      "trigger_event": "豆瓣‘985废物引进计划’小组中，组员自嘲出身小城市、只会做题、缺乏资源和视野的处境",
+      "precursor": null
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": "2020年10月-2021年初",
+        "description": "在豆瓣‘985废物引进计划’小组内，组员用‘小镇做题家’自嘲，指代出身三四线城市、埋头苦读、擅长考试但缺乏资源和视野的青年学子",
+        "key_platforms": [
+          "豆瓣"
+        ],
+        "key_figures": [
+          "豆瓣‘985废物引进计划’小组成员"
+        ]
+      },
+      {
+        "phase": "爆发",
+        "time_range": "2021年-2022年",
+        "description": "《中国新闻周刊》编辑杨时扬在文章中将‘小镇做题家’与‘没日没夜刷题的普通考生’挂钩，用刻薄傲慢的语气嘲讽努力备考的普通人，引发广泛争议和舆论反弹，梗迅速出圈",
+        "key_platforms": [
+          "微博",
+          "B站",
+          "知乎"
+        ],
+        "key_figures": [
+          "杨时扬（《中国新闻周刊》编辑）"
+        ]
+      },
+      {
+        "phase": "泛化",
+        "time_range": "2022年至今",
+        "description": "‘小镇做题家’从自嘲标签变为被特权阶层用来嘲讽普通人的工具，但同时也被普通人重新夺回，成为对抗精英傲慢、捍卫努力价值的符号",
+        "key_platforms": [
+          "微博",
+          "B站",
+          "抖音",
+          "知乎"
+        ],
+        "key_figures": [
+          "普通网友、自媒体"
+        ]
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "小镇错题家",
+        "time": "2022年",
+        "relationship": "衍生（反讽，指连题都做不对的普通人）"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "社会阶层固化，教育资源不均",
+        "‘寒门难出贵子’的焦虑",
+        "精英媒体对普通人的傲慢与刻薄"
+      ],
+      "target_audience": "出身三四线城市、靠读书考试改变命运的年轻人",
+      "political_sensitivity": "中",
+      "backlash_events": [
+        "《中国新闻周刊》编辑杨时扬文章引发大规模舆论批判"
+      ]
+    },
+    "semantic_drift": {
+      "original_meaning": "自嘲出身小城市、只会做题、缺乏资源和视野的青年学子",
+      "current_meaning": "被特权阶层用来嘲讽普通人的标签，后又被普通人重新定义为‘努力奋斗改变命运’的象征",
+      "drift_direction": "从自嘲变为被攻击的工具，再变为反抗精英傲慢的符号"
+    },
+    "narrative_quality": {
+      "information_richness": "中",
+      "key_insight": "该梗的传播关键转折点是《中国新闻周刊》编辑杨时扬的刻薄文章，将原本的自嘲标签变成了精英嘲讽普通人的武器，从而引发大规模舆论反弹和语义重构"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"小镇做题家\",\n  \"origin\": {\n    \"time\": \"2020年10月\",\n    \"platform\": \"豆瓣\",\n    \"trigger_event\": \"豆瓣‘985废物引进计划’小组中，组员自嘲出身小城市、只会做题、缺乏资源和视野的处境\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2020年10月-2021年初\",\n      \"description\": \"在豆瓣‘985废物引进计划’小组内，组员用‘小镇做题家’自嘲，指代出身三四线城市、埋头苦读、擅长考试但缺乏资源和视野的青年学子\",\n      \"key_platforms\": [\"豆瓣\"],\n      \"key_figures\": [\"豆瓣‘985废物引进计划’小组成员\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2021年-2022年\",\n      \"description\": \"《中国新闻周刊》编辑杨时扬在文章中将‘小镇做题家’与‘没日没夜刷题的普通考生’挂钩，用刻薄傲慢的语气嘲讽努力备考的普通人，引发广泛争议和舆论反弹，梗迅速出圈\",\n      \"key_platforms\": [\"微博\", \"B站\", \"知乎\"],\n      \"key_figures\": [\"杨时扬（《中国新闻周刊》编辑）\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2022年至今\",\n      \"description\": \"‘小镇做题家’从自嘲标签变为被特权阶层用来嘲讽普通人的工具，但同时也被普通人重新夺回，成为对抗精英傲慢、捍卫努力价值的符号\",\n      \"key_platforms\": [\"微博\", \"B站\", \"抖音\", \"知乎\"],\n      \"key_figures\": [\"普通网友、自媒体\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"小镇错题家\",\n      \"time\": \"2022年\",\n      \"relationship\": \"衍生（反讽，指连题都做不对的普通人）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\n      \"社会阶层固化，教育资源不均\",\n      \"‘寒门难出贵子’的焦虑\",\n      \"精英媒体对普通人的傲慢与刻薄\"\n    ],\n    \"target_audience\": \"出身三四线城市、靠读书考试改变命运的年轻人\",\n    \"political_sensitivity\": \"中\",\n    \"backlash_events\": [\n      \"《中国新闻周刊》编辑杨时扬文章引发大规模舆论批判\"\n    ]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"自嘲出身小城市、只会做题、缺乏资源和视野的青年学子\",\n    \"current_meaning\": \"被特权阶层用来嘲讽普通人的标签，后又被普通人重新定义为‘努力奋斗改变命运’的象征\",\n    \"drift_direction\": \"从自嘲变为被攻击的工具，再变为反抗精英傲慢的符号\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗的传播关键转折点是《中国新闻周刊》编辑杨时扬的刻薄文章，将原本的自嘲标签变成了精英嘲讽普通人的武器，从而引发大规模舆论反弹和语义重构\"\n  }\n}",
+    "video_name": "小镇做题家是什么梗【梗指南】 - 1.小镇做题家是什么梗【梗指南】(Av428133221,P1)",
+    "transcript_chars": 453,
+    "duration_sec": 92.565333
+  },
+  {
+    "meme_name": "我的刀盾",
+    "origin": {
+      "time": null,
+      "platform": "国外视频平台",
+      "trigger_event": null,
+      "precursor": "英文短语 'What the dog doing' 的空耳"
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": null,
+        "description": "源自国外视频平台的搞笑印象，原意为'这条狗在做什么'，被网友空耳为'我的刀盾'",
+        "key_platforms": [
+          "国外视频平台"
+        ],
+        "key_figures": null
+      },
+      {
+        "phase": "爆发",
+        "time_range": null,
+        "description": "被加入猫咪小剧场中，成为新角色和台词，角色形象为手持砍刀和盾牌的猫，经AI二创后形成刀盾外型",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": null
+      },
+      {
+        "phase": "泛化",
+        "time_range": null,
+        "description": "因无厘头搞笑效果和可爱外型被广泛喜爱，网友用AI创作大量相关视频",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": null
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "刀盾猫",
+        "time": null,
+        "relationship": "衍生"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "无厘头搞笑需求",
+        "AI二创热潮"
+      ],
+      "target_audience": "B站用户、网络迷因爱好者",
+      "political_sensitivity": "无",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "英文 'What the dog doing' 的空耳，意为'这条狗在做什么'",
+      "current_meaning": "指代手持砍刀和盾牌的猫角色，用于无厘头搞笑场景",
+      "drift_direction": "从对狗的疑问空耳转变为特定猫角色的代称"
+    },
+    "narrative_quality": {
+      "information_richness": "低",
+      "key_insight": "该梗的核心是英文 'What the dog doing' 的空耳，经过猫咪小剧场和AI二创后形成了刀盾猫的固定形象"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"我的刀盾\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": \"国外视频平台\",\n    \"trigger_event\": null,\n    \"precursor\": \"英文短语 'What the dog doing' 的空耳\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": null,\n      \"description\": \"源自国外视频平台的搞笑印象，原意为'这条狗在做什么'，被网友空耳为'我的刀盾'\",\n      \"key_platforms\": [\"国外视频平台\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": null,\n      \"description\": \"被加入猫咪小剧场中，成为新角色和台词，角色形象为手持砍刀和盾牌的猫，经AI二创后形成刀盾外型\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": null,\n      \"description\": \"因无厘头搞笑效果和可爱外型被广泛喜爱，网友用AI创作大量相关视频\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"刀盾猫\",\n      \"time\": null,\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"无厘头搞笑需求\", \"AI二创热潮\"],\n    \"target_audience\": \"B站用户、网络迷因爱好者\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"英文 'What the dog doing' 的空耳，意为'这条狗在做什么'\",\n    \"current_meaning\": \"指代手持砍刀和盾牌的猫角色，用于无厘头搞笑场景\",\n    \"drift_direction\": \"从对狗的疑问空耳转变为特定猫角色的代称\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该梗的核心是英文 'What the dog doing' 的空耳，经过猫咪小剧场和AI二创后形成了刀盾猫的固定形象\"\n  }\n}",
+    "video_name": "我的刀盾是什么梗【梗指南】 - 1.我的刀盾是什么梗【梗指南】(Av116220003092297,P1)",
+    "transcript_chars": 343,
+    "duration_sec": 114.538667
+  },
+  {
+    "meme_name": "摆烂",
+    "origin": {
+      "time": null,
+      "platform": "英雄联盟（游戏）",
+      "trigger_event": "游戏对局中玩家心态爆炸、放弃抵抗的行为",
+      "precursor": "破罐子破摔"
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": null,
+        "description": "在英雄联盟（LOL）玩家圈中流传，指有能力逆转局面但心态爆炸后放任局势恶化",
+        "key_platforms": [
+          "英雄联盟游戏社区"
+        ],
+        "key_figures": null
+      },
+      {
+        "phase": "爆发",
+        "time_range": null,
+        "description": "作为CS:GO主播王岐顺的口头禅“开摆”被广泛传播，带动梗出圈",
+        "key_platforms": [
+          "B站",
+          "直播平台"
+        ],
+        "key_figures": [
+          "王岐顺（CS:GO主播）"
+        ]
+      },
+      {
+        "phase": "泛化",
+        "time_range": null,
+        "description": "从游戏场景扩展到社会领域，指任何不作为、放任自流的行为，例如游戏公司有钱有资源却做出烂游戏",
+        "key_platforms": [
+          "B站",
+          "微博",
+          "贴吧"
+        ],
+        "key_figures": null
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "开摆",
+        "time": null,
+        "relationship": "衍生（作为口头禅的变体）"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "对游戏公司摆烂行为的不满（如某游戏公司有钱有资源却做烂游戏）",
+        "对氪金游戏持续压榨玩家的愤怒"
+      ],
+      "target_audience": "游戏玩家、年轻网民",
+      "political_sensitivity": "无",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "在游戏中有能力逆转局面但心态爆炸后放弃抵抗、放任局势恶化",
+      "current_meaning": "泛指任何不作为、放任事情变坏的态度或行为",
+      "drift_direction": "从具体游戏行为变为泛指社会现象"
+    },
+    "narrative_quality": {
+      "information_richness": "中",
+      "key_insight": "该梗从游戏内心态描述演变为对游戏公司等主体摆烂行为的批判，体现了从个人到社会的语义泛化"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"摆烂\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": \"英雄联盟（游戏）\",\n    \"trigger_event\": \"游戏对局中玩家心态爆炸、放弃抵抗的行为\",\n    \"precursor\": \"破罐子破摔\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": null,\n      \"description\": \"在英雄联盟（LOL）玩家圈中流传，指有能力逆转局面但心态爆炸后放任局势恶化\",\n      \"key_platforms\": [\"英雄联盟游戏社区\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": null,\n      \"description\": \"作为CS:GO主播王岐顺的口头禅“开摆”被广泛传播，带动梗出圈\",\n      \"key_platforms\": [\"B站\", \"直播平台\"],\n      \"key_figures\": [\"王岐顺（CS:GO主播）\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": null,\n      \"description\": \"从游戏场景扩展到社会领域，指任何不作为、放任自流的行为，例如游戏公司有钱有资源却做出烂游戏\",\n      \"key_platforms\": [\"B站\", \"微博\", \"贴吧\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"开摆\",\n      \"time\": null,\n      \"relationship\": \"衍生（作为口头禅的变体）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"对游戏公司摆烂行为的不满（如某游戏公司有钱有资源却做烂游戏）\", \"对氪金游戏持续压榨玩家的愤怒\"],\n    \"target_audience\": \"游戏玩家、年轻网民\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"在游戏中有能力逆转局面但心态爆炸后放弃抵抗、放任局势恶化\",\n    \"current_meaning\": \"泛指任何不作为、放任事情变坏的态度或行为\",\n    \"drift_direction\": \"从具体游戏行为变为泛指社会现象\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗从游戏内心态描述演变为对游戏公司等主体摆烂行为的批判，体现了从个人到社会的语义泛化\"\n  }\n}",
+    "video_name": "摆烂是什么梗【梗指南】 - 1.摆烂(Av721978954,P1)",
+    "transcript_chars": 372,
+    "duration_sec": 78.570667
+  },
+  {
+    "meme_name": "普通却自信",
+    "origin": {
+      "time": "2020年",
+      "platform": "脱口秀大会（第三季）",
+      "trigger_event": "杨笠在《脱口秀大会》第三季表演中的一段话：'为什么看起来那么普通，但是他就可以那么自信'",
+      "precursor": null
+    },
+    "spread_phases": [
+      {
+        "phase": "爆发",
+        "time_range": "2020年",
+        "description": "杨笠的表演片段迅速引发巨大讨论和争议，该梗在性别话题中快速传播，并衍生出'普信男''普信女'等词汇",
+        "key_platforms": [
+          "微博",
+          "B站",
+          "知乎"
+        ],
+        "key_figures": [
+          "杨笠"
+        ]
+      },
+      {
+        "phase": "泛化",
+        "time_range": "2020年至今",
+        "description": "该梗从性别话题扩展到更广泛的社会讨论，被用于攻击普通人的自信表达，成为互相攻击的词汇",
+        "key_platforms": [
+          "微博",
+          "B站",
+          "知乎",
+          "贴吧"
+        ],
+        "key_figures": [
+          "杨笠"
+        ]
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "普信男",
+        "time": "2020年",
+        "relationship": "衍生"
+      },
+      {
+        "variant_name": "普信女",
+        "time": "2020年",
+        "relationship": "衍生"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "性别矛盾",
+        "公共话语边界争议"
+      ],
+      "target_audience": "网络讨论中关注性别议题的群体",
+      "political_sensitivity": "中",
+      "backlash_events": [
+        "杨笠因该梗及相关争议观点成为舆论焦点，其代言（如英特尔、京东等）引发网络热议"
+      ]
+    },
+    "semantic_drift": {
+      "original_meaning": "调侃某些人外表普通却过度自信",
+      "current_meaning": "用于贬低普通人公开表达自信，视为自大或冒犯",
+      "drift_direction": "从调侃变为攻击性标签"
+    },
+    "narrative_quality": {
+      "information_richness": "中",
+      "key_insight": "该梗通过扭曲'普通'和'自信'的含义，以及使用转折关联词'明明...却'，传播了一种'只有人上人才有资格自信'的观点，从而引发争议和广泛使用"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"普通却自信\",\n  \"origin\": {\n    \"time\": \"2020年\",\n    \"platform\": \"脱口秀大会（第三季）\",\n    \"trigger_event\": \"杨笠在《脱口秀大会》第三季表演中的一段话：'为什么看起来那么普通，但是他就可以那么自信'\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2020年\",\n      \"description\": \"杨笠的表演片段迅速引发巨大讨论和争议，该梗在性别话题中快速传播，并衍生出'普信男''普信女'等词汇\",\n      \"key_platforms\": [\"微博\", \"B站\", \"知乎\"],\n      \"key_figures\": [\"杨笠\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2020年至今\",\n      \"description\": \"该梗从性别话题扩展到更广泛的社会讨论，被用于攻击普通人的自信表达，成为互相攻击的词汇\",\n      \"key_platforms\": [\"微博\", \"B站\", \"知乎\", \"贴吧\"],\n      \"key_figures\": [\"杨笠\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"普信男\",\n      \"time\": \"2020年\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"普信女\",\n      \"time\": \"2020年\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"性别矛盾\", \"公共话语边界争议\"],\n    \"target_audience\": \"网络讨论中关注性别议题的群体\",\n    \"political_sensitivity\": \"中\",\n    \"backlash_events\": [\"杨笠因该梗及相关争议观点成为舆论焦点，其代言（如英特尔、京东等）引发网络热议\"]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"调侃某些人外表普通却过度自信\",\n    \"current_meaning\": \"用于贬低普通人公开表达自信，视为自大或冒犯\",\n    \"drift_direction\": \"从调侃变为攻击性标签\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗通过扭曲'普通'和'自信'的含义，以及使用转折关联词'明明...却'，传播了一种'只有人上人才有资格自信'的观点，从而引发争议和广泛使用\"\n  }\n}",
+    "video_name": "普通却自信是什么梗【键政梗百科24】 - 1.普通却自信是什么梗【键政梗百科24】(Av114263628715752,P1)",
+    "transcript_chars": 803,
+    "duration_sec": 177.400771
+  },
+  {
+    "meme_name": "曾经的王",
+    "origin": {
+      "time": "2023年",
+      "platform": "B站",
+      "trigger_event": "博主龙龙（原名王祖坡）因一张EXO合照中的空位被网友虚构故事线，结合AI技术塑造为被资本雪藏的虚拟偶像",
+      "precursor": null
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": "2023年初",
+        "description": "一张EXO合照中有一个空位，网友将博主龙龙的照片P到空位上，形成反差感，开始小规模整活",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": [
+          "龙龙（王祖坡）"
+        ]
+      },
+      {
+        "phase": "爆发",
+        "time_range": "2023年中",
+        "description": "AI技术普及后，网友为龙龙虚构完整故事线：被S.M.公司雪藏、合约不平等、资料被抹除等，配合真情实感发言，梗迅速传播",
+        "key_platforms": [
+          "B站",
+          "微博"
+        ],
+        "key_figures": [
+          "网友（AI创作者、故事线编造者）"
+        ]
+      },
+      {
+        "phase": "泛化",
+        "time_range": "2023年下半年",
+        "description": "梗从虚构故事扩展到对资本压制的讽刺，网友挖掘所谓“机密文件”，包括发布会、MV、后台合照等，形成集体创作",
+        "key_platforms": [
+          "B站",
+          "微博",
+          "贴吧"
+        ],
+        "key_figures": [
+          "粉丝群体"
+        ]
+      },
+      {
+        "phase": "固化",
+        "time_range": "2023年末",
+        "description": "梗成为固定网络迷因，龙龙被塑造成“被资本血藏的顶流”，左眼遮住发型被解读为“被抹去前半生”，形成完整叙事",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": [
+          "龙龙",
+          "粉丝"
+        ]
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "被资本血藏的顶流",
+        "time": "2023年中",
+        "relationship": "衍生"
+      },
+      {
+        "variant_name": "EXO第13人",
+        "time": "2023年中",
+        "relationship": "衍生"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "对资本压制艺人的不满情绪",
+        "对偶像工业的讽刺",
+        "集体创作和玩梗的娱乐需求"
+      ],
+      "target_audience": "B站年轻用户、K-pop粉丝、网络迷因爱好者",
+      "political_sensitivity": "低",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "对博主龙龙照片的P图整活",
+      "current_meaning": "讽刺资本雪藏艺人、虚构偶像故事的集体创作梗",
+      "drift_direction": "从简单P图整活变为具有讽刺意味的虚构叙事"
+    },
+    "narrative_quality": {
+      "information_richness": "中",
+      "key_insight": "该梗的传播核心在于网友通过AI和虚构故事线，将一张普通合照中的空位塑造成被资本抹去的偶像，体现了网络集体创作和反讽资本的能力"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"曾经的王\",\n  \"origin\": {\n    \"time\": \"2023年\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"博主龙龙（原名王祖坡）因一张EXO合照中的空位被网友虚构故事线，结合AI技术塑造为被资本雪藏的虚拟偶像\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2023年初\",\n      \"description\": \"一张EXO合照中有一个空位，网友将博主龙龙的照片P到空位上，形成反差感，开始小规模整活\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"龙龙（王祖坡）\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2023年中\",\n      \"description\": \"AI技术普及后，网友为龙龙虚构完整故事线：被S.M.公司雪藏、合约不平等、资料被抹除等，配合真情实感发言，梗迅速传播\",\n      \"key_platforms\": [\"B站\", \"微博\"],\n      \"key_figures\": [\"网友（AI创作者、故事线编造者）\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2023年下半年\",\n      \"description\": \"梗从虚构故事扩展到对资本压制的讽刺，网友挖掘所谓“机密文件”，包括发布会、MV、后台合照等，形成集体创作\",\n      \"key_platforms\": [\"B站\", \"微博\", \"贴吧\"],\n      \"key_figures\": [\"粉丝群体\"]\n    },\n    {\n      \"phase\": \"固化\",\n      \"time_range\": \"2023年末\",\n      \"description\": \"梗成为固定网络迷因，龙龙被塑造成“被资本血藏的顶流”，左眼遮住发型被解读为“被抹去前半生”，形成完整叙事\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"龙龙\", \"粉丝\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"被资本血藏的顶流\",\n      \"time\": \"2023年中\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"EXO第13人\",\n      \"time\": \"2023年中\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"对资本压制艺人的不满情绪\", \"对偶像工业的讽刺\", \"集体创作和玩梗的娱乐需求\"],\n    \"target_audience\": \"B站年轻用户、K-pop粉丝、网络迷因爱好者\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"对博主龙龙照片的P图整活\",\n    \"current_meaning\": \"讽刺资本雪藏艺人、虚构偶像故事的集体创作梗\",\n    \"drift_direction\": \"从简单P图整活变为具有讽刺意味的虚构叙事\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗的传播核心在于网友通过AI和虚构故事线，将一张普通合照中的空位塑造成被资本抹去的偶像，体现了网络集体创作和反讽资本的能力\"\n  }\n}",
+    "video_name": "曾经的王King是什么梗，成为王的代价是什么？【梗指南】 - 1.曾经的王(Av116538585645160,P1)",
+    "transcript_chars": 684,
+    "duration_sec": 191.168
+  },
+  {
+    "meme_name": "轻松绷住",
+    "origin": {
+      "time": "2024年（视频发布时间为2024年，梗出现于该年）",
+      "platform": "B站",
+      "trigger_event": "《熊出没》动画中熊二决定去城市生活的情节引发网友共鸣，熊大表情包被广泛使用",
+      "precursor": null
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": "2024年初",
+        "description": "《熊出没》动画中熊二向熊大坦白要去城市生活，熊大做出无奈表情的片段被截取为表情包，在评论区频繁出现",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": [
+          "《熊出没》官方"
+        ]
+      },
+      {
+        "phase": "爆发",
+        "time_range": "2024年（视频发布前后）",
+        "description": "表情包走红后，官方顺势推出‘轻松绷住’教程视频，教网友如何模仿熊大的表情和姿势，引发大量二创和模仿",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": [
+          "《熊出没》官方"
+        ]
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "轻松绷住教程",
+        "time": "2024年",
+        "relationship": "衍生（官方将表情包转化为可模仿的姿势教程）"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "对城市生活与乡村生活对比的调侃",
+        "对‘外国的月亮更圆’心态的讽刺"
+      ],
+      "target_audience": "B站年轻用户、动画爱好者、网络冲浪人群",
+      "political_sensitivity": "无",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "熊大对熊二想去城市生活的无奈表情，表达‘绷不住’的搞笑反应",
+      "current_meaning": "一种刻意保持淡定、看透一切的表情和姿势，用于表达‘我忍住了不笑’或‘我无所谓’",
+      "drift_direction": "从具体动画情节中的无奈表情泛化为一种通用的‘绷住’姿势梗"
+    },
+    "narrative_quality": {
+      "information_richness": "中",
+      "key_insight": "该梗的传播核心在于官方主动下场制作教程，将表情包转化为可模仿的姿势，从而推动二次传播"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"轻松绷住\",\n  \"origin\": {\n    \"time\": \"2024年（视频发布时间为2024年，梗出现于该年）\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"《熊出没》动画中熊二决定去城市生活的情节引发网友共鸣，熊大表情包被广泛使用\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2024年初\",\n      \"description\": \"《熊出没》动画中熊二向熊大坦白要去城市生活，熊大做出无奈表情的片段被截取为表情包，在评论区频繁出现\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"《熊出没》官方\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2024年（视频发布前后）\",\n      \"description\": \"表情包走红后，官方顺势推出‘轻松绷住’教程视频，教网友如何模仿熊大的表情和姿势，引发大量二创和模仿\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"《熊出没》官方\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"轻松绷住教程\",\n      \"time\": \"2024年\",\n      \"relationship\": \"衍生（官方将表情包转化为可模仿的姿势教程）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"对城市生活与乡村生活对比的调侃\", \"对‘外国的月亮更圆’心态的讽刺\"],\n    \"target_audience\": \"B站年轻用户、动画爱好者、网络冲浪人群\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"熊大对熊二想去城市生活的无奈表情，表达‘绷不住’的搞笑反应\",\n    \"current_meaning\": \"一种刻意保持淡定、看透一切的表情和姿势，用于表达‘我忍住了不笑’或‘我无所谓’\",\n    \"drift_direction\": \"从具体动画情节中的无奈表情泛化为一种通用的‘绷住’姿势梗\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗的传播核心在于官方主动下场制作教程，将表情包转化为可模仿的姿势，从而推动二次传播\"\n  }\n}",
+    "video_name": "熊出没官方整活！轻松绷住是什么梗？【网梗指南】 - 1.熊出没官方整活！轻松绷住是什么梗？【网梗指南】(Av116649936033272,P1)",
+    "transcript_chars": 742,
+    "duration_sec": 169.20415
+  },
+  {
+    "meme_name": "躺平",
+    "origin": {
+      "time": "2021年4月",
+      "platform": "贴吧",
+      "trigger_event": "中国人口吧一篇题为《躺平即是正义》的帖子引发广泛讨论",
+      "precursor": null
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": "2021年4月",
+        "description": "在贴吧中国人口吧出现《躺平即是正义》的帖子，提出躺平概念，引发小范围讨论",
+        "key_platforms": [
+          "贴吧"
+        ],
+        "key_figures": [
+          "贴吧用户（发帖者）"
+        ]
+      },
+      {
+        "phase": "爆发",
+        "time_range": "2021年5月-6月",
+        "description": "躺平概念迅速在社交媒体扩散，成为对抗内卷、低欲望生活的代名词，引发主流媒体和官方讨论",
+        "key_platforms": [
+          "微博",
+          "B站",
+          "知乎",
+          "微信公众号"
+        ],
+        "key_figures": [
+          "自媒体博主",
+          "网络评论员"
+        ]
+      },
+      {
+        "phase": "泛化",
+        "time_range": "2021年下半年至今",
+        "description": "躺平从具体的生活哲学泛化为一种对工作压力、消费主义、社会竞争的消极抵抗态度，衍生出各种变体",
+        "key_platforms": [
+          "B站",
+          "抖音",
+          "小红书"
+        ],
+        "key_figures": [
+          "内容创作者",
+          "普通网民"
+        ]
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "躺平学",
+        "time": "2021年5月",
+        "relationship": "衍生（将躺平系统化为一种学说）"
+      },
+      {
+        "variant_name": "躺平即是正义",
+        "time": "2021年4月",
+        "relationship": "衍生（原帖标题，成为口号）"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "社会内卷加剧，年轻人面临高房价、高工作压力、低上升通道",
+        "996工作制引发普遍焦虑",
+        "消费主义与物质压力导致低欲望心态蔓延"
+      ],
+      "target_audience": "中国年轻职场人群、学生、低线城市青年",
+      "political_sensitivity": "中",
+      "backlash_events": [
+        "部分官方媒体批评躺平是消极逃避，不符合奋斗精神",
+        "引发关于奋斗与休息、个人选择与社会责任的舆论辩论"
+      ]
+    },
+    "semantic_drift": {
+      "original_meaning": "主动降低欲望和努力，放弃拼命赚钱和买房结婚等传统目标，以减轻生存压力的一种生活哲学",
+      "current_meaning": "泛指对工作、学习、社交等一切需要努力的事情采取消极、不积极的态度，甚至带有自嘲和反讽",
+      "drift_direction": "从具体的生活策略变为泛指消极态度，从自嘲变为被批评的对象"
+    },
+    "narrative_quality": {
+      "information_richness": "中",
+      "key_insight": "躺平概念的起源可追溯到贴吧中国人口吧的一篇帖子《躺平即是正义》，该帖子提出了躺平作为对抗内卷的生活哲学"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"躺平\",\n  \"origin\": {\n    \"time\": \"2021年4月\",\n    \"platform\": \"贴吧\",\n    \"trigger_event\": \"中国人口吧一篇题为《躺平即是正义》的帖子引发广泛讨论\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2021年4月\",\n      \"description\": \"在贴吧中国人口吧出现《躺平即是正义》的帖子，提出躺平概念，引发小范围讨论\",\n      \"key_platforms\": [\"贴吧\"],\n      \"key_figures\": [\"贴吧用户（发帖者）\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2021年5月-6月\",\n      \"description\": \"躺平概念迅速在社交媒体扩散，成为对抗内卷、低欲望生活的代名词，引发主流媒体和官方讨论\",\n      \"key_platforms\": [\"微博\", \"B站\", \"知乎\", \"微信公众号\"],\n      \"key_figures\": [\"自媒体博主\", \"网络评论员\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2021年下半年至今\",\n      \"description\": \"躺平从具体的生活哲学泛化为一种对工作压力、消费主义、社会竞争的消极抵抗态度，衍生出各种变体\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"小红书\"],\n      \"key_figures\": [\"内容创作者\", \"普通网民\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"躺平学\",\n      \"time\": \"2021年5月\",\n      \"relationship\": \"衍生（将躺平系统化为一种学说）\"\n    },\n    {\n      \"variant_name\": \"躺平即是正义\",\n      \"time\": \"2021年4月\",\n      \"relationship\": \"衍生（原帖标题，成为口号）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\n      \"社会内卷加剧，年轻人面临高房价、高工作压力、低上升通道\",\n      \"996工作制引发普遍焦虑\",\n      \"消费主义与物质压力导致低欲望心态蔓延\"\n    ],\n    \"target_audience\": \"中国年轻职场人群、学生、低线城市青年\",\n    \"political_sensitivity\": \"中\",\n    \"backlash_events\": [\n      \"部分官方媒体批评躺平是消极逃避，不符合奋斗精神\",\n      \"引发关于奋斗与休息、个人选择与社会责任的舆论辩论\"\n    ]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"主动降低欲望和努力，放弃拼命赚钱和买房结婚等传统目标，以减轻生存压力的一种生活哲学\",\n    \"current_meaning\": \"泛指对工作、学习、社交等一切需要努力的事情采取消极、不积极的态度，甚至带有自嘲和反讽\",\n    \"drift_direction\": \"从具体的生活策略变为泛指消极态度，从自嘲变为被批评的对象\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"躺平概念的起源可追溯到贴吧中国人口吧的一篇帖子《躺平即是正义》，该帖子提出了躺平作为对抗内卷的生活哲学\"\n  }\n}",
+    "video_name": "躺平是什么梗【梗指南】 - 1.躺平(Av205825511,P1)",
+    "transcript_chars": 252,
+    "duration_sec": 59.882667
+  },
+  {
+    "meme_name": "这是一场试炼",
+    "origin": {
+      "time": "2016年12月（动画《JOJO的奇妙冒险 黄金之风》第33集播出时间）",
+      "platform": "B站",
+      "trigger_event": null,
+      "precursor": null
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": "2016年12月",
+        "description": "动画《JOJO的奇妙冒险 黄金之风》第33集播出，迪亚波罗在人格切换前说出台词'这是一场试炼'，随后托比欧脱衣变身，该场景成为原始素材。",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": [
+          "动画制作组"
+        ]
+      },
+      {
+        "phase": "爆发",
+        "time_range": "2017年-2020年",
+        "description": "B站UP主开始制作'脱衣切换'二创视频，将迪亚波罗的脱衣动作与其他角色脱衣瞬间进行剪辑拼接，形成固定模板。",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": [
+          "B站二创UP主"
+        ]
+      },
+      {
+        "phase": "泛化",
+        "time_range": "2020年-2023年",
+        "description": "梗脱离JOJO圈层，被广泛用于任何角色脱衣或换装场景，成为通用'变身'梗，常配合'这是一场试炼'台词使用。",
+        "key_platforms": [
+          "B站",
+          "抖音",
+          "微博"
+        ],
+        "key_figures": [
+          "泛二次元用户"
+        ]
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "脱衣切换",
+        "time": "2017年",
+        "relationship": "衍生（将原台词与脱衣动作结合，形成固定剪辑模板）"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "JOJO系列动画的高人气与二创文化",
+        "脱衣/变身动作的视觉冲击力"
+      ],
+      "target_audience": "二次元爱好者、B站用户",
+      "political_sensitivity": "无",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "迪亚波罗在人格切换前对自己说的台词，表示即将面临的考验。",
+      "current_meaning": "用于角色脱衣或换装瞬间的调侃，表示'变身开始'或'认真模式开启'。",
+      "drift_direction": "从严肃台词变为搞笑/玩梗素材，从具体剧情变为泛指任何脱衣切换场景"
+    },
+    "narrative_quality": {
+      "information_richness": "低",
+      "key_insight": "该梗的核心是'脱衣切换'的剪辑模板，将迪亚波罗的脱衣动作与其他角色脱衣瞬间拼接，形成固定二创形式。"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"这是一场试炼\",\n  \"origin\": {\n    \"time\": \"2016年12月（动画《JOJO的奇妙冒险 黄金之风》第33集播出时间）\",\n    \"platform\": \"B站\",\n    \"trigger_event\": null,\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2016年12月\",\n      \"description\": \"动画《JOJO的奇妙冒险 黄金之风》第33集播出，迪亚波罗在人格切换前说出台词'这是一场试炼'，随后托比欧脱衣变身，该场景成为原始素材。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"动画制作组\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2017年-2020年\",\n      \"description\": \"B站UP主开始制作'脱衣切换'二创视频，将迪亚波罗的脱衣动作与其他角色脱衣瞬间进行剪辑拼接，形成固定模板。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"B站二创UP主\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2020年-2023年\",\n      \"description\": \"梗脱离JOJO圈层，被广泛用于任何角色脱衣或换装场景，成为通用'变身'梗，常配合'这是一场试炼'台词使用。\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"微博\"],\n      \"key_figures\": [\"泛二次元用户\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"脱衣切换\",\n      \"time\": \"2017年\",\n      \"relationship\": \"衍生（将原台词与脱衣动作结合，形成固定剪辑模板）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"JOJO系列动画的高人气与二创文化\", \"脱衣/变身动作的视觉冲击力\"],\n    \"target_audience\": \"二次元爱好者、B站用户\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"迪亚波罗在人格切换前对自己说的台词，表示即将面临的考验。\",\n    \"current_meaning\": \"用于角色脱衣或换装瞬间的调侃，表示'变身开始'或'认真模式开启'。\",\n    \"drift_direction\": \"从严肃台词变为搞笑/玩梗素材，从具体剧情变为泛指任何脱衣切换场景\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该梗的核心是'脱衣切换'的剪辑模板，将迪亚波罗的脱衣动作与其他角色脱衣瞬间拼接，形成固定二创形式。\"\n  }\n}",
+    "video_name": "这是一场试炼是什么梗【梗指南】 - 1.这是一场试炼(Av377142056,P1)",
+    "transcript_chars": 193,
+    "duration_sec": 89.493333
+  },
+  {
+    "meme_name": "润",
+    "origin": {
+      "time": null,
+      "platform": null,
+      "trigger_event": null,
+      "precursor": "跑"
+    },
+    "spread_phases": [
+      {
+        "phase": "泛化",
+        "time_range": null,
+        "description": "该词从最初表示'跑'、'离开'，逐渐被网友用于表达逃离过度内卷和压抑的工作生活环境，使用场景扩展到离职、转行、追星爬墙、脱坑退坑等，近期更频繁作为'移民'的替代词出现。",
+        "key_platforms": [
+          "互联网（未具体指明）"
+        ],
+        "key_figures": null
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "润学",
+        "time": null,
+        "relationship": "衍生（指研究如何移民的学问或策略）"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "过度内卷和内耗的工作生活环境"
+      ],
+      "target_audience": "面临内卷和压力的网友",
+      "political_sensitivity": "中",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "跑，奔跑",
+      "current_meaning": "离开某地、工作转行、追星爬墙、脱坑退坑，尤其作为移民的替代词",
+      "drift_direction": "从具体动作变为泛指各种形式的离开/逃离"
+    },
+    "narrative_quality": {
+      "information_richness": "低",
+      "key_insight": "该视频指出'润'作为'跑'的谐音，其含义从字面奔跑泛化为逃离内卷环境，并成为移民的替代词，且出现了'润学'这一衍生概念。"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"润\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": null,\n    \"trigger_event\": null,\n    \"precursor\": \"跑\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": null,\n      \"description\": \"该词从最初表示'跑'、'离开'，逐渐被网友用于表达逃离过度内卷和压抑的工作生活环境，使用场景扩展到离职、转行、追星爬墙、脱坑退坑等，近期更频繁作为'移民'的替代词出现。\",\n      \"key_platforms\": [\"互联网（未具体指明）\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"润学\",\n      \"time\": null,\n      \"relationship\": \"衍生（指研究如何移民的学问或策略）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"过度内卷和内耗的工作生活环境\"],\n    \"target_audience\": \"面临内卷和压力的网友\",\n    \"political_sensitivity\": \"中\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"跑，奔跑\",\n    \"current_meaning\": \"离开某地、工作转行、追星爬墙、脱坑退坑，尤其作为移民的替代词\",\n    \"drift_direction\": \"从具体动作变为泛指各种形式的离开/逃离\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该视频指出'润'作为'跑'的谐音，其含义从字面奔跑泛化为逃离内卷环境，并成为移民的替代词，且出现了'润学'这一衍生概念。\"\n  }\n}",
+    "video_name": "这是什么梗：润？润学？ - 1.这是什么梗：润？润学？(Av855968170,P1)",
+    "transcript_chars": 166,
+    "duration_sec": 34.133333
+  },
+  {
+    "meme_name": "鸡你太美",
+    "origin": {
+      "time": "2018年",
+      "platform": "B站",
+      "trigger_event": "偶像练习生蔡徐坤在自我介绍时演唱歌曲《只因你太美》，因歌词唱得太快，空耳成“鸡你太美”",
+      "precursor": "《只因你太美》歌曲"
+    },
+    "spread_phases": [
+      {
+        "phase": "萌芽",
+        "time_range": "2018年",
+        "description": "蔡徐坤在《偶像练习生》中自我介绍演唱《只因你太美》，因发音模糊被网友空耳为“鸡你太美”，开始在B站等平台作为鬼畜素材传播",
+        "key_platforms": [
+          "B站"
+        ],
+        "key_figures": [
+          "蔡徐坤"
+        ]
+      },
+      {
+        "phase": "爆发",
+        "time_range": "2023年",
+        "description": "蔡徐坤被爆出与女性发生关系并导致女方怀孕堕胎，聊天记录显示其母亲采取恐吓、安装监控等手段，引发舆论热议，“鸡你太美”被改编为“鸡你胎没”用于嘲讽",
+        "key_platforms": [
+          "微博",
+          "B站"
+        ],
+        "key_figures": [
+          "蔡徐坤",
+          "蔡徐坤母亲"
+        ]
+      }
+    ],
+    "mutations": [
+      {
+        "variant_name": "鸡你胎没",
+        "time": "2023年",
+        "relationship": "衍生"
+      }
+    ],
+    "social_context": {
+      "triggers": [
+        "蔡徐坤被曝出恋情及堕胎事件",
+        "公众对偶像私德的双标嘲讽",
+        "对明星公关手段的讽刺"
+      ],
+      "target_audience": "网络年轻用户、B站鬼畜区观众、蔡徐坤黑粉及路人",
+      "political_sensitivity": "无",
+      "backlash_events": null
+    },
+    "semantic_drift": {
+      "original_meaning": "对歌曲《只因你太美》的空耳恶搞，指代蔡徐坤的唱功或形象",
+      "current_meaning": "嘲讽蔡徐坤被曝出导致女方怀孕堕胎的丑闻",
+      "drift_direction": "从单纯恶搞变为针对具体丑闻的讽刺攻击"
+    },
+    "narrative_quality": {
+      "information_richness": "中",
+      "key_insight": "该梗在2023年因蔡徐坤堕胎丑闻被重新激活并变异为“鸡你胎没”，体现了网络梗从娱乐恶搞到道德审判的语义漂移"
+    },
+    "raw_llm_output": "{\n  \"meme_name\": \"鸡你太美\",\n  \"origin\": {\n    \"time\": \"2018年\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"偶像练习生蔡徐坤在自我介绍时演唱歌曲《只因你太美》，因歌词唱得太快，空耳成“鸡你太美”\",\n    \"precursor\": \"《只因你太美》歌曲\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2018年\",\n      \"description\": \"蔡徐坤在《偶像练习生》中自我介绍演唱《只因你太美》，因发音模糊被网友空耳为“鸡你太美”，开始在B站等平台作为鬼畜素材传播\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"蔡徐坤\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2023年\",\n      \"description\": \"蔡徐坤被爆出与女性发生关系并导致女方怀孕堕胎，聊天记录显示其母亲采取恐吓、安装监控等手段，引发舆论热议，“鸡你太美”被改编为“鸡你胎没”用于嘲讽\",\n      \"key_platforms\": [\"微博\", \"B站\"],\n      \"key_figures\": [\"蔡徐坤\", \"蔡徐坤母亲\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"鸡你胎没\",\n      \"time\": \"2023年\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"蔡徐坤被曝出恋情及堕胎事件\", \"公众对偶像私德的双标嘲讽\", \"对明星公关手段的讽刺\"],\n    \"target_audience\": \"网络年轻用户、B站鬼畜区观众、蔡徐坤黑粉及路人\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"对歌曲《只因你太美》的空耳恶搞，指代蔡徐坤的唱功或形象\",\n    \"current_meaning\": \"嘲讽蔡徐坤被曝出导致女方怀孕堕胎的丑闻\",\n    \"drift_direction\": \"从单纯恶搞变为针对具体丑闻的讽刺攻击\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗在2023年因蔡徐坤堕胎丑闻被重新激活并变异为“鸡你胎没”，体现了网络梗从娱乐恶搞到道德审判的语义漂移\"\n  }\n}",
+    "video_name": "鸡你胎没是什么梗【梗指南】 - 1.鸡你胎没是什么梗【梗指南】(Av827681606,P1)",
+    "transcript_chars": 532,
+    "duration_sec": 132.970667
+  }
+]

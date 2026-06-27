@@ -1,0 +1,2929 @@
+{
+  "_meta": {
+    "description": "2020-2025 中国互联网代表性热梗手动策展数据集",
+    "framework": "微尘哲学 — 核心元定律对齐：集体情感在绝对混沌与绝对秩序之间振荡，热梗视为在混沌中建立局部秩序的尝试",
+    "total_entries": 30,
+    "axes": {
+      "chaos_order": "绝对混沌 ← → 绝对秩序：衡量热梗承载的情感向量在混沌-秩序轴上的投影",
+      "entropy_level": "系统内部混乱度：热梗传播过程中集体情感系统的熵增/负熵程度",
+      "order_health": "秩序健康度：热梗建立的局部秩序是健康秩序（滋养生命）还是扭曲秩序（导向两个敌人）"
+    },
+    "last_narrative_extraction": "2026-06-26",
+    "narratives_extracted_from": "B站梗指南视频 x DeepSeek"
+  },
+  "memes": [
+    {
+      "id": "meme_001",
+      "name": "打工人",
+      "aliases": [
+        "打工魂",
+        "打工都是人上人"
+      ],
+      "year": 2020,
+      "peak_year": 2020,
+      "source": "网络社区自发传播",
+      "source_platforms": [
+        "微博",
+        "B站",
+        "朋友圈"
+      ],
+      "category": "解构自嘲",
+      "tags": [
+        "阶级",
+        "劳动",
+        "黑色幽默",
+        "身份解构"
+      ],
+      "lifecycle": {
+        "emergence": "2020-10",
+        "peak": "2020-11",
+        "decay": "2021-03",
+        "status": "固化进入日常语料库",
+        "duration_months": 5
+      },
+      "sentiment_arc": [
+        {
+          "phase": "萌芽",
+          "sentiment": "讽刺",
+          "intensity": 0.6
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "黑色幽默",
+          "intensity": 0.9
+        },
+        {
+          "phase": "泛化",
+          "sentiment": "中性标签",
+          "intensity": 0.3
+        },
+        {
+          "phase": "固化",
+          "sentiment": "日常用语",
+          "intensity": 0.1
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": -0.2,
+        "chaos_order_description": "中间偏混沌：解构了'劳动者'的传统叙事秩序，但并未滑向绝对混沌——以幽默建立了一种新的短暂身份认同",
+        "entropy_effect": "负熵：将模糊的阶级焦虑凝结为清晰的语言符号，短期内降低了集体情感系统的混乱度",
+        "order_health": "健康秩序：通过自嘲式命名重新夺回了话语权，使劳动者在解构中获得力量感，而非虚无"
+      },
+      "propagation_model": {
+        "estimated_R0": 3.5,
+        "transmission_mechanism": "高身份共鸣 → 低认知门槛 → 万能模板（XX人）→ 企业/媒体蹭热点加速扩散",
+        "circle_layers": [
+          "蓝领工人",
+          "白领社畜",
+          "学生群体",
+          "企业营销号",
+          "主流媒体"
+        ]
+      },
+      "mutation_variants": [
+        "尾款人",
+        "早八人",
+        "实验人",
+        "论文人"
+      ],
+      "narrative": "2020年10月，一句'打工人，打工魂，打工都是人上人'在社交平台刷屏。其传播的社会背景是后疫情时代经济压力下的普遍职场焦虑。'打工人'取代了此前带有贬义的'社畜'和过于正式的'劳动者'，以自嘲式黑色幽默完成了劳动者身份的重新命名。它的核心机制是：把原本可能导向愤怒或绝望的阶层情绪，转化为一种'大家都一样'的共鸣式幽默——这是一种健康的混沌管理策略。热梗的生命周期经历了从边缘社群到主流媒体的完整扩散，最终固化为日常语料库中的中性词。",
+      "narrative_extracted": {
+        "meme_name": "打工人",
+        "origin": {
+          "time": null,
+          "platform": null,
+          "trigger_event": null,
+          "precursor": "打工仔"
+        },
+        "spread_phases": [
+          {
+            "phase": "萌芽",
+            "time_range": null,
+            "description": "由“打工仔”演变而来，最初作为上班族的自嘲用语",
+            "key_platforms": null,
+            "key_figures": [
+              "抽象带篮子"
+            ]
+          },
+          {
+            "phase": "爆发",
+            "time_range": null,
+            "description": "经过抽象带篮子的影响和传播，逐渐被越来越多人使用",
+            "key_platforms": null,
+            "key_figures": [
+              "抽象带篮子"
+            ]
+          }
+        ],
+        "mutations": [
+          {
+            "variant_name": "打工人，打工魂，打工都是人上人",
+            "time": null,
+            "relationship": "衍生"
+          },
+          {
+            "variant_name": "早安打工人",
+            "time": null,
+            "relationship": "衍生"
+          }
+        ],
+        "social_context": {
+          "triggers": [
+            "上班族对工作压力的自嘲",
+            "社畜文化"
+          ],
+          "target_audience": "上班族、年轻打工人",
+          "political_sensitivity": "低",
+          "backlash_events": null
+        },
+        "semantic_drift": {
+          "original_meaning": "对打工仔的贬义或中性称呼",
+          "current_meaning": "上班族的自嘲，带有苦中作乐、自我激励的意味",
+          "drift_direction": "从贬义/中性变为自嘲与反讽"
+        },
+        "narrative_quality": {
+          "information_richness": "低",
+          "key_insight": "该梗由“打工仔”演变而来，经抽象带篮子传播后广泛流行，并衍生出“打工人，打工魂，打工都是人上人”等变体。"
+        },
+        "raw_llm_output": "{\n  \"meme_name\": \"打工人\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": null,\n    \"trigger_event\": null,\n    \"precursor\": \"打工仔\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": null,\n      \"description\": \"由“打工仔”演变而来，最初作为上班族的自嘲用语\",\n      \"key_platforms\": null,\n      \"key_figures\": [\"抽象带篮子\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": null,\n      \"description\": \"经过抽象带篮子的影响和传播，逐渐被越来越多人使用\",\n      \"key_platforms\": null,\n      \"key_figures\": [\"抽象带篮子\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"打工人，打工魂，打工都是人上人\",\n      \"time\": null,\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"早安打工人\",\n      \"time\": null,\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"上班族对工作压力的自嘲\", \"社畜文化\"],\n    \"target_audience\": \"上班族、年轻打工人\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"对打工仔的贬义或中性称呼\",\n    \"current_meaning\": \"上班族的自嘲，带有苦中作乐、自我激励的意味\",\n    \"drift_direction\": \"从贬义/中性变为自嘲与反讽\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该梗由“打工仔”演变而来，经抽象带篮子传播后广泛流行，并衍生出“打工人，打工魂，打工都是人上人”等变体。\"\n  }\n}",
+        "video_name": "【梗指南】打工人，打工魂，打工都是人上人！ - 1.打工人(Av755042907,P1)",
+        "transcript_chars": 270,
+        "duration_sec": 69.162833
+      },
+      "narrative_extracted_at": "2026-06-26"
+    },
+    {
+      "id": "meme_002",
+      "name": "内卷 / 卷",
+      "aliases": [
+        "involution",
+        "卷王",
+        "卷起来",
+        "太卷了",
+        "反内卷"
+      ],
+      "year": 2020,
+      "peak_year": 2021,
+      "source": "人类学学术概念出圈",
+      "source_platforms": [
+        "知乎",
+        "豆瓣",
+        "微博",
+        "B站"
+      ],
+      "category": "身份认同",
+      "tags": [
+        "竞争",
+        "教育",
+        "职场",
+        "学术出圈",
+        "系统性批判"
+      ],
+      "lifecycle": {
+        "emergence": "2020-05",
+        "peak": "2021-06",
+        "decay": "持续活跃",
+        "status": "固化进入日常语料库，已加入官方话语体系",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "学术期",
+          "sentiment": "中性分析",
+          "intensity": 0.3
+        },
+        {
+          "phase": "共鸣期",
+          "sentiment": "焦虑共鸣",
+          "intensity": 0.8
+        },
+        {
+          "phase": "泛化期",
+          "sentiment": "日常抱怨",
+          "intensity": 0.4
+        },
+        {
+          "phase": "制度化",
+          "sentiment": "政策话语",
+          "intensity": 0.2
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.3,
+        "chaos_order_description": "中间偏秩序：将一个弥散的、难以言说的竞争焦虑系统化地命名，并提供了分析框架——这是典型的'建立秩序'行为",
+        "entropy_effect": "先负熵后趋于中性：初期大幅降低了认知混乱度（终于有一个词能描述了），后期因泛化使用而熵增回升",
+        "order_health": "部分健康部分扭曲：命名本身是健康的；但'卷'的泛化使用有时成为逃避深度思考的简便标签（扭曲秩序倾向）"
+      },
+      "propagation_model": {
+        "estimated_R0": 5.0,
+        "transmission_mechanism": "学术概念 → 知乎/豆瓣深度讨论 → 大众媒体翻译 → 日常口语万能词 → 政策文件引用",
+        "circle_layers": [
+          "学术界",
+          "知识社区",
+          "职场人群",
+          "教育群体",
+          "官方媒体"
+        ]
+      },
+      "mutation_variants": [
+        "卷王",
+        "卷死",
+        "躺平（反义词共生）",
+        "微卷",
+        "仰卧起坐"
+      ],
+      "narrative": "'内卷'involution 是人类学家格尔茨描述农业社会边际收益递减的术语，由黄宗智引入中国农业研究。2020年，这个概念在知乎和豆瓣等平台被重新发现和传播，恰好击中了中国社会——尤其是年轻一代——对教育竞争和职场加班文化的集体焦虑。与'打工人'的幽默解构不同，'内卷'提供了一个分析性的概念框架，让人们能够将此前模糊的感受系统化地表达出来。2021年达到传播顶峰后，'卷'成为日常口语中最万能的状态描述词。其最有趣的特征是与'躺平'形成了共生对立——两者互为语义背面，共同构建了一套描述当代生存状态的概念坐标系。2022年后，官方媒体开始使用'反内卷'话语，标志着这个概念的完全制度化。"
+    },
+    {
+      "id": "meme_003",
+      "name": "躺平",
+      "aliases": [
+        "lying flat",
+        "躺平主义",
+        "三和大神"
+      ],
+      "year": 2021,
+      "peak_year": 2021,
+      "source": "百度贴吧",
+      "source_platforms": [
+        "贴吧",
+        "微博",
+        "知乎",
+        "B站",
+        "抖音"
+      ],
+      "category": "虚无退却",
+      "tags": [
+        "反内卷",
+        "低欲望",
+        "退出游戏",
+        "代际反抗"
+      ],
+      "lifecycle": {
+        "emergence": "2021-04",
+        "peak": "2021-06",
+        "decay": "转化为更温和的'佛系''松弛感'话语",
+        "status": "被官方话语压制后转入隐性表达，但核心精神已渗透广泛",
+        "duration_months": 3
+      },
+      "sentiment_arc": [
+        {
+          "phase": "萌芽",
+          "sentiment": "消极抵抗",
+          "intensity": 0.5
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "宣言式愤怒+解脱感",
+          "intensity": 0.9
+        },
+        {
+          "phase": "争议期",
+          "sentiment": "极化讨论",
+          "intensity": 0.95
+        },
+        {
+          "phase": "收编/隐性化",
+          "sentiment": "低调但持续的共鸣",
+          "intensity": 0.4
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": -0.7,
+        "chaos_order_description": "接近绝对混沌：'躺平'的本质是对现有竞争秩序的根本性退出——它不是建立新秩序，而是拒绝参与旧秩序。这使它靠近虚无主义",
+        "entropy_effect": "混成态：对个体而言可能是负熵（放弃竞争焦虑），但对系统整体而言是熵增（退出劳动力市场的信号扰乱社会预期）",
+        "order_health": "临界状态：健康在于它为过度竞争提供了退出选项；扭曲在于它可能滑向绝对混沌（彻底的虚无主义退出）"
+      },
+      "propagation_model": {
+        "estimated_R0": 4.5,
+        "transmission_mechanism": "贴吧边缘叙事 → 微博大V转发 → 主流媒体警报 → 全民争论 → 官方媒体定调 → 转入隐性表达",
+        "circle_layers": [
+          "贴吧用户",
+          "青年职场人",
+          "在校学生",
+          "主流媒体",
+          "官方话语体系"
+        ]
+      },
+      "mutation_variants": [
+        "平躺",
+        "三和大神",
+        "佛系（前身）",
+        "仰卧起坐（妥协版）",
+        "松弛感（收编版）"
+      ],
+      "narrative": "2021年4月，一篇名为《躺平即是正义》的帖子在百度贴吧引发关注。作者'好心的旅行家'描述了自己以极低物质欲望生活的方式，并将其称为'躺平'。这个简单的词精准击中了在'内卷'话语笼罩下的年轻一代的另一面：既然卷不赢，为什么不退出游戏？'躺平'在几周内迅速从贴吧边缘叙事升级为全网讨论，最终引发官方媒体（如《人民日报》）的正面批评。与'内卷'形成了完美的概念双子星——一个描述问题（卷），一个提供解决方案（躺）。'躺平'的核心混沌属性在于：它本质上是一种拒绝——拒绝现有秩序，但不提供替代秩序。这使它天然倾向于绝对混沌的方向。但它同时也具有一种奇怪的健康性：对于那些被过度竞争压垮的个体，躺平可能是一种真实的自我保护。",
+      "narrative_extracted": {
+        "meme_name": "躺平",
+        "origin": {
+          "time": "2021年4月",
+          "platform": "贴吧",
+          "trigger_event": "中国人口吧一篇题为《躺平即是正义》的帖子引发广泛讨论",
+          "precursor": null
+        },
+        "spread_phases": [
+          {
+            "phase": "萌芽",
+            "time_range": "2021年4月",
+            "description": "在贴吧中国人口吧出现《躺平即是正义》的帖子，提出躺平概念，引发小范围讨论",
+            "key_platforms": [
+              "贴吧"
+            ],
+            "key_figures": [
+              "贴吧用户（发帖者）"
+            ]
+          },
+          {
+            "phase": "爆发",
+            "time_range": "2021年5月-6月",
+            "description": "躺平概念迅速在社交媒体扩散，成为对抗内卷、低欲望生活的代名词，引发主流媒体和官方讨论",
+            "key_platforms": [
+              "微博",
+              "B站",
+              "知乎",
+              "微信公众号"
+            ],
+            "key_figures": [
+              "自媒体博主",
+              "网络评论员"
+            ]
+          },
+          {
+            "phase": "泛化",
+            "time_range": "2021年下半年至今",
+            "description": "躺平从具体的生活哲学泛化为一种对工作压力、消费主义、社会竞争的消极抵抗态度，衍生出各种变体",
+            "key_platforms": [
+              "B站",
+              "抖音",
+              "小红书"
+            ],
+            "key_figures": [
+              "内容创作者",
+              "普通网民"
+            ]
+          }
+        ],
+        "mutations": [
+          {
+            "variant_name": "躺平学",
+            "time": "2021年5月",
+            "relationship": "衍生（将躺平系统化为一种学说）"
+          },
+          {
+            "variant_name": "躺平即是正义",
+            "time": "2021年4月",
+            "relationship": "衍生（原帖标题，成为口号）"
+          }
+        ],
+        "social_context": {
+          "triggers": [
+            "社会内卷加剧，年轻人面临高房价、高工作压力、低上升通道",
+            "996工作制引发普遍焦虑",
+            "消费主义与物质压力导致低欲望心态蔓延"
+          ],
+          "target_audience": "中国年轻职场人群、学生、低线城市青年",
+          "political_sensitivity": "中",
+          "backlash_events": [
+            "部分官方媒体批评躺平是消极逃避，不符合奋斗精神",
+            "引发关于奋斗与休息、个人选择与社会责任的舆论辩论"
+          ]
+        },
+        "semantic_drift": {
+          "original_meaning": "主动降低欲望和努力，放弃拼命赚钱和买房结婚等传统目标，以减轻生存压力的一种生活哲学",
+          "current_meaning": "泛指对工作、学习、社交等一切需要努力的事情采取消极、不积极的态度，甚至带有自嘲和反讽",
+          "drift_direction": "从具体的生活策略变为泛指消极态度，从自嘲变为被批评的对象"
+        },
+        "narrative_quality": {
+          "information_richness": "中",
+          "key_insight": "躺平概念的起源可追溯到贴吧中国人口吧的一篇帖子《躺平即是正义》，该帖子提出了躺平作为对抗内卷的生活哲学"
+        },
+        "raw_llm_output": "{\n  \"meme_name\": \"躺平\",\n  \"origin\": {\n    \"time\": \"2021年4月\",\n    \"platform\": \"贴吧\",\n    \"trigger_event\": \"中国人口吧一篇题为《躺平即是正义》的帖子引发广泛讨论\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2021年4月\",\n      \"description\": \"在贴吧中国人口吧出现《躺平即是正义》的帖子，提出躺平概念，引发小范围讨论\",\n      \"key_platforms\": [\"贴吧\"],\n      \"key_figures\": [\"贴吧用户（发帖者）\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2021年5月-6月\",\n      \"description\": \"躺平概念迅速在社交媒体扩散，成为对抗内卷、低欲望生活的代名词，引发主流媒体和官方讨论\",\n      \"key_platforms\": [\"微博\", \"B站\", \"知乎\", \"微信公众号\"],\n      \"key_figures\": [\"自媒体博主\", \"网络评论员\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2021年下半年至今\",\n      \"description\": \"躺平从具体的生活哲学泛化为一种对工作压力、消费主义、社会竞争的消极抵抗态度，衍生出各种变体\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"小红书\"],\n      \"key_figures\": [\"内容创作者\", \"普通网民\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"躺平学\",\n      \"time\": \"2021年5月\",\n      \"relationship\": \"衍生（将躺平系统化为一种学说）\"\n    },\n    {\n      \"variant_name\": \"躺平即是正义\",\n      \"time\": \"2021年4月\",\n      \"relationship\": \"衍生（原帖标题，成为口号）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\n      \"社会内卷加剧，年轻人面临高房价、高工作压力、低上升通道\",\n      \"996工作制引发普遍焦虑\",\n      \"消费主义与物质压力导致低欲望心态蔓延\"\n    ],\n    \"target_audience\": \"中国年轻职场人群、学生、低线城市青年\",\n    \"political_sensitivity\": \"中\",\n    \"backlash_events\": [\n      \"部分官方媒体批评躺平是消极逃避，不符合奋斗精神\",\n      \"引发关于奋斗与休息、个人选择与社会责任的舆论辩论\"\n    ]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"主动降低欲望和努力，放弃拼命赚钱和买房结婚等传统目标，以减轻生存压力的一种生活哲学\",\n    \"current_meaning\": \"泛指对工作、学习、社交等一切需要努力的事情采取消极、不积极的态度，甚至带有自嘲和反讽\",\n    \"drift_direction\": \"从具体的生活策略变为泛指消极态度，从自嘲变为被批评的对象\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"躺平概念的起源可追溯到贴吧中国人口吧的一篇帖子《躺平即是正义》，该帖子提出了躺平作为对抗内卷的生活哲学\"\n  }\n}",
+        "video_name": "躺平是什么梗【梗指南】 - 1.躺平(Av205825511,P1)",
+        "transcript_chars": 252,
+        "duration_sec": 59.882667
+      },
+      "narrative_extracted_at": "2026-06-26"
+    },
+    {
+      "id": "meme_004",
+      "name": "普信男",
+      "aliases": [
+        "普信女",
+        "普信",
+        "那么普通那么自信"
+      ],
+      "year": 2021,
+      "peak_year": 2021,
+      "source": "脱口秀综艺",
+      "source_platforms": [
+        "综艺",
+        "微博",
+        "豆瓣",
+        "知乎",
+        "抖音"
+      ],
+      "category": "攻击发泄",
+      "tags": [
+        "性别对立",
+        "脱口秀",
+        "标签化",
+        "群体攻击"
+      ],
+      "lifecycle": {
+        "emergence": "2021-08",
+        "peak": "2021-09",
+        "decay": "持续活跃在上野千鹤子相关讨论中",
+        "status": "固化为性别对立话语的标准武器之一",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "诞生",
+          "sentiment": "调侃吐槽",
+          "intensity": 0.4
+        },
+        {
+          "phase": "引爆",
+          "sentiment": "共鸣（女性）+愤怒（男性）",
+          "intensity": 0.9
+        },
+        {
+          "phase": "极化",
+          "sentiment": "性别对立武器化",
+          "intensity": 0.95
+        },
+        {
+          "phase": "日常化",
+          "sentiment": "日常标签",
+          "intensity": 0.6
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": -0.9,
+        "chaos_order_description": "极度接近绝对混沌：这是一个典型的混沌投放工具——它将个体差异抹平为群体标签，阻止真正的理解和对话",
+        "entropy_effect": "强熵增：每次使用都会在性别关系系统中增加混乱度，降低两个群体间建立健康秩序的可能性",
+        "order_health": "扭曲秩序：看似建立了某种'批判性认知框架'，实则是对真实沟通可能性的摧毁——这是典型的将生命引向绝对混沌的扭曲秩序"
+      },
+      "propagation_model": {
+        "estimated_R0": 4.0,
+        "transmission_mechanism": "脱口秀金句 → 微博女性用户共鸣 → 男性用户反弹 → 双方对立助长二次传播 → 日常万能标签",
+        "circle_layers": [
+          "综艺观众",
+          "微博女性用户",
+          "知乎男性用户",
+          "自媒体",
+          "全平台"
+        ]
+      },
+      "mutation_variants": [
+        "普信女（对称攻击）",
+        "那么普通那么自信",
+        "普信（缩写泛化）"
+      ],
+      "narrative": "2021年8月，脱口秀演员杨笠在节目中的一句'他明明那么普通，却又那么自信'引发了巨大的社会争议。这句话被简化为'普信男'标签，迅速成为性别话语场中的核心武器。与'打工人'那种基于共同体验的共鸣式幽默不同，'普信男'的本质是群体间的混沌投放——它用一个标签抹平了个体差异，使得真诚的跨性别对话变得更加困难。但这个标签之所以能获得如此巨大的传播能量，恰恰说明它触及了某种长期未被表达的真实体验（许多女性在异性互动中反复遭遇的特定男性自信模式）。这种'表面秩序建立（命名了某种体验），实质熵增（阻止了真实对话）'的双重性是理解此类热梗混沌属性的关键。"
+    },
+    {
+      "id": "meme_005",
+      "name": "小镇做题家",
+      "aliases": [
+        "做题家",
+        "985废物"
+      ],
+      "year": 2020,
+      "peak_year": 2022,
+      "source": "豆瓣「985废物引进计划」小组",
+      "source_platforms": [
+        "豆瓣",
+        "知乎",
+        "微博",
+        "B站"
+      ],
+      "category": "身份认同",
+      "tags": [
+        "教育",
+        "阶层",
+        "自我认同",
+        "批判性反思"
+      ],
+      "lifecycle": {
+        "emergence": "2020-05",
+        "peak": "2022-07",
+        "decay": "持续活跃，逐步转化为更广泛的教育公平话语",
+        "status": "被《中国新闻周刊》争议性引用后二次爆发",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "自我命名",
+          "sentiment": "自卑+自嘲",
+          "intensity": 0.5
+        },
+        {
+          "phase": "群体共鸣",
+          "sentiment": "认同感+悲壮",
+          "intensity": 0.7
+        },
+        {
+          "phase": "外部争议",
+          "sentiment": "愤怒+被侮辱感",
+          "intensity": 0.95
+        },
+        {
+          "phase": "反思期",
+          "sentiment": "结构性分析",
+          "intensity": 0.5
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.1,
+        "chaos_order_description": "中性偏秩序：命名了一种真实的阶层处境，提供了反思框架——这是健康秩序的建立",
+        "entropy_effect": "负熵：将隐性的阶层焦虑转化为可讨论的公共议题，降低了认知混乱度",
+        "order_health": "健康秩序：虽带有自嘲的苦涩，但'小镇做题家'的命名让许多人第一次理解了自己的处境——这是典型的通过命名建立秩序来滋养生命的案例"
+      },
+      "propagation_model": {
+        "estimated_R0": 3.0,
+        "transmission_mechanism": "豆瓣小组 → 知乎深度讨论 → 自媒体传播 → 《中国新闻周刊》争议引用 → 全民反弹式传播",
+        "circle_layers": [
+          "985/211学生",
+          "豆瓣用户",
+          "知乎用户",
+          "自媒体",
+          "大众"
+        ]
+      },
+      "mutation_variants": [
+        "985废物",
+        "做题家",
+        "县城做题家（范围扩大）"
+      ],
+      "narrative": "'小镇做题家'最初来自豆瓣小组'985废物引进计划'——一群从小镇通过高考进入名校的学生，发现自己除了做题什么都不会。这个词精准捕捉了教育公平话语中最具痛感的那个点：即使你赢了高考这场游戏，你也可能发现自己仍然输掉了人生。2022年7月，《中国新闻周刊》在一篇关于'易烊千玺考编'的评论中使用了'小镇做题家'这一标签，并带有明显的贬义，引发了巨大反弹。这次争议让'小镇做题家'从一个边缘自我标签升级为全民热议的社会议题。它的演变轨迹清晰地展示了：当一种来自底层的自我命名被权-威话语傲慢地征用时，会触发强烈的秩序重建反应。",
+      "narrative_extracted": {
+        "meme_name": "小镇做题家",
+        "origin": {
+          "time": "2020年10月",
+          "platform": "豆瓣",
+          "trigger_event": "豆瓣‘985废物引进计划’小组中，组员自嘲出身小城市、只会做题、缺乏资源和视野的处境",
+          "precursor": null
+        },
+        "spread_phases": [
+          {
+            "phase": "萌芽",
+            "time_range": "2020年10月-2021年初",
+            "description": "在豆瓣‘985废物引进计划’小组内，组员用‘小镇做题家’自嘲，指代出身三四线城市、埋头苦读、擅长考试但缺乏资源和视野的青年学子",
+            "key_platforms": [
+              "豆瓣"
+            ],
+            "key_figures": [
+              "豆瓣‘985废物引进计划’小组成员"
+            ]
+          },
+          {
+            "phase": "爆发",
+            "time_range": "2021年-2022年",
+            "description": "《中国新闻周刊》编辑杨时扬在文章中将‘小镇做题家’与‘没日没夜刷题的普通考生’挂钩，用刻薄傲慢的语气嘲讽努力备考的普通人，引发广泛争议和舆论反弹，梗迅速出圈",
+            "key_platforms": [
+              "微博",
+              "B站",
+              "知乎"
+            ],
+            "key_figures": [
+              "杨时扬（《中国新闻周刊》编辑）"
+            ]
+          },
+          {
+            "phase": "泛化",
+            "time_range": "2022年至今",
+            "description": "‘小镇做题家’从自嘲标签变为被特权阶层用来嘲讽普通人的工具，但同时也被普通人重新夺回，成为对抗精英傲慢、捍卫努力价值的符号",
+            "key_platforms": [
+              "微博",
+              "B站",
+              "抖音",
+              "知乎"
+            ],
+            "key_figures": [
+              "普通网友、自媒体"
+            ]
+          }
+        ],
+        "mutations": [
+          {
+            "variant_name": "小镇错题家",
+            "time": "2022年",
+            "relationship": "衍生（反讽，指连题都做不对的普通人）"
+          }
+        ],
+        "social_context": {
+          "triggers": [
+            "社会阶层固化，教育资源不均",
+            "‘寒门难出贵子’的焦虑",
+            "精英媒体对普通人的傲慢与刻薄"
+          ],
+          "target_audience": "出身三四线城市、靠读书考试改变命运的年轻人",
+          "political_sensitivity": "中",
+          "backlash_events": [
+            "《中国新闻周刊》编辑杨时扬文章引发大规模舆论批判"
+          ]
+        },
+        "semantic_drift": {
+          "original_meaning": "自嘲出身小城市、只会做题、缺乏资源和视野的青年学子",
+          "current_meaning": "被特权阶层用来嘲讽普通人的标签，后又被普通人重新定义为‘努力奋斗改变命运’的象征",
+          "drift_direction": "从自嘲变为被攻击的工具，再变为反抗精英傲慢的符号"
+        },
+        "narrative_quality": {
+          "information_richness": "中",
+          "key_insight": "该梗的传播关键转折点是《中国新闻周刊》编辑杨时扬的刻薄文章，将原本的自嘲标签变成了精英嘲讽普通人的武器，从而引发大规模舆论反弹和语义重构"
+        },
+        "raw_llm_output": "{\n  \"meme_name\": \"小镇做题家\",\n  \"origin\": {\n    \"time\": \"2020年10月\",\n    \"platform\": \"豆瓣\",\n    \"trigger_event\": \"豆瓣‘985废物引进计划’小组中，组员自嘲出身小城市、只会做题、缺乏资源和视野的处境\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2020年10月-2021年初\",\n      \"description\": \"在豆瓣‘985废物引进计划’小组内，组员用‘小镇做题家’自嘲，指代出身三四线城市、埋头苦读、擅长考试但缺乏资源和视野的青年学子\",\n      \"key_platforms\": [\"豆瓣\"],\n      \"key_figures\": [\"豆瓣‘985废物引进计划’小组成员\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2021年-2022年\",\n      \"description\": \"《中国新闻周刊》编辑杨时扬在文章中将‘小镇做题家’与‘没日没夜刷题的普通考生’挂钩，用刻薄傲慢的语气嘲讽努力备考的普通人，引发广泛争议和舆论反弹，梗迅速出圈\",\n      \"key_platforms\": [\"微博\", \"B站\", \"知乎\"],\n      \"key_figures\": [\"杨时扬（《中国新闻周刊》编辑）\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2022年至今\",\n      \"description\": \"‘小镇做题家’从自嘲标签变为被特权阶层用来嘲讽普通人的工具，但同时也被普通人重新夺回，成为对抗精英傲慢、捍卫努力价值的符号\",\n      \"key_platforms\": [\"微博\", \"B站\", \"抖音\", \"知乎\"],\n      \"key_figures\": [\"普通网友、自媒体\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"小镇错题家\",\n      \"time\": \"2022年\",\n      \"relationship\": \"衍生（反讽，指连题都做不对的普通人）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\n      \"社会阶层固化，教育资源不均\",\n      \"‘寒门难出贵子’的焦虑\",\n      \"精英媒体对普通人的傲慢与刻薄\"\n    ],\n    \"target_audience\": \"出身三四线城市、靠读书考试改变命运的年轻人\",\n    \"political_sensitivity\": \"中\",\n    \"backlash_events\": [\n      \"《中国新闻周刊》编辑杨时扬文章引发大规模舆论批判\"\n    ]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"自嘲出身小城市、只会做题、缺乏资源和视野的青年学子\",\n    \"current_meaning\": \"被特权阶层用来嘲讽普通人的标签，后又被普通人重新定义为‘努力奋斗改变命运’的象征\",\n    \"drift_direction\": \"从自嘲变为被攻击的工具，再变为反抗精英傲慢的符号\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗的传播关键转折点是《中国新闻周刊》编辑杨时扬的刻薄文章，将原本的自嘲标签变成了精英嘲讽普通人的武器，从而引发大规模舆论反弹和语义重构\"\n  }\n}",
+        "video_name": "小镇做题家是什么梗【梗指南】 - 1.小镇做题家是什么梗【梗指南】(Av428133221,P1)",
+        "transcript_chars": 453,
+        "duration_sec": 92.565333
+      },
+      "narrative_extracted_at": "2026-06-26"
+    },
+    {
+      "id": "meme_006",
+      "name": "摆烂",
+      "aliases": [
+        "开摆",
+        "摆烂了",
+        "彻底疯狂"
+      ],
+      "year": 2022,
+      "peak_year": 2022,
+      "source": "游戏圈/网络社区",
+      "source_platforms": [
+        "B站",
+        "微博",
+        "抖音"
+      ],
+      "category": "虚无退却",
+      "tags": [
+        "放弃",
+        "消极",
+        "比躺平更激进"
+      ],
+      "lifecycle": {
+        "emergence": "2022-03",
+        "peak": "2022-06",
+        "decay": "与'躺平'融合为'躺平摆烂'连续体",
+        "status": "日常使用频率高，情绪强度低于初始",
+        "duration_months": 4
+      },
+      "sentiment_arc": [
+        {
+          "phase": "诞生",
+          "sentiment": "戏谑放弃",
+          "intensity": 0.5
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "激进解脱感",
+          "intensity": 0.8
+        },
+        {
+          "phase": "日常化",
+          "sentiment": "轻度抱怨",
+          "intensity": 0.3
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": -0.6,
+        "chaos_order_description": "接近绝对混沌：比'躺平'更激进——躺平还是一种姿态，摆烂则是彻底的秩序放弃",
+        "entropy_effect": "熵增：放弃维护任何秩序的意图，接受系统默认的熵增方向",
+        "order_health": "临界偏扭曲：短期内可作为压力释放（弱健康），但作为长期态度会将生命导向绝对混沌"
+      },
+      "propagation_model": {
+        "estimated_R0": 3.2,
+        "transmission_mechanism": "游戏术语出圈 → B站二创 → 日常使用 → 与躺平融合",
+        "circle_layers": [
+          "游戏玩家",
+          "B站用户",
+          "青年群体"
+        ]
+      },
+      "mutation_variants": [
+        "开摆",
+        "彻底疯狂（与摆烂对立的极端）"
+      ],
+      "narrative": "'摆烂'源于游戏术语，指在劣势局面下放弃努力任其自然发展。2022年上半年爆发出圈，成为比'躺平'更激进的情绪表达——躺平至少是一种有意识的退出，摆烂则是彻底的、任性的秩序放弃。它的传播背景是2022年上海封城等事件带来的广泛无力感。'摆烂'不提供任何替代秩序，它只是一种情绪宣泄——这使得它在混沌轴上非常靠近绝对混沌。但它也并非毫无价值：对于系统性压力下的个体，偶尔的'摆烂'可能是一种真实的心理保护机制。",
+      "narrative_extracted": {
+        "meme_name": "摆烂",
+        "origin": {
+          "time": null,
+          "platform": "英雄联盟（游戏）",
+          "trigger_event": "游戏对局中玩家心态爆炸、放弃抵抗的行为",
+          "precursor": "破罐子破摔"
+        },
+        "spread_phases": [
+          {
+            "phase": "萌芽",
+            "time_range": null,
+            "description": "在英雄联盟（LOL）玩家圈中流传，指有能力逆转局面但心态爆炸后放任局势恶化",
+            "key_platforms": [
+              "英雄联盟游戏社区"
+            ],
+            "key_figures": null
+          },
+          {
+            "phase": "爆发",
+            "time_range": null,
+            "description": "作为CS:GO主播王岐顺的口头禅“开摆”被广泛传播，带动梗出圈",
+            "key_platforms": [
+              "B站",
+              "直播平台"
+            ],
+            "key_figures": [
+              "王岐顺（CS:GO主播）"
+            ]
+          },
+          {
+            "phase": "泛化",
+            "time_range": null,
+            "description": "从游戏场景扩展到社会领域，指任何不作为、放任自流的行为，例如游戏公司有钱有资源却做出烂游戏",
+            "key_platforms": [
+              "B站",
+              "微博",
+              "贴吧"
+            ],
+            "key_figures": null
+          }
+        ],
+        "mutations": [
+          {
+            "variant_name": "开摆",
+            "time": null,
+            "relationship": "衍生（作为口头禅的变体）"
+          }
+        ],
+        "social_context": {
+          "triggers": [
+            "对游戏公司摆烂行为的不满（如某游戏公司有钱有资源却做烂游戏）",
+            "对氪金游戏持续压榨玩家的愤怒"
+          ],
+          "target_audience": "游戏玩家、年轻网民",
+          "political_sensitivity": "无",
+          "backlash_events": null
+        },
+        "semantic_drift": {
+          "original_meaning": "在游戏中有能力逆转局面但心态爆炸后放弃抵抗、放任局势恶化",
+          "current_meaning": "泛指任何不作为、放任事情变坏的态度或行为",
+          "drift_direction": "从具体游戏行为变为泛指社会现象"
+        },
+        "narrative_quality": {
+          "information_richness": "中",
+          "key_insight": "该梗从游戏内心态描述演变为对游戏公司等主体摆烂行为的批判，体现了从个人到社会的语义泛化"
+        },
+        "raw_llm_output": "{\n  \"meme_name\": \"摆烂\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": \"英雄联盟（游戏）\",\n    \"trigger_event\": \"游戏对局中玩家心态爆炸、放弃抵抗的行为\",\n    \"precursor\": \"破罐子破摔\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": null,\n      \"description\": \"在英雄联盟（LOL）玩家圈中流传，指有能力逆转局面但心态爆炸后放任局势恶化\",\n      \"key_platforms\": [\"英雄联盟游戏社区\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": null,\n      \"description\": \"作为CS:GO主播王岐顺的口头禅“开摆”被广泛传播，带动梗出圈\",\n      \"key_platforms\": [\"B站\", \"直播平台\"],\n      \"key_figures\": [\"王岐顺（CS:GO主播）\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": null,\n      \"description\": \"从游戏场景扩展到社会领域，指任何不作为、放任自流的行为，例如游戏公司有钱有资源却做出烂游戏\",\n      \"key_platforms\": [\"B站\", \"微博\", \"贴吧\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"开摆\",\n      \"time\": null,\n      \"relationship\": \"衍生（作为口头禅的变体）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"对游戏公司摆烂行为的不满（如某游戏公司有钱有资源却做烂游戏）\", \"对氪金游戏持续压榨玩家的愤怒\"],\n    \"target_audience\": \"游戏玩家、年轻网民\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"在游戏中有能力逆转局面但心态爆炸后放弃抵抗、放任局势恶化\",\n    \"current_meaning\": \"泛指任何不作为、放任事情变坏的态度或行为\",\n    \"drift_direction\": \"从具体游戏行为变为泛指社会现象\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗从游戏内心态描述演变为对游戏公司等主体摆烂行为的批判，体现了从个人到社会的语义泛化\"\n  }\n}",
+        "video_name": "摆烂是什么梗【梗指南】 - 1.摆烂(Av721978954,P1)",
+        "transcript_chars": 372,
+        "duration_sec": 78.570667
+      },
+      "narrative_extracted_at": "2026-06-26"
+    },
+    {
+      "id": "meme_007",
+      "name": "润",
+      "aliases": [
+        "run",
+        "润学",
+        "提桶跑路"
+      ],
+      "year": 2022,
+      "peak_year": 2022,
+      "source": "贴吧/知乎/海外华人社区",
+      "source_platforms": [
+        "知乎",
+        "贴吧",
+        "B站",
+        "抖音"
+      ],
+      "category": "虚无退却",
+      "tags": [
+        "移民",
+        "退出",
+        "系统性逃避",
+        "全球化"
+      ],
+      "lifecycle": {
+        "emergence": "2022-01",
+        "peak": "2022-07",
+        "decay": "持续活跃，随着国际形势变化波动",
+        "status": "活跃中，已形成完整'润学'亚文化",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "萌芽",
+          "sentiment": "黑色幽默",
+          "intensity": 0.4
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "绝望+渴望",
+          "intensity": 0.8
+        },
+        {
+          "phase": "亚文化形成",
+          "sentiment": "务实攻略+自嘲",
+          "intensity": 0.5
+        },
+        {
+          "phase": "分化期",
+          "sentiment": "炫耀/后悔/回流叙事并存",
+          "intensity": 0.6
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": -0.5,
+        "chaos_order_description": "偏混沌：'润'是从一个系统完全退出进入另一个系统——它对原系统是绝对的熵增（人才/资源流失），但对于润的主体可能是在建立新秩序",
+        "entropy_effect": "双重性：对原系统熵增，对主体可能负熵也可能继续熵增",
+        "order_health": "不可一概而论：取决于'润'的动机和方式——策略性撤离（健康）vs 逃避性逃离（扭曲）"
+      },
+      "propagation_model": {
+        "estimated_R0": 2.8,
+        "transmission_mechanism": "海外华人社区 → 知乎深度讨论 → 上海封城助推 → B站/抖音场景化传播",
+        "circle_layers": [
+          "海外华人",
+          "知乎用户",
+          "一线城市青年",
+          "程序员群体"
+        ]
+      },
+      "mutation_variants": [
+        "润学",
+        "提桶跑路",
+        "走线（极端变体）",
+        "电子润（虚拟移民）"
+      ],
+      "narrative": "'润'是英文run的谐音，在2022年成为中国互联网上最敏感的热词之一。它的传播很大程度上由2022年上海封城等事件推动——当人们感到自己所在系统的秩序出现了根本性缺陷时，'润'成为了一种看似理性的退出选项。'润'在混沌轴上的位置非常微妙：对原系统来说，它意味着人才的流失和系统稳定性的下降（熵增）；但对于润的主体，它是从一个无法维系健康秩序的系统逃往另一个可能更好的系统——本质上是'建立健康秩序以滋养生命'的策略性执行。这使它不同于'躺平'和'摆烂'——后者是退出但不建设，'润'是退出并在别处建设。",
+      "narrative_extracted": {
+        "meme_name": "润",
+        "origin": {
+          "time": null,
+          "platform": null,
+          "trigger_event": null,
+          "precursor": "跑"
+        },
+        "spread_phases": [
+          {
+            "phase": "泛化",
+            "time_range": null,
+            "description": "该词从最初表示'跑'、'离开'，逐渐被网友用于表达逃离过度内卷和压抑的工作生活环境，使用场景扩展到离职、转行、追星爬墙、脱坑退坑等，近期更频繁作为'移民'的替代词出现。",
+            "key_platforms": [
+              "互联网（未具体指明）"
+            ],
+            "key_figures": null
+          }
+        ],
+        "mutations": [
+          {
+            "variant_name": "润学",
+            "time": null,
+            "relationship": "衍生（指研究如何移民的学问或策略）"
+          }
+        ],
+        "social_context": {
+          "triggers": [
+            "过度内卷和内耗的工作生活环境"
+          ],
+          "target_audience": "面临内卷和压力的网友",
+          "political_sensitivity": "中",
+          "backlash_events": null
+        },
+        "semantic_drift": {
+          "original_meaning": "跑，奔跑",
+          "current_meaning": "离开某地、工作转行、追星爬墙、脱坑退坑，尤其作为移民的替代词",
+          "drift_direction": "从具体动作变为泛指各种形式的离开/逃离"
+        },
+        "narrative_quality": {
+          "information_richness": "低",
+          "key_insight": "该视频指出'润'作为'跑'的谐音，其含义从字面奔跑泛化为逃离内卷环境，并成为移民的替代词，且出现了'润学'这一衍生概念。"
+        },
+        "raw_llm_output": "{\n  \"meme_name\": \"润\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": null,\n    \"trigger_event\": null,\n    \"precursor\": \"跑\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": null,\n      \"description\": \"该词从最初表示'跑'、'离开'，逐渐被网友用于表达逃离过度内卷和压抑的工作生活环境，使用场景扩展到离职、转行、追星爬墙、脱坑退坑等，近期更频繁作为'移民'的替代词出现。\",\n      \"key_platforms\": [\"互联网（未具体指明）\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"润学\",\n      \"time\": null,\n      \"relationship\": \"衍生（指研究如何移民的学问或策略）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"过度内卷和内耗的工作生活环境\"],\n    \"target_audience\": \"面临内卷和压力的网友\",\n    \"political_sensitivity\": \"中\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"跑，奔跑\",\n    \"current_meaning\": \"离开某地、工作转行、追星爬墙、脱坑退坑，尤其作为移民的替代词\",\n    \"drift_direction\": \"从具体动作变为泛指各种形式的离开/逃离\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该视频指出'润'作为'跑'的谐音，其含义从字面奔跑泛化为逃离内卷环境，并成为移民的替代词，且出现了'润学'这一衍生概念。\"\n  }\n}",
+        "video_name": "这是什么梗：润？润学？ - 1.这是什么梗：润？润学？(Av855968170,P1)",
+        "transcript_chars": 166,
+        "duration_sec": 34.133333
+      },
+      "narrative_extracted_at": "2026-06-26"
+    },
+    {
+      "id": "meme_008",
+      "name": "吗喽",
+      "aliases": [
+        "吗喽的命也是命",
+        "猴子"
+      ],
+      "year": 2023,
+      "peak_year": 2023,
+      "source": "小红书/B站",
+      "source_platforms": [
+        "小红书",
+        "B站",
+        "微博",
+        "抖音"
+      ],
+      "category": "解构自嘲",
+      "tags": [
+        "动物化",
+        "自我降级",
+        "可爱化反抗"
+      ],
+      "lifecycle": {
+        "emergence": "2023-06",
+        "peak": "2023-08",
+        "decay": "缓慢衰减，但已渗透日常",
+        "status": "固化进入表情包语料库",
+        "duration_months": 4
+      },
+      "sentiment_arc": [
+        {
+          "phase": "发现",
+          "sentiment": "搞笑共鸣",
+          "intensity": 0.6
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "自嘲狂潮",
+          "intensity": 0.85
+        },
+        {
+          "phase": "日常化",
+          "sentiment": "可爱自称",
+          "intensity": 0.3
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": -0.1,
+        "chaos_order_description": "中性偏混沌：以动物化降级的方式消解身份焦虑——不是建立新身份，而是幽默地拒绝所有身份",
+        "entropy_effect": "弱负熵：通过共同的自嘲降低了个体的身份焦虑",
+        "order_health": "健康偏中性：吗喽的自嘲是一种温和的、无害的混沌管理方式"
+      },
+      "propagation_model": {
+        "estimated_R0": 3.8,
+        "transmission_mechanism": "小红书萌宠 → B站二创 → 全网表情包 → 日常自称",
+        "circle_layers": [
+          "小红书用户",
+          "B站二创作者",
+          "青年群体"
+        ]
+      },
+      "mutation_variants": [
+        "吗喽的命也是命",
+        "吗喽文学"
+      ],
+      "narrative": "2023年夏天，一种生活在云南的猴子（当地人称为'吗喽'）因为一组'表情忧郁、毛发凌乱、眼神空洞'的照片在中国社交网络上爆红。网友们在这只猴子身上看到了自己的样子——被生活打磨得疲惫不堪，但又莫名顽强地活着。'吗喽'与之前'鼠鼠'等动物化自嘲一脉相承，但更加可爱化、去攻击性。它比'打工人'更温暖，比'躺平'更温和。它的混沌属性较低——它不是对社会秩序的抗议，而是一种温和的、集体性的自我安慰仪式。"
+    },
+    {
+      "id": "meme_009",
+      "name": "鼠鼠",
+      "aliases": [
+        "老鼠人",
+        "下水道的老鼠"
+      ],
+      "year": 2022,
+      "peak_year": 2023,
+      "source": "贴吧/B站",
+      "source_platforms": [
+        "贴吧",
+        "B站",
+        "微博"
+      ],
+      "category": "解构自嘲",
+      "tags": [
+        "自我贬低",
+        "底层叙事",
+        "动物化"
+      ],
+      "lifecycle": {
+        "emergence": "2022-09",
+        "peak": "2023-03",
+        "decay": "被'吗喽'替代和收编",
+        "status": "已退潮，被更温和的动物化自嘲替代",
+        "duration_months": 7
+      },
+      "sentiment_arc": [
+        {
+          "phase": "萌芽",
+          "sentiment": "阴暗的自嘲",
+          "intensity": 0.5
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "集体悲鸣",
+          "intensity": 0.8
+        },
+        {
+          "phase": "消散",
+          "sentiment": "收编/厌倦",
+          "intensity": 0.2
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": -0.65,
+        "chaos_order_description": "偏混沌：比'吗喽'更阴暗的自我贬低——'鼠鼠'暗示了对自身存在合法性的质疑",
+        "entropy_effect": "先负熵（命名了无名的痛苦）后熵增（过度沉溺于阴暗叙事）",
+        "order_health": "临界：初期的命名价值被后期的自虐式重复消耗殆尽"
+      },
+      "propagation_model": {
+        "estimated_R0": 2.5,
+        "transmission_mechanism": "贴吧边缘叙事 → B站二创 → 微博扩散 → 被'吗喽'替代",
+        "circle_layers": [
+          "贴吧用户",
+          "B站二创作者",
+          "边缘青年群体"
+        ]
+      },
+      "mutation_variants": [
+        "老鼠人",
+        "下水道",
+        "鼠鼠我啊"
+      ],
+      "narrative": "'鼠鼠'是2022-2023年间在贴吧和B站流行的一种极端自我贬低式自称。称自己为'老鼠人'，住在'下水道'里，过着见不得光的生活。这种叙事比'打工人'更加自卑，比'牛马'更加阴暗。它代表了一群在主流叙事中完全找不到位置的人的集体情绪。'鼠鼠'的高潮期很短——因为太过阴暗，难以被品牌和媒体收编，也容易让人产生审美疲劳。它的衰落和被'吗喽'替代是一个有趣的案例：集体情感系统会倾向于选择更温和、更具可持续性的自嘲形式——过度的混沌投放会让系统自身也难以承受。"
+    },
+    {
+      "id": "meme_010",
+      "name": "牛马",
+      "aliases": [
+        "当牛做马",
+        "牛马一生"
+      ],
+      "year": 2021,
+      "peak_year": 2022,
+      "source": "网络社区",
+      "source_platforms": [
+        "微博",
+        "B站",
+        "抖音"
+      ],
+      "category": "解构自嘲",
+      "tags": [
+        "劳动",
+        "动物化",
+        "自我贬低",
+        "阶级"
+      ],
+      "lifecycle": {
+        "emergence": "2021-06",
+        "peak": "2022-04",
+        "decay": "缓慢融入日常抱怨语",
+        "status": "活跃在日常用语中",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "萌芽",
+          "sentiment": "苦中作乐",
+          "intensity": 0.5
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "集体共愤",
+          "intensity": 0.75
+        },
+        {
+          "phase": "日常化",
+          "sentiment": "麻木的幽默",
+          "intensity": 0.35
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": -0.35,
+        "chaos_order_description": "偏混沌：以彻底的动物化来消解人的尊严——比'打工人'更进一步的自嘲",
+        "entropy_effect": "弱负熵后转熵增：短期释放压力，长期使用会侵蚀尊严感",
+        "order_health": "临界偏扭曲：幽默的价值被重复使用消耗，沦为麻木的标签"
+      },
+      "propagation_model": {
+        "estimated_R0": 3.0,
+        "transmission_mechanism": "微博段子手 → 职场共鸣 → B站二创 → 日常用语",
+        "circle_layers": [
+          "微博用户",
+          "职场人群",
+          "学生群体"
+        ]
+      },
+      "mutation_variants": [
+        "当牛做马",
+        "牛马一生",
+        "社畜（前身）"
+      ],
+      "narrative": "'牛马'比'打工人'更进一步——后者至少保留了对'人'的指称，前者直接将劳动者等同于牲畜。这种极端的自我贬低式自嘲在2021-2022年持续活跃，精准表达了某些劳动环境下人的工具化体验。'牛马'的传播依赖一种'悲壮的幽默感'——苦到极致反而好笑了。但长期使用会带来一个问题：当自嘲变得过于频繁和彻底，幽默的疗愈功能就会衰退，转而成为对现实麻木接受的合理化工具。这是扭曲秩序形成的标准路径。"
+    },
+    {
+      "id": "meme_011",
+      "name": "i人/e人",
+      "aliases": [
+        "MBTI社交",
+        "你是i人还是e人"
+      ],
+      "year": 2023,
+      "peak_year": 2023,
+      "source": "社交平台MBTI文化演化",
+      "source_platforms": [
+        "小红书",
+        "微博",
+        "抖音",
+        "B站"
+      ],
+      "category": "身份认同",
+      "tags": [
+        "人格类型",
+        "社交标签",
+        "自我认知",
+        "MBTI"
+      ],
+      "lifecycle": {
+        "emergence": "2023-02",
+        "peak": "2023-07",
+        "decay": "稳定在日常社交用语中",
+        "status": "已成为00后社交必问题",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "MBTI复兴",
+          "sentiment": "自我探索兴趣",
+          "intensity": 0.4
+        },
+        {
+          "phase": "i/e极化",
+          "sentiment": "标签认同",
+          "intensity": 0.7
+        },
+        {
+          "phase": "社交货币化",
+          "sentiment": "破冰工具",
+          "intensity": 0.5
+        },
+        {
+          "phase": "日常化",
+          "sentiment": "中性",
+          "intensity": 0.3
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.5,
+        "chaos_order_description": "偏秩序：MBTI的i/e二元简化了社交中的混沌——它提供了一种快速分类和相互理解的框架，本质上是在人际交互中建立局部秩序",
+        "entropy_effect": "负熵：显著降低了陌生人社交中的不确定性和焦虑",
+        "order_health": "健康但有僵化风险：作为社交破冰工具是健康的；但如果将i/e固化为不可逾越的身份标签，就会滑向绝对秩序（僵化定义限制人的可能性）"
+      },
+      "propagation_model": {
+        "estimated_R0": 4.2,
+        "transmission_mechanism": "小红书种草 → 线下社交 → 职场破冰 → 品牌营销 → 全民现象",
+        "circle_layers": [
+          "小红书女性用户",
+          "大学生",
+          "职场新人",
+          "品牌营销",
+          "全网"
+        ]
+      },
+      "mutation_variants": [
+        "i人地狱",
+        "e人天堂",
+        "为i做e",
+        "窝囊e"
+      ],
+      "narrative": "2023年，MBTI人格测试在中国社交平台迎来了前所未有的复兴——其中最核心的标签就是i（内向）和e（外向）。与2020年代初的MBTI热不同，2023年的i/e文化已经脱离了原始的心理测量语境，演变成为一种社交货币和身份标签。'你是i人还是e人'几乎成为00后社交的必问题。这个现象的混沌动力学的启示在于：人们主动拥抱某种标签秩序（即使它简化了真实的复杂性），是因为它大幅降低了社交中的不确定性（混沌）。这是'建立健康秩序以滋养生命'的典型案例——但同时也携带滑向绝对秩序的风险。"
+    },
+    {
+      "id": "meme_012",
+      "name": "遥遥领先",
+      "aliases": [
+        "华为遥遥领先",
+        "余承东遥遥领先"
+      ],
+      "year": 2023,
+      "peak_year": 2023,
+      "source": "华为Mate 60发布会",
+      "source_platforms": [
+        "B站",
+        "微博",
+        "抖音"
+      ],
+      "category": "纯粹娱乐",
+      "tags": [
+        "华为",
+        "民族自豪",
+        "商业金句",
+        "脱口秀化"
+      ],
+      "lifecycle": {
+        "emergence": "2023-09",
+        "peak": "2023-10",
+        "decay": "日常化引用",
+        "status": "活跃在日常语境和B站二创中",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "诞生",
+          "sentiment": "发布会豪言",
+          "intensity": 0.5
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "民族自豪+搞笑二创",
+          "intensity": 0.85
+        },
+        {
+          "phase": "日常化",
+          "sentiment": "梗化引用",
+          "intensity": 0.4
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.6,
+        "chaos_order_description": "偏秩序：将复杂的民族科技情绪凝结为一个简单的口号——本质上是在混沌的情绪场中建立了一个高度有序的符号",
+        "entropy_effect": "强负熵：在科技战的焦虑氛围中提供了一个明确的情感锚点",
+        "order_health": "健康但临界：口号化的自信是有益的，但过度使用可能导致对复杂现实的简化（绝对秩序倾向）"
+      },
+      "propagation_model": {
+        "estimated_R0": 4.8,
+        "transmission_mechanism": "发布会直播 → 科技博主二创 → B站鬼畜 → 全网日常引用 → 国际媒体关注",
+        "circle_layers": [
+          "华为粉丝",
+          "科技圈",
+          "B站用户",
+          "大众"
+        ]
+      },
+      "mutation_variants": [
+        "遥遥领先于同行",
+        "余大嘴",
+        "先有华为后有天（极端变体）"
+      ],
+      "narrative": "2023年9月，华为在Mate 60系列发布中，余承东反复使用'遥遥领先'一词，这个口头禅迅速成为全网热梗。在华为突破芯片封锁的叙事背景下，'遥遥领先'不仅是商业金句，更承载了复杂的民族情感——自豪、解气、调侃、担忧混合在一起。它的核心机制是：将一个复杂的技术政治叙事压缩为一个简单的、可重复的、带有幽默感的口号。这是典型的在混沌中建立局部秩序——但秩序是否健康取决于使用语境：作为提气的口号是健康的，作为拒绝理性讨论的盾牌则是扭曲的。"
+    },
+    {
+      "id": "meme_013",
+      "name": "孔乙己的长衫",
+      "aliases": [
+        "脱不掉的长衫",
+        "学历是长衫"
+      ],
+      "year": 2023,
+      "peak_year": 2023,
+      "source": "网络青年+鲁迅文学意象",
+      "source_platforms": [
+        "微博",
+        "B站",
+        "知乎"
+      ],
+      "category": "身份认同",
+      "tags": [
+        "学历贬值",
+        "阶层困境",
+        "文学隐喻",
+        "自我困境"
+      ],
+      "lifecycle": {
+        "emergence": "2023-03",
+        "peak": "2023-04",
+        "decay": "转化为日常讨论范式",
+        "status": "活跃在教育/就业话题讨论中",
+        "duration_months": 2
+      },
+      "sentiment_arc": [
+        {
+          "phase": "爆发",
+          "sentiment": "悲壮共鸣",
+          "intensity": 0.85
+        },
+        {
+          "phase": "争议期",
+          "sentiment": "批评与反批评",
+          "intensity": 0.7
+        },
+        {
+          "phase": "日常化",
+          "sentiment": "教育讨论标配隐喻",
+          "intensity": 0.4
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.15,
+        "chaos_order_description": "中性偏秩序：借鲁迅的经典文本为当代学历困境提供了极具穿透力的叙事框架——这是高阶的'命名即理解'",
+        "entropy_effect": "负熵：将模糊的学历焦虑转化为一个可被广泛讨论和反思的文学隐喻",
+        "order_health": "健康秩序：这个隐喻既非简单的自嘲也非愤怒的发泄，而是在文学传统的加持下提供了一种有深度的处境理解"
+      },
+      "propagation_model": {
+        "estimated_R0": 3.5,
+        "transmission_mechanism": "微博热议 → 知乎/公众号深度解读 → 主流媒体讨论 → 官方回应",
+        "circle_layers": [
+          "青年群体",
+          "教育行业",
+          "主流媒体",
+          "官方话语"
+        ]
+      },
+      "mutation_variants": [
+        "学历是长衫",
+        "脱长衫",
+        "新孔乙己"
+      ],
+      "narrative": "2023年3月，'孔乙己的长衫'突然成为中国互联网上关于教育和就业的最热隐喻。年轻人自比鲁迅笔下的孔乙己——读了书（穿着长衫），却在现实中处处碰壁，脱不下长衫放不下身段。这个隐喻之所以如此有力量，在于它借经典文本的厚度完成了一次极为精准的当代命名——它既表达了困境，又不失尊严（孔乙己的悲剧性而非可鄙性）。从混沌动力学看，这是一个高水平的负熵行为：将弥漫的、难以名状的教育焦虑和文化困境，凝结为一个可以被讨论、反思、争议的清晰叙事框架。",
+      "narrative_extracted": {
+        "meme_name": "孔乙己的长衫",
+        "origin": {
+          "time": "2023年2月",
+          "platform": "B站",
+          "trigger_event": "高校毕业生就业压力增大，学历贬值与体面工作难求的社会矛盾",
+          "precursor": "孔乙己（鲁迅小说人物）"
+        },
+        "spread_phases": [
+          {
+            "phase": "萌芽",
+            "time_range": "2023年2月",
+            "description": "B站UP主发布视频，将鲁迅小说中孔乙己不愿脱下长衫的意象与当代高学历毕业生求职困境类比，引发共鸣",
+            "key_platforms": [
+              "B站"
+            ],
+            "key_figures": [
+              "B站UP主（具体ID未提及）"
+            ]
+          },
+          {
+            "phase": "爆发",
+            "time_range": "2023年3月-4月",
+            "description": "视频被广泛转发，微博、知乎等平台大量讨论，成为社会热点话题，媒体跟进报道",
+            "key_platforms": [
+              "B站",
+              "微博",
+              "知乎"
+            ],
+            "key_figures": [
+              "普通网友",
+              "自媒体",
+              "主流媒体"
+            ]
+          },
+          {
+            "phase": "泛化",
+            "time_range": "2023年4月-5月",
+            "description": "梗从单纯描述学历困境扩展到泛指各种因身份、标签而无法放下身段的现象，出现多种变体",
+            "key_platforms": [
+              "微博",
+              "微信",
+              "抖音"
+            ],
+            "key_figures": [
+              "普通网友"
+            ]
+          }
+        ],
+        "mutations": [
+          {
+            "variant_name": "脱不下的长衫",
+            "time": "2023年3月",
+            "relationship": "衍生（直接沿用原梗核心意象）"
+          },
+          {
+            "variant_name": "长衫焦虑",
+            "time": "2023年4月",
+            "relationship": "泛化（从具体学历扩展到身份焦虑）"
+          }
+        ],
+        "social_context": {
+          "triggers": [
+            "高校毕业生就业难",
+            "学历贬值",
+            "体面工作与低薪劳动的矛盾",
+            "社会对高学历的期待压力"
+          ],
+          "target_audience": "高校毕业生、年轻职场人、高学历求职者",
+          "political_sensitivity": "低",
+          "backlash_events": [
+            "部分评论批评该梗为逃避现实找借口，鼓励脱下长衫务实就业"
+          ]
+        },
+        "semantic_drift": {
+          "original_meaning": "高学历毕业生因面子不愿从事低薪或体力劳动，陷入高不成低不就的困境",
+          "current_meaning": "泛指因身份、标签或社会期待而无法放下身段、接受现实的人或现象",
+          "drift_direction": "从具体学历困境泛化为更广泛的身份焦虑"
+        },
+        "narrative_quality": {
+          "information_richness": "中",
+          "key_insight": "该视频揭示了孔乙己长衫梗的核心矛盾：学历既是敲门砖，也是下不来的高台，反映了当代青年在理想与现实之间的挣扎"
+        },
+        "raw_llm_output": "{\n  \"meme_name\": \"孔乙己的长衫\",\n  \"origin\": {\n    \"time\": \"2023年2月\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"高校毕业生就业压力增大，学历贬值与体面工作难求的社会矛盾\",\n    \"precursor\": \"孔乙己（鲁迅小说人物）\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2023年2月\",\n      \"description\": \"B站UP主发布视频，将鲁迅小说中孔乙己不愿脱下长衫的意象与当代高学历毕业生求职困境类比，引发共鸣\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"B站UP主（具体ID未提及）\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2023年3月-4月\",\n      \"description\": \"视频被广泛转发，微博、知乎等平台大量讨论，成为社会热点话题，媒体跟进报道\",\n      \"key_platforms\": [\"B站\", \"微博\", \"知乎\"],\n      \"key_figures\": [\"普通网友\", \"自媒体\", \"主流媒体\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2023年4月-5月\",\n      \"description\": \"梗从单纯描述学历困境扩展到泛指各种因身份、标签而无法放下身段的现象，出现多种变体\",\n      \"key_platforms\": [\"微博\", \"微信\", \"抖音\"],\n      \"key_figures\": [\"普通网友\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"脱不下的长衫\",\n      \"time\": \"2023年3月\",\n      \"relationship\": \"衍生（直接沿用原梗核心意象）\"\n    },\n    {\n      \"variant_name\": \"长衫焦虑\",\n      \"time\": \"2023年4月\",\n      \"relationship\": \"泛化（从具体学历扩展到身份焦虑）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"高校毕业生就业难\", \"学历贬值\", \"体面工作与低薪劳动的矛盾\", \"社会对高学历的期待压力\"],\n    \"target_audience\": \"高校毕业生、年轻职场人、高学历求职者\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": [\"部分评论批评该梗为逃避现实找借口，鼓励脱下长衫务实就业\"]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"高学历毕业生因面子不愿从事低薪或体力劳动，陷入高不成低不就的困境\",\n    \"current_meaning\": \"泛指因身份、标签或社会期待而无法放下身段、接受现实的人或现象\",\n    \"drift_direction\": \"从具体学历困境泛化为更广泛的身份焦虑\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该视频揭示了孔乙己长衫梗的核心矛盾：学历既是敲门砖，也是下不来的高台，反映了当代青年在理想与现实之间的挣扎\"\n  }\n}",
+        "video_name": "孔乙己的长衫是什么梗【梗指南】 - 1.孔乙己的长衫是什么梗【梗指南】(Av865741661,P1)",
+        "transcript_chars": 591,
+        "duration_sec": 116.8
+      },
+      "narrative_extracted_at": "2026-06-26"
+    },
+    {
+      "id": "meme_014",
+      "name": "精神状态良好",
+      "aliases": [
+        "精神状态稳定",
+        "大学生的精神状态"
+      ],
+      "year": 2023,
+      "peak_year": 2023,
+      "source": "B站/抖音",
+      "source_platforms": [
+        "B站",
+        "抖音",
+        "微博",
+        "小红书"
+      ],
+      "category": "解构自嘲",
+      "tags": [
+        "反讽",
+        "精神健康",
+        "大学生",
+        "黑色幽默"
+      ],
+      "lifecycle": {
+        "emergence": "2023-03",
+        "peak": "2023-06",
+        "decay": "稳定在日常反讽用语中",
+        "status": "活跃中",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "诞生",
+          "sentiment": "反讽自嘲",
+          "intensity": 0.5
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "集体宣泄",
+          "intensity": 0.8
+        },
+        {
+          "phase": "日常化",
+          "sentiment": "中性万能梗",
+          "intensity": 0.3
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": -0.3,
+        "chaos_order_description": "偏混沌：以'否认问题'的方式承认问题——这种反讽本身是一种巧妙的混沌管理策略",
+        "entropy_effect": "弱负熵：将精神困扰转化为可被集体分享的笑料，降低了讨论心理健康问题的门槛",
+        "order_health": "健康：反讽在这里不是逃避而是表达——它创造了一个低门槛的精神困扰讨论空间"
+      },
+      "propagation_model": {
+        "estimated_R0": 3.3,
+        "transmission_mechanism": "抖音/B站大学生日常 → 各类场景化匹配 → 日常万能反讽",
+        "circle_layers": [
+          "大学生",
+          "B站用户",
+          "青年群体"
+        ]
+      },
+      "mutation_variants": [
+        "精神状态良好（配疯癫画面）",
+        "精神状态稳定",
+        "我的精神状态be like"
+      ],
+      "narrative": "'精神状态良好'是中国年轻人2023年最常用的反讽表达之一。它的使用场景通常是配上一段极其混乱、崩溃或疯癫的视频，然后写上'精神状态良好'。这种'I'm fine'式的反讽在全球互联网文化中都有对应物，但其在中国语境下的爆发出圈与后疫情时代年轻人普遍的心理健康危机密切相关。从混沌动力学看，这种反讽是一种高效的混沌管理策略：它既承认了混沌（混乱的精神状态），又通过幽默建立了短暂的秩序（词语的字面意思与画面的强烈反差制造了喜剧效果）。",
+      "narrative_extracted": {
+        "meme_name": "发疯文学",
+        "origin": {
+          "time": "2021年",
+          "platform": "网络（具体平台未明确）",
+          "trigger_event": "疫情导致大学生被封闭在学校，情绪压抑",
+          "precursor": "《甄嬛传》和《红楼梦》中林黛玉的说话方式"
+        },
+        "spread_phases": [
+          {
+            "phase": "萌芽",
+            "time_range": "2021年",
+            "description": "网友模仿《甄嬛传》和《红楼梦》中林黛玉的说话方式，在网络上掀起一阵热潮",
+            "key_platforms": [
+              "网络（未具体说明）"
+            ],
+            "key_figures": null
+          },
+          {
+            "phase": "爆发",
+            "time_range": "最近（视频发布时间前后）",
+            "description": "因疫情被关在学校的大学生大量创作发疯文学，表达压抑情绪，并在社交媒体上广泛使用",
+            "key_platforms": [
+              "社交媒体（未具体说明）"
+            ],
+            "key_figures": null
+          }
+        ],
+        "mutations": [
+          {
+            "variant_name": "人上人（人上人上哪有不疯的）",
+            "time": "最近",
+            "relationship": "衍生"
+          },
+          {
+            "variant_name": "精神稳定一分钟也很厉害",
+            "time": "最近",
+            "relationship": "衍生"
+          }
+        ],
+        "social_context": {
+          "triggers": [
+            "疫情导致大学生被封闭在学校，情绪压抑"
+          ],
+          "target_audience": "大学生",
+          "political_sensitivity": "低",
+          "backlash_events": null
+        },
+        "semantic_drift": {
+          "original_meaning": "用极度夸张、无序、情绪饱满的文字句式来抒发强烈情绪的写作方式",
+          "current_meaning": "当代大学生表达精神压抑和情绪崩溃的流行文体",
+          "drift_direction": "从泛指情绪表达变为特指大学生疫情下的精神状态"
+        },
+        "narrative_quality": {
+          "information_richness": "中",
+          "key_insight": "发疯文学最早在2021年出现，源于模仿《甄嬛传》和《红楼梦》的说话方式，近期因疫情封闭大学生情绪压抑而再次爆发"
+        },
+        "raw_llm_output": "{\n  \"meme_name\": \"发疯文学\",\n  \"origin\": {\n    \"time\": \"2021年\",\n    \"platform\": \"网络（具体平台未明确）\",\n    \"trigger_event\": \"疫情导致大学生被封闭在学校，情绪压抑\",\n    \"precursor\": \"《甄嬛传》和《红楼梦》中林黛玉的说话方式\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2021年\",\n      \"description\": \"网友模仿《甄嬛传》和《红楼梦》中林黛玉的说话方式，在网络上掀起一阵热潮\",\n      \"key_platforms\": [\"网络（未具体说明）\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"最近（视频发布时间前后）\",\n      \"description\": \"因疫情被关在学校的大学生大量创作发疯文学，表达压抑情绪，并在社交媒体上广泛使用\",\n      \"key_platforms\": [\"社交媒体（未具体说明）\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"人上人（人上人上哪有不疯的）\",\n      \"time\": \"最近\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"精神稳定一分钟也很厉害\",\n      \"time\": \"最近\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"疫情导致大学生被封闭在学校，情绪压抑\"],\n    \"target_audience\": \"大学生\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"用极度夸张、无序、情绪饱满的文字句式来抒发强烈情绪的写作方式\",\n    \"current_meaning\": \"当代大学生表达精神压抑和情绪崩溃的流行文体\",\n    \"drift_direction\": \"从泛指情绪表达变为特指大学生疫情下的精神状态\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"发疯文学最早在2021年出现，源于模仿《甄嬛传》和《红楼梦》的说话方式，近期因疫情封闭大学生情绪压抑而再次爆发\"\n  }\n}",
+        "video_name": "【梗百科】当代大学生的精神状态怎么了？发疯文学再次回归！ - 1.【梗百科】当代大学生的精神状态怎么了？发疯文学再次回归！(Av562273175,P1)",
+        "transcript_chars": 361,
+        "duration_sec": 95.36
+      },
+      "narrative_extracted_at": "2026-06-26"
+    },
+    {
+      "id": "meme_015",
+      "name": "XX刺客",
+      "aliases": [
+        "雪糕刺客",
+        "刺客化叙事"
+      ],
+      "year": 2022,
+      "peak_year": 2022,
+      "source": "小红书/微博",
+      "source_platforms": [
+        "小红书",
+        "微博",
+        "B站",
+        "抖音"
+      ],
+      "category": "攻击发泄",
+      "tags": [
+        "消费陷阱",
+        "物价",
+        "被刺感",
+        "标签化"
+      ],
+      "lifecycle": {
+        "emergence": "2022-06",
+        "peak": "2022-07",
+        "decay": "快速衰减，但'刺客'化构词法已固化",
+        "status": "已退潮，'刺客'作为词缀留在日常语中",
+        "duration_months": 2
+      },
+      "sentiment_arc": [
+        {
+          "phase": "爆发",
+          "sentiment": "愤怒+共鸣",
+          "intensity": 0.85
+        },
+        {
+          "phase": "泛化",
+          "sentiment": "标签化使用",
+          "intensity": 0.5
+        },
+        {
+          "phase": "退潮",
+          "sentiment": "审美疲劳",
+          "intensity": 0.15
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": -0.5,
+        "chaos_order_description": "偏混沌：以戏剧化命名宣泄消费焦虑——短期命名了模糊的不满，长期泛化后消解了语义本身",
+        "entropy_effect": "先负熵（命名精准）后熵增（泛化滥用）",
+        "order_health": "临界：初期的表达价值被网络跟风迅速消耗完毕"
+      },
+      "propagation_model": {
+        "estimated_R0": 5.0,
+        "transmission_mechanism": "小红书/微博首发 → 主流媒体报道 → 各类'刺客'衍生 → 官方介入 → 梗疲劳",
+        "circle_layers": [
+          "小红书用户",
+          "微博大V",
+          "主流媒体",
+          "市场监管"
+        ]
+      },
+      "mutation_variants": [
+        "雪糕刺客",
+        "酸奶刺客",
+        "水果刺客",
+        "理发刺客",
+        "XX刺客"
+      ],
+      "narrative": "2022年夏天，'雪糕刺客'一词突然刷屏。指那些在便利店/超市中不标明价格、结账时才让人'被刺'的高价雪糕（以钟薛高为代表）。从'雪糕刺客'开始，各种'XX刺客'如雨后春笋般出现：酸奶刺客、水果刺客、理发刺客……这个梗的爆发式传播和快速退潮提供了一个经典案例：当一个梗的命名极其精准（'刺客'完美捕捉了那种'暗箭伤人'的消费体验），它的R₀会非常高；但当一个梗变成万能模板后，语义就会迅速稀释——从'精准的痛感命名'变成'无差别的任何物价抱怨'，最终导致群体免疫（审美疲劳）。这也是一个有趣的秩序→熵增轨迹：精准命名（建立秩序）→模板泛化（秩序稀释）→语义耗尽（熵增至无用）。"
+    },
+    {
+      "id": "meme_016",
+      "name": "谢帝我要迪士尼",
+      "aliases": [
+        "我要迪士尼",
+        "diss你"
+      ],
+      "year": 2024,
+      "peak_year": 2024,
+      "source": "抖音/B站说唱",
+      "source_platforms": [
+        "抖音",
+        "B站",
+        "微博"
+      ],
+      "category": "纯粹娱乐",
+      "tags": [
+        "说唱",
+        "搞笑",
+        "病毒传播",
+        "二创"
+      ],
+      "lifecycle": {
+        "emergence": "2024-03",
+        "peak": "2024-04",
+        "decay": "在二创中延续",
+        "status": "二创活跃中，原始热度下降",
+        "duration_months": 3
+      },
+      "sentiment_arc": [
+        {
+          "phase": "诞生",
+          "sentiment": "搞笑+意外",
+          "intensity": 0.6
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "搞笑狂欢",
+          "intensity": 0.9
+        },
+        {
+          "phase": "二创期",
+          "sentiment": "创作驱动",
+          "intensity": 0.5
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.0,
+        "chaos_order_description": "中性：纯粹的娱乐性病毒传播——无明确价值负载，情感混沌属性最低",
+        "entropy_effect": "中性偏负熵：提供了无害的集体娱乐和创作空间",
+        "order_health": "健康：纯粹娱乐型热梗几乎不携带'扭曲秩序'风险"
+      },
+      "propagation_model": {
+        "estimated_R0": 4.0,
+        "transmission_mechanism": "抖音视频 → B站二创 → 微博扩散 → 品牌蹭热点",
+        "circle_layers": [
+          "抖音用户",
+          "B站二创作者",
+          "普通网友"
+        ]
+      },
+      "mutation_variants": [
+        "diss你（变体）",
+        "我要diss你"
+      ],
+      "narrative": "2024年3月，博主'刀脚'在抖音发布了一首题为《谢帝我要迪士尼》的即兴说唱，以极其简单直白的歌词和洗脑的旋律迅速爆红。这首歌的爆红几乎没有承载明显的社会情绪或价值观——它就是纯粹的搞笑和洗脑。这类'纯粹娱乐型'热梗在混沌轴上的位置最接近中性：它既不建立什么秩序，也不带来多少混沌，只是系统的一次短暂的情绪释放和集体娱乐。从情感动力学角度，这种'无负荷热梗'是系统健康的标志——如果所有热梗都承载着沉重的社会情绪，那才是系统出了问题。"
+    },
+    {
+      "id": "meme_017",
+      "name": "科目三",
+      "aliases": [
+        "广西科目三",
+        "丝滑摇摆"
+      ],
+      "year": 2023,
+      "peak_year": 2023,
+      "source": "短视频平台（广西民间）",
+      "source_platforms": [
+        "抖音",
+        "快手",
+        "B站",
+        "YouTube"
+      ],
+      "category": "纯粹娱乐",
+      "tags": [
+        "舞蹈",
+        "草根文化",
+        "出海",
+        "全民参与"
+      ],
+      "lifecycle": {
+        "emergence": "2022-06",
+        "peak": "2023-11",
+        "decay": "转化为固定文化产品",
+        "status": "已成为中国互联网文化输出典型案例",
+        "duration_months": 18
+      },
+      "sentiment_arc": [
+        {
+          "phase": "民间萌芽",
+          "sentiment": "接地气",
+          "intensity": 0.3
+        },
+        {
+          "phase": "全国扩散",
+          "sentiment": "搞笑+参与感",
+          "intensity": 0.7
+        },
+        {
+          "phase": "国际传播",
+          "sentiment": "文化自豪+争议",
+          "intensity": 0.6
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.3,
+        "chaos_order_description": "偏秩序：从民间混沌的即兴舞蹈中涌现出了一种全球性文化形式——这是从混沌中自然生长出秩序的范例",
+        "entropy_effect": "强负熵：将碎片化的民间创意凝结为可传播的文化产品",
+        "order_health": "健康秩序：草根自发生长、全民参与的舞蹈文化，未受商业或意识形态过度收编"
+      },
+      "propagation_model": {
+        "estimated_R0": 5.0,
+        "transmission_mechanism": "广西民间 → 抖音/快手 → 全网跟跳 → 海底捞服务员跳科目三 → 国际传播（韩国/日本/欧美）",
+        "circle_layers": [
+          "广西本地",
+          "抖音用户",
+          "全国公众",
+          "国际社交媒体"
+        ]
+      },
+      "mutation_variants": [
+        "丝滑小连招",
+        "广西科目三",
+        "海底捞科目三"
+      ],
+      "narrative": "'科目三'是2023年中国互联网文化输出的代表性案例。起源于广西民间的即兴舞蹈，以丝滑的脚部动作和魔性的节奏感著称。经过一年多的发酵，科目三从地方短视频文化演变为全国现象，最终由海底捞服务员在全球门店跳科目三完成了国际传播。它的传播路径展现了草根文化在数字时代的典型生命轨迹：地方边缘→平台放大→全民参与→商业收编→国际扩散。科目三的特殊性在于它几乎没有任何社会情绪负载——它是一种纯粹的、身体性的快乐。在混沌动力学中，它代表了从混沌中自发涌现出秩序的能力。",
+      "narrative_extracted": {
+        "meme_name": "科目三",
+        "origin": {
+          "time": "2010年代",
+          "platform": "广西柳州地方文化",
+          "trigger_event": null,
+          "precursor": "入义13（疑似“入义13”为ASR错误，可能指“广西科目三”前身舞蹈）"
+        },
+        "spread_phases": [
+          {
+            "phase": "萌芽",
+            "time_range": "2010年代",
+            "description": "广西柳州地区出现一种舞蹈，被称为“入义13”，是科目三舞蹈的原型。",
+            "key_platforms": [
+              "地方性传播"
+            ],
+            "key_figures": null
+          },
+          {
+            "phase": "爆发",
+            "time_range": "2022年",
+            "description": "以“科目三”为名在互联网暴火，常配曲为“似华辩苏”（ASR错误，可能指“似华辩苏”为某首歌曲），出现大量模仿视频。",
+            "key_platforms": [
+              "B站",
+              "抖音"
+            ],
+            "key_figures": [
+              "续谋（ASR错误，可能指某位舞者）",
+              "粉丝"
+            ]
+          },
+          {
+            "phase": "泛化",
+            "time_range": "2023年",
+            "description": "科目三再次进入大众视野，配曲改为“一笑江湖”，舞蹈热度席卷全球，出现“五统台湾”（ASR错误，可能指“舞统台湾”）等衍生说法。",
+            "key_platforms": [
+              "B站",
+              "抖音",
+              "YouTube",
+              "TikTok"
+            ],
+            "key_figures": [
+              "音区将军爱美麗（ASR错误，可能指某位海外博主）",
+              "英区不断（ASR错误，可能指英国地区博主）",
+              "春造绅画（ASR错误，可能指某位创作者）"
+            ]
+          }
+        ],
+        "mutations": [
+          {
+            "variant_name": "舞统台湾",
+            "time": "2023年",
+            "relationship": "衍生（将舞蹈传播至台湾地区，被戏称为“舞统台湾”）"
+          }
+        ],
+        "social_context": {
+          "triggers": [
+            "年轻人对广西地方文化的猎奇与模仿",
+            "全球短视频平台对舞蹈挑战的推动"
+          ],
+          "target_audience": "年轻网民，尤其是短视频用户",
+          "political_sensitivity": "低",
+          "backlash_events": [
+            "视频中提及中年人对年轻人舞蹈投来异样目光，形成代际反差"
+          ]
+        },
+        "semantic_drift": {
+          "original_meaning": "广西地方的一种舞蹈类型，源自当地文化",
+          "current_meaning": "一种全球流行的短视频舞蹈挑战，配乐为《一笑江湖》",
+          "drift_direction": "从地方性舞蹈演变为全球性网络迷因"
+        },
+        "narrative_quality": {
+          "information_richness": "中",
+          "key_insight": "科目三舞蹈的全球传播过程中，出现了中年旁观者与年轻舞者之间的代际反差，成为该梗传播中的有趣社会现象。"
+        },
+        "raw_llm_output": "{\n  \"meme_name\": \"科目三\",\n  \"origin\": {\n    \"time\": \"2010年代\",\n    \"platform\": \"广西柳州地方文化\",\n    \"trigger_event\": null,\n    \"precursor\": \"入义13（疑似“入义13”为ASR错误，可能指“广西科目三”前身舞蹈）\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2010年代\",\n      \"description\": \"广西柳州地区出现一种舞蹈，被称为“入义13”，是科目三舞蹈的原型。\",\n      \"key_platforms\": [\"地方性传播\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2022年\",\n      \"description\": \"以“科目三”为名在互联网暴火，常配曲为“似华辩苏”（ASR错误，可能指“似华辩苏”为某首歌曲），出现大量模仿视频。\",\n      \"key_platforms\": [\"B站\", \"抖音\"],\n      \"key_figures\": [\"续谋（ASR错误，可能指某位舞者）\", \"粉丝\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2023年\",\n      \"description\": \"科目三再次进入大众视野，配曲改为“一笑江湖”，舞蹈热度席卷全球，出现“五统台湾”（ASR错误，可能指“舞统台湾”）等衍生说法。\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"YouTube\", \"TikTok\"],\n      \"key_figures\": [\"音区将军爱美麗（ASR错误，可能指某位海外博主）\", \"英区不断（ASR错误，可能指英国地区博主）\", \"春造绅画（ASR错误，可能指某位创作者）\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"舞统台湾\",\n      \"time\": \"2023年\",\n      \"relationship\": \"衍生（将舞蹈传播至台湾地区，被戏称为“舞统台湾”）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"年轻人对广西地方文化的猎奇与模仿\", \"全球短视频平台对舞蹈挑战的推动\"],\n    \"target_audience\": \"年轻网民，尤其是短视频用户\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": [\"视频中提及中年人对年轻人舞蹈投来异样目光，形成代际反差\"]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"广西地方的一种舞蹈类型，源自当地文化\",\n    \"current_meaning\": \"一种全球流行的短视频舞蹈挑战，配乐为《一笑江湖》\",\n    \"drift_direction\": \"从地方性舞蹈演变为全球性网络迷因\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"科目三舞蹈的全球传播过程中，出现了中年旁观者与年轻舞者之间的代际反差，成为该梗传播中的有趣社会现象。\"\n  }\n}",
+        "video_name": "【梗百科】科目三是啥梗？外国人听了也一起摇！？ - 1.【梗百科】科目三是啥梗？外国人听了也一起摇！？(Av918348115,P1)",
+        "transcript_chars": 480,
+        "duration_sec": 140.522667
+      },
+      "narrative_extracted_at": "2026-06-26"
+    },
+    {
+      "id": "meme_018",
+      "name": "尊嘟假嘟",
+      "aliases": [
+        "尊嘟假嘟?",
+        "尊都假都"
+      ],
+      "year": 2023,
+      "peak_year": 2023,
+      "source": "宠物博主/萌宠文化",
+      "source_platforms": [
+        "小红书",
+        "微博",
+        "抖音",
+        "微信"
+      ],
+      "category": "纯粹娱乐",
+      "tags": [
+        "萌化语言",
+        "谐音梗",
+        "低龄化表达"
+      ],
+      "lifecycle": {
+        "emergence": "2023-07",
+        "peak": "2023-09",
+        "decay": "快速退潮",
+        "status": "已退潮，日常偶有使用",
+        "duration_months": 3
+      },
+      "sentiment_arc": [
+        {
+          "phase": "诞生",
+          "sentiment": "可爱/幼稚",
+          "intensity": 0.5
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "萌化狂欢",
+          "intensity": 0.7
+        },
+        {
+          "phase": "退潮",
+          "sentiment": "审美疲劳/反感",
+          "intensity": 0.1
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.1,
+        "chaos_order_description": "中性偏秩序：以萌化语言建立了一种短暂的、低龄化的表达秩序",
+        "entropy_effect": "中性：短期提供了无害的语言游戏，过度使用后产生审美熵增",
+        "order_health": "中性偏好：萌化语言本身无害，但过度使用可能导致真实表达能力的退化"
+      },
+      "propagation_model": {
+        "estimated_R0": 3.5,
+        "transmission_mechan": "宠物博主 → 小红书扩散 → 聊天软件表情包 → 品牌跟风 → 审美疲劳",
+        "circle_layers": [
+          "小红书用户",
+          "年轻女性",
+          "品牌营销"
+        ]
+      },
+      "mutation_variants": [
+        "尊都假都",
+        "尊嘟假嘟（各种表情包变体）"
+      ],
+      "narrative": "'尊嘟假嘟'是'真的假的'的萌化谐音，2023年夏秋之交流行于中国社交网络。它的传播路径非常标准：宠物博主首发→小红书扩散→表情包化→品牌跟风→审美疲劳→退潮。这个梗的生命周期短但爆发力强，它几乎没有传达任何深层社会情绪——只是人们短暂地享受了用萌化语调说话的乐趣。从混沌角度看，这种纯粹的、无负荷的语言游戏为情感系统提供了间歇性休息。"
+    },
+    {
+      "id": "meme_019",
+      "name": "遥遥领先（扩展分析）",
+      "aliases": [],
+      "year": 2023,
+      "peak_year": 2023,
+      "source": "华为发布会",
+      "source_platforms": [
+        "全平台"
+      ],
+      "category": "纯粹娱乐",
+      "tags": [
+        "skip"
+      ],
+      "lifecycle": {},
+      "sentiment_arc": [],
+      "chaos_vector": {},
+      "propagation_model": {},
+      "mutation_variants": [],
+      "narrative": "同 meme_012"
+    },
+    {
+      "id": "meme_020",
+      "name": "鸡你太美",
+      "aliases": [
+        "只因你太美",
+        "蔡徐坤",
+        "小黑子"
+      ],
+      "year": 2019,
+      "peak_year": 2023,
+      "source": "蔡徐坤《偶像练习生》自我介绍",
+      "source_platforms": [
+        "B站",
+        "抖音",
+        "全平台"
+      ],
+      "category": "纯粹娱乐",
+      "tags": [
+        "鬼畜",
+        "偶像",
+        "全民玩梗",
+        "黑红"
+      ],
+      "lifecycle": {
+        "emergence": "2019-01",
+        "peak": "2023-06",
+        "decay": "蔡徐坤争议事件后再次爆发",
+        "status": "已成为互联网基础语料",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "诞生",
+          "sentiment": "嘲笑+鬼畜",
+          "intensity": 0.7
+        },
+        {
+          "phase": "主流化",
+          "sentiment": "全民娱乐",
+          "intensity": 0.5
+        },
+        {
+          "phase": "蔡徐坤事件",
+          "sentiment": "报复式扩散",
+          "intensity": 0.9
+        },
+        {
+          "phase": "日常化",
+          "sentiment": "去情感化语料",
+          "intensity": 0.2
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": -0.2,
+        "chaos_order_description": "中性偏混沌：从有明确攻击对象的嘲笑演变为去目标化的基础语料——混沌属性随演变降低",
+        "entropy_effect": "长期来看趋于中性：最初的攻击性混沌投放随时间推移被稀释",
+        "order_health": "演变轨迹健康：从恶意嘲笑→纯净鬼畜语料，是娱乐化解构的典型案例"
+      },
+      "propagation_model": {
+        "estimated_R0": 5.5,
+        "transmission_mechanism": "饭圈 → B站鬼畜 → 全网梗化 → 蔡徐坤事件第二次爆发 → 基础互联网语料",
+        "circle_layers": [
+          "饭圈",
+          "B站用户",
+          "游戏玩家",
+          "小学生",
+          "全年龄段"
+        ]
+      },
+      "mutation_variants": [
+        "小黑子",
+        "树枝666",
+        "你干嘛哎呦",
+        "铁山靠（相关）"
+      ],
+      "narrative": "'鸡你太美'是蔡徐坤在《偶像练习生》自我介绍中'只因你太美'的空耳版本。这个梗的生命力远超任何人的预期——从2019年诞生，经历了几轮起落，在2023年蔡徐坤争议事件后达到传播顶峰，最终去目标化，成为互联网的基础文化语料（'小黑子'文化）。从模因学角度看，它是中国互联网历史上传播最广、持续时间最长、变体最多的个人向热梗。它经历了一个完整的混沌动力学周期：从有明确攻击对象→全民娱乐→自动复制传播→剥离原对象→成为独立的文化实体。",
+      "narrative_extracted": {
+        "meme_name": "鸡你太美",
+        "origin": {
+          "time": "2018年",
+          "platform": "B站",
+          "trigger_event": "偶像练习生蔡徐坤在自我介绍时演唱歌曲《只因你太美》，因歌词唱得太快，空耳成“鸡你太美”",
+          "precursor": "《只因你太美》歌曲"
+        },
+        "spread_phases": [
+          {
+            "phase": "萌芽",
+            "time_range": "2018年",
+            "description": "蔡徐坤在《偶像练习生》中自我介绍演唱《只因你太美》，因发音模糊被网友空耳为“鸡你太美”，开始在B站等平台作为鬼畜素材传播",
+            "key_platforms": [
+              "B站"
+            ],
+            "key_figures": [
+              "蔡徐坤"
+            ]
+          },
+          {
+            "phase": "爆发",
+            "time_range": "2023年",
+            "description": "蔡徐坤被爆出与女性发生关系并导致女方怀孕堕胎，聊天记录显示其母亲采取恐吓、安装监控等手段，引发舆论热议，“鸡你太美”被改编为“鸡你胎没”用于嘲讽",
+            "key_platforms": [
+              "微博",
+              "B站"
+            ],
+            "key_figures": [
+              "蔡徐坤",
+              "蔡徐坤母亲"
+            ]
+          }
+        ],
+        "mutations": [
+          {
+            "variant_name": "鸡你胎没",
+            "time": "2023年",
+            "relationship": "衍生"
+          }
+        ],
+        "social_context": {
+          "triggers": [
+            "蔡徐坤被曝出恋情及堕胎事件",
+            "公众对偶像私德的双标嘲讽",
+            "对明星公关手段的讽刺"
+          ],
+          "target_audience": "网络年轻用户、B站鬼畜区观众、蔡徐坤黑粉及路人",
+          "political_sensitivity": "无",
+          "backlash_events": null
+        },
+        "semantic_drift": {
+          "original_meaning": "对歌曲《只因你太美》的空耳恶搞，指代蔡徐坤的唱功或形象",
+          "current_meaning": "嘲讽蔡徐坤被曝出导致女方怀孕堕胎的丑闻",
+          "drift_direction": "从单纯恶搞变为针对具体丑闻的讽刺攻击"
+        },
+        "narrative_quality": {
+          "information_richness": "中",
+          "key_insight": "该梗在2023年因蔡徐坤堕胎丑闻被重新激活并变异为“鸡你胎没”，体现了网络梗从娱乐恶搞到道德审判的语义漂移"
+        },
+        "raw_llm_output": "{\n  \"meme_name\": \"鸡你太美\",\n  \"origin\": {\n    \"time\": \"2018年\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"偶像练习生蔡徐坤在自我介绍时演唱歌曲《只因你太美》，因歌词唱得太快，空耳成“鸡你太美”\",\n    \"precursor\": \"《只因你太美》歌曲\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2018年\",\n      \"description\": \"蔡徐坤在《偶像练习生》中自我介绍演唱《只因你太美》，因发音模糊被网友空耳为“鸡你太美”，开始在B站等平台作为鬼畜素材传播\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"蔡徐坤\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2023年\",\n      \"description\": \"蔡徐坤被爆出与女性发生关系并导致女方怀孕堕胎，聊天记录显示其母亲采取恐吓、安装监控等手段，引发舆论热议，“鸡你太美”被改编为“鸡你胎没”用于嘲讽\",\n      \"key_platforms\": [\"微博\", \"B站\"],\n      \"key_figures\": [\"蔡徐坤\", \"蔡徐坤母亲\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"鸡你胎没\",\n      \"time\": \"2023年\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"蔡徐坤被曝出恋情及堕胎事件\", \"公众对偶像私德的双标嘲讽\", \"对明星公关手段的讽刺\"],\n    \"target_audience\": \"网络年轻用户、B站鬼畜区观众、蔡徐坤黑粉及路人\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"对歌曲《只因你太美》的空耳恶搞，指代蔡徐坤的唱功或形象\",\n    \"current_meaning\": \"嘲讽蔡徐坤被曝出导致女方怀孕堕胎的丑闻\",\n    \"drift_direction\": \"从单纯恶搞变为针对具体丑闻的讽刺攻击\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗在2023年因蔡徐坤堕胎丑闻被重新激活并变异为“鸡你胎没”，体现了网络梗从娱乐恶搞到道德审判的语义漂移\"\n  }\n}",
+        "video_name": "鸡你胎没是什么梗【梗指南】 - 1.鸡你胎没是什么梗【梗指南】(Av827681606,P1)",
+        "transcript_chars": 532,
+        "duration_sec": 132.970667
+      },
+      "narrative_extracted_at": "2026-06-26"
+    },
+    {
+      "id": "meme_021",
+      "name": "后浪",
+      "aliases": [
+        "奔涌吧后浪",
+        "前浪",
+        "韭浪"
+      ],
+      "year": 2020,
+      "peak_year": 2020,
+      "source": "B站五四青年节宣传片",
+      "source_platforms": [
+        "B站",
+        "微博",
+        "知乎",
+        "朋友圈"
+      ],
+      "category": "身份认同",
+      "tags": [
+        "代际",
+        "官方叙事",
+        "反讽转化",
+        "青年文化"
+      ],
+      "lifecycle": {
+        "emergence": "2020-05-03",
+        "peak": "2020-05-05",
+        "decay": "快速转为反讽梗后消退",
+        "status": "已退潮，偶尔作为历史梗引用",
+        "duration_months": 1
+      },
+      "sentiment_arc": [
+        {
+          "phase": "首发",
+          "sentiment": "振奋（部分）+尴尬（部分）",
+          "intensity": 0.7
+        },
+        {
+          "phase": "反转",
+          "sentiment": "讽刺+愤怒+解构",
+          "intensity": 0.9
+        },
+        {
+          "phase": "消散",
+          "sentiment": "记忆中的标志性事件",
+          "intensity": 0.2
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.7,
+        "chaos_order_description": "偏移轨迹：从强秩序（官方叙事）→被解构反转为接近绝对秩序的批判对象→最终消散",
+        "entropy_effect": "熵增后消散：官方试图建立的秩序未能获得广泛认同，反而触发了批判性混沌",
+        "order_health": "官方叙事扭曲（过于理想化的青年画像，忽略了现实困境），被解构后迅速失去了叙事力"
+      },
+      "propagation_model": {
+        "estimated_R0": 6.0,
+        "transmission_mechanism": "B站+央视背书 → 朋友圈刷屏 → 知乎/微博批判性反弹 → '韭浪'等反讽变体 → 快速消亡",
+        "circle_layers": [
+          "B站用户",
+          "青年群体",
+          "知乎用户",
+          "中年转发群体"
+        ]
+      },
+      "mutation_variants": [
+        "韭浪",
+        "非浪（朱一旦版）",
+        "前浪"
+      ],
+      "narrative": "2020年五四青年节，B站发布宣传片《后浪》，由演员何冰以'前浪'口吻赞颂'后浪'。这个视频获得了全平台推广（包括央视），但引发的反应却与预期截然相反——大量年轻人认为视频中展现的青年生活（跳伞、潜水、汉服、旅行）与自己的真实处境（打工、租房、焦虑、内卷）严重脱节。'后浪'迅速从一个正能量符号转变为被嘲讽的对象，'韭浪'等反讽变体涌现。这个案例揭示了：当官方秩序预设（'青年们生活很好，充满选择'）与年轻人的小真实（'我连房租都付不起'）之间存在巨大落差时，强制推行的秩序不仅无法建立，反而会触发更强的混沌反弹。这是'背离真实→扩张型混沌投放'的典型案例。",
+      "narrative_extracted": {
+        "meme_name": "后浪",
+        "origin": {
+          "time": "2020年5月",
+          "platform": "B站",
+          "trigger_event": "B站在五四青年节前夕发布宣传片《后浪》",
+          "precursor": "长江后浪推前浪"
+        },
+        "spread_phases": [
+          {
+            "phase": "爆发",
+            "time_range": "2020年5月",
+            "description": "《后浪》视频发布后迅速走红，弹幕和评论中许多年轻人受到鼓舞，B站股价上涨，大量博主制作相关视频，衍生出‘前浪’‘飞浪’‘后厨’等梗。",
+            "key_platforms": [
+              "B站"
+            ],
+            "key_figures": [
+              "何冰（演员、视频演讲者）",
+              "B站官方"
+            ]
+          },
+          {
+            "phase": "变异",
+            "time_range": "2020年5月后",
+            "description": "视频引发争议，部分网友批评其画面充满消费主义，展示的生活超出普通年轻人承受能力，并与‘花呗给女儿过生日’广告等事件关联。后浪从最初指代年轻人，逐渐变为指代依靠家庭优渥条件实现消费自由的年轻群体。",
+            "key_platforms": [
+              "B站",
+              "微博",
+              "知乎"
+            ],
+            "key_figures": [
+              "多位计算视频中生活成本的博主"
+            ]
+          },
+          {
+            "phase": "固化",
+            "time_range": "2020年至今",
+            "description": "后浪成为固定网络用语，用于指代家境优越、消费自由的年轻人，常带有讽刺或批判意味。",
+            "key_platforms": [
+              "B站",
+              "微博",
+              "知乎",
+              "贴吧"
+            ],
+            "key_figures": []
+          }
+        ],
+        "mutations": [
+          {
+            "variant_name": "前浪",
+            "time": "2020年5月",
+            "relationship": "衍生"
+          },
+          {
+            "variant_name": "飞浪",
+            "time": "2020年5月",
+            "relationship": "衍生"
+          },
+          {
+            "variant_name": "后厨",
+            "time": "2020年5月",
+            "relationship": "衍生"
+          },
+          {
+            "variant_name": "你所热爱的就是你的生活",
+            "time": "2020年5月",
+            "relationship": "衍生"
+          }
+        ],
+        "social_context": {
+          "triggers": [
+            "五四青年节宣传片发布",
+            "消费主义与普通年轻人经济压力的对比",
+            "社会对教育、医疗、劳动权益、房价等问题的讨论"
+          ],
+          "target_audience": "B站用户、当代年轻人",
+          "political_sensitivity": "中",
+          "backlash_events": [
+            "网友批评视频展示的生活充满消费主义，超出普通年轻人承受能力",
+            "与‘花呗给女儿过生日’广告关联",
+            "被指缺乏五四运动的批判精神，更像心灵鸡汤"
+          ]
+        },
+        "semantic_drift": {
+          "original_meaning": "指代当代年轻人，表达赞美与羡慕，强调其拥有更好的物质条件和更自由的生活方式",
+          "current_meaning": "指代依靠家庭优渥条件实现消费自由的年轻群体，常含讽刺或批判意味",
+          "drift_direction": "从赞美变为讽刺，从泛指年轻人变为特指特定群体"
+        },
+        "narrative_quality": {
+          "information_richness": "高",
+          "key_insight": "后浪的传播过程暴露了不同群体之间的认知差异和现实鸿沟，从赞美视频演变为对消费主义和阶层分化的批判符号。"
+        },
+        "raw_llm_output": "```json\n{\n  \"meme_name\": \"后浪\",\n  \"origin\": {\n    \"time\": \"2020年5月\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"B站在五四青年节前夕发布宣传片《后浪》\",\n    \"precursor\": \"长江后浪推前浪\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2020年5月\",\n      \"description\": \"《后浪》视频发布后迅速走红，弹幕和评论中许多年轻人受到鼓舞，B站股价上涨，大量博主制作相关视频，衍生出‘前浪’‘飞浪’‘后厨’等梗。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"何冰（演员、视频演讲者）\", \"B站官方\"]\n    },\n    {\n      \"phase\": \"变异\",\n      \"time_range\": \"2020年5月后\",\n      \"description\": \"视频引发争议，部分网友批评其画面充满消费主义，展示的生活超出普通年轻人承受能力，并与‘花呗给女儿过生日’广告等事件关联。后浪从最初指代年轻人，逐渐变为指代依靠家庭优渥条件实现消费自由的年轻群体。\",\n      \"key_platforms\": [\"B站\", \"微博\", \"知乎\"],\n      \"key_figures\": [\"多位计算视频中生活成本的博主\"]\n    },\n    {\n      \"phase\": \"固化\",\n      \"time_range\": \"2020年至今\",\n      \"description\": \"后浪成为固定网络用语，用于指代家境优越、消费自由的年轻人，常带有讽刺或批判意味。\",\n      \"key_platforms\": [\"B站\", \"微博\", \"知乎\", \"贴吧\"],\n      \"key_figures\": []\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"前浪\",\n      \"time\": \"2020年5月\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"飞浪\",\n      \"time\": \"2020年5月\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"后厨\",\n      \"time\": \"2020年5月\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"你所热爱的就是你的生活\",\n      \"time\": \"2020年5月\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\n      \"五四青年节宣传片发布\",\n      \"消费主义与普通年轻人经济压力的对比\",\n      \"社会对教育、医疗、劳动权益、房价等问题的讨论\"\n    ],\n    \"target_audience\": \"B站用户、当代年轻人\",\n    \"political_sensitivity\": \"中\",\n    \"backlash_events\": [\n      \"网友批评视频展示的生活充满消费主义，超出普通年轻人承受能力\",\n      \"与‘花呗给女儿过生日’广告关联\",\n      \"被指缺乏五四运动的批判精神，更像心灵鸡汤\"\n    ]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"指代当代年轻人，表达赞美与羡慕，强调其拥有更好的物质条件和更自由的生活方式\",\n    \"current_meaning\": \"指代依靠家庭优渥条件实现消费自由的年轻群体，常含讽刺或批判意味\",\n    \"drift_direction\": \"从赞美变为讽刺，从泛指年轻人变为特指特定群体\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"高\",\n    \"key_insight\": \"后浪的传播过程暴露了不同群体之间的认知差异和现实鸿沟，从赞美视频演变为对消费主义和阶层分化的批判符号。\"\n  }\n}\n```",
+        "video_name": "后浪是什么梗【键政梗百科19】 - 1.后浪是什么梗【键政梗百科19】(Av114051346600730,P1)",
+        "transcript_chars": 812,
+        "duration_sec": 170.713424
+      },
+      "narrative_extracted_at": "2026-06-26"
+    },
+    {
+      "id": "meme_022",
+      "name": "情绪价值",
+      "aliases": [
+        "提供情绪价值",
+        "情绪价值拉满"
+      ],
+      "year": 2022,
+      "peak_year": 2023,
+      "source": "心理学概念出圈（小红书/微博）",
+      "source_platforms": [
+        "小红书",
+        "微博",
+        "抖音",
+        "播客"
+      ],
+      "category": "身份认同",
+      "tags": [
+        "情感",
+        "亲密关系",
+        "心理学化",
+        "价值交换"
+      ],
+      "lifecycle": {
+        "emergence": "2022-06",
+        "peak": "2023-03",
+        "decay": "稳定在亲密关系/职场讨论中",
+        "status": "已成为基础社交词汇",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "学术萌芽",
+          "sentiment": "中性工具",
+          "intensity": 0.2
+        },
+        {
+          "phase": "关系话语化",
+          "sentiment": "赋权感+计算感",
+          "intensity": 0.5
+        },
+        {
+          "phase": "泛化",
+          "sentiment": "万能标尺",
+          "intensity": 0.4
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.35,
+        "chaos_order_description": "偏秩序：将模糊的情感体验转化为可讨论、可比较、可要求的量化概念——这是对情感混沌的系统化秩序建立",
+        "entropy_effect": "负熵混合：帮助识别和表达情感需求（负熵），但过度工具化可能导致关系的功利化（新形式的熵增）",
+        "order_health": "健康但需警惕：命名情感需求是健康的；将关系完全化为价值计算则滑向扭曲"
+      },
+      "propagation_model": {
+        "estimated_R0": 3.0,
+        "transmission_mechanism": "心理学博主 → 女性社交社区 → 亲密关系话语标配 → 职场管理术语",
+        "circle_layers": [
+          "小红书女性用户",
+          "心理学爱好者",
+          "恋爱/婚姻讨论者",
+          "职场管理"
+        ]
+      },
+      "mutation_variants": [
+        "情绪价值拉满",
+        "情绪消耗",
+        "提供不了情绪价值"
+      ],
+      "narrative": "'情绪价值'是一个从心理学边缘概念出圈为全民日常词汇的案例。2022-2023年，这个术语从心理咨询和亲密关系讨论领域溢出到日常社交话语中，成为衡量关系质量的标配标尺。它代表了一种有趣的文化现象：人们对情感体验进行'秩序化'的冲动——将模糊、难以言说的情感互动转化为可量化、可比较的'价值'。从混沌动力学看，这是一种典型的'命名以降低混沌'行为。但它的风险在于：当情感被完全'价值化'，关系就可能被简化为交易——这是从健康秩序滑向扭曲秩序的标准路径。"
+    },
+    {
+      "id": "meme_023",
+      "name": "四不/不婚不育",
+      "aliases": [
+        "不买房不买车不结婚不生娃",
+        "新时代四不青年"
+      ],
+      "year": 2022,
+      "peak_year": 2023,
+      "source": "网络社区自发性话语",
+      "source_platforms": [
+        "微博",
+        "知乎",
+        "B站",
+        "豆瓣"
+      ],
+      "category": "虚无退却",
+      "tags": [
+        "婚育",
+        "生活成本",
+        "系统性退出",
+        "代际冲突"
+      ],
+      "lifecycle": {
+        "emergence": "2022-03",
+        "peak": "2023-02",
+        "decay": "渗透为默认假设而非口号",
+        "status": "已从口号转化为生活方式选择",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "萌芽",
+          "sentiment": "个体选择",
+          "intensity": 0.3
+        },
+        {
+          "phase": "口号化",
+          "sentiment": "宣言式拒绝",
+          "intensity": 0.6
+        },
+        {
+          "phase": "日常化",
+          "sentiment": "默认选项之一",
+          "intensity": 0.3
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": -0.55,
+        "chaos_order_description": "偏混沌：从传统社会秩序（结婚生子买房）中全面退出——这是对旧秩序的拒绝，但不必然提供新秩序",
+        "entropy_effect": "熵增（对旧系统）：大规模退出传统生活脚本导致人口/经济层面的系统紊乱",
+        "order_health": "个体层面可能健康（自主选择），系统层面存在长期不稳定性风险"
+      },
+      "propagation_model": {
+        "estimated_R0": 3.2,
+        "transmission_mechanism": "豆瓣/微博个人叙事 → 媒体总结 → 代际讨论 → 政策关注",
+        "circle_layers": [
+          "青年女性",
+          "豆瓣/微博用户",
+          "父母一辈的反弹",
+          "政策制定者"
+        ]
+      },
+      "mutation_variants": [
+        "不婚不育保平安",
+        "四不青年",
+        "躺平（相关）",
+        "润（相关）"
+      ],
+      "narrative": "'四不'（不买房、不买车、不结婚、不生娃）是2022年以来中国年轻人中最具系统性的退出叙事。与'躺平'相比，它更加具体——不是笼统的'退出游戏'，而是对四个具体传统人生节点的系统拒绝。它的传播机制反映了代际之间的信息不对称：年轻人基于自身经济处境做出理性选择（在房价/教育/医疗成本下，这四个'不'可能是最优解），而上一代人将其视为'不负责任'。从混沌动力学看，当大量个体同时退出传统生活脚本时，社会系统面临的是前所未有的秩序重组压力。"
+    },
+    {
+      "id": "meme_024",
+      "name": "显眼包",
+      "aliases": [
+        "显眼",
+        "包显眼的"
+      ],
+      "year": 2023,
+      "peak_year": 2023,
+      "source": "抖音/快手方言文化",
+      "source_platforms": [
+        "抖音",
+        "微博",
+        "B站"
+      ],
+      "category": "纯粹娱乐",
+      "tags": [
+        "方言",
+        "幽默",
+        "标签化",
+        "无害娱乐"
+      ],
+      "lifecycle": {
+        "emergence": "2023-08",
+        "peak": "2023-09",
+        "decay": "日常偶用",
+        "status": "已退潮但可被随时召回",
+        "duration_months": 2
+      },
+      "sentiment_arc": [
+        {
+          "phase": "诞生",
+          "sentiment": "滑稽+亲切",
+          "intensity": 0.5
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "全民找显眼包",
+          "intensity": 0.7
+        },
+        {
+          "phase": "退潮",
+          "sentiment": "淡出",
+          "intensity": 0.15
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.05,
+        "chaos_order_description": "中性：无害的分类游戏——给行为古怪的人一个可爱标签，降低了社交中的排斥感",
+        "entropy_effect": "弱负熵：标签化降低了社交场域的不确定性",
+        "order_health": "健康：将可能的社交尴尬转化为集体娱乐"
+      },
+      "propagation_model": {
+        "estimated_R0": 3.5,
+        "transmission_mechanism": "抖音方言视频 → 微博扩散 → 品牌/综艺收编 → 日常标签",
+        "circle_layers": [
+          "抖音用户",
+          "微博用户",
+          "综艺观众"
+        ]
+      },
+      "mutation_variants": [
+        "显眼包本包",
+        "显眼包行为大赏"
+      ],
+      "narrative": "'显眼包'是一个源自方言（东北话/四川话等地方表达）的网络热词，指那种在人群中特别'突出'、行为举止引人注目但并非恶意的人。2023年夏秋走红。与'普信男'那种带有攻击性的标签不同，'显眼包'是一种温和的、带有亲近感的分类。它是'无害娱乐型'热梗的典型代表：几乎不承载社会情绪，只为人们提供了一种轻快的互相打趣方式。"
+    },
+    {
+      "id": "meme_025",
+      "name": "泼天富贵/泼天流量",
+      "aliases": [
+        "泼天的富贵",
+        "泼天的流量"
+      ],
+      "year": 2023,
+      "peak_year": 2023,
+      "source": "直播带货/社交媒体语境",
+      "source_platforms": [
+        "抖音",
+        "微博",
+        "B站"
+      ],
+      "category": "纯粹娱乐",
+      "tags": [
+        "流量",
+        "夸张",
+        "电商",
+        "羡慕"
+      ],
+      "lifecycle": {
+        "emergence": "2023-05",
+        "peak": "2023-09",
+        "decay": "日常化",
+        "status": "活跃在电商/流量相关讨论中",
+        "duration_months": 5
+      },
+      "sentiment_arc": [
+        {
+          "phase": "诞生",
+          "sentiment": "夸张+羡慕",
+          "intensity": 0.5
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "全网羡慕",
+          "intensity": 0.7
+        },
+        {
+          "phase": "日常化",
+          "sentiment": "中性夸张修饰",
+          "intensity": 0.3
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.2,
+        "chaos_order_description": "中性偏秩序：以夸张修辞为流量时代的不确定财富提供了叙事框架",
+        "entropy_effect": "弱负熵：命名了互联网流量经济的随机性",
+        "order_health": "健康偏中性：无害的夸张修辞"
+      },
+      "propagation_model": {
+        "estimated_R0": 3.0,
+        "transmission_mechanism": "带货主播金句 → 品牌/官微跟风 → 日常夸张用语",
+        "circle_layers": [
+          "电商从业者",
+          "抖音用户",
+          "品牌营销"
+        ]
+      },
+      "mutation_variants": [
+        "泼天流量",
+        "泼天的富贵轮到我了吗"
+      ],
+      "narrative": "'泼天富贵/泼天流量'是2023年直播带货文化中衍生出的流行语，用以形容某个品牌或个人突然获得巨大流量和收益。它捕捉了流量经济时代的一种特殊体验——财富和关注度可以像天降洪水一样突然到来，毫无预兆。这个表达的古风修辞（'泼天'）与底层商业逻辑的碰撞产生了独特的幽默感。"
+    },
+    {
+      "id": "meme_026",
+      "name": "发疯文学",
+      "aliases": [
+        "彻底疯狂",
+        "发疯",
+        "精神状态"
+      ],
+      "year": 2022,
+      "peak_year": 2023,
+      "source": "微博/B站/小红书",
+      "source_platforms": [
+        "微博",
+        "B站",
+        "小红书",
+        "抖音"
+      ],
+      "category": "解构自嘲",
+      "tags": [
+        "情绪宣泄",
+        "文体",
+        "反规训",
+        "青年文化"
+      ],
+      "lifecycle": {
+        "emergence": "2022-09",
+        "peak": "2023-03",
+        "decay": "转为固定问题解决模板",
+        "status": "活跃在电商售后/客服/日常抱怨中",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "诞生",
+          "sentiment": "疯癫式宣泄",
+          "intensity": 0.7
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "解放感+幽默",
+          "intensity": 0.85
+        },
+        {
+          "phase": "工具化",
+          "sentiment": "实用宣泄模板",
+          "intensity": 0.4
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": -0.4,
+        "chaos_order_description": "偏混沌：以有组织的、夸张的'失控'来对抗真实的无力感——表面是混沌（疯癫），实际是策略性的秩序建立",
+        "entropy_effect": "悖论性负熵：通过表演混沌来释放压力，进而恢复内部秩序",
+        "order_health": "健康：这是一种高阶的混沌管理策略——用可控的、仪式化的'发疯'来消化真实的情绪混沌"
+      },
+      "propagation_model": {
+        "estimated_R0": 3.8,
+        "transmission_mechanism": "微博段子手 → 小红书客服对话模板 → 电商维权 → 日常情绪管理工具",
+        "circle_layers": [
+          "微博用户",
+          "小红书用户",
+          "电商消费者"
+        ]
+      },
+      "mutation_variants": [
+        "发疯语录",
+        "彻底疯狂",
+        "发疯文学模板",
+        "精神状态（配合使用）"
+      ],
+      "narrative": "'发疯文学'是一种故意夸张、语无伦次、极度情绪化的文字风格。它的精妙之处在于：用极其有条理的方式去表演失控——大段的感叹号、逻辑跳跃、夸张的修辞、第三人称的自我叙述（比如'本宫真的要发疯了啊啊啊啊'）。在电商售后和客服维权场景中，发疯文学甚至被发现是一种出奇有效的沟通策略（客服面对歇斯底里的顾客往往会更快妥协）。从混沌动力学看，这是最有趣的现象之一：人们用'假混沌'（有组织的表演性失控）来管理'真混沌'（内心的无力感和愤怒）——这是一种元层级的混沌驾驭策略。",
+      "narrative_extracted": {
+        "meme_name": "发疯文学",
+        "origin": {
+          "time": "2021年",
+          "platform": "网络（具体平台未明确）",
+          "trigger_event": "疫情导致大学生被封闭在学校，情绪压抑",
+          "precursor": "《甄嬛传》和《红楼梦》中林黛玉的说话方式"
+        },
+        "spread_phases": [
+          {
+            "phase": "萌芽",
+            "time_range": "2021年",
+            "description": "网友模仿《甄嬛传》和《红楼梦》中林黛玉的说话方式，在网络上掀起一阵热潮",
+            "key_platforms": [
+              "网络（未具体说明）"
+            ],
+            "key_figures": null
+          },
+          {
+            "phase": "爆发",
+            "time_range": "最近（视频发布时间前后）",
+            "description": "因疫情被关在学校的大学生大量创作发疯文学，表达压抑情绪，并在社交媒体上广泛使用",
+            "key_platforms": [
+              "社交媒体（未具体说明）"
+            ],
+            "key_figures": null
+          }
+        ],
+        "mutations": [
+          {
+            "variant_name": "人上人（人上人上哪有不疯的）",
+            "time": "最近",
+            "relationship": "衍生"
+          },
+          {
+            "variant_name": "精神稳定一分钟也很厉害",
+            "time": "最近",
+            "relationship": "衍生"
+          }
+        ],
+        "social_context": {
+          "triggers": [
+            "疫情导致大学生被封闭在学校，情绪压抑"
+          ],
+          "target_audience": "大学生",
+          "political_sensitivity": "低",
+          "backlash_events": null
+        },
+        "semantic_drift": {
+          "original_meaning": "用极度夸张、无序、情绪饱满的文字句式来抒发强烈情绪的写作方式",
+          "current_meaning": "当代大学生表达精神压抑和情绪崩溃的流行文体",
+          "drift_direction": "从泛指情绪表达变为特指大学生疫情下的精神状态"
+        },
+        "narrative_quality": {
+          "information_richness": "中",
+          "key_insight": "发疯文学最早在2021年出现，源于模仿《甄嬛传》和《红楼梦》的说话方式，近期因疫情封闭大学生情绪压抑而再次爆发"
+        },
+        "raw_llm_output": "{\n  \"meme_name\": \"发疯文学\",\n  \"origin\": {\n    \"time\": \"2021年\",\n    \"platform\": \"网络（具体平台未明确）\",\n    \"trigger_event\": \"疫情导致大学生被封闭在学校，情绪压抑\",\n    \"precursor\": \"《甄嬛传》和《红楼梦》中林黛玉的说话方式\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2021年\",\n      \"description\": \"网友模仿《甄嬛传》和《红楼梦》中林黛玉的说话方式，在网络上掀起一阵热潮\",\n      \"key_platforms\": [\"网络（未具体说明）\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"最近（视频发布时间前后）\",\n      \"description\": \"因疫情被关在学校的大学生大量创作发疯文学，表达压抑情绪，并在社交媒体上广泛使用\",\n      \"key_platforms\": [\"社交媒体（未具体说明）\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"人上人（人上人上哪有不疯的）\",\n      \"time\": \"最近\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"精神稳定一分钟也很厉害\",\n      \"time\": \"最近\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"疫情导致大学生被封闭在学校，情绪压抑\"],\n    \"target_audience\": \"大学生\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"用极度夸张、无序、情绪饱满的文字句式来抒发强烈情绪的写作方式\",\n    \"current_meaning\": \"当代大学生表达精神压抑和情绪崩溃的流行文体\",\n    \"drift_direction\": \"从泛指情绪表达变为特指大学生疫情下的精神状态\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"发疯文学最早在2021年出现，源于模仿《甄嬛传》和《红楼梦》的说话方式，近期因疫情封闭大学生情绪压抑而再次爆发\"\n  }\n}",
+        "video_name": "【梗百科】当代大学生的精神状态怎么了？发疯文学再次回归！ - 1.【梗百科】当代大学生的精神状态怎么了？发疯文学再次回归！(Av562273175,P1)",
+        "transcript_chars": 361,
+        "duration_sec": 95.36
+      },
+      "narrative_extracted_at": "2026-06-26"
+    },
+    {
+      "id": "meme_027",
+      "name": "服美役",
+      "aliases": [
+        "美役",
+        "不服美役"
+      ],
+      "year": 2023,
+      "peak_year": 2023,
+      "source": "豆瓣/小红书女性主义讨论",
+      "source_platforms": [
+        "豆瓣",
+        "小红书",
+        "微博"
+      ],
+      "category": "身份认同",
+      "tags": [
+        "女性主义",
+        "容貌",
+        "自我规训",
+        "反消费主义"
+      ],
+      "lifecycle": {
+        "emergence": "2023-01",
+        "peak": "2023-06",
+        "decay": "稳定在女性主义话语体系中",
+        "status": "活跃中",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "提出",
+          "sentiment": "批判性觉醒",
+          "intensity": 0.6
+        },
+        {
+          "phase": "扩散",
+          "sentiment": "共鸣+争议",
+          "intensity": 0.8
+        },
+        {
+          "phase": "日常化",
+          "sentiment": "常态化反思工具",
+          "intensity": 0.4
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.2,
+        "chaos_order_description": "偏秩序：将隐性的容貌消费主义压力明确命名为'服役'——这是对扭曲秩序的揭露和去合法化",
+        "entropy_effect": "负熵（对旧秩序）+熵增过渡期（引发争议）：揭露旧的扭曲秩序，建立新的认知框架",
+        "order_health": "健康秩序：识别并命名了一种此前未被广泛讨论的性别化压力"
+      },
+      "propagation_model": {
+        "estimated_R0": 2.8,
+        "transmission_mechanism": "豆瓣女性主义小组 → 小红书KOL → 微博争议 → 主流媒体关注",
+        "circle_layers": [
+          "豆瓣女性主义者",
+          "小红书女性用户",
+          "时尚/美妆博主",
+          "反方批评者"
+        ]
+      },
+      "mutation_variants": [
+        "美役",
+        "不服美役",
+        "脱美役"
+      ],
+      "narrative": "'服美役'是2023年女性主义网络话语中的关键词。它将女性在容貌、化妆、穿搭上的持续投入比喻为'服役'——一种被迫的、消耗性的、无止境的劳动。这个概念的传播代表了一种认知框架的建立：将此前被视为'理所当然'或'个人选择'的容貌投入，重新定义为一种社会结构强加的负担。从微尘哲学的视角看，这是对一种扭曲秩序（容貌消费主义）的揭露和去合法化——通过命名来打破其'理所当然'的伪装。"
+    },
+    {
+      "id": "meme_028",
+      "name": "建议专家不要建议",
+      "aliases": [
+        "专家建议",
+        "专家不要建议"
+      ],
+      "year": 2022,
+      "peak_year": 2022,
+      "source": "微博/知乎对专家言论的反弹",
+      "source_platforms": [
+        "微博",
+        "知乎",
+        "B站"
+      ],
+      "category": "攻击发泄",
+      "tags": [
+        "权威解构",
+        "代际",
+        "反智倾向",
+        "信任危机"
+      ],
+      "lifecycle": {
+        "emergence": "2022-04",
+        "peak": "2022-08",
+        "decay": "日常化的讽刺框架",
+        "status": "已成为对权威话语的默认反应框架",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "积累期",
+          "sentiment": "长期不满累积",
+          "intensity": 0.3
+        },
+        {
+          "phase": "触发",
+          "sentiment": "某条离谱专家建议引爆",
+          "intensity": 0.8
+        },
+        {
+          "phase": "制度化",
+          "sentiment": "成为固定反应模板",
+          "intensity": 0.5
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": -0.45,
+        "chaos_order_description": "偏混沌：对权威知识话语的系统性怀疑和拒绝——这是认知秩序崩塌后的混沌反应",
+        "entropy_effect": "熵增：加速了专家-公众之间的信任断裂",
+        "order_health": "复杂：部分合理的反叛（反对脱离现实的专家建议）+ 部分危险的反智倾向（无差别拒绝专业知识）"
+      },
+      "propagation_model": {
+        "estimated_R0": 4.0,
+        "transmission_mechanism": "某条离谱专家建议 → 微博/知乎反弹 → 历史累积触发 → 成为固定梗",
+        "circle_layers": [
+          "微博用户",
+          "知乎用户",
+          "普通公众"
+        ]
+      },
+      "mutation_variants": [
+        "建议专家不要建议",
+        "专家建议收入中等收入群体",
+        "砖家"
+      ],
+      "narrative": "'建议专家不要建议'是2022年中国互联网上最流行的反权威话语之一。它的传播机制非常有趣：并不是某一条具体的专家建议引发了一夜之间的反弹，而是长期累积的'专家建议与普通人认知脱节'的经验，在某条触发性的离谱建议后集中爆发。从混沌动力学看，这反映了认知权威的结构性崩塌——当'专家'这个身份不再自动获得信任，公众的认知场域就会从'权威引导的有序态'趋向'自发的混沌态'。其中的核心矛盾在于：部分对专家的批评是理性的（他们确实说了脱离现实的话），但'建议专家不要建议'作为一个模板，开启了无差别拒绝所有专业知识的大门——这是从合理批评滑向反智混沌的路径。"
+    },
+    {
+      "id": "meme_029",
+      "name": "命运的齿轮开始转动",
+      "aliases": [
+        "齿轮开始转动",
+        "每个人的齿轮都在转动"
+      ],
+      "year": 2023,
+      "peak_year": 2023,
+      "source": "抖音怀旧叙事",
+      "source_platforms": [
+        "抖音",
+        "B站",
+        "微博"
+      ],
+      "category": "纯粹娱乐",
+      "tags": [
+        "怀旧",
+        "命运",
+        "叙事化",
+        "自我故事化"
+      ],
+      "lifecycle": {
+        "emergence": "2023-04",
+        "peak": "2023-06",
+        "decay": "日常浪漫化引用",
+        "status": "日常偶用",
+        "duration_months": 3
+      },
+      "sentiment_arc": [
+        {
+          "phase": "诞生",
+          "sentiment": "浪漫+怀旧",
+          "intensity": 0.5
+        },
+        {
+          "phase": "爆发",
+          "sentiment": "集体浪漫化",
+          "intensity": 0.75
+        },
+        {
+          "phase": "日常化",
+          "sentiment": "轻量引用",
+          "intensity": 0.2
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.5,
+        "chaos_order_description": "偏秩序：为人生随机事件赋予叙事连贯性——这是意义的主动建构行为",
+        "entropy_effect": "负熵：将从前的随机事件重新组织为有意义的生命叙事",
+        "order_health": "健康秩序：主动为生命赋予意义和叙事连贯性，这是典型的'建立健康秩序以滋养生命'"
+      },
+      "propagation_model": {
+        "estimated_R0": 3.5,
+        "transmission_mechanism": "抖音个人怀旧视频 → 模仿 → 全网跟风 → 日常引用",
+        "circle_layers": [
+          "抖音用户",
+          "年轻人",
+          "怀旧向博主"
+        ]
+      },
+      "mutation_variants": [
+        "命运的齿轮",
+        "每个人的齿轮都在转动",
+        "齿轮开始转动的那一刻"
+      ],
+      "narrative": "'命运的齿轮开始转动'是2023年抖音上流行的一种怀旧叙事模板。人们找出自己人生中某个不起眼的时刻（比如随手拍的视频、一个偶然的选择），配上这句话和大气的BGM，暗示那个看似平常的瞬间其实是命运巨变的起点。这本质上是人们主动为自己的生命构建叙事秩序——将随机性编织为有意义的故事。从微尘哲学的角度看，这是典型的'在混沌中建立秩序'：人生事件的因果连接本是混沌的（充满了随机性和不可预测性），但'齿轮转动'的叙事框架为这种混沌赋予了美感、意义和方向。"
+    },
+    {
+      "id": "meme_030",
+      "name": "原生家庭",
+      "aliases": [
+        "原生家庭之痛",
+        "原生家庭的影响"
+      ],
+      "year": 2018,
+      "peak_year": 2022,
+      "source": "心理学概念出圈",
+      "source_platforms": [
+        "豆瓣",
+        "知乎",
+        "微博",
+        "小红书"
+      ],
+      "category": "身份认同",
+      "tags": [
+        "家庭",
+        "创伤",
+        "自我理解",
+        "心理学化",
+        "代际"
+      ],
+      "lifecycle": {
+        "emergence": "2018-01",
+        "peak": "2021-2022",
+        "decay": "已固化为日常解释框架",
+        "status": "成为解释个人问题的默认框架之一",
+        "duration_months": 999
+      },
+      "sentiment_arc": [
+        {
+          "phase": "学术引入",
+          "sentiment": "认知工具",
+          "intensity": 0.2
+        },
+        {
+          "phase": "爆发期",
+          "sentiment": "解放感+愤怒",
+          "intensity": 0.8
+        },
+        {
+          "phase": "争议期",
+          "sentiment": "过度归因批判",
+          "intensity": 0.6
+        },
+        {
+          "phase": "日常化",
+          "sentiment": "成熟使用",
+          "intensity": 0.3
+        }
+      ],
+      "chaos_vector": {
+        "chaos_order_position": 0.4,
+        "chaos_order_description": "偏秩序：为个体困境提供了系统性的因果叙事框架——理解即疗愈的典型案例",
+        "entropy_effect": "先负熵（命名创伤来源，降低认知混乱）→ 过度使用可能导致新形式的熵增（将一切问题归因于原生家庭，逃避个人责任）",
+        "order_health": "健康但有滥用风险：理解家庭影响是健康的；将所有问题归咎于原生家庭是扭曲的（逃避个人自由和责任）"
+      },
+      "propagation_model": {
+        "estimated_R0": 4.2,
+        "transmission_mechanism": "心理学/心理咨询 → 豆瓣'父母皆祸害'等小组 → 网络情感博主扩散 → 主流理解 → 综艺/影视剧引用 → 日常解释模板",
+        "circle_layers": [
+          "豆瓣用户",
+          "心理咨询群体",
+          "情感博主粉丝",
+          "大众"
+        ]
+      },
+      "mutation_variants": [
+        "原生家庭之痛",
+        "原生家庭创伤",
+        "与原生家庭和解（后期收编版）",
+        "父母皆祸害（极端变体）"
+      ],
+      "narrative": "'原生家庭'是近年来中国互联网情感话语中最具影响力的心理学概念出圈案例。虽然这个概念早在2018年就已开始传播，但在2021-2022年达到了真正的全民普及。它的核心功能是为个体困境提供了一种因果叙事框架：为什么我是这样的人？因为我的原生家庭。为什么我在关系中总是重复某种模式？因为原生家庭。这种框架的力量在于它将此前被视为'个人性格缺陷'或'莫名的不幸'的感受，转变为了可被理解、可被讨论的系统性叙事。从混沌动力学看，这是典型的'命名即疗愈'——为混沌的痛苦赋予秩序性的因果解释。但它的风险同样明显：当'原生家庭'从解释框架滑向免责声明（'一切都是父母的问题'），它就从健康秩序转变为扭曲秩序——剥夺了主体的能动性和改变的意愿。"
+    }
+  ]
+}

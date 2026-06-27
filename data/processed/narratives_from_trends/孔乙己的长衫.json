@@ -1,0 +1,27 @@
+{
+  "meme_name": "孔乙己的长衫",
+  "peak_month": "2016-08",
+  "peak_value": 31,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2016-08",
+      "description": "梗首次出现，搜索量达到峰值31，可能源于对鲁迅作品《孔乙己》中‘长衫’象征意义的重新解读，引发初期关注。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2016-08",
+      "description": "搜索量在当月达到最高点31，形成单一脉冲式峰值，随后迅速消退。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2016-09至2023-02",
+      "description": "峰值后搜索量急剧下降，长期处于低位，但在2023年3-4月出现复燃，搜索量回升至11，形成二次小高峰。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 1,
+  "resurgence_detected": true,
+  "narrative_summary": "该梗在2016年8月短暂爆发后长期沉寂，于2023年3-4月复燃，呈现典型的‘复燃波动型’传播模式。",
+  "social_context_hint": "2023年复燃可能关联高校毕业生就业压力、‘脱不下长衫’的学历焦虑等社会议题，与疫情后经济恢复期的青年心态相关。"
+}

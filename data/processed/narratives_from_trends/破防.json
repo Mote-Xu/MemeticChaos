@@ -1,0 +1,27 @@
+{
+  "meme_name": "破防",
+  "peak_month": "2025-11",
+  "peak_value": 4,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2019-12 至 2025-10",
+      "description": "梗在2019年底萌芽，随后长期处于低关注度（值2-3），偶有波动但未形成爆发，属于潜伏积累期。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2025-11",
+      "description": "关注度突然跃升至历史最高值4，形成明显峰值，可能由特定事件或二次创作引爆。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2025-12",
+      "description": "峰值后迅速回落至2，关注度消退，符合短期爆发后快速冷却的特征。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 72,
+  "resurgence_detected": true,
+  "narrative_summary": "该梗经历长达近6年的低水平潜伏后，在2025年11月突然爆发达到峰值，随后迅速衰退，呈现典型的‘复燃波动型’传播模式。",
+  "social_context_hint": "2025年11月峰值可能关联当年重大社会事件或网络热点（如经济压力、公共事件引发的集体情绪宣泄），使‘破防’一词被高频使用以表达情感冲击。"
+}

@@ -1,0 +1,27 @@
+{
+  "meme_name": "社死",
+  "peak_month": "2021-10",
+  "peak_value": 13,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2021-05 至 2021-09",
+      "description": "梗在2021年5月首次出现，搜索关注度从7起步，经历数月缓慢爬升，至9月达到7，为爆发蓄力。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2021-10",
+      "description": "2021年10月搜索关注度飙升至13，达到历史最高点，标志着该梗进入全网爆火阶段。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2021-11 至 2025-12",
+      "description": "峰值后关注度迅速回落，但并未归零，而是呈现多次小幅度复燃（如2022-08、2023-10、2024-12），整体呈波动下降趋势，直至2025年底仍有余温。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 56,
+  "resurgence_detected": true,
+  "narrative_summary": "该梗经历了一次爆发式峰值后进入长期波动衰退期，期间多次复燃，表现出较强的生命力和周期性回潮特征。",
+  "social_context_hint": "2021年10月峰值可能关联疫情常态化下线上社交活跃、年轻人对尴尬场景的共鸣放大，以及短视频平台对‘社死’类内容的集中推流。"
+}

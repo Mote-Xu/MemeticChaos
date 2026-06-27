@@ -201,14 +201,19 @@ def phase_transition_summary(curator: Optional[MemeCurator] = None) -> dict:
         if not meme:
             continue
         # Estimate SIR params
-        from src.models.sir_meme import estimate_params_from_lifecycle
+        from src.models.sir_meme import estimate_params_from_lifecycle, estimate_total_infected
         lc = meme.lifecycle
         dur = lc.get("duration_months", 6)
         if dur >= 999:
             dur = 18
+        pm = meme.propagation_model
+        circle_count = len(pm.get("circle_layers", []))
+        sa = meme.sentiment_arc
+        peak_intensity = max(p.get("intensity", 0.5) for p in sa) if sa else 0.5
+        ti = estimate_total_infected(circle_count, peak_intensity, dur)
         params = estimate_params_from_lifecycle(
             peak_day=dur * 30 * 0.3,
-            total_infected=0.5,
+            total_infected=ti,
             duration_days=dur * 30,
         )
         result = solve_sir(params)

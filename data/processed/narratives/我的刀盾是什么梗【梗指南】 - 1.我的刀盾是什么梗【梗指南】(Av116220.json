@@ -1,0 +1,67 @@
+{
+  "meme_name": "我的刀盾",
+  "origin": {
+    "time": null,
+    "platform": "国外视频平台",
+    "trigger_event": null,
+    "precursor": "英文短语 'What the dog doing' 的空耳"
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": null,
+      "description": "源自国外视频平台的搞笑印象，原意为'这条狗在做什么'，被网友空耳为'我的刀盾'",
+      "key_platforms": [
+        "国外视频平台"
+      ],
+      "key_figures": null
+    },
+    {
+      "phase": "爆发",
+      "time_range": null,
+      "description": "被加入猫咪小剧场中，成为新角色和台词，角色形象为手持砍刀和盾牌的猫，经AI二创后形成刀盾外型",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": null
+    },
+    {
+      "phase": "泛化",
+      "time_range": null,
+      "description": "因无厘头搞笑效果和可爱外型被广泛喜爱，网友用AI创作大量相关视频",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": null
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "刀盾猫",
+      "time": null,
+      "relationship": "衍生"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "无厘头搞笑需求",
+      "AI二创热潮"
+    ],
+    "target_audience": "B站用户、网络迷因爱好者",
+    "political_sensitivity": "无",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "英文 'What the dog doing' 的空耳，意为'这条狗在做什么'",
+    "current_meaning": "指代手持砍刀和盾牌的猫角色，用于无厘头搞笑场景",
+    "drift_direction": "从对狗的疑问空耳转变为特定猫角色的代称"
+  },
+  "narrative_quality": {
+    "information_richness": "低",
+    "key_insight": "该梗的核心是英文 'What the dog doing' 的空耳，经过猫咪小剧场和AI二创后形成了刀盾猫的固定形象"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"我的刀盾\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": \"国外视频平台\",\n    \"trigger_event\": null,\n    \"precursor\": \"英文短语 'What the dog doing' 的空耳\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": null,\n      \"description\": \"源自国外视频平台的搞笑印象，原意为'这条狗在做什么'，被网友空耳为'我的刀盾'\",\n      \"key_platforms\": [\"国外视频平台\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": null,\n      \"description\": \"被加入猫咪小剧场中，成为新角色和台词，角色形象为手持砍刀和盾牌的猫，经AI二创后形成刀盾外型\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": null,\n      \"description\": \"因无厘头搞笑效果和可爱外型被广泛喜爱，网友用AI创作大量相关视频\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"刀盾猫\",\n      \"time\": null,\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"无厘头搞笑需求\", \"AI二创热潮\"],\n    \"target_audience\": \"B站用户、网络迷因爱好者\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"英文 'What the dog doing' 的空耳，意为'这条狗在做什么'\",\n    \"current_meaning\": \"指代手持砍刀和盾牌的猫角色，用于无厘头搞笑场景\",\n    \"drift_direction\": \"从对狗的疑问空耳转变为特定猫角色的代称\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该梗的核心是英文 'What the dog doing' 的空耳，经过猫咪小剧场和AI二创后形成了刀盾猫的固定形象\"\n  }\n}",
+  "video_name": "我的刀盾是什么梗【梗指南】 - 1.我的刀盾是什么梗【梗指南】(Av116220003092297,P1)",
+  "transcript_chars": 343,
+  "duration_sec": 114.538667
+}

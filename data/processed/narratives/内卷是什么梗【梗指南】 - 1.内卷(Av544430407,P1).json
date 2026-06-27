@@ -1,0 +1,81 @@
+{
+  "meme_name": "内卷",
+  "origin": {
+    "time": "2020年下半年",
+    "platform": "B站",
+    "trigger_event": "社会竞争加剧、教育内卷、职场内卷等现实背景",
+    "precursor": "学术概念'内卷化'（involution）"
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": "2020年9月-10月",
+      "description": "内卷一词从学术圈进入大众视野，最初在知乎、微博等平台讨论教育、职场竞争时被引用",
+      "key_platforms": [
+        "知乎",
+        "微博"
+      ],
+      "key_figures": null
+    },
+    {
+      "phase": "爆发",
+      "time_range": "2020年10月-12月",
+      "description": "B站大量UP主制作科普视频，如本视频《梗指南》系列，用通俗比喻（看电影、论文、补习班）解释内卷，引发广泛共鸣和传播",
+      "key_platforms": [
+        "B站",
+        "微博",
+        "微信朋友圈"
+      ],
+      "key_figures": [
+        "梗指南系列UP主"
+      ]
+    },
+    {
+      "phase": "泛化",
+      "time_range": "2021年全年",
+      "description": "内卷一词被用于描述各行各业过度竞争现象，含义从具体学术概念泛化为'非理性内部竞争'的代名词",
+      "key_platforms": [
+        "B站",
+        "抖音",
+        "小红书",
+        "知乎"
+      ],
+      "key_figures": null
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "卷",
+      "time": "2020年底",
+      "relationship": "衍生（动词化，如'太卷了''卷起来'）"
+    },
+    {
+      "variant_name": "反内卷",
+      "time": "2021年初",
+      "relationship": "反讽/收编（倡导躺平、拒绝内卷）"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "教育竞争白热化（如学区房、补习班）",
+      "职场996文化",
+      "社会阶层固化焦虑"
+    ],
+    "target_audience": "年轻网民（学生、职场新人）",
+    "political_sensitivity": "低",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "学术概念：系统内部无法产生质变的过度精细化发展",
+    "current_meaning": "泛指一切非理性的内部竞争，导致所有人付出更多却收益不变",
+    "drift_direction": "从学术术语变为日常流行语，含义从具体变为泛指"
+  },
+  "narrative_quality": {
+    "information_richness": "低",
+    "key_insight": "该视频用看电影、写论文、报补习班三个通俗比喻，成功将内卷概念从学术语境转化为大众可理解的日常场景，是推动该梗破圈传播的关键"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"内卷\",\n  \"origin\": {\n    \"time\": \"2020年下半年\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"社会竞争加剧、教育内卷、职场内卷等现实背景\",\n    \"precursor\": \"学术概念'内卷化'（involution）\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2020年9月-10月\",\n      \"description\": \"内卷一词从学术圈进入大众视野，最初在知乎、微博等平台讨论教育、职场竞争时被引用\",\n      \"key_platforms\": [\"知乎\", \"微博\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2020年10月-12月\",\n      \"description\": \"B站大量UP主制作科普视频，如本视频《梗指南》系列，用通俗比喻（看电影、论文、补习班）解释内卷，引发广泛共鸣和传播\",\n      \"key_platforms\": [\"B站\", \"微博\", \"微信朋友圈\"],\n      \"key_figures\": [\"梗指南系列UP主\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2021年全年\",\n      \"description\": \"内卷一词被用于描述各行各业过度竞争现象，含义从具体学术概念泛化为'非理性内部竞争'的代名词\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"小红书\", \"知乎\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"卷\",\n      \"time\": \"2020年底\",\n      \"relationship\": \"衍生（动词化，如'太卷了''卷起来'）\"\n    },\n    {\n      \"variant_name\": \"反内卷\",\n      \"time\": \"2021年初\",\n      \"relationship\": \"反讽/收编（倡导躺平、拒绝内卷）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"教育竞争白热化（如学区房、补习班）\", \"职场996文化\", \"社会阶层固化焦虑\"],\n    \"target_audience\": \"年轻网民（学生、职场新人）\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"学术概念：系统内部无法产生质变的过度精细化发展\",\n    \"current_meaning\": \"泛指一切非理性的内部竞争，导致所有人付出更多却收益不变\",\n    \"drift_direction\": \"从学术术语变为日常流行语，含义从具体变为泛指\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该视频用看电影、写论文、报补习班三个通俗比喻，成功将内卷概念从学术语境转化为大众可理解的日常场景，是推动该梗破圈传播的关键\"\n  }\n}",
+  "video_name": "内卷是什么梗【梗指南】 - 1.内卷(Av544430407,P1)",
+  "transcript_chars": 240,
+  "duration_sec": 47.616
+}

@@ -1,0 +1,27 @@
+{
+  "meme_name": "润",
+  "peak_month": "2025-11",
+  "peak_value": 80,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2015-01至2022-05",
+      "description": "长期低位波动，搜索指数在12-29之间，反映该词作为网络隐语在小众圈层中萌芽，但未进入主流视野。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2025-11前后",
+      "description": "搜索指数急剧攀升至80，形成历史最高峰，表明该梗在特定社会事件或舆论催化下爆发式传播。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2025-12",
+      "description": "峰值后迅速回落至50，但仍显著高于历史均值，显示热度快速消退但未归零，具备复燃潜力。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 121,
+  "resurgence_detected": true,
+  "narrative_summary": "该梗经历长达十年的低位潜伏后，在2025年末突然爆发达到峰值，呈现典型的长期蓄力后复燃式传播模式。",
+  "social_context_hint": "2025年峰值可能关联当年经济下行压力加剧、就业市场紧缩或移民政策变动等社会背景，促使‘润’（逃离/移民）成为集体情绪出口。"
+}

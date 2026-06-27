@@ -1,0 +1,68 @@
+{
+  "meme_name": "月薪喵",
+  "origin": {
+    "time": "2025年",
+    "platform": "B站",
+    "trigger_event": null,
+    "precursor": null
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": "2025年",
+      "description": "博主月薪喵参照自家宠物猫制作了系列表情包，最初在B站发布，内容为两只小猫的可爱动态表情。",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": [
+        "月薪喵"
+      ]
+    },
+    {
+      "phase": "爆发",
+      "time_range": "2025年之后",
+      "description": "表情包中一只小猫左右躲闪并捏着山峰的动作受到欢迎，可能借鉴了浩克的取责S.G.B.J.K.，并在怪情物语热度加持下火出圈，衍生出散位舞、迷和手势舞等变体。",
+      "key_platforms": [
+        "B站",
+        "外网"
+      ],
+      "key_figures": [
+        "胡尼克"
+      ]
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "散位舞",
+      "time": "2025年之后",
+      "relationship": "衍生"
+    },
+    {
+      "variant_name": "迷和手势舞",
+      "time": "2025年之后",
+      "relationship": "衍生"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "可爱宠物表情包的流行趋势",
+      "怪情物语的热度"
+    ],
+    "target_audience": "B站用户及网络表情包爱好者",
+    "political_sensitivity": "无",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "博主月薪喵参照自家宠物猫制作的表情包系列",
+    "current_meaning": "泛指该系列中一只小猫左右躲闪并捏着山峰的可爱动作表情包",
+    "drift_direction": "从具体系列名变为特指某个动作表情包"
+  },
+  "narrative_quality": {
+    "information_richness": "低",
+    "key_insight": "该表情包中捏山峰的动作可能借鉴了浩克的取责S.G.B.J.K.，并在怪情物语热度加持下火出圈。"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"月薪喵\",\n  \"origin\": {\n    \"time\": \"2025年\",\n    \"platform\": \"B站\",\n    \"trigger_event\": null,\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2025年\",\n      \"description\": \"博主月薪喵参照自家宠物猫制作了系列表情包，最初在B站发布，内容为两只小猫的可爱动态表情。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"月薪喵\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2025年之后\",\n      \"description\": \"表情包中一只小猫左右躲闪并捏着山峰的动作受到欢迎，可能借鉴了浩克的取责S.G.B.J.K.，并在怪情物语热度加持下火出圈，衍生出散位舞、迷和手势舞等变体。\",\n      \"key_platforms\": [\"B站\", \"外网\"],\n      \"key_figures\": [\"胡尼克\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"散位舞\",\n      \"time\": \"2025年之后\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"迷和手势舞\",\n      \"time\": \"2025年之后\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"可爱宠物表情包的流行趋势\", \"怪情物语的热度\"],\n    \"target_audience\": \"B站用户及网络表情包爱好者\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"博主月薪喵参照自家宠物猫制作的表情包系列\",\n    \"current_meaning\": \"泛指该系列中一只小猫左右躲闪并捏着山峰的可爱动作表情包\",\n    \"drift_direction\": \"从具体系列名变为特指某个动作表情包\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该表情包中捏山峰的动作可能借鉴了浩克的取责S.G.B.J.K.，并在怪情物语热度加持下火出圈。\"\n  }\n}",
+  "video_name": "【梗百科】月薪喵是啥？这个“散味舞”怎么来的？ - 1.月薪喵+字幕(Av116680051135929,P1)",
+  "transcript_chars": 408,
+  "duration_sec": 124.714626
+}

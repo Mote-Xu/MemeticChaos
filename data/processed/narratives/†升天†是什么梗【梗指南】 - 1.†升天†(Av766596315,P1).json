@@ -1,0 +1,54 @@
+{
+  "meme_name": "升天",
+  "origin": {
+    "time": "2022年",
+    "platform": "B站",
+    "trigger_event": "游戏《主播女孩重度依赖》的流行",
+    "precursor": null
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": "2022年",
+      "description": "出自游戏《主播女孩重度依赖》，角色糖糖（超天酱）在直播结束语中使用“升天”一词，作为下播的固定语癖。",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": [
+        "糖糖（超天酱）"
+      ]
+    },
+    {
+      "phase": "爆发",
+      "time_range": "2022年",
+      "description": "被网友广泛用于弹幕中，尤其是阴间视频或令人震撼的片段，表达“这段让我有升天的感觉”或赞赏之意，类似KKSK。",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": null
+    }
+  ],
+  "mutations": [],
+  "social_context": {
+    "triggers": [
+      "游戏《主播女孩重度依赖》的二次元文化热潮",
+      "网友对阴间视频或夸张内容的娱乐化表达需求"
+    ],
+    "target_audience": "B站用户、游戏玩家、二次元文化爱好者",
+    "political_sensitivity": "无",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "游戏角色下播时的结束语，指天使回归天上",
+    "current_meaning": "对视频片段表达极度赞赏或震撼，类似“爽到升天”",
+    "drift_direction": "从具体游戏用语泛化为网络弹幕中的赞赏表达"
+  },
+  "narrative_quality": {
+    "information_richness": "低",
+    "key_insight": "该梗源自游戏《主播女孩重度依赖》中角色超天酱的下播语癖，后被网友用于弹幕表达对阴间视频片段的赞赏。"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"升天\",\n  \"origin\": {\n    \"time\": \"2022年\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"游戏《主播女孩重度依赖》的流行\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2022年\",\n      \"description\": \"出自游戏《主播女孩重度依赖》，角色糖糖（超天酱）在直播结束语中使用“升天”一词，作为下播的固定语癖。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"糖糖（超天酱）\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2022年\",\n      \"description\": \"被网友广泛用于弹幕中，尤其是阴间视频或令人震撼的片段，表达“这段让我有升天的感觉”或赞赏之意，类似KKSK。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [],\n  \"social_context\": {\n    \"triggers\": [\"游戏《主播女孩重度依赖》的二次元文化热潮\", \"网友对阴间视频或夸张内容的娱乐化表达需求\"],\n    \"target_audience\": \"B站用户、游戏玩家、二次元文化爱好者\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"游戏角色下播时的结束语，指天使回归天上\",\n    \"current_meaning\": \"对视频片段表达极度赞赏或震撼，类似“爽到升天”\",\n    \"drift_direction\": \"从具体游戏用语泛化为网络弹幕中的赞赏表达\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该梗源自游戏《主播女孩重度依赖》中角色超天酱的下播语癖，后被网友用于弹幕表达对阴间视频片段的赞赏。\"\n  }\n}",
+  "video_name": "†升天†是什么梗【梗指南】 - 1.†升天†(Av766596315,P1)",
+  "transcript_chars": 192,
+  "duration_sec": 72.597333
+}

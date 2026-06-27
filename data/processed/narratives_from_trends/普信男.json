@@ -1,0 +1,27 @@
+{
+  "meme_name": "普信男",
+  "peak_month": "2022-01",
+  "peak_value": 12,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2021-08 至 2021-12",
+      "description": "梗在2021年8月首次出现，搜索热度较高（9），随后缓慢下降至6，处于早期传播阶段。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2022-01",
+      "description": "2022年1月达到搜索峰值12，成为全网热议焦点，可能由特定事件或社交媒体话题引爆。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2022-02 至 2024-10",
+      "description": "峰值后热度迅速下降至7以下，但后续在2022年8月、2023年5月和2024年10月出现多次复燃，形成波动衰退。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 38,
+  "resurgence_detected": true,
+  "narrative_summary": "普信男梗经历了一次高峰后进入长期波动衰退，但多次复燃显示其作为社会批判标签的持久生命力。",
+  "social_context_hint": "2022年1月峰值可能关联当时性别议题讨论升温，以及脱口秀等文化产品对‘普信’概念的普及；后续复燃与网络性别对立事件周期性爆发有关。"
+}

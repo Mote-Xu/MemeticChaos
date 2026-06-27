@@ -1,0 +1,27 @@
+{
+  "meme_name": "后浪",
+  "peak_month": "2020-05",
+  "peak_value": 100,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2017-03 至 2020-04",
+      "description": "长期低水平存在，搜索指数在10左右波动，未形成广泛传播，属于潜在语义积累期。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2020-05 至 2020-06",
+      "description": "2020年5月搜索指数飙升至100，达到绝对峰值，次月迅速回落至24，呈现典型的脉冲式爆发。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2020-07 至 2023-06",
+      "description": "峰值后快速下降，2020年7月降至13，随后长期在4-10之间波动，2023年5月出现一次小反弹（24），但未形成复燃，最终趋于沉寂。"
+    }
+  ],
+  "curve_shape": "脉冲",
+  "estimated_duration_months": 38,
+  "resurgence_detected": false,
+  "narrative_summary": "该梗在2020年5月因B站《后浪》演讲引发全网讨论而瞬间爆发，随后迅速消退，仅有一次微弱反弹，整体呈现典型的单次脉冲式传播生命周期。",
+  "social_context_hint": "2020年5月正值新冠疫情初步控制后的社会情绪复杂期，《后浪》演讲因代际价值观争议引爆舆论，成为当年青年文化讨论的标志性事件。"
+}

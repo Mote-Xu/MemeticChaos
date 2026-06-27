@@ -1,0 +1,62 @@
+{
+  "meme_name": "嘉豪",
+  "origin": {
+    "time": null,
+    "platform": null,
+    "trigger_event": null,
+    "precursor": null
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": null,
+      "description": "指一类为了吸引关注而刻意装酷、用力过猛的群体，通常爱戴黑口罩、模仿电音制作人表演，被网友戏称为‘爱录底克’（疑似‘电子音乐人’的谐音或误写）。",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": null
+    },
+    {
+      "phase": "固化",
+      "time_range": null,
+      "description": "梗的传播形成一种自指逻辑：当你嘲笑嘉豪时，本身也成为了嘉豪；而当你意识到自己成为嘉豪时，又失去了成为嘉豪的资格，由此进入‘四豪’（疑似‘死豪’或‘思豪’）的哲学循环。",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": null
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "四豪",
+      "time": null,
+      "relationship": "衍生（对嘉豪身份的元层次反思）"
+    },
+    {
+      "variant_name": "混豪种",
+      "time": null,
+      "relationship": "衍生（指真正具有嘉豪血统的混合体）"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "对网络装酷行为的嘲讽与解构"
+    ],
+    "target_audience": "B站年轻用户，尤其是关注网络亚文化和电音圈的群体",
+    "political_sensitivity": "无",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "指刻意装酷、用力过猛的群体",
+    "current_meaning": "演变为一种自我指涉的哲学概念，强调身份认同的悖论",
+    "drift_direction": "从具体群体标签变为抽象的身份哲学"
+  },
+  "narrative_quality": {
+    "information_richness": "低",
+    "key_insight": "该梗的核心传播机制在于‘当你嘲笑嘉豪时，你本身也成为了嘉豪’这一自反性逻辑，形成了类似‘套娃’的传播循环。"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"嘉豪\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": null,\n    \"trigger_event\": null,\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": null,\n      \"description\": \"指一类为了吸引关注而刻意装酷、用力过猛的群体，通常爱戴黑口罩、模仿电音制作人表演，被网友戏称为‘爱录底克’（疑似‘电子音乐人’的谐音或误写）。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"固化\",\n      \"time_range\": null,\n      \"description\": \"梗的传播形成一种自指逻辑：当你嘲笑嘉豪时，本身也成为了嘉豪；而当你意识到自己成为嘉豪时，又失去了成为嘉豪的资格，由此进入‘四豪’（疑似‘死豪’或‘思豪’）的哲学循环。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"四豪\",\n      \"time\": null,\n      \"relationship\": \"衍生（对嘉豪身份的元层次反思）\"\n    },\n    {\n      \"variant_name\": \"混豪种\",\n      \"time\": null,\n      \"relationship\": \"衍生（指真正具有嘉豪血统的混合体）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"对网络装酷行为的嘲讽与解构\"],\n    \"target_audience\": \"B站年轻用户，尤其是关注网络亚文化和电音圈的群体\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"指刻意装酷、用力过猛的群体\",\n    \"current_meaning\": \"演变为一种自我指涉的哲学概念，强调身份认同的悖论\",\n    \"drift_direction\": \"从具体群体标签变为抽象的身份哲学\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该梗的核心传播机制在于‘当你嘲笑嘉豪时，你本身也成为了嘉豪’这一自反性逻辑，形成了类似‘套娃’的传播循环。\"\n  }\n}",
+  "video_name": "嘉豪是什么梗？【十万个梗知识】 - 1.嘉豪是什么梗？【十万个梗知识】(Av116447082710084,P1)",
+  "transcript_chars": 371,
+  "duration_sec": 91.788639
+}

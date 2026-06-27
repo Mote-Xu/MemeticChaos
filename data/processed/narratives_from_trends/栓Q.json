@@ -1,0 +1,27 @@
+{
+  "meme_name": "栓Q",
+  "peak_month": "2022-05",
+  "peak_value": 4,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2022-04",
+      "description": "梗在4月首次出现，搜索关注度较低（值为1），处于萌芽阶段，可能由个别短视频或事件引发初步传播。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2022-05",
+      "description": "5月搜索关注度达到峰值（值为4），梗迅速扩散，成为热门话题，可能因病毒式传播或主流平台推流。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2022-06至2022-09",
+      "description": "6月关注度下降至3，8月和9月稳定在2，呈现缓慢衰退趋势，但未完全消失，显示一定长尾效应。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 5,
+  "resurgence_detected": false,
+  "narrative_summary": "该梗在5月快速爆发达到峰值后逐步衰退，但关注度在后续月份保持低位稳定，未出现明显复燃。",
+  "social_context_hint": "2022年4-5月正值中国多地疫情封控期，线上娱乐和短视频消费活跃，可能助推了该梗的快速传播。"
+}

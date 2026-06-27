@@ -1,0 +1,27 @@
+{
+  "meme_name": "芭比Q",
+  "peak_month": "2022-01",
+  "peak_value": 10,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2021-11 至 2021-12",
+      "description": "梗在游戏直播圈萌芽，源于电竞解说误将‘完蛋’说成‘芭比Q’，逐渐在小众社群传播，搜索热度从2升至4。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2022-01",
+      "description": "借助短视频平台和春节假期流量爆发，成为全网流行语，搜索热度达到峰值10，广泛用于表达‘完了、糟糕’等情绪。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2022-02 至 2023-01",
+      "description": "热度快速回落至2-5区间，但后续在2023年1月出现小幅复燃（2），显示该梗仍有间歇性使用，但整体进入长尾衰退期。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 8,
+  "resurgence_detected": true,
+  "narrative_summary": "芭比Q梗经历快速爆发、急剧衰退后，在一年后出现微弱复燃，呈现典型的‘短命爆梗+长尾回光’传播模式。",
+  "social_context_hint": "2022年1月峰值恰逢春节前后，疫情管控下居家娱乐需求旺盛，游戏直播和短视频成为情绪宣泄出口，该梗的‘完蛋’含义也暗合当时部分人群对生活不确定性的戏谑表达。"
+}

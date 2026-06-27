@@ -1,0 +1,74 @@
+{
+  "meme_name": "普通却自信",
+  "origin": {
+    "time": "2020年",
+    "platform": "脱口秀大会（第三季）",
+    "trigger_event": "杨笠在《脱口秀大会》第三季表演中的一段话：'为什么看起来那么普通，但是他就可以那么自信'",
+    "precursor": null
+  },
+  "spread_phases": [
+    {
+      "phase": "爆发",
+      "time_range": "2020年",
+      "description": "杨笠的表演片段迅速引发巨大讨论和争议，该梗在性别话题中快速传播，并衍生出'普信男''普信女'等词汇",
+      "key_platforms": [
+        "微博",
+        "B站",
+        "知乎"
+      ],
+      "key_figures": [
+        "杨笠"
+      ]
+    },
+    {
+      "phase": "泛化",
+      "time_range": "2020年至今",
+      "description": "该梗从性别话题扩展到更广泛的社会讨论，被用于攻击普通人的自信表达，成为互相攻击的词汇",
+      "key_platforms": [
+        "微博",
+        "B站",
+        "知乎",
+        "贴吧"
+      ],
+      "key_figures": [
+        "杨笠"
+      ]
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "普信男",
+      "time": "2020年",
+      "relationship": "衍生"
+    },
+    {
+      "variant_name": "普信女",
+      "time": "2020年",
+      "relationship": "衍生"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "性别矛盾",
+      "公共话语边界争议"
+    ],
+    "target_audience": "网络讨论中关注性别议题的群体",
+    "political_sensitivity": "中",
+    "backlash_events": [
+      "杨笠因该梗及相关争议观点成为舆论焦点，其代言（如英特尔、京东等）引发网络热议"
+    ]
+  },
+  "semantic_drift": {
+    "original_meaning": "调侃某些人外表普通却过度自信",
+    "current_meaning": "用于贬低普通人公开表达自信，视为自大或冒犯",
+    "drift_direction": "从调侃变为攻击性标签"
+  },
+  "narrative_quality": {
+    "information_richness": "中",
+    "key_insight": "该梗通过扭曲'普通'和'自信'的含义，以及使用转折关联词'明明...却'，传播了一种'只有人上人才有资格自信'的观点，从而引发争议和广泛使用"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"普通却自信\",\n  \"origin\": {\n    \"time\": \"2020年\",\n    \"platform\": \"脱口秀大会（第三季）\",\n    \"trigger_event\": \"杨笠在《脱口秀大会》第三季表演中的一段话：'为什么看起来那么普通，但是他就可以那么自信'\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2020年\",\n      \"description\": \"杨笠的表演片段迅速引发巨大讨论和争议，该梗在性别话题中快速传播，并衍生出'普信男''普信女'等词汇\",\n      \"key_platforms\": [\"微博\", \"B站\", \"知乎\"],\n      \"key_figures\": [\"杨笠\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2020年至今\",\n      \"description\": \"该梗从性别话题扩展到更广泛的社会讨论，被用于攻击普通人的自信表达，成为互相攻击的词汇\",\n      \"key_platforms\": [\"微博\", \"B站\", \"知乎\", \"贴吧\"],\n      \"key_figures\": [\"杨笠\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"普信男\",\n      \"time\": \"2020年\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"普信女\",\n      \"time\": \"2020年\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"性别矛盾\", \"公共话语边界争议\"],\n    \"target_audience\": \"网络讨论中关注性别议题的群体\",\n    \"political_sensitivity\": \"中\",\n    \"backlash_events\": [\"杨笠因该梗及相关争议观点成为舆论焦点，其代言（如英特尔、京东等）引发网络热议\"]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"调侃某些人外表普通却过度自信\",\n    \"current_meaning\": \"用于贬低普通人公开表达自信，视为自大或冒犯\",\n    \"drift_direction\": \"从调侃变为攻击性标签\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗通过扭曲'普通'和'自信'的含义，以及使用转折关联词'明明...却'，传播了一种'只有人上人才有资格自信'的观点，从而引发争议和广泛使用\"\n  }\n}",
+  "video_name": "普通却自信是什么梗【键政梗百科24】 - 1.普通却自信是什么梗【键政梗百科24】(Av114263628715752,P1)",
+  "transcript_chars": 803,
+  "duration_sec": 177.400771
+}

@@ -1,0 +1,62 @@
+{
+  "meme_name": "发疯文学",
+  "origin": {
+    "time": "2021年",
+    "platform": "网络（具体平台未明确）",
+    "trigger_event": "疫情导致大学生被封闭在学校，情绪压抑",
+    "precursor": "《甄嬛传》和《红楼梦》中林黛玉的说话方式"
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": "2021年",
+      "description": "网友模仿《甄嬛传》和《红楼梦》中林黛玉的说话方式，在网络上掀起一阵热潮",
+      "key_platforms": [
+        "网络（未具体说明）"
+      ],
+      "key_figures": null
+    },
+    {
+      "phase": "爆发",
+      "time_range": "最近（视频发布时间前后）",
+      "description": "因疫情被关在学校的大学生大量创作发疯文学，表达压抑情绪，并在社交媒体上广泛使用",
+      "key_platforms": [
+        "社交媒体（未具体说明）"
+      ],
+      "key_figures": null
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "人上人（人上人上哪有不疯的）",
+      "time": "最近",
+      "relationship": "衍生"
+    },
+    {
+      "variant_name": "精神稳定一分钟也很厉害",
+      "time": "最近",
+      "relationship": "衍生"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "疫情导致大学生被封闭在学校，情绪压抑"
+    ],
+    "target_audience": "大学生",
+    "political_sensitivity": "低",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "用极度夸张、无序、情绪饱满的文字句式来抒发强烈情绪的写作方式",
+    "current_meaning": "当代大学生表达精神压抑和情绪崩溃的流行文体",
+    "drift_direction": "从泛指情绪表达变为特指大学生疫情下的精神状态"
+  },
+  "narrative_quality": {
+    "information_richness": "中",
+    "key_insight": "发疯文学最早在2021年出现，源于模仿《甄嬛传》和《红楼梦》的说话方式，近期因疫情封闭大学生情绪压抑而再次爆发"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"发疯文学\",\n  \"origin\": {\n    \"time\": \"2021年\",\n    \"platform\": \"网络（具体平台未明确）\",\n    \"trigger_event\": \"疫情导致大学生被封闭在学校，情绪压抑\",\n    \"precursor\": \"《甄嬛传》和《红楼梦》中林黛玉的说话方式\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2021年\",\n      \"description\": \"网友模仿《甄嬛传》和《红楼梦》中林黛玉的说话方式，在网络上掀起一阵热潮\",\n      \"key_platforms\": [\"网络（未具体说明）\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"最近（视频发布时间前后）\",\n      \"description\": \"因疫情被关在学校的大学生大量创作发疯文学，表达压抑情绪，并在社交媒体上广泛使用\",\n      \"key_platforms\": [\"社交媒体（未具体说明）\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"人上人（人上人上哪有不疯的）\",\n      \"time\": \"最近\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"精神稳定一分钟也很厉害\",\n      \"time\": \"最近\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"疫情导致大学生被封闭在学校，情绪压抑\"],\n    \"target_audience\": \"大学生\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"用极度夸张、无序、情绪饱满的文字句式来抒发强烈情绪的写作方式\",\n    \"current_meaning\": \"当代大学生表达精神压抑和情绪崩溃的流行文体\",\n    \"drift_direction\": \"从泛指情绪表达变为特指大学生疫情下的精神状态\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"发疯文学最早在2021年出现，源于模仿《甄嬛传》和《红楼梦》的说话方式，近期因疫情封闭大学生情绪压抑而再次爆发\"\n  }\n}",
+  "video_name": "【梗百科】当代大学生的精神状态怎么了？发疯文学再次回归！ - 1.【梗百科】当代大学生的精神状态怎么了？发疯文学再次回归！(Av562273175,P1)",
+  "transcript_chars": 361,
+  "duration_sec": 95.36
+}

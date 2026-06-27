@@ -1,0 +1,72 @@
+{
+  "meme_name": "摆烂",
+  "origin": {
+    "time": null,
+    "platform": "英雄联盟（游戏）",
+    "trigger_event": "游戏对局中玩家心态爆炸、放弃抵抗的行为",
+    "precursor": "破罐子破摔"
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": null,
+      "description": "在英雄联盟（LOL）玩家圈中流传，指有能力逆转局面但心态爆炸后放任局势恶化",
+      "key_platforms": [
+        "英雄联盟游戏社区"
+      ],
+      "key_figures": null
+    },
+    {
+      "phase": "爆发",
+      "time_range": null,
+      "description": "作为CS:GO主播王岐顺的口头禅“开摆”被广泛传播，带动梗出圈",
+      "key_platforms": [
+        "B站",
+        "直播平台"
+      ],
+      "key_figures": [
+        "王岐顺（CS:GO主播）"
+      ]
+    },
+    {
+      "phase": "泛化",
+      "time_range": null,
+      "description": "从游戏场景扩展到社会领域，指任何不作为、放任自流的行为，例如游戏公司有钱有资源却做出烂游戏",
+      "key_platforms": [
+        "B站",
+        "微博",
+        "贴吧"
+      ],
+      "key_figures": null
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "开摆",
+      "time": null,
+      "relationship": "衍生（作为口头禅的变体）"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "对游戏公司摆烂行为的不满（如某游戏公司有钱有资源却做烂游戏）",
+      "对氪金游戏持续压榨玩家的愤怒"
+    ],
+    "target_audience": "游戏玩家、年轻网民",
+    "political_sensitivity": "无",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "在游戏中有能力逆转局面但心态爆炸后放弃抵抗、放任局势恶化",
+    "current_meaning": "泛指任何不作为、放任事情变坏的态度或行为",
+    "drift_direction": "从具体游戏行为变为泛指社会现象"
+  },
+  "narrative_quality": {
+    "information_richness": "中",
+    "key_insight": "该梗从游戏内心态描述演变为对游戏公司等主体摆烂行为的批判，体现了从个人到社会的语义泛化"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"摆烂\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": \"英雄联盟（游戏）\",\n    \"trigger_event\": \"游戏对局中玩家心态爆炸、放弃抵抗的行为\",\n    \"precursor\": \"破罐子破摔\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": null,\n      \"description\": \"在英雄联盟（LOL）玩家圈中流传，指有能力逆转局面但心态爆炸后放任局势恶化\",\n      \"key_platforms\": [\"英雄联盟游戏社区\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": null,\n      \"description\": \"作为CS:GO主播王岐顺的口头禅“开摆”被广泛传播，带动梗出圈\",\n      \"key_platforms\": [\"B站\", \"直播平台\"],\n      \"key_figures\": [\"王岐顺（CS:GO主播）\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": null,\n      \"description\": \"从游戏场景扩展到社会领域，指任何不作为、放任自流的行为，例如游戏公司有钱有资源却做出烂游戏\",\n      \"key_platforms\": [\"B站\", \"微博\", \"贴吧\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"开摆\",\n      \"time\": null,\n      \"relationship\": \"衍生（作为口头禅的变体）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"对游戏公司摆烂行为的不满（如某游戏公司有钱有资源却做烂游戏）\", \"对氪金游戏持续压榨玩家的愤怒\"],\n    \"target_audience\": \"游戏玩家、年轻网民\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"在游戏中有能力逆转局面但心态爆炸后放弃抵抗、放任局势恶化\",\n    \"current_meaning\": \"泛指任何不作为、放任事情变坏的态度或行为\",\n    \"drift_direction\": \"从具体游戏行为变为泛指社会现象\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗从游戏内心态描述演变为对游戏公司等主体摆烂行为的批判，体现了从个人到社会的语义泛化\"\n  }\n}",
+  "video_name": "摆烂是什么梗【梗指南】 - 1.摆烂(Av721978954,P1)",
+  "transcript_chars": 372,
+  "duration_sec": 78.570667
+}

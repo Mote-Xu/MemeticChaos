@@ -1,0 +1,27 @@
+{
+  "meme_name": "内卷",
+  "peak_month": "2021-05",
+  "peak_value": 78,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2019-11 至 2020-04",
+      "description": "概念从学术圈扩散至公众，搜索量缓慢爬升，社会对竞争压力的关注开始萌芽。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2020-05 至 2021-06",
+      "description": "搜索量急剧攀升，2020年底至2021年中达到顶峰，反映教育、职场等领域内卷现象引发广泛共鸣与讨论。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2021-07 至 2025-12",
+      "description": "热度整体下降，但出现多次小规模复燃（如2023年10月、2025年7月），表明话题具有长期社会基础，但已从爆发期转入常态化讨论。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 74,
+  "resurgence_detected": true,
+  "narrative_summary": "内卷一词经历了从学术术语到全民热词的爆发式传播，在2021年达到顶峰后热度衰减，但持续以周期性复燃维持社会关注，成为描述中国社会竞争压力的长期符号。",
+  "social_context_hint": "2021年峰值与疫情后经济下行、就业压力加剧、教育减负政策（双减）等社会背景高度相关，反映了公众对过度竞争和资源稀缺的集体焦虑。"
+}

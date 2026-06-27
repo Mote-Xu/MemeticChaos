@@ -1,0 +1,89 @@
+{
+  "meme_name": "躺平",
+  "origin": {
+    "time": "2021年4月",
+    "platform": "贴吧",
+    "trigger_event": "中国人口吧一篇题为《躺平即是正义》的帖子引发广泛讨论",
+    "precursor": null
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": "2021年4月",
+      "description": "在贴吧中国人口吧出现《躺平即是正义》的帖子，提出躺平概念，引发小范围讨论",
+      "key_platforms": [
+        "贴吧"
+      ],
+      "key_figures": [
+        "贴吧用户（发帖者）"
+      ]
+    },
+    {
+      "phase": "爆发",
+      "time_range": "2021年5月-6月",
+      "description": "躺平概念迅速在社交媒体扩散，成为对抗内卷、低欲望生活的代名词，引发主流媒体和官方讨论",
+      "key_platforms": [
+        "微博",
+        "B站",
+        "知乎",
+        "微信公众号"
+      ],
+      "key_figures": [
+        "自媒体博主",
+        "网络评论员"
+      ]
+    },
+    {
+      "phase": "泛化",
+      "time_range": "2021年下半年至今",
+      "description": "躺平从具体的生活哲学泛化为一种对工作压力、消费主义、社会竞争的消极抵抗态度，衍生出各种变体",
+      "key_platforms": [
+        "B站",
+        "抖音",
+        "小红书"
+      ],
+      "key_figures": [
+        "内容创作者",
+        "普通网民"
+      ]
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "躺平学",
+      "time": "2021年5月",
+      "relationship": "衍生（将躺平系统化为一种学说）"
+    },
+    {
+      "variant_name": "躺平即是正义",
+      "time": "2021年4月",
+      "relationship": "衍生（原帖标题，成为口号）"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "社会内卷加剧，年轻人面临高房价、高工作压力、低上升通道",
+      "996工作制引发普遍焦虑",
+      "消费主义与物质压力导致低欲望心态蔓延"
+    ],
+    "target_audience": "中国年轻职场人群、学生、低线城市青年",
+    "political_sensitivity": "中",
+    "backlash_events": [
+      "部分官方媒体批评躺平是消极逃避，不符合奋斗精神",
+      "引发关于奋斗与休息、个人选择与社会责任的舆论辩论"
+    ]
+  },
+  "semantic_drift": {
+    "original_meaning": "主动降低欲望和努力，放弃拼命赚钱和买房结婚等传统目标，以减轻生存压力的一种生活哲学",
+    "current_meaning": "泛指对工作、学习、社交等一切需要努力的事情采取消极、不积极的态度，甚至带有自嘲和反讽",
+    "drift_direction": "从具体的生活策略变为泛指消极态度，从自嘲变为被批评的对象"
+  },
+  "narrative_quality": {
+    "information_richness": "中",
+    "key_insight": "躺平概念的起源可追溯到贴吧中国人口吧的一篇帖子《躺平即是正义》，该帖子提出了躺平作为对抗内卷的生活哲学"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"躺平\",\n  \"origin\": {\n    \"time\": \"2021年4月\",\n    \"platform\": \"贴吧\",\n    \"trigger_event\": \"中国人口吧一篇题为《躺平即是正义》的帖子引发广泛讨论\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2021年4月\",\n      \"description\": \"在贴吧中国人口吧出现《躺平即是正义》的帖子，提出躺平概念，引发小范围讨论\",\n      \"key_platforms\": [\"贴吧\"],\n      \"key_figures\": [\"贴吧用户（发帖者）\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2021年5月-6月\",\n      \"description\": \"躺平概念迅速在社交媒体扩散，成为对抗内卷、低欲望生活的代名词，引发主流媒体和官方讨论\",\n      \"key_platforms\": [\"微博\", \"B站\", \"知乎\", \"微信公众号\"],\n      \"key_figures\": [\"自媒体博主\", \"网络评论员\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2021年下半年至今\",\n      \"description\": \"躺平从具体的生活哲学泛化为一种对工作压力、消费主义、社会竞争的消极抵抗态度，衍生出各种变体\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"小红书\"],\n      \"key_figures\": [\"内容创作者\", \"普通网民\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"躺平学\",\n      \"time\": \"2021年5月\",\n      \"relationship\": \"衍生（将躺平系统化为一种学说）\"\n    },\n    {\n      \"variant_name\": \"躺平即是正义\",\n      \"time\": \"2021年4月\",\n      \"relationship\": \"衍生（原帖标题，成为口号）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\n      \"社会内卷加剧，年轻人面临高房价、高工作压力、低上升通道\",\n      \"996工作制引发普遍焦虑\",\n      \"消费主义与物质压力导致低欲望心态蔓延\"\n    ],\n    \"target_audience\": \"中国年轻职场人群、学生、低线城市青年\",\n    \"political_sensitivity\": \"中\",\n    \"backlash_events\": [\n      \"部分官方媒体批评躺平是消极逃避，不符合奋斗精神\",\n      \"引发关于奋斗与休息、个人选择与社会责任的舆论辩论\"\n    ]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"主动降低欲望和努力，放弃拼命赚钱和买房结婚等传统目标，以减轻生存压力的一种生活哲学\",\n    \"current_meaning\": \"泛指对工作、学习、社交等一切需要努力的事情采取消极、不积极的态度，甚至带有自嘲和反讽\",\n    \"drift_direction\": \"从具体的生活策略变为泛指消极态度，从自嘲变为被批评的对象\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"躺平概念的起源可追溯到贴吧中国人口吧的一篇帖子《躺平即是正义》，该帖子提出了躺平作为对抗内卷的生活哲学\"\n  }\n}",
+  "video_name": "躺平是什么梗【梗指南】 - 1.躺平(Av205825511,P1)",
+  "transcript_chars": 252,
+  "duration_sec": 59.882667
+}

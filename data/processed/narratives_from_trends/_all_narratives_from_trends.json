@@ -1,0 +1,974 @@
+{
+  "打工人": {
+    "meme_name": "打工人",
+    "peak_month": "2020-11",
+    "peak_value": 44,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2020-10",
+        "description": "梗在2020年10月突然出现，搜索热度高达43，几乎接近峰值，属于爆发式萌芽。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2020-10至2020-11",
+        "description": "2020年10月和11月连续两个月热度极高，11月达到峰值44，形成短暂但强烈的关注高峰。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2020-12至2025-12",
+        "description": "峰值后热度迅速下降，2021年2月降至16，随后长期在低位波动（5-15之间），呈现缓慢衰退但偶有复燃的形态。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 63,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗在2020年10月突然爆发并迅速达到峰值，随后长期处于低位波动状态，但每年年底或特定时期（如2021年12月、2022年12月、2023年12月）出现小幅复燃，呈现典型的复燃波动型生命周期。",
+    "social_context_hint": "2020年10-11月峰值可能关联疫情后经济压力增大、职场内卷话题升温，以及‘打工人’自嘲文化在社交媒体上的集中爆发；后续年底复燃可能与年终总结、职场焦虑等周期性社会情绪相关。"
+  },
+  "内卷": {
+    "meme_name": "内卷",
+    "peak_month": "2021-05",
+    "peak_value": 78,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2019-11 至 2020-04",
+        "description": "概念从学术圈扩散至公众，搜索量缓慢爬升，社会对竞争压力的关注开始萌芽。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2020-05 至 2021-06",
+        "description": "搜索量急剧攀升，2020年底至2021年中达到顶峰，反映教育、职场等领域内卷现象引发广泛共鸣与讨论。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2021-07 至 2025-12",
+        "description": "热度整体下降，但出现多次小规模复燃（如2023年10月、2025年7月），表明话题具有长期社会基础，但已从爆发期转入常态化讨论。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 74,
+    "resurgence_detected": true,
+    "narrative_summary": "内卷一词经历了从学术术语到全民热词的爆发式传播，在2021年达到顶峰后热度衰减，但持续以周期性复燃维持社会关注，成为描述中国社会竞争压力的长期符号。",
+    "social_context_hint": "2021年峰值与疫情后经济下行、就业压力加剧、教育减负政策（双减）等社会背景高度相关，反映了公众对过度竞争和资源稀缺的集体焦虑。"
+  },
+  "躺平": {
+    "meme_name": "躺平",
+    "peak_month": "2021-06",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2020-05至2021-05",
+        "description": "萌芽期搜索量低位波动，2020年4月为14，2020年12月仍为14，2021年5月前缓慢爬升，反映话题从边缘讨论逐渐进入公众视野。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2021-06至2021-07",
+        "description": "2021年6月达到峰值100，7月回落至32，形成尖锐脉冲，表明该梗在短时间内引爆全网关注，成为现象级社会议题。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2021-08至2025-12",
+        "description": "峰值后快速衰退，但后续多次复燃（如2022年4月28、2022年10月27、2025年10月34），呈现波动衰减的长尾特征，直至2025年12月仍有一定搜索量。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 68,
+    "resurgence_detected": true,
+    "narrative_summary": "躺平梗在2021年6月达到爆炸性峰值后迅速降温，但凭借其与社会经济压力的强关联，在后续数年内多次复燃，形成典型的脉冲-复燃-长尾传播模式。",
+    "social_context_hint": "2021年峰值恰逢中国青年就业压力增大、内卷讨论升温及疫情后经济恢复期，躺平成为对抗过度竞争的文化符号；后续复燃点（如2022年4月上海封控、2025年10月经济下行预期）均与重大社会事件或政策调整相关。"
+  },
+  "普信男": {
+    "meme_name": "普信男",
+    "peak_month": "2022-01",
+    "peak_value": 12,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2021-08 至 2021-12",
+        "description": "梗在2021年8月首次出现，搜索热度较高（9），随后缓慢下降至6，处于早期传播阶段。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2022-01",
+        "description": "2022年1月达到搜索峰值12，成为全网热议焦点，可能由特定事件或社交媒体话题引爆。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2022-02 至 2024-10",
+        "description": "峰值后热度迅速下降至7以下，但后续在2022年8月、2023年5月和2024年10月出现多次复燃，形成波动衰退。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 38,
+    "resurgence_detected": true,
+    "narrative_summary": "普信男梗经历了一次高峰后进入长期波动衰退，但多次复燃显示其作为社会批判标签的持久生命力。",
+    "social_context_hint": "2022年1月峰值可能关联当时性别议题讨论升温，以及脱口秀等文化产品对‘普信’概念的普及；后续复燃与网络性别对立事件周期性爆发有关。"
+  },
+  "小镇做题家": {
+    "meme_name": "小镇做题家",
+    "peak_month": "2022-07",
+    "peak_value": 55,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2016-06 至 2022-06",
+        "description": "长期潜伏期，搜索量极低但持续存在，反映该词在特定群体中缓慢酝酿。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2022-07",
+        "description": "搜索量急剧攀升至55，形成脉冲式爆发，表明该梗在短时间内获得广泛关注。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2022-08 至 2022-09",
+        "description": "搜索量断崖式下跌至5和9，随后长期低迷，符合典型脉冲式衰退特征。"
+      }
+    ],
+    "curve_shape": "脉冲",
+    "estimated_duration_months": 4,
+    "resurgence_detected": false,
+    "narrative_summary": "该梗经历长达六年的低活跃度萌芽期后，于2022年7月突然爆发达到峰值，随后迅速消退，未出现复燃，属于典型的脉冲式传播模式。",
+    "social_context_hint": "2022年7月峰值可能关联当年中国高校毕业生就业压力加剧、社会对教育公平与阶层流动的讨论升温，以及相关公共事件（如明星考编争议）引发的舆论聚焦。"
+  },
+  "摆烂": {
+    "meme_name": "摆烂",
+    "peak_month": "2022-01",
+    "peak_value": 4,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2021-12 至 2022-01",
+        "description": "梗在2021年12月萌芽，搜索指数为2，随后在2022年1月迅速攀升至峰值4，标志着进入公众视野。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2022-01 至 2022-02",
+        "description": "峰值持续两个月（2022年1月和2月均为4），达到搜索关注度的最高点，反映该梗在短期内爆发式传播。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2022-03 至 2025-12",
+        "description": "从2022年3月开始指数波动下降，经历多次小幅复燃（如2022年4月、2024年3月、2025年11月），但整体趋势走低，最终在2025年12月降至1，进入长期衰退。"
+      }
+    ],
+    "curve_shape": "复燃波动型",
+    "estimated_duration_months": 38,
+    "resurgence_detected": true,
+    "narrative_summary": "摆烂梗在2022年初爆发达到峰值后，经历长期波动衰退，期间多次小幅复燃，呈现典型的复燃波动型生命周期。",
+    "social_context_hint": "2022年初峰值可能关联疫情反复、经济下行压力及年轻人对‘躺平’‘内卷’等社会情绪的延续，反映一种消极应对的集体心态。"
+  },
+  "润": {
+    "meme_name": "润",
+    "peak_month": "2025-11",
+    "peak_value": 80,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2015-01至2022-05",
+        "description": "长期低位波动，搜索指数在12-29之间，反映该词作为网络隐语在小众圈层中萌芽，但未进入主流视野。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2025-11前后",
+        "description": "搜索指数急剧攀升至80，形成历史最高峰，表明该梗在特定社会事件或舆论催化下爆发式传播。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2025-12",
+        "description": "峰值后迅速回落至50，但仍显著高于历史均值，显示热度快速消退但未归零，具备复燃潜力。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 121,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗经历长达十年的低位潜伏后，在2025年末突然爆发达到峰值，呈现典型的长期蓄力后复燃式传播模式。",
+    "social_context_hint": "2025年峰值可能关联当年经济下行压力加剧、就业市场紧缩或移民政策变动等社会背景，促使‘润’（逃离/移民）成为集体情绪出口。"
+  },
+  "吗喽": {
+    "meme_name": "吗喽",
+    "peak_month": "2024-08",
+    "peak_value": 4,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2023-11至2024-07",
+        "description": "梗在2023年11月萌芽，搜索热度维持在2-3的低位，呈现缓慢积累态势，尚未引起广泛关注。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2024-08",
+        "description": "2024年8月搜索热度突然升至4，达到整个周期的最高点，表明该梗在当月被大量传播和使用。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2024-09",
+        "description": "2024年9月热度骤降至1，几乎归零，说明该梗迅速失去关注度，进入衰退期。"
+      }
+    ],
+    "curve_shape": "长尾",
+    "estimated_duration_months": 11,
+    "resurgence_detected": false,
+    "narrative_summary": "该梗经历近10个月的低位酝酿后，在2024年8月短暂爆发达到峰值，随后迅速消退，呈现典型的长尾衰减模式。",
+    "social_context_hint": "峰值出现在2024年8月，可能关联暑期社会情绪释放或特定网络事件（如职场自嘲、生活压力表达），‘吗喽’作为自嘲式身份标签在年轻人中短暂流行。"
+  },
+  "鼠鼠": {
+    "meme_name": "鼠鼠",
+    "peak_month": "2025-11",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2015-01 至 2020-01",
+        "description": "早期萌芽阶段，关注度在低位波动，偶有小型峰值（如2015-07的35），但未形成持续热度。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2020-01 至 2020-07",
+        "description": "首次显著爆发，2020-01达到80的峰值，随后快速回落，形成脉冲式高峰。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2020-07 至 2025-07",
+        "description": "长期衰退期，关注度稳定在24-30的低位区间，无明显波动，直至2025年11月突然复燃至100。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 120,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗经历了长达十年的潜伏与低活跃期，在2020年初因社会事件短暂爆发后陷入沉寂，最终在2025年末意外复燃并创下历史最高关注度。",
+    "social_context_hint": "2020年1月峰值可能与新冠疫情初期社会焦虑、自嘲文化兴起有关；2025年11月复燃可能关联新的经济压力或网络亚文化事件（如‘鼠鼠文学’再度流行）。"
+  },
+  "牛马": {
+    "meme_name": "牛马",
+    "peak_month": "2024-09",
+    "peak_value": 4,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2021-04至2024-08",
+        "description": "长期低位波动，搜索量在1-2之间徘徊，偶有零星小高峰，表明梗在特定社群中缓慢积累认知度，尚未进入大众视野。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2024-09至2025-03",
+        "description": "出现两次明显峰值（2024-09=4，2025-03=4），搜索量显著跃升，表明梗在特定社会事件或舆论催化下爆发，成为广泛使用的自嘲或讽刺标签。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2025-04至2025-12",
+        "description": "峰值后回落至2-3区间，但仍高于萌芽期均值，呈现长尾衰减特征，表明梗已融入日常网络用语，成为稳定表达，但热度逐渐消退。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 57,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗经历长达三年的潜伏期后，在2024年下半年至2025年初两次爆发，形成双峰复燃曲线，随后进入长尾稳定期。",
+    "social_context_hint": "2024-2025年峰值可能关联经济下行压力、就业焦虑及职场内卷等社会情绪，'牛马'作为自嘲打工人的代称，在社交媒体上被广泛用于表达对工作状态的不满与无奈。"
+  },
+  "i人 e人": {
+    "meme_name": "i人 e人",
+    "peak_month": "2024-01",
+    "peak_value": 42,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2023-08 至 2023-12",
+        "description": "梗从2023年8月开始萌芽，搜索热度逐步上升，10月后进入快速增长期，12月达到33，为爆发蓄力。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2024-01",
+        "description": "2024年1月达到搜索峰值42，成为全网热议焦点，标志着梗的全面爆发。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2024-02 至 2025-12",
+        "description": "峰值后热度迅速回落，2024年2月降至19，随后在10-20区间波动，2025年10-11月出现小幅复燃（20、26），但整体呈长期衰退趋势。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 21,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗经历快速爆发后进入长期波动衰退，并在2025年末出现一次明显复燃，呈现典型的复燃波动型生命周期。",
+    "social_context_hint": "2024年初峰值可能关联MBTI人格测试在社交媒体上的持续走红，以及年轻人对自我标签化、社交身份认同的讨论热潮；2025年末复燃或与年终社交场景、职场性格话题的周期性回归有关。"
+  },
+  "遥遥领先 华为": {
+    "meme_name": "遥遥领先 华为",
+    "peak_month": "2017-04",
+    "peak_value": 30,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2017-04 至 2023-08",
+        "description": "梗在2017年4月首次出现并达到初始峰值，随后长期处于低关注度状态，但并未完全消失，为后续复燃埋下伏笔。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2017-04",
+        "description": "2017年4月达到历史最高搜索峰值（30），可能与华为某款产品发布或营销事件相关，形成首次爆发。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2023-09 至 2025-10",
+        "description": "2023年9月出现明显复燃（23），随后进入缓慢衰退期，至2025年10月降至12，但仍高于长期低谷水平，呈现长尾衰减。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 102,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗经历早期爆发后长期沉寂，在2023年因华为Mate 60系列发布等事件强势复燃，随后进入缓慢衰退的长尾阶段。",
+    "social_context_hint": "2017年峰值可能对应华为P10或Mate 10发布时的营销口号；2023年复燃与华为突破芯片封锁、发布Mate 60系列引发的民族情绪和‘遥遥领先’成为网络热词密切相关。"
+  },
+  "孔乙己的长衫": {
+    "meme_name": "孔乙己的长衫",
+    "peak_month": "2016-08",
+    "peak_value": 31,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2016-08",
+        "description": "梗首次出现，搜索量达到峰值31，可能源于对鲁迅作品《孔乙己》中‘长衫’象征意义的重新解读，引发初期关注。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2016-08",
+        "description": "搜索量在当月达到最高点31，形成单一脉冲式峰值，随后迅速消退。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2016-09至2023-02",
+        "description": "峰值后搜索量急剧下降，长期处于低位，但在2023年3-4月出现复燃，搜索量回升至11，形成二次小高峰。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 1,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗在2016年8月短暂爆发后长期沉寂，于2023年3-4月复燃，呈现典型的‘复燃波动型’传播模式。",
+    "social_context_hint": "2023年复燃可能关联高校毕业生就业压力、‘脱不下长衫’的学历焦虑等社会议题，与疫情后经济恢复期的青年心态相关。"
+  },
+  "精神状态": {
+    "meme_name": "精神状态",
+    "peak_month": "2025-11",
+    "peak_value": 74,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2017-09 至 2025-10",
+        "description": "长期低水平波动，偶有微小起伏，处于潜伏期，搜索热度极低，仅在特定语境下被提及。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2025-10 至 2025-11",
+        "description": "搜索量急剧攀升，2025年11月达到历史峰值74，呈现脉冲式爆发，反映该梗在短时间内获得广泛关注和传播。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2025-11 至 2025-12",
+        "description": "峰值后迅速回落，2025年12月降至30，符合脉冲型快速消退特征，但仍有较高余热。"
+      }
+    ],
+    "curve_shape": "脉冲",
+    "estimated_duration_months": 1,
+    "resurgence_detected": false,
+    "narrative_summary": "该梗长期处于潜伏状态，在2025年末突然爆发达到峰值后迅速回落，呈现典型的脉冲式传播模式。",
+    "social_context_hint": "2025年11月峰值可能关联当时社会压力事件（如经济波动、就业焦虑或重大社会议题），引发网民集体自嘲与情绪宣泄，使“精神状态”成为表达内心状态的流行标签。"
+  },
+  "雪糕刺客": {
+    "meme_name": "雪糕刺客",
+    "peak_month": "2015-02",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2015-02 至 2015-05",
+        "description": "梗在2015年2月突然爆发达到峰值，随后在5月仍保持较高热度（85），属于早期快速传播阶段。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2015-02",
+        "description": "搜索关注度达到最高值100，形成脉冲式爆发，但峰值持续时间极短。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2015-05 至 2022-06",
+        "description": "热度从2015年5月后急剧下降，长期处于低水平，至2022年6月仅剩15，进入长期衰退期。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 89,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗在2015年初脉冲式爆发后长期沉寂，但在2022年7月出现明显复燃（从15回升至36），呈现‘先脉冲爆发、后长期衰退、再复燃’的传播模式。",
+    "social_context_hint": "2015年峰值可能与当时高端雪糕品牌（如钟薛高）初入市场引发价格争议有关；2022年复燃则关联‘雪糕刺客’一词在社交媒体上重新流行，反映消费者对高价雪糕的调侃与消费压力感知，叠加疫情后经济下行背景下的价格敏感情绪。"
+  },
+  "科目三": {
+    "meme_name": "科目三",
+    "peak_month": "2025-11",
+    "peak_value": 56,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2016-12 至 2023-11",
+        "description": "长期低水平波动，搜索热度在6-16之间徘徊，梗处于小众或地域性传播阶段，未进入大众视野。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2023-12 至 2025-11",
+        "description": "2023年12月首次爆发至35，随后回落，2025年11月达到历史最高56，形成二次复燃峰值，表明梗经历重新包装或跨平台传播。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2025-12 及之后",
+        "description": "2025年12月数据未给出但标记为衰退，峰值后热度快速下降，符合复燃后消退特征。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 82,
+    "resurgence_detected": true,
+    "narrative_summary": "科目三经历了长达7年的低热度潜伏期，在2023年底突然爆发，并在2025年底达到二次高峰，呈现典型的复燃波动模式。",
+    "social_context_hint": "2023年底的首次爆发可能与短视频平台舞蹈挑战（如广西科目三）的病毒式传播有关；2025年11月的更高峰值可能关联重大事件或跨文化改编（如国际明星模仿、综艺节目助推）。"
+  },
+  "尊嘟假嘟": {
+    "meme_name": "尊嘟假嘟",
+    "peak_month": "2023-08",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2023-08",
+        "description": "梗在8月初突然爆发，迅速达到搜索峰值，属于典型的脉冲式引爆，可能源于短视频平台或社交媒体的病毒式传播。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2023-08",
+        "description": "8月达到搜索热度顶峰（100），全网广泛使用，成为现象级热梗。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2023-09至2023-10",
+        "description": "9月热度骤降至33，10月进一步降至22，呈现快速衰退趋势，但仍有残余关注度。"
+      }
+    ],
+    "curve_shape": "脉冲",
+    "estimated_duration_months": 3,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗在2023年8月突然爆发并达到峰值，随后两个月快速衰退，但近12月均值较高且存在复燃迹象，属于短周期脉冲式传播。",
+    "social_context_hint": "2023年8月正值暑期，互联网娱乐内容消费旺盛，该梗可能源于某热门短视频或直播中的可爱/卖萌口音，契合年轻用户轻松搞笑的社交需求。"
+  },
+  "鸡你太美": {
+    "meme_name": "鸡你太美",
+    "peak_month": "2019-04",
+    "peak_value": 41,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2019-04",
+        "description": "梗在2019年4月突然爆发，达到历史最高关注度，源于蔡徐坤篮球视频的恶搞传播，迅速成为全网热梗。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2019-04",
+        "description": "单月峰值41，为整个生命周期的最高点，随后快速回落，表明该梗属于爆发型传播。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2019-05至2023-04",
+        "description": "关注度从2019年5月起急剧下降，但后续多年出现多次小规模复燃（如2020年8月、2022年9-11月、2023年3-4月），呈现长尾波动特征，直至2023年4月后趋于沉寂。"
+      }
+    ],
+    "curve_shape": "复燃波动型",
+    "estimated_duration_months": 53,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗以2019年4月爆发式峰值开局，随后快速衰退，但凭借网络记忆和二次创作在后续四年内多次复燃，形成典型的复燃波动型长尾曲线。",
+    "social_context_hint": "2019年4月峰值对应蔡徐坤《偶像练习生》走红及篮球梗全网恶搞热潮；后续复燃节点（如2022年下半年）可能与B站鬼畜区持续创作、短视频平台怀旧风潮及蔡徐坤相关事件（如2023年4月新动态）有关。"
+  },
+  "后浪": {
+    "meme_name": "后浪",
+    "peak_month": "2020-05",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2017-03 至 2020-04",
+        "description": "长期低水平存在，搜索指数在10左右波动，未形成广泛传播，属于潜在语义积累期。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2020-05 至 2020-06",
+        "description": "2020年5月搜索指数飙升至100，达到绝对峰值，次月迅速回落至24，呈现典型的脉冲式爆发。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2020-07 至 2023-06",
+        "description": "峰值后快速下降，2020年7月降至13，随后长期在4-10之间波动，2023年5月出现一次小反弹（24），但未形成复燃，最终趋于沉寂。"
+      }
+    ],
+    "curve_shape": "脉冲",
+    "estimated_duration_months": 38,
+    "resurgence_detected": false,
+    "narrative_summary": "该梗在2020年5月因B站《后浪》演讲引发全网讨论而瞬间爆发，随后迅速消退，仅有一次微弱反弹，整体呈现典型的单次脉冲式传播生命周期。",
+    "social_context_hint": "2020年5月正值新冠疫情初步控制后的社会情绪复杂期，《后浪》演讲因代际价值观争议引爆舆论，成为当年青年文化讨论的标志性事件。"
+  },
+  "情绪价值": {
+    "meme_name": "情绪价值",
+    "peak_month": "2025-11",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2019-01 至 2025-09",
+        "description": "长期低水平波动，关注度在19-41之间徘徊，属于概念萌芽与缓慢渗透期，尚未形成广泛传播。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2025-10 至 2025-11",
+        "description": "关注度急剧攀升，从2025-10的67飙升至2025-11的100，达到历史峰值，呈现爆发式增长。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2025-12",
+        "description": "峰值后迅速回落至27，关注度骤降，符合长尾型衰退特征，但未完全归零。"
+      }
+    ],
+    "curve_shape": "长尾",
+    "estimated_duration_months": 84,
+    "resurgence_detected": false,
+    "narrative_summary": "该梗经历了长达近7年的低关注度萌芽期，在2025年末突然爆发达到顶峰，随后快速衰退，属于典型的‘长尾爆发型’传播模式。",
+    "social_context_hint": "2025年末的爆发可能关联社会对心理健康、人际关系质量及消费主义反思的集中讨论，或与特定网络事件、流行文化作品引发的情感共鸣有关。"
+  },
+  "原生家庭": {
+    "meme_name": "原生家庭",
+    "peak_month": "2015-04",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2015-04 至 2015-04",
+        "description": "概念首次出现即达到历史最高峰值，可能源于某部影视作品或社会事件引爆讨论，但随后迅速降温，进入长期低关注度阶段。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2015-04",
+        "description": "单月爆发式峰值，关注度达到100，之后急剧下降，表明该词在初期具有极强的瞬时传播力但缺乏持续热度。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2015-05 至 2025-12",
+        "description": "长期处于低位波动，但多次出现小规模复燃（如2019年、2020年、2023年、2025年），呈现周期性回温，整体呈长尾衰退形态。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 129,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗在2015年4月因某事件引爆后迅速沉寂，但此后十年间多次因社会议题（如家庭关系、心理创伤）被重新激活，形成低频复燃的长尾传播模式。",
+    "social_context_hint": "2015年峰值可能关联电视剧《欢乐颂》或《小别离》等涉及家庭关系的热播剧；后续复燃节点（2019-2020年、2023年）与疫情居家、代际冲突讨论、心理健康话题升温有关。"
+  },
+  "专家建议": {
+    "meme_name": "专家建议",
+    "peak_month": "2019-11",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2018-12 至 2019-10",
+        "description": "搜索关注度从57逐步上升，公众对‘专家建议’话题开始产生兴趣，但尚未形成大规模讨论。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2019-11",
+        "description": "搜索关注度达到历史最高值100，可能因某次引发争议的专家言论或集中报道导致舆论爆发。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2019-12 至 2025-12",
+        "description": "峰值后关注度大幅下降，但长期维持在较高水平（近12月均值74），并在2025年9-12月出现明显复燃（从41升至94），呈现波动性衰退。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 85,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗在2019年底达到顶峰后长期保持高热度，并在2025年秋季再次显著回升，形成典型的复燃波动模式。",
+    "social_context_hint": "2019年峰值可能关联当时‘专家建议’频繁引发公众反感的舆论事件（如生活建议脱离实际）；2025年复燃可能对应经济压力或社会信任危机下对专家话语的集体嘲讽与反思。"
+  },
+  "不结婚": {
+    "meme_name": "不结婚",
+    "peak_month": "2025-11",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2017-02 至 2025-10",
+        "description": "长期低位波动，偶有脉冲式关注（如2017-02=77、2022-02=71），但未形成持续上升趋势，属于社会议题的潜伏期。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2025-10 至 2025-11",
+        "description": "关注度急剧攀升，2025-10=70，2025-11达到峰值100，可能由特定事件或政策讨论引爆。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2025-12 及之后",
+        "description": "数据截至2025-12，峰值后迅速回落，但近12月均值44.7显示仍有较高基础关注度，可能进入长尾衰退。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 107,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗经历长达8年的低水平潜伏，在2025年末突然爆发达到历史峰值，呈现典型的‘长期酝酿+短期引爆’复燃模式。",
+    "social_context_hint": "2025年峰值可能关联中国人口负增长加剧、婚育政策调整或经济下行压力下‘不婚主义’社会讨论集中爆发。"
+  },
+  "显眼": {
+    "meme_name": "显眼",
+    "peak_month": "2020-04",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2018-09 至 2020-03",
+        "description": "萌芽期搜索热度较高（73），但未达峰值，可能为早期局部使用或语义铺垫，随后缓慢上升至爆发前夜。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2020-04",
+        "description": "单月脉冲式爆发，达到搜索关注度顶峰（100），表明该梗在短时间内被大量传播和搜索。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2020-05 至 2025-05",
+        "description": "峰值后快速回落，但长期维持中等热度（近12月均值58.6），并出现多次小幅度复燃（如2023-07=43, 2025-05=40），呈现长尾衰退特征。"
+      }
+    ],
+    "curve_shape": "脉冲+长尾复燃",
+    "estimated_duration_months": 80,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗在2020年4月经历一次爆发式脉冲峰值，随后进入长期缓慢衰退，但保持较高基础热度并多次复燃，形成长尾传播模式。",
+    "social_context_hint": "2020年4月峰值可能关联新冠疫情初期居家隔离期间，网络社交活跃，带有自嘲或突出个性的‘显眼’表达被广泛使用；后续复燃可能与每年特定事件或网络亚文化周期性回潮有关。"
+  },
+  "遥遥领先": {
+    "meme_name": "遥遥领先",
+    "peak_month": "2023-09",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2023-08 至 2023-09",
+        "description": "2023年8月搜索量仅为11，处于萌芽期；9月突然爆发至峰值100，表明该梗在短时间内被大量用户关注和传播，可能由某个重大事件或产品发布引爆。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2023-09",
+        "description": "2023年9月达到搜索热度顶峰（100），是典型的脉冲式爆发，通常对应某个标志性事件（如华为Mate 60系列发布后“遥遥领先”成为网络热词）。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2023-10 至 2024-01",
+        "description": "2023年10月迅速降至40，11月32，12月15，2024年1月20，呈现快速衰退但略有波动，说明热度在爆发后迅速消退，但仍有部分用户持续使用。"
+      }
+    ],
+    "curve_shape": "脉冲",
+    "estimated_duration_months": 6,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗在2023年9月因华为发布会事件瞬间引爆，随后快速衰退，但2024年4月出现小幅复燃（13），显示其具备一定长尾效应和话题再激活能力。",
+    "social_context_hint": "2023年9月峰值与华为Mate 60系列手机发布高度相关，该系列因突破性技术（如卫星通话、麒麟芯片回归）被网友和余承东多次使用‘遥遥领先’形容，形成全网模仿和传播热潮。"
+  },
+  "普信": {
+    "meme_name": "普信",
+    "peak_month": "2025-11",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2019-12 至 2021-04",
+        "description": "梗从2019年底萌芽，初始关注度较高（68），随后波动下降，进入潜伏期，关注度在40-50区间徘徊，为后续爆发蓄力。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2025-10 至 2025-11",
+        "description": "2025年10月关注度突然跃升至67，11月达到历史峰值100，形成陡峭的爆发尖峰，表明该梗在特定事件或语境下被大规模重新激活。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2025-12",
+        "description": "峰值后迅速回落至42，接近长期均值，显示热度快速消退，但未归零，表明梗已沉淀为网络常用语。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 73,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗经历长期低水平潜伏后，在2025年末因社会事件触发二次爆发，形成陡峭的复燃型峰值，随后快速回落至常态。",
+    "social_context_hint": "2025年11月峰值可能关联当年重大社会议题或娱乐事件（如性别议题讨论、综艺节目争议或网络舆论事件），使‘普信’一词被重新赋予批判性语境。"
+  },
+  "社恐": {
+    "meme_name": "社恐",
+    "peak_month": "2023-06",
+    "peak_value": 8,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2021-11 至 2023-05",
+        "description": "从2021年11月开始，搜索关注度维持在5-7之间波动，呈现缓慢上升趋势，反映‘社恐’概念逐渐进入公众视野，但尚未形成爆发式传播。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2023-06",
+        "description": "2023年6月达到最高值8，成为整个周期的峰值，可能与当时社会对社交焦虑的广泛讨论或特定事件（如后疫情时代社交恢复压力）相关。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2023-07 至 2025-11",
+        "description": "峰值后关注度回落至6-7区间，但未持续下降至低点，而是保持较高水平波动，并在2025年9-10月出现小幅回升（7），呈现复燃特征，表明该梗已沉淀为长期话题。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 48,
+    "resurgence_detected": true,
+    "narrative_summary": "‘社恐’梗经历长期酝酿后于2023年6月达到顶峰，随后进入高平台期并出现复燃，形成典型的复燃波动型生命周期。",
+    "social_context_hint": "峰值出现在2023年6月，可能关联后疫情时代社交需求恢复与社交焦虑加剧的冲突，以及‘社恐’作为自我标签在年轻人中的泛化使用。"
+  },
+  "社死": {
+    "meme_name": "社死",
+    "peak_month": "2021-10",
+    "peak_value": 13,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2021-05 至 2021-09",
+        "description": "梗在2021年5月首次出现，搜索关注度从7起步，经历数月缓慢爬升，至9月达到7，为爆发蓄力。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2021-10",
+        "description": "2021年10月搜索关注度飙升至13，达到历史最高点，标志着该梗进入全网爆火阶段。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2021-11 至 2025-12",
+        "description": "峰值后关注度迅速回落，但并未归零，而是呈现多次小幅度复燃（如2022-08、2023-10、2024-12），整体呈波动下降趋势，直至2025年底仍有余温。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 56,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗经历了一次爆发式峰值后进入长期波动衰退期，期间多次复燃，表现出较强的生命力和周期性回潮特征。",
+    "social_context_hint": "2021年10月峰值可能关联疫情常态化下线上社交活跃、年轻人对尴尬场景的共鸣放大，以及短视频平台对‘社死’类内容的集中推流。"
+  },
+  "凡尔赛": {
+    "meme_name": "凡尔赛",
+    "peak_month": "2020-11",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2017-06 至 2020-10",
+        "description": "早期萌芽阶段，搜索热度较低且波动平缓，2017年6月出现初始关注（19），随后长期在10-20区间徘徊，2020年3月为17，尚未形成广泛传播。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2020-11 至 2021-01",
+        "description": "爆发式增长至峰值100（2020年11月），随后2021年1月仍维持59的高位，形成明显尖峰，标志着梗的全民化传播高潮。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2021-02 至 2025-12",
+        "description": "峰值后快速回落，2021年4月降至25，此后长期在7-15区间波动，2025年12月回升至17，呈现低水平复燃但未达前期高度。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 102,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗经历长期潜伏后于2020年底爆发式走红，随后进入长达数年的低热度波动期，并在2025年末出现小幅复燃迹象。",
+    "social_context_hint": "2020年11月峰值恰逢中国疫情后经济复苏期，社交媒体上对‘凡尔赛文学’（低调炫耀）的调侃集中爆发，反映疫情后消费主义与阶层焦虑的混合情绪。"
+  },
+  "破防": {
+    "meme_name": "破防",
+    "peak_month": "2025-11",
+    "peak_value": 4,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2019-12 至 2025-10",
+        "description": "梗在2019年底萌芽，随后长期处于低关注度（值2-3），偶有波动但未形成爆发，属于潜伏积累期。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2025-11",
+        "description": "关注度突然跃升至历史最高值4，形成明显峰值，可能由特定事件或二次创作引爆。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2025-12",
+        "description": "峰值后迅速回落至2，关注度消退，符合短期爆发后快速冷却的特征。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 72,
+    "resurgence_detected": true,
+    "narrative_summary": "该梗经历长达近6年的低水平潜伏后，在2025年11月突然爆发达到峰值，随后迅速衰退，呈现典型的‘复燃波动型’传播模式。",
+    "social_context_hint": "2025年11月峰值可能关联当年重大社会事件或网络热点（如经济压力、公共事件引发的集体情绪宣泄），使‘破防’一词被高频使用以表达情感冲击。"
+  },
+  "芭比Q": {
+    "meme_name": "芭比Q",
+    "peak_month": "2022-01",
+    "peak_value": 10,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2021-11 至 2021-12",
+        "description": "梗在游戏直播圈萌芽，源于电竞解说误将‘完蛋’说成‘芭比Q’，逐渐在小众社群传播，搜索热度从2升至4。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2022-01",
+        "description": "借助短视频平台和春节假期流量爆发，成为全网流行语，搜索热度达到峰值10，广泛用于表达‘完了、糟糕’等情绪。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2022-02 至 2023-01",
+        "description": "热度快速回落至2-5区间，但后续在2023年1月出现小幅复燃（2），显示该梗仍有间歇性使用，但整体进入长尾衰退期。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 8,
+    "resurgence_detected": true,
+    "narrative_summary": "芭比Q梗经历快速爆发、急剧衰退后，在一年后出现微弱复燃，呈现典型的‘短命爆梗+长尾回光’传播模式。",
+    "social_context_hint": "2022年1月峰值恰逢春节前后，疫情管控下居家娱乐需求旺盛，游戏直播和短视频成为情绪宣泄出口，该梗的‘完蛋’含义也暗合当时部分人群对生活不确定性的戏谑表达。"
+  },
+  "栓Q": {
+    "meme_name": "栓Q",
+    "peak_month": "2022-05",
+    "peak_value": 4,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2022-04",
+        "description": "梗在4月首次出现，搜索关注度较低（值为1），处于萌芽阶段，可能由个别短视频或事件引发初步传播。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2022-05",
+        "description": "5月搜索关注度达到峰值（值为4），梗迅速扩散，成为热门话题，可能因病毒式传播或主流平台推流。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2022-06至2022-09",
+        "description": "6月关注度下降至3，8月和9月稳定在2，呈现缓慢衰退趋势，但未完全消失，显示一定长尾效应。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 5,
+    "resurgence_detected": false,
+    "narrative_summary": "该梗在5月快速爆发达到峰值后逐步衰退，但关注度在后续月份保持低位稳定，未出现明显复燃。",
+    "social_context_hint": "2022年4-5月正值中国多地疫情封控期，线上娱乐和短视频消费活跃，可能助推了该梗的快速传播。"
+  },
+  "元宇宙": {
+    "meme_name": "元宇宙",
+    "peak_month": "2021-11",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2021-06 至 2021-10",
+        "description": "概念从科技圈小范围讨论开始，搜索量从3快速攀升至39，预示即将爆发。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2021-11 至 2022-02",
+        "description": "达到搜索顶峰100，随后在50-78高位震荡，资本与媒体狂热炒作，全民热议。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2022-03 至 2023-03",
+        "description": "搜索量从34持续下滑至23，热度消退，泡沫破裂，公众兴趣转向其他概念。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 24,
+    "resurgence_detected": true,
+    "narrative_summary": "元宇宙经历2021年底的爆炸式爆发后迅速衰退，但在2025年底出现小幅复燃，形成典型的复燃波动型曲线。",
+    "social_context_hint": "2021年峰值对应Facebook改名Meta、疫情催生虚拟经济幻想，以及资本疯狂追捧；2025年复燃可能与AI+空间计算等新技术融合有关。"
+  },
+  "citywalk": {
+    "meme_name": "citywalk",
+    "peak_month": "2023-07",
+    "peak_value": 70,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2023-07",
+        "description": "梗在2023年7月突然爆发，达到最高关注度，萌芽与峰值几乎重合，属于快速引爆型"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2023-07",
+        "description": "2023年7月达到峰值70，随后迅速回落，但后续有多次小幅度复燃"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2023-08至2025-11",
+        "description": "峰值后关注度波动下降，2023年8月至2025年11月整体呈衰退趋势，期间出现多次复燃（如2024年4月）但未能回到峰值"
+      }
+    ],
+    "curve_shape": "复燃波动型",
+    "estimated_duration_months": 29,
+    "resurgence_detected": true,
+    "narrative_summary": "citywalk在2023年7月突然爆红后迅速降温，但后续多次复燃，形成长尾波动式传播，最终缓慢消退。",
+    "social_context_hint": "2023年7月峰值可能关联后疫情时代年轻人对低成本、慢节奏城市探索的追捧，以及社交媒体（如小红书、抖音）对‘Citywalk’概念的集中推广"
+  },
+  "美拉德": {
+    "meme_name": "美拉德",
+    "peak_month": "2023-10",
+    "peak_value": 100,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2022-05 至 2023-09",
+        "description": "萌芽期搜索量较低且波动，2022年5月出现初始关注（32），2023年4月小幅上升（37），8月升至39，9月跃升至57，预示爆发前积累。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2023-10 至 2023-12",
+        "description": "2023年10月达到峰值100，随后11月回落至61，12月小幅回升至63，形成短暂高位平台，热度集中爆发。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2024-01 至 2025-12",
+        "description": "2024年初缓慢下降（56→50），9月降至36，10月维持36，2025年11月意外复燃至91，12月回落至51，呈现长尾衰退与复燃波动。"
+      }
+    ],
+    "curve_shape": "复燃",
+    "estimated_duration_months": 44,
+    "resurgence_detected": true,
+    "narrative_summary": "美拉德梗在2023年秋季爆发达到顶峰，经历一年低谷后于2025年底意外复燃，呈现典型的复燃波动型传播曲线。",
+    "social_context_hint": "2023年10月峰值可能关联秋季时尚/美食潮流（美拉德反应指食物褐变，后被引申为穿搭风格），2025年11月复燃或与社交媒体怀旧话题或新事件重新激活相关。"
+  },
+  "南方小土豆": {
+    "meme_name": "南方小土豆",
+    "peak_month": "2024-01",
+    "peak_value": 89,
+    "spread_phases": [
+      {
+        "phase": "emergence",
+        "time_range": "2019-10至2023-10",
+        "description": "梗在2019年10月首次出现，但关注度极低，随后长期沉寂，直到2023年底才重新被激活。"
+      },
+      {
+        "phase": "peak",
+        "time_range": "2024-01",
+        "description": "2024年1月关注度急剧攀升至峰值89，形成脉冲式爆发，可能与冬季旅游或社交媒体热点事件相关。"
+      },
+      {
+        "phase": "decay",
+        "time_range": "2024-01之后",
+        "description": "峰值后迅速衰退，数据未提供后续月份，但根据脉冲形态可推断关注度快速回落。"
+      }
+    ],
+    "curve_shape": "脉冲",
+    "estimated_duration_months": 4,
+    "resurgence_detected": false,
+    "narrative_summary": "该梗经历长期潜伏后，在2024年1月突然爆发达到高峰，随后迅速消退，属于典型的脉冲式传播。",
+    "social_context_hint": "2024年1月峰值可能关联冬季哈尔滨旅游热潮中‘南方小土豆’称呼的广泛使用，以及社交媒体对南北差异话题的放大效应。"
+  }
+}

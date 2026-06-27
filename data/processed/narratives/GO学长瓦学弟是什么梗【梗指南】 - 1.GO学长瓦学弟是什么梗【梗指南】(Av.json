@@ -1,0 +1,79 @@
+{
+  "meme_name": "GO学长瓦学弟",
+  "origin": {
+    "time": "2020年左右",
+    "platform": "B站/贴吧",
+    "trigger_event": "《CS:GO》与《Valorant》玩家群体之间的长期对抗与互相嘲讽",
+    "precursor": "CS玩家自称或被称为“GO学长”，Valorant玩家被称为“瓦学弟”"
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": "2020年-2021年",
+      "description": "随着《Valorant》国服上线，CS玩家与Valorant玩家在社区中开始互相嘲讽，出现“GO学长”“瓦学弟”等称呼，最初带有攻击性。",
+      "key_platforms": [
+        "贴吧",
+        "B站"
+      ],
+      "key_figures": null
+    },
+    {
+      "phase": "爆发",
+      "time_range": "2022年-2023年",
+      "description": "“笨蛋奶妈事件”等具体事件出圈，使“瓦学弟性压抑”标签广泛传播；博主“逼逼”的社会实验系列视频进一步强化双方标签，梗从骂战变为调侃。",
+      "key_platforms": [
+        "B站",
+        "抖音"
+      ],
+      "key_figures": [
+        "逼逼（博主）"
+      ]
+    },
+    {
+      "phase": "固化",
+      "time_range": "2023年至今",
+      "description": "梗成为固定网络用语，用于调侃CS和Valorant玩家群体，并衍生出“西格马男人”“性压抑群体”等标签，双方玩家也主动使用该梗自嘲。",
+      "key_platforms": [
+        "B站",
+        "抖音",
+        "微博"
+      ],
+      "key_figures": null
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "瓦学弟性压抑",
+      "time": "2022年",
+      "relationship": "衍生（从群体称呼变为特定标签，强调Valorant玩家在游戏中的性压抑表现）"
+    },
+    {
+      "variant_name": "GO学长西格马男人",
+      "time": "2022年",
+      "relationship": "衍生（对应瓦学弟标签，强调CS玩家的硬核/男性气质）"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "FPS游戏玩家群体之间的鄙视链",
+      "《Valorant》作为后来者挑战《CS:GO》经典地位",
+      "游戏社区中女玩家稀少导致的“性压抑”调侃氛围"
+    ],
+    "target_audience": "FPS游戏玩家，尤其是CS:GO和Valorant玩家",
+    "political_sensitivity": "无",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "CS玩家（GO学长）与Valorant玩家（瓦学弟）之间的互相嘲讽称呼",
+    "current_meaning": "用于调侃两个游戏玩家群体的固定网络梗，带有自嘲和幽默色彩，不再具有强烈攻击性",
+    "drift_direction": "从攻击性称呼变为调侃性标签，并衍生出更具体的性格标签（性压抑、西格马男人）"
+  },
+  "narrative_quality": {
+    "information_richness": "中",
+    "key_insight": "该梗从玩家群体间的攻击性称呼，经过具体事件（笨蛋奶妈事件）和博主创作（逼逼的社会实验）的推动，演变为双方共同使用的调侃梗，并固化为带有标签化的网络文化符号。"
+  },
+  "raw_llm_output": "```json\n{\n  \"meme_name\": \"GO学长瓦学弟\",\n  \"origin\": {\n    \"time\": \"2020年左右\",\n    \"platform\": \"B站/贴吧\",\n    \"trigger_event\": \"《CS:GO》与《Valorant》玩家群体之间的长期对抗与互相嘲讽\",\n    \"precursor\": \"CS玩家自称或被称为“GO学长”，Valorant玩家被称为“瓦学弟”\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2020年-2021年\",\n      \"description\": \"随着《Valorant》国服上线，CS玩家与Valorant玩家在社区中开始互相嘲讽，出现“GO学长”“瓦学弟”等称呼，最初带有攻击性。\",\n      \"key_platforms\": [\"贴吧\", \"B站\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2022年-2023年\",\n      \"description\": \"“笨蛋奶妈事件”等具体事件出圈，使“瓦学弟性压抑”标签广泛传播；博主“逼逼”的社会实验系列视频进一步强化双方标签，梗从骂战变为调侃。\",\n      \"key_platforms\": [\"B站\", \"抖音\"],\n      \"key_figures\": [\"逼逼（博主）\"]\n    },\n    {\n      \"phase\": \"固化\",\n      \"time_range\": \"2023年至今\",\n      \"description\": \"梗成为固定网络用语，用于调侃CS和Valorant玩家群体，并衍生出“西格马男人”“性压抑群体”等标签，双方玩家也主动使用该梗自嘲。\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"微博\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"瓦学弟性压抑\",\n      \"time\": \"2022年\",\n      \"relationship\": \"衍生（从群体称呼变为特定标签，强调Valorant玩家在游戏中的性压抑表现）\"\n    },\n    {\n      \"variant_name\": \"GO学长西格马男人\",\n      \"time\": \"2022年\",\n      \"relationship\": \"衍生（对应瓦学弟标签，强调CS玩家的硬核/男性气质）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\n      \"FPS游戏玩家群体之间的鄙视链\",\n      \"《Valorant》作为后来者挑战《CS:GO》经典地位\",\n      \"游戏社区中女玩家稀少导致的“性压抑”调侃氛围\"\n    ],\n    \"target_audience\": \"FPS游戏玩家，尤其是CS:GO和Valorant玩家\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"CS玩家（GO学长）与Valorant玩家（瓦学弟）之间的互相嘲讽称呼\",\n    \"current_meaning\": \"用于调侃两个游戏玩家群体的固定网络梗，带有自嘲和幽默色彩，不再具有强烈攻击性\",\n    \"drift_direction\": \"从攻击性称呼变为调侃性标签，并衍生出更具体的性格标签（性压抑、西格马男人）\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该梗从玩家群体间的攻击性称呼，经过具体事件（笨蛋奶妈事件）和博主创作（逼逼的社会实验）的推动，演变为双方共同使用的调侃梗，并固化为带有标签化的网络文化符号。\"\n  }\n}\n```",
+  "video_name": "GO学长瓦学弟是什么梗【梗指南】 - 1.GO学长瓦学弟是什么梗【梗指南】(Av114376270940510,P1)",
+  "transcript_chars": 797,
+  "duration_sec": 256.213333
+}

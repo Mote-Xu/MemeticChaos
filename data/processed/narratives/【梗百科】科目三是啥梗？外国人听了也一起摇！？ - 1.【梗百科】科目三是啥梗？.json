@@ -1,0 +1,80 @@
+{
+  "meme_name": "科目三",
+  "origin": {
+    "time": "2010年代",
+    "platform": "广西柳州地方文化",
+    "trigger_event": null,
+    "precursor": "入义13（疑似“入义13”为ASR错误，可能指“广西科目三”前身舞蹈）"
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": "2010年代",
+      "description": "广西柳州地区出现一种舞蹈，被称为“入义13”，是科目三舞蹈的原型。",
+      "key_platforms": [
+        "地方性传播"
+      ],
+      "key_figures": null
+    },
+    {
+      "phase": "爆发",
+      "time_range": "2022年",
+      "description": "以“科目三”为名在互联网暴火，常配曲为“似华辩苏”（ASR错误，可能指“似华辩苏”为某首歌曲），出现大量模仿视频。",
+      "key_platforms": [
+        "B站",
+        "抖音"
+      ],
+      "key_figures": [
+        "续谋（ASR错误，可能指某位舞者）",
+        "粉丝"
+      ]
+    },
+    {
+      "phase": "泛化",
+      "time_range": "2023年",
+      "description": "科目三再次进入大众视野，配曲改为“一笑江湖”，舞蹈热度席卷全球，出现“五统台湾”（ASR错误，可能指“舞统台湾”）等衍生说法。",
+      "key_platforms": [
+        "B站",
+        "抖音",
+        "YouTube",
+        "TikTok"
+      ],
+      "key_figures": [
+        "音区将军爱美麗（ASR错误，可能指某位海外博主）",
+        "英区不断（ASR错误，可能指英国地区博主）",
+        "春造绅画（ASR错误，可能指某位创作者）"
+      ]
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "舞统台湾",
+      "time": "2023年",
+      "relationship": "衍生（将舞蹈传播至台湾地区，被戏称为“舞统台湾”）"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "年轻人对广西地方文化的猎奇与模仿",
+      "全球短视频平台对舞蹈挑战的推动"
+    ],
+    "target_audience": "年轻网民，尤其是短视频用户",
+    "political_sensitivity": "低",
+    "backlash_events": [
+      "视频中提及中年人对年轻人舞蹈投来异样目光，形成代际反差"
+    ]
+  },
+  "semantic_drift": {
+    "original_meaning": "广西地方的一种舞蹈类型，源自当地文化",
+    "current_meaning": "一种全球流行的短视频舞蹈挑战，配乐为《一笑江湖》",
+    "drift_direction": "从地方性舞蹈演变为全球性网络迷因"
+  },
+  "narrative_quality": {
+    "information_richness": "中",
+    "key_insight": "科目三舞蹈的全球传播过程中，出现了中年旁观者与年轻舞者之间的代际反差，成为该梗传播中的有趣社会现象。"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"科目三\",\n  \"origin\": {\n    \"time\": \"2010年代\",\n    \"platform\": \"广西柳州地方文化\",\n    \"trigger_event\": null,\n    \"precursor\": \"入义13（疑似“入义13”为ASR错误，可能指“广西科目三”前身舞蹈）\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2010年代\",\n      \"description\": \"广西柳州地区出现一种舞蹈，被称为“入义13”，是科目三舞蹈的原型。\",\n      \"key_platforms\": [\"地方性传播\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2022年\",\n      \"description\": \"以“科目三”为名在互联网暴火，常配曲为“似华辩苏”（ASR错误，可能指“似华辩苏”为某首歌曲），出现大量模仿视频。\",\n      \"key_platforms\": [\"B站\", \"抖音\"],\n      \"key_figures\": [\"续谋（ASR错误，可能指某位舞者）\", \"粉丝\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2023年\",\n      \"description\": \"科目三再次进入大众视野，配曲改为“一笑江湖”，舞蹈热度席卷全球，出现“五统台湾”（ASR错误，可能指“舞统台湾”）等衍生说法。\",\n      \"key_platforms\": [\"B站\", \"抖音\", \"YouTube\", \"TikTok\"],\n      \"key_figures\": [\"音区将军爱美麗（ASR错误，可能指某位海外博主）\", \"英区不断（ASR错误，可能指英国地区博主）\", \"春造绅画（ASR错误，可能指某位创作者）\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"舞统台湾\",\n      \"time\": \"2023年\",\n      \"relationship\": \"衍生（将舞蹈传播至台湾地区，被戏称为“舞统台湾”）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"年轻人对广西地方文化的猎奇与模仿\", \"全球短视频平台对舞蹈挑战的推动\"],\n    \"target_audience\": \"年轻网民，尤其是短视频用户\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": [\"视频中提及中年人对年轻人舞蹈投来异样目光，形成代际反差\"]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"广西地方的一种舞蹈类型，源自当地文化\",\n    \"current_meaning\": \"一种全球流行的短视频舞蹈挑战，配乐为《一笑江湖》\",\n    \"drift_direction\": \"从地方性舞蹈演变为全球性网络迷因\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"科目三舞蹈的全球传播过程中，出现了中年旁观者与年轻舞者之间的代际反差，成为该梗传播中的有趣社会现象。\"\n  }\n}",
+  "video_name": "【梗百科】科目三是啥梗？外国人听了也一起摇！？ - 1.【梗百科】科目三是啥梗？外国人听了也一起摇！？(Av918348115,P1)",
+  "transcript_chars": 480,
+  "duration_sec": 140.522667
+}

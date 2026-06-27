@@ -1,0 +1,27 @@
+{
+  "meme_name": "尊嘟假嘟",
+  "peak_month": "2023-08",
+  "peak_value": 100,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2023-08",
+      "description": "梗在8月初突然爆发，迅速达到搜索峰值，属于典型的脉冲式引爆，可能源于短视频平台或社交媒体的病毒式传播。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2023-08",
+      "description": "8月达到搜索热度顶峰（100），全网广泛使用，成为现象级热梗。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2023-09至2023-10",
+      "description": "9月热度骤降至33，10月进一步降至22，呈现快速衰退趋势，但仍有残余关注度。"
+    }
+  ],
+  "curve_shape": "脉冲",
+  "estimated_duration_months": 3,
+  "resurgence_detected": true,
+  "narrative_summary": "该梗在2023年8月突然爆发并达到峰值，随后两个月快速衰退，但近12月均值较高且存在复燃迹象，属于短周期脉冲式传播。",
+  "social_context_hint": "2023年8月正值暑期，互联网娱乐内容消费旺盛，该梗可能源于某热门短视频或直播中的可爱/卖萌口音，契合年轻用户轻松搞笑的社交需求。"
+}

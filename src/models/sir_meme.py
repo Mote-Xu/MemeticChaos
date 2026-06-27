@@ -402,21 +402,60 @@ def fit_sir_to_curve(t_data: np.ndarray, I_data: np.ndarray,
             raise RuntimeError(f"Failed to fit SIR model: {e}")
 
 
+def estimate_total_infected(circle_count: int,
+                            peak_intensity: float = 0.5,
+                            duration_months: float = 12.0) -> float:
+    """从可用生命周期特征估算连续的累积感染率 R∞。
+
+    替代之前的三档硬映射（circle_count ≥ 5 → 0.75, ≥ 3 → 0.50, else 0.25），
+    使用三条可用信息通过 sigmoid 组合产生连续值：
+    - circle_count: 受众圈层数（覆盖广度代理）
+    - peak_intensity: 峰值情感强度（来自 sentiment_arc，渗透深度代理）
+    - duration_months: 有效传播月数（持续时间代理）
+
+    输出限制在 [0.03, 0.92]，避免 R₀ 奇异点 (target → 1) 和退化零点。
+
+    Args:
+        circle_count: audience circle layers count
+        peak_intensity: sentiment intensity at peak phase [0, 1]
+        duration_months: effective propagation duration in months
+
+    Returns:
+        Continuous total_infected estimate ∈ [0.03, 0.92]
+    """
+    # Normalize circle_count to [0, 1] (observed range: 1-7 circles)
+    circle_score = np.clip((circle_count - 1) / 6.0, 0.0, 1.0)
+    # Normalize duration: ~4 years is effectively "max persistence"
+    duration_score = np.clip(duration_months / 48.0, 0.0, 1.0)
+
+    # Weighted blend: breadth (0.5) + depth (0.3) + persistence (0.2)
+    raw = 0.5 * circle_score + 0.3 * peak_intensity + 0.2 * duration_score
+
+    # Sigmoid stretch to [0.03, 0.92] — avoids R₀ singularity at target ≥ 0.99
+    return 0.03 + 0.89 / (1.0 + np.exp(-6.0 * (raw - 0.5)))
+
+
 def estimate_params_from_lifecycle(
     peak_day: float,
     total_infected: float,
     duration_days: float,
-    N: float = 1.0
+    N: float = 1.0,
+    S0: float = 1.0
 ) -> SIRParams:
     """从热梗生命周期的观测特征粗略估算 SIR 参数。
 
     用于没有完整时间序列数据时的手动参数估计。
 
+    注意：此 R₀ 应被解释为 "Effective Meme R₀"（相对传播势能指标），
+    而非流行病学意义上的真实基本再生数。因为互联网热梗的 S₀（易感人群
+    初始比例）无法精确测量——关注该梗的人群 ≠ 全网人口。
+
     Args:
         peak_day: 从出现到峰值的近似天数
-        total_infected: 最终累计感染比例 (R(∞))
+        total_infected: 最终累计感染比例 R(∞)，占易感人群 S₀ 的比例
         duration_days: 有效传播持续天数
         N: 总人口
+        S0: 易感人群初始比例 (默认 1.0 = 标准 SIR 近似)
 
     Returns:
         SIRParams 估算参数
@@ -424,16 +463,21 @@ def estimate_params_from_lifecycle(
     # Gamma ≈ 1 / (duration / 2) — 恢复率近似为有效传播时长一半的倒数
     gamma_est = 2.0 / max(duration_days, 1.0)
 
-    # R₀ estimation from SIR final size equation:
-    # R∞ = 1 - exp(-R₀ × R∞)  (assuming S₀ ≈ 1)
-    # → R₀ = -ln(1 - R∞) / R∞   (analytical solution)
+    # R₀ estimation from corrected SIR final size equation:
+    # S∞ = S₀ × exp(-R₀ × (S₀ - S∞) / S₀)
+    # Let R∞ = S₀ - S∞ (cumulative infected fraction of S₀)
+    # → R₀ = -S₀ × ln(1 - R∞/S₀) / R∞
+    # When S₀ = 1.0, reduces to the standard formula: R₀ = -ln(1-R∞)/R∞
     target = total_infected
-    if target >= 0.99:
+    effective_target = target / S0  # scale to S₀ fraction
+
+    if effective_target >= 0.99:
         R0_est = 10.0
-    elif target <= 0.001:
+    elif effective_target <= 0.001:
         R0_est = 0.1
     else:
-        R0_est = -np.log(1.0 - target) / target
+        # Corrected formula with S₀
+        R0_est = -S0 * np.log(max(1e-12, 1.0 - effective_target)) / target
 
     beta_est = R0_est * gamma_est
 
@@ -541,8 +585,8 @@ def detect_phase_transition(param_sweeps: list[dict]) -> Optional[dict]:
     """
     R0s = [s["params"].R0 for s in param_sweeps]
     for i in range(len(R0s) - 1):
-        product = (R0s[i] - 1.0) * (R0s[i + 1] - 1.0)
-        if product < 0 or (product == 0 and (R0s[i] != 1.0 or R0s[i+1] != 1.0)):
+        # Strict crossing: one side < 1.0, the other >= 1.0 (handles exact 1.0)
+        if (R0s[i] < 1.0 and R0s[i + 1] >= 1.0) or (R0s[i] >= 1.0 and R0s[i + 1] < 1.0):
             return {
                 "transition_at": i,
                 "pre_R0": R0s[i],
@@ -701,7 +745,7 @@ if __name__ == "__main__":
     print("MemeticChaos SIR Model — Demonstration")
     print("=" * 60)
 
-    print("\n▶ Demo: Four meme types based on typical parameters\n")
+    print("\n>> Demo: Four meme types based on typical parameters\n")
     demos = demo_all_types()
     for name, result in demos.items():
         classification = classify_meme_type(result)
@@ -716,7 +760,7 @@ if __name__ == "__main__":
               f"status={lifecycle.status}")
         print()
 
-    print("▶ Chaos axis interpretation:")
+    print(">> Chaos axis interpretation:")
     print("  脉冲型 = 高熵爆发，秩序快速建立→快速消亡 → 偏混沌")
     print("  爆发型 = 经典的混沌→秩序→免疫 三阶段")
     print("  长尾型 = 缓慢渗透，秩序持续建立 → 偏秩序")

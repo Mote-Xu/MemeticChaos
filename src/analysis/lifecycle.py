@@ -14,7 +14,8 @@ from typing import Optional
 
 from src.models.sir_meme import (
     SIRParams, SIRResult, MemeLifecycle,
-    solve_sir, extract_lifecycle, classify_meme_type, estimate_params_from_lifecycle,
+    solve_sir, extract_lifecycle, classify_meme_type,
+    estimate_params_from_lifecycle, estimate_total_infected,
 )
 from src.data.curator import MemeCurator, MemeEntry
 
@@ -75,14 +76,16 @@ def build_lifecycle_profiles(curator: Optional[MemeCurator] = None) -> list[Life
             dur_months = 18
         dur_days = dur_months * 30
 
-        # Estimate total infected from circle layers
+        # Estimate total infected: continuous from lifecycle features
         circle_count = len(pm.get("circle_layers", []))
-        if circle_count >= 5:
-            total_infected = 0.75
-        elif circle_count >= 3:
-            total_infected = 0.50
+        sa = meme.sentiment_arc
+        if sa and len(sa) > 0:
+            peak_intensity = max(p.get("intensity", 0.5) for p in sa)
         else:
-            total_infected = 0.25
+            peak_intensity = 0.5
+        total_infected = estimate_total_infected(
+            circle_count, peak_intensity, dur_months
+        )
 
         # Estimate SIR params
         params = estimate_params_from_lifecycle(

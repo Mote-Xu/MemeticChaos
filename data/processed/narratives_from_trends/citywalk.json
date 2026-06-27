@@ -1,0 +1,27 @@
+{
+  "meme_name": "citywalk",
+  "peak_month": "2023-07",
+  "peak_value": 70,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2023-07",
+      "description": "梗在2023年7月突然爆发，达到最高关注度，萌芽与峰值几乎重合，属于快速引爆型"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2023-07",
+      "description": "2023年7月达到峰值70，随后迅速回落，但后续有多次小幅度复燃"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2023-08至2025-11",
+      "description": "峰值后关注度波动下降，2023年8月至2025年11月整体呈衰退趋势，期间出现多次复燃（如2024年4月）但未能回到峰值"
+    }
+  ],
+  "curve_shape": "复燃波动型",
+  "estimated_duration_months": 29,
+  "resurgence_detected": true,
+  "narrative_summary": "citywalk在2023年7月突然爆红后迅速降温，但后续多次复燃，形成长尾波动式传播，最终缓慢消退。",
+  "social_context_hint": "2023年7月峰值可能关联后疫情时代年轻人对低成本、慢节奏城市探索的追捧，以及社交媒体（如小红书、抖音）对‘Citywalk’概念的集中推广"
+}

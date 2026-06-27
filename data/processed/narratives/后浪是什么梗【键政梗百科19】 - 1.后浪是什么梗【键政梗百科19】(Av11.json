@@ -1,0 +1,97 @@
+{
+  "meme_name": "后浪",
+  "origin": {
+    "time": "2020年5月",
+    "platform": "B站",
+    "trigger_event": "B站在五四青年节前夕发布宣传片《后浪》",
+    "precursor": "长江后浪推前浪"
+  },
+  "spread_phases": [
+    {
+      "phase": "爆发",
+      "time_range": "2020年5月",
+      "description": "《后浪》视频发布后迅速走红，弹幕和评论中许多年轻人受到鼓舞，B站股价上涨，大量博主制作相关视频，衍生出‘前浪’‘飞浪’‘后厨’等梗。",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": [
+        "何冰（演员、视频演讲者）",
+        "B站官方"
+      ]
+    },
+    {
+      "phase": "变异",
+      "time_range": "2020年5月后",
+      "description": "视频引发争议，部分网友批评其画面充满消费主义，展示的生活超出普通年轻人承受能力，并与‘花呗给女儿过生日’广告等事件关联。后浪从最初指代年轻人，逐渐变为指代依靠家庭优渥条件实现消费自由的年轻群体。",
+      "key_platforms": [
+        "B站",
+        "微博",
+        "知乎"
+      ],
+      "key_figures": [
+        "多位计算视频中生活成本的博主"
+      ]
+    },
+    {
+      "phase": "固化",
+      "time_range": "2020年至今",
+      "description": "后浪成为固定网络用语，用于指代家境优越、消费自由的年轻人，常带有讽刺或批判意味。",
+      "key_platforms": [
+        "B站",
+        "微博",
+        "知乎",
+        "贴吧"
+      ],
+      "key_figures": []
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "前浪",
+      "time": "2020年5月",
+      "relationship": "衍生"
+    },
+    {
+      "variant_name": "飞浪",
+      "time": "2020年5月",
+      "relationship": "衍生"
+    },
+    {
+      "variant_name": "后厨",
+      "time": "2020年5月",
+      "relationship": "衍生"
+    },
+    {
+      "variant_name": "你所热爱的就是你的生活",
+      "time": "2020年5月",
+      "relationship": "衍生"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "五四青年节宣传片发布",
+      "消费主义与普通年轻人经济压力的对比",
+      "社会对教育、医疗、劳动权益、房价等问题的讨论"
+    ],
+    "target_audience": "B站用户、当代年轻人",
+    "political_sensitivity": "中",
+    "backlash_events": [
+      "网友批评视频展示的生活充满消费主义，超出普通年轻人承受能力",
+      "与‘花呗给女儿过生日’广告关联",
+      "被指缺乏五四运动的批判精神，更像心灵鸡汤"
+    ]
+  },
+  "semantic_drift": {
+    "original_meaning": "指代当代年轻人，表达赞美与羡慕，强调其拥有更好的物质条件和更自由的生活方式",
+    "current_meaning": "指代依靠家庭优渥条件实现消费自由的年轻群体，常含讽刺或批判意味",
+    "drift_direction": "从赞美变为讽刺，从泛指年轻人变为特指特定群体"
+  },
+  "narrative_quality": {
+    "information_richness": "高",
+    "key_insight": "后浪的传播过程暴露了不同群体之间的认知差异和现实鸿沟，从赞美视频演变为对消费主义和阶层分化的批判符号。"
+  },
+  "raw_llm_output": "```json\n{\n  \"meme_name\": \"后浪\",\n  \"origin\": {\n    \"time\": \"2020年5月\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"B站在五四青年节前夕发布宣传片《后浪》\",\n    \"precursor\": \"长江后浪推前浪\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2020年5月\",\n      \"description\": \"《后浪》视频发布后迅速走红，弹幕和评论中许多年轻人受到鼓舞，B站股价上涨，大量博主制作相关视频，衍生出‘前浪’‘飞浪’‘后厨’等梗。\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"何冰（演员、视频演讲者）\", \"B站官方\"]\n    },\n    {\n      \"phase\": \"变异\",\n      \"time_range\": \"2020年5月后\",\n      \"description\": \"视频引发争议，部分网友批评其画面充满消费主义，展示的生活超出普通年轻人承受能力，并与‘花呗给女儿过生日’广告等事件关联。后浪从最初指代年轻人，逐渐变为指代依靠家庭优渥条件实现消费自由的年轻群体。\",\n      \"key_platforms\": [\"B站\", \"微博\", \"知乎\"],\n      \"key_figures\": [\"多位计算视频中生活成本的博主\"]\n    },\n    {\n      \"phase\": \"固化\",\n      \"time_range\": \"2020年至今\",\n      \"description\": \"后浪成为固定网络用语，用于指代家境优越、消费自由的年轻人，常带有讽刺或批判意味。\",\n      \"key_platforms\": [\"B站\", \"微博\", \"知乎\", \"贴吧\"],\n      \"key_figures\": []\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"前浪\",\n      \"time\": \"2020年5月\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"飞浪\",\n      \"time\": \"2020年5月\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"后厨\",\n      \"time\": \"2020年5月\",\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"你所热爱的就是你的生活\",\n      \"time\": \"2020年5月\",\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\n      \"五四青年节宣传片发布\",\n      \"消费主义与普通年轻人经济压力的对比\",\n      \"社会对教育、医疗、劳动权益、房价等问题的讨论\"\n    ],\n    \"target_audience\": \"B站用户、当代年轻人\",\n    \"political_sensitivity\": \"中\",\n    \"backlash_events\": [\n      \"网友批评视频展示的生活充满消费主义，超出普通年轻人承受能力\",\n      \"与‘花呗给女儿过生日’广告关联\",\n      \"被指缺乏五四运动的批判精神，更像心灵鸡汤\"\n    ]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"指代当代年轻人，表达赞美与羡慕，强调其拥有更好的物质条件和更自由的生活方式\",\n    \"current_meaning\": \"指代依靠家庭优渥条件实现消费自由的年轻群体，常含讽刺或批判意味\",\n    \"drift_direction\": \"从赞美变为讽刺，从泛指年轻人变为特指特定群体\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"高\",\n    \"key_insight\": \"后浪的传播过程暴露了不同群体之间的认知差异和现实鸿沟，从赞美视频演变为对消费主义和阶层分化的批判符号。\"\n  }\n}\n```",
+  "video_name": "后浪是什么梗【键政梗百科19】 - 1.后浪是什么梗【键政梗百科19】(Av114051346600730,P1)",
+  "transcript_chars": 812,
+  "duration_sec": 170.713424
+}

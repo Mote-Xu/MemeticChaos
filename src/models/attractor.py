@@ -23,6 +23,7 @@ import numpy as np
 from dataclasses import dataclass, field
 from typing import Optional, Literal
 from scipy.spatial.distance import pdist, squareform
+from scipy.spatial import KDTree
 from scipy.signal import argrelextrema
 import warnings
 
@@ -120,56 +121,100 @@ def estimate_embedding_delay(time_series: np.ndarray,
 def estimate_embedding_dim(time_series: np.ndarray,
                             max_dim: int = 10,
                             delay: int = None,
-                            threshold: float = 0.05) -> int:
-    """使用假近邻法 (False Nearest Neighbors) 估计最优嵌入维数。
+                            threshold: float = 0.05,
+                            R_tol: float = 15.0) -> int:
+    """标准假近邻法 (False Nearest Neighbors, Kennel et al. 1992) 估计最优嵌入维数。
 
-    简化版：检查增加嵌入维数后，相空间中的近邻关系稳定。
+    对每个候选维数 d，在 d 维空间中寻找最近邻，然后检查当扩展到 d+1 维时
+    这些近邻是否变为"假近邻"（距离急剧增大）：
+    - 若 d 维中 FNN > threshold → d 维不足，继续尝试 d+1
+    - 若 d 维中 FNN < threshold → d 维足够 → 返回 d
+
+    关键改进（相对之前简化版）：
+    - 最近邻搜索和 FNN 检查分离：NN 在 d 维找，FNN 在 d+1 维验证
+    - 使用 KD-Tree + Theiler window
 
     Args:
         time_series: 一维时间序列
         max_dim: 最大嵌入维数
         delay: 时间延迟，None则自动估计
-        threshold: FNN 比例阈值
+        threshold: FNN 比例阈值，低于此值认为维数足够
+        R_tol: 距离比值阈值（假近邻判据，Kennel 1992 用 10-15）
 
     Returns:
-        最优嵌入维数 m
+        最优嵌入维数 d
     """
     if delay is None:
         delay = estimate_embedding_delay(time_series)
 
     n = len(time_series)
-    for m in range(2, max_dim + 1):
-        if n - (m - 1) * delay < 10:
-            return max(2, m - 1)
+    theiler = 2 * delay
 
-        embedded = takens_embedding(time_series, m, delay)
-        # Compute pairwise distances
-        dists = squareform(pdist(embedded))
-        n_points = len(embedded)
+    # Degenerate case: flat signal → no dynamics, dimension 1
+    if np.std(time_series) < 1e-10:
+        return 1
 
-        # Count false neighbors
+    for d in range(1, max_dim + 1):
+        # Need at least d*delay + theiler + 10 points for both d and d+1 embeddings
+        min_points = max((d + 1) * delay + 10, 3 * delay + 10)
+        if n < min_points:
+            return max(1, d)
+
+        # Step 1: Embed in d dimensions, find nearest neighbors
+        embedded_d = takens_embedding(time_series, d, delay)
+        n_d = len(embedded_d)
+
+        # Build (d+1)-dim embedding for the FNN check.
+        # embedded_dp1[i] = [x_i, x_{i+τ}, ..., x_{i+dτ}]
+        # embedded_d[i]    = [x_i, x_{i+τ}, ..., x_{i+(d-1)τ}]
+        embedded_dp1 = takens_embedding(time_series, d + 1, delay)
+        n_dp1 = len(embedded_dp1)  # = n_d - delay
+
+        # Only check points that have both d-dim and (d+1)-dim embeddings
+        n_check = min(n_d, n_dp1)
+
+        # KD-Tree on d-dim space (restrict to points with (d+1)-dim counterparts)
+        tree = KDTree(embedded_d[:n_check])
+        k_needed = min(n_check, theiler + 2)
+        distances, indices = tree.query(embedded_d[:n_check], k=k_needed)
+
+        # Step 2: Count false neighbors
         fnn_count = 0
         total_pairs = 0
-        for i in range(n_points):
-            # Find nearest neighbor in m-1 dims
-            if i >= len(dists):
-                break
-            sorted_idx = np.argsort(dists[i])
-            nn = sorted_idx[1] if len(sorted_idx) > 1 else None  # skip self (idx 0)
-            if nn is None:
+
+        for i in range(n_check):
+            # Find nearest neighbor outside Theiler window
+            nn_idx = None
+            for j in range(1, k_needed):
+                candidate = int(indices[i, j])
+                if candidate >= n_check:
+                    continue
+                if abs(i - candidate) > theiler:
+                    nn_idx = candidate
+                    break
+
+            if nn_idx is None:
                 continue
 
-            # Check if distance changes significantly when adding m-th dimension
-            dist_m = np.linalg.norm(embedded[i] - embedded[nn])
-            d_extra = abs(time_series[i + (m - 1) * delay] -
-                         time_series[nn + (m - 1) * delay])
+            # Distance in d-dim space
+            dist_d = np.linalg.norm(embedded_d[i] - embedded_d[nn_idx])
+            if dist_d < 1e-10:
+                continue
 
-            if dist_m > 1e-10 and d_extra / dist_m > 10.0:
+            # Extra distance from the (d+1)-th coordinate
+            d_extra = abs(embedded_dp1[i, -1] - embedded_dp1[nn_idx, -1])
+
+            # Kennel criterion
+            if d_extra / dist_d > R_tol:
                 fnn_count += 1
             total_pairs += 1
 
-        if total_pairs > 0 and fnn_count / total_pairs < threshold:
-            return m
+        if total_pairs == 0:
+            # No valid pairs (e.g., all distances too small, or sequence too short)
+            # → cannot assess FNN → assume d is sufficient
+            return max(1, d)
+        if fnn_count / total_pairs < threshold:
+            return d
 
     return max_dim
 

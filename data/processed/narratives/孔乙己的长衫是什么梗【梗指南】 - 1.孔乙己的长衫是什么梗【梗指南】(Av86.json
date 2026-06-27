@@ -1,0 +1,88 @@
+{
+  "meme_name": "孔乙己的长衫",
+  "origin": {
+    "time": "2023年2月",
+    "platform": "B站",
+    "trigger_event": "高校毕业生就业压力增大，学历贬值与体面工作难求的社会矛盾",
+    "precursor": "孔乙己（鲁迅小说人物）"
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": "2023年2月",
+      "description": "B站UP主发布视频，将鲁迅小说中孔乙己不愿脱下长衫的意象与当代高学历毕业生求职困境类比，引发共鸣",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": [
+        "B站UP主（具体ID未提及）"
+      ]
+    },
+    {
+      "phase": "爆发",
+      "time_range": "2023年3月-4月",
+      "description": "视频被广泛转发，微博、知乎等平台大量讨论，成为社会热点话题，媒体跟进报道",
+      "key_platforms": [
+        "B站",
+        "微博",
+        "知乎"
+      ],
+      "key_figures": [
+        "普通网友",
+        "自媒体",
+        "主流媒体"
+      ]
+    },
+    {
+      "phase": "泛化",
+      "time_range": "2023年4月-5月",
+      "description": "梗从单纯描述学历困境扩展到泛指各种因身份、标签而无法放下身段的现象，出现多种变体",
+      "key_platforms": [
+        "微博",
+        "微信",
+        "抖音"
+      ],
+      "key_figures": [
+        "普通网友"
+      ]
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "脱不下的长衫",
+      "time": "2023年3月",
+      "relationship": "衍生（直接沿用原梗核心意象）"
+    },
+    {
+      "variant_name": "长衫焦虑",
+      "time": "2023年4月",
+      "relationship": "泛化（从具体学历扩展到身份焦虑）"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "高校毕业生就业难",
+      "学历贬值",
+      "体面工作与低薪劳动的矛盾",
+      "社会对高学历的期待压力"
+    ],
+    "target_audience": "高校毕业生、年轻职场人、高学历求职者",
+    "political_sensitivity": "低",
+    "backlash_events": [
+      "部分评论批评该梗为逃避现实找借口，鼓励脱下长衫务实就业"
+    ]
+  },
+  "semantic_drift": {
+    "original_meaning": "高学历毕业生因面子不愿从事低薪或体力劳动，陷入高不成低不就的困境",
+    "current_meaning": "泛指因身份、标签或社会期待而无法放下身段、接受现实的人或现象",
+    "drift_direction": "从具体学历困境泛化为更广泛的身份焦虑"
+  },
+  "narrative_quality": {
+    "information_richness": "中",
+    "key_insight": "该视频揭示了孔乙己长衫梗的核心矛盾：学历既是敲门砖，也是下不来的高台，反映了当代青年在理想与现实之间的挣扎"
+  },
+  "raw_llm_output": "{\n  \"meme_name\": \"孔乙己的长衫\",\n  \"origin\": {\n    \"time\": \"2023年2月\",\n    \"platform\": \"B站\",\n    \"trigger_event\": \"高校毕业生就业压力增大，学历贬值与体面工作难求的社会矛盾\",\n    \"precursor\": \"孔乙己（鲁迅小说人物）\"\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": \"2023年2月\",\n      \"description\": \"B站UP主发布视频，将鲁迅小说中孔乙己不愿脱下长衫的意象与当代高学历毕业生求职困境类比，引发共鸣\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": [\"B站UP主（具体ID未提及）\"]\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": \"2023年3月-4月\",\n      \"description\": \"视频被广泛转发，微博、知乎等平台大量讨论，成为社会热点话题，媒体跟进报道\",\n      \"key_platforms\": [\"B站\", \"微博\", \"知乎\"],\n      \"key_figures\": [\"普通网友\", \"自媒体\", \"主流媒体\"]\n    },\n    {\n      \"phase\": \"泛化\",\n      \"time_range\": \"2023年4月-5月\",\n      \"description\": \"梗从单纯描述学历困境扩展到泛指各种因身份、标签而无法放下身段的现象，出现多种变体\",\n      \"key_platforms\": [\"微博\", \"微信\", \"抖音\"],\n      \"key_figures\": [\"普通网友\"]\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"脱不下的长衫\",\n      \"time\": \"2023年3月\",\n      \"relationship\": \"衍生（直接沿用原梗核心意象）\"\n    },\n    {\n      \"variant_name\": \"长衫焦虑\",\n      \"time\": \"2023年4月\",\n      \"relationship\": \"泛化（从具体学历扩展到身份焦虑）\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\"高校毕业生就业难\", \"学历贬值\", \"体面工作与低薪劳动的矛盾\", \"社会对高学历的期待压力\"],\n    \"target_audience\": \"高校毕业生、年轻职场人、高学历求职者\",\n    \"political_sensitivity\": \"低\",\n    \"backlash_events\": [\"部分评论批评该梗为逃避现实找借口，鼓励脱下长衫务实就业\"]\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"高学历毕业生因面子不愿从事低薪或体力劳动，陷入高不成低不就的困境\",\n    \"current_meaning\": \"泛指因身份、标签或社会期待而无法放下身段、接受现实的人或现象\",\n    \"drift_direction\": \"从具体学历困境泛化为更广泛的身份焦虑\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"中\",\n    \"key_insight\": \"该视频揭示了孔乙己长衫梗的核心矛盾：学历既是敲门砖，也是下不来的高台，反映了当代青年在理想与现实之间的挣扎\"\n  }\n}",
+  "video_name": "孔乙己的长衫是什么梗【梗指南】 - 1.孔乙己的长衫是什么梗【梗指南】(Av865741661,P1)",
+  "transcript_chars": 591,
+  "duration_sec": 116.8
+}

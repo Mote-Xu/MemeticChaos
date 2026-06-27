@@ -23,8 +23,8 @@ from collections import defaultdict
 
 from src.data.curator import MemeCurator
 from src.models.sir_meme import (
-    SIRParams, estimate_params_from_lifecycle, solve_sir,
-    classify_meme_type, compute_entropy_curve,
+    SIRParams, estimate_params_from_lifecycle, estimate_total_infected,
+    solve_sir, classify_meme_type, compute_entropy_curve,
 )
 
 
@@ -125,14 +125,17 @@ def build_state_points(curator: MemeCurator = None,
             dur_months = 18
         dur_days = dur_months * 30
 
-        # Total infected estimation
+        # Total infected: continuous estimation from available lifecycle features
         circle_count = len(pm.get("circle_layers", []))
-        if circle_count >= 5:
-            total_infected = 0.75
-        elif circle_count >= 3:
-            total_infected = 0.50
+        # Extract peak intensity from sentiment_arc
+        sentiment_arc = meme.sentiment_arc if hasattr(meme, 'sentiment_arc') else lc.get("sentiment_arc", [])
+        if isinstance(sentiment_arc, list) and len(sentiment_arc) > 0:
+            peak_intensity = max(p.get("intensity", 0.5) for p in sentiment_arc)
         else:
-            total_infected = 0.25
+            peak_intensity = 0.5
+        total_infected = estimate_total_infected(
+            circle_count, peak_intensity, dur_months
+        )
 
         # SIR params
         params = estimate_params_from_lifecycle(
@@ -432,6 +435,115 @@ def build_phase_diagram(curator: MemeCurator = None) -> PhaseDiagram:
 
 
 # ═══════════════════════════════════════════════
+# Blind clustering validation (GPT: verify 5-phase structure is data-driven)
+# ═══════════════════════════════════════════════
+
+def blind_clustering_validation(points: list[MemeStatePoint] = None,
+                                curator: MemeCurator = None,
+                                n_clusters: int = 5):
+    """无监督盲聚类验证 — 在不使用类别标签的情况下重构相区。
+
+    GPT 关键批评："5 相区与双吸引子是在数据中被发现的，还是在建模过程中
+    被定义出来的？"
+
+    使用 KMeans / GMM / HDBSCAN 对 (R₀, chaos, entropy) 进行盲聚类，
+    然后与人工类别标签计算 ARI / NMI / V-measure。
+
+    Args:
+        points: 预构建的状态点列表
+        curator: MemeCurator（与 points 二选一）
+        n_clusters: 聚类数（默认 5，对应 5 个策展类别）
+
+    Returns:
+        dict with ARI, NMI, homogeneity, completeness, v_measure
+    """
+    import numpy as np
+    from sklearn.metrics import (
+        adjusted_rand_score, normalized_mutual_info_score,
+        homogeneity_score, completeness_score, v_measure_score,
+    )
+    from sklearn.cluster import KMeans
+    from sklearn.mixture import GaussianMixture
+
+    if points is None:
+        if curator is None:
+            curator = MemeCurator()
+        points = build_state_points(curator)
+
+    # Feature matrix: R₀, chaos_position, entropy_max, entropy_mean
+    X = np.column_stack([
+        [p.R0 for p in points],
+        [p.chaos_position for p in points],
+        [p.entropy_max for p in points],
+        [p.entropy_mean for p in points],
+    ])
+    # Standardize
+    X = (X - X.mean(axis=0)) / X.std(axis=0)
+
+    y_true = np.array([p.category for p in points])
+
+    results = {}
+
+    # ── KMeans ──
+    km = KMeans(n_clusters=n_clusters, random_state=42, n_init=20)
+    y_km = km.fit_predict(X)
+    results["KMeans"] = {
+        "ARI": round(adjusted_rand_score(y_true, y_km), 4),
+        "NMI": round(normalized_mutual_info_score(y_true, y_km), 4),
+        "homogeneity": round(homogeneity_score(y_true, y_km), 4),
+        "completeness": round(completeness_score(y_true, y_km), 4),
+        "v_measure": round(v_measure_score(y_true, y_km), 4),
+    }
+
+    # ── GMM ──
+    try:
+        gmm = GaussianMixture(n_components=n_clusters, random_state=42, n_init=5)
+        y_gmm = gmm.fit_predict(X)
+        results["GMM"] = {
+            "ARI": round(adjusted_rand_score(y_true, y_gmm), 4),
+            "NMI": round(normalized_mutual_info_score(y_true, y_gmm), 4),
+            "homogeneity": round(homogeneity_score(y_true, y_gmm), 4),
+            "completeness": round(completeness_score(y_true, y_gmm), 4),
+            "v_measure": round(v_measure_score(y_true, y_gmm), 4),
+        }
+    except Exception as e:
+        results["GMM"] = {"error": str(e)}
+
+    # ── HDBSCAN (no n_clusters needed — data-driven) ──
+    try:
+        from sklearn.cluster import HDBSCAN
+        hdb = HDBSCAN(min_cluster_size=3, allow_single_cluster=False)
+        y_hdb = hdb.fit_predict(X)
+        n_hdb = len(set(y_hdb)) - (1 if -1 in y_hdb else 0)
+        results["HDBSCAN"] = {
+            "n_clusters_found": n_hdb,
+            "ARI": round(adjusted_rand_score(y_true, y_hdb), 4),
+            "NMI": round(normalized_mutual_info_score(y_true, y_hdb), 4),
+            "v_measure": round(v_measure_score(y_true, y_hdb), 4),
+            "n_noise": int(np.sum(y_hdb == -1)),
+        }
+    except ImportError:
+        results["HDBSCAN"] = {"error": "HDBSCAN not available (requires sklearn ≥ 1.3)"}
+    except Exception as e:
+        results["HDBSCAN"] = {"error": str(e)}
+
+    # ── Aggregate verdict ──
+    aris = [v["ARI"] for v in results.values() if "ARI" in v]
+    best_ari = max(aris) if aris else 0.0
+
+    results["verdict"] = (
+        "DATA-DRIVEN — blind clustering aligns with human categories (ARI > 0.3)"
+        if best_ari > 0.3
+        else "WEAK — some alignment but categories may be partly a priori"
+        if best_ari > 0.15
+        else "PRIOR-DRIVEN — 5-phase regions are largely defined by human labels, not emergent from data"
+    )
+    results["best_ARI"] = best_ari
+
+    return results
+
+
+# ═══════════════════════════════════════════════
 # Script entry point
 # ═══════════════════════════════════════════════
 
@@ -460,3 +572,21 @@ if __name__ == "__main__":
         print(f"    Trigger: {t['trigger']}")
         if "historical_example" in t:
             print(f"    Historical: {t['historical_example']}")
+
+    # ── Blind Clustering Validation ──────────────
+    print("\n" + "=" * 60)
+    print("Blind Clustering Validation (GPT建议)")
+    print("=" * 60)
+    bc = blind_clustering_validation(points=diagram.points)
+    for method, metrics in bc.items():
+        if method == "verdict":
+            print(f"\n  Verdict: {metrics}")
+        elif method == "best_ARI":
+            print(f"  Best ARI: {metrics:.4f}")
+        elif isinstance(metrics, dict) and "error" not in metrics:
+            print(f"\n  [{method}]")
+            print(f"    ARI={metrics['ARI']} NMI={metrics['NMI']} V-measure={metrics.get('v_measure', 'N/A')}")
+            if "n_clusters_found" in metrics:
+                print(f"    Clusters found: {metrics['n_clusters_found']} (noise: {metrics.get('n_noise', 0)})")
+        elif isinstance(metrics, dict) and "error" in metrics:
+            print(f"  [{method}] Error: {metrics['error']}")

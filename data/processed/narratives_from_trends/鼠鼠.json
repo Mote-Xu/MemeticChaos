@@ -1,0 +1,27 @@
+{
+  "meme_name": "鼠鼠",
+  "peak_month": "2025-11",
+  "peak_value": 100,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2015-01 至 2020-01",
+      "description": "早期萌芽阶段，关注度在低位波动，偶有小型峰值（如2015-07的35），但未形成持续热度。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2020-01 至 2020-07",
+      "description": "首次显著爆发，2020-01达到80的峰值，随后快速回落，形成脉冲式高峰。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2020-07 至 2025-07",
+      "description": "长期衰退期，关注度稳定在24-30的低位区间，无明显波动，直至2025年11月突然复燃至100。"
+    }
+  ],
+  "curve_shape": "复燃",
+  "estimated_duration_months": 120,
+  "resurgence_detected": true,
+  "narrative_summary": "该梗经历了长达十年的潜伏与低活跃期，在2020年初因社会事件短暂爆发后陷入沉寂，最终在2025年末意外复燃并创下历史最高关注度。",
+  "social_context_hint": "2020年1月峰值可能与新冠疫情初期社会焦虑、自嘲文化兴起有关；2025年11月复燃可能关联新的经济压力或网络亚文化事件（如‘鼠鼠文学’再度流行）。"
+}

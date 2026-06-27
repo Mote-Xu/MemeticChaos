@@ -1,0 +1,27 @@
+{
+  "meme_name": "精神状态",
+  "peak_month": "2025-11",
+  "peak_value": 74,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2017-09 至 2025-10",
+      "description": "长期低水平波动，偶有微小起伏，处于潜伏期，搜索热度极低，仅在特定语境下被提及。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2025-10 至 2025-11",
+      "description": "搜索量急剧攀升，2025年11月达到历史峰值74，呈现脉冲式爆发，反映该梗在短时间内获得广泛关注和传播。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2025-11 至 2025-12",
+      "description": "峰值后迅速回落，2025年12月降至30，符合脉冲型快速消退特征，但仍有较高余热。"
+    }
+  ],
+  "curve_shape": "脉冲",
+  "estimated_duration_months": 1,
+  "resurgence_detected": false,
+  "narrative_summary": "该梗长期处于潜伏状态，在2025年末突然爆发达到峰值后迅速回落，呈现典型的脉冲式传播模式。",
+  "social_context_hint": "2025年11月峰值可能关联当时社会压力事件（如经济波动、就业焦虑或重大社会议题），引发网民集体自嘲与情绪宣泄，使“精神状态”成为表达内心状态的流行标签。"
+}

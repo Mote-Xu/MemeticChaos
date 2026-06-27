@@ -1,93 +1,138 @@
-# MemeticChaos — 人类情感混沌属性建模
+# MemeticChaos — 人类集体情感混沌属性建模
 
-> 项目上下文，供 Claude 新会话快速理解。最后更新：2026-06-26
+> 最后更新：2026-06-27
 
 ## 项目目标
 
-利用 2020-2025 年中国互联网热梗的由来与演变数据，对人类集体情感的「混沌属性」进行建模。
+利用 2020-2025 年中国互联网热梗数据，对人类集体情感的混沌属性进行建模。
 
-- **目标不是**预测下一个具体的热梗
-- **目标是**识别系统级别的吸引子（Attractors）和相变点（Phase Transitions）
-- **扩展目标**：从外部行为信号反推个体混沌属性剖面（贝叶斯后验）
-- **核心产出**：模因相图（Meme Phase Diagram）——中国互联网集体情绪相图
-
-## 哲学基础
-
-对齐「微尘哲学」核心元定律：熵增常态 / 与混沌共存 / 小真实不可穿透
+- **Hassabis 猜想驱动**：自然界中任何存在的模式都可以被经典学习算法高效地发现。模因是被集体情感/社会压力/语言演化筛选过的系统——有结构，就能被学习。
+- **两层架构**：外部环境场（平台注意力数据）+ 内部混沌层（叙事结构）。两层耦合驱动集体情感状态演化。
+- **数学框架退到验证层**：SIR/相图/吸引子验证生成轨迹的动力学合理性，不做生成。
+- **核心产出**：集体情感相图（已有）+ 秩序形态预测模型（FR19, v0.1 已上线）。
 
 ## 技术栈
 
-Python 3.12 + conda `MemeticChaos` + numpy/scipy/pandas/networkx/matplotlib
+Python 3.12 + conda `MemeticChaos` + numpy/scipy/pandas/scikit-learn/pytrends
 仓库：git@github.com:Mote-Xu/MemeticChaos.git
+
+## 数据资产（截至 2026-06-27）
+
+```
+外部层 (环境场):  51 关键词 × 132 月 = 5217 数据点 (Google Trends 2015-2025)
+内部层 (梗):      43 关键词 × ~100 月 = 1048 数据点
+叙事层:           87 条 (22 B站视频 + 36 曲线生成 + 29 人工策展)
+集体混沌轴:       127 个月 (2015-01 至 2025-07)
+```
+
+数据文件：
+- `data/collector/external_field_2015_2025.json` — 51 关键词外部场
+- `data/collector/google_trends_2015_2025.json` — 43 梗注意力曲线
+- `data/processed/narratives/` — 22 个 LLM 抽取
+- `data/processed/narratives_from_trends/` — 36 个曲线生成
+- `data/curated/memes_2020_2025.json` — 29 人工策展（含真实注意力数据）
 
 ## 项目结构
 
 ```
 src/
 ├── data/
-│   ├── curator.py                 # 策展数据管理 + SIR参数估算
-│   └── bilibili_pipeline.py       # B站字幕→SIRS-M真实拟合 (Gemini贡献)
+│   ├── curator.py                     # 策展数据管理
+│   ├── narrative_extractor.py         # LLM叙事抽取 (22/22)
+│   ├── narrative_from_trends.py       # 曲线→叙事生成 (36条)
+│   ├── trends_loader.py               # Google Trends 加载器
+│   ├── rebuild_from_trends.py         # 真实数据重构项目
+│   ├── scraper.py                     # 微博实时采集
+│   ├── auto_collector.py              # 自动采集器
+│   ├── bilibili_timeseries.py         # B站时间序列
+│   └── live_pipeline.py               # 采集→更新→报告
+├── constraint/
+│   ├── concept_bottleneck.py          # 35概念→5D约束 (软匹配, Step 1用)
+│   └── delta_transition.py            # ΔTransition + 3Validator + Ridge
+├── trajectory/
+│   ├── meme_trajectory.py             # 29条轨迹 (Schema 2.1)
+│   └── trajectory_viz.py              # 轨迹相图
 ├── models/
-│   ├── sir_meme.py                # SIR/SIRS/双群体 + 参数拟合 + 混沌熵
-│   ├── abm_simulation.py          # 300 Agent 无标度网络仿真
-│   ├── attractor.py               # Takens/RQA/Lyapunov/盆地检测
-│   └── individual_calibrator.py   # 直接启发式+GA, 贝叶斯后验输出
+│   ├── order_form_predictor.py        # ★ 两层预测模型 (FR19 v0.1)
+│   ├── collective_predictor.py        # 旧版预测器 (保留参考)
+│   ├── sir_meme.py / abm_simulation.py / attractor.py / individual_calibrator.py
 ├── analysis/
-│   ├── lifecycle.py               # 生命周期剖面 + 跨类别对比
-│   ├── sentiment.py               # 情感弧线分类 (8种类型)
-│   ├── phase_detect.py            # 相变检测 (R₀/混沌轴/熵 三维)
-│   ├── phase_diagram.py          # ★模因相图 — 核心研究产出
-│   └── backtest.py                # 历史回测 + 鲁棒性验证
-└── viz/
-    └── plots.py                   # 可复用可视化函数库
-data/curated/memes_2020_2025.json  # 29个热梗策展
-tests/test_sir_model.py            # 24/24 通过
+│   ├── collective_dynamics.py         # 集体情感系统动力学 (127月)
+│   ├── phase_diagram.py / backtest.py / lifecycle.py / phase_detect.py
+└── meme_inspector.py                  # 梗分析工具
+tests/
+├── test_sir_model.py                  # 24/24
+└── test_system_integrity.py           # 38/38
 ```
 
-## 功能清单（21项）
+## FR19: 秩序形态预测模型 (v0.2 — Step 2 完成)
 
-### 集体层
-1. SIR/SIRS/双群体 模因传播模拟
-2. 从时间序列反推 β, γ, R₀ (curve_fit)
-3. 定性描述 → 参数估算
-4. 300-Agent ABM 网络仿真
-5. 模因四分类 (脉冲/爆发/长尾/流产)
-6. Lyapunov指数 + RQA混沌检测
-7. 吸引子盆地识别
-8. 生命周期提取 (萌芽/高峰/衰退)
-9. 8种情感弧线分类 + 情感熵
-10. R₀/混沌轴/熵 三维相变检测
-11. ★模因相图 (5相区+2盆地+情绪状态机)
-12. 历史回测验证 (时序切分+留一)
-13. 吸引子鲁棒性测试
-14. B站字幕→SIRS-M拟合管道
+### 架构
 
-### 个体层
-15. 行为信号→混沌后验分布
-16. 角色类型推断 (builder/injector/normal/lurker)
-17. 模因行为预测 (early_adopter/follower/resister)
-18. 4种场景模板一键校准
+```
+外部场 (51维 PCA→8维) ──→ RidgeCV ──→ 混沌轴 + 约束场(5D) + 类别分布 + 注意力结构
+                                          │
+LLM约束历史 (5维×6月) ──→ RidgeCV 残差 ──→│
+                                          ▼
+                                   秩序形态 (8聚类, 含约束维度)
+                                          │
+                            LLM 月度叙事摘要 ──→ NL 报告
+```
 
-### 数据与验证
-19. 29热梗策展数据管理 (筛选/排序/统计)
-20. 24单元测试
-21. 跨类别统计对比
+### Step 2 关键升级 (2026-06-27)
 
-## 关键发现
+1. **LLM 概念打分** 替换软匹配：DeepSeek API 对 48 条 narrative 打分 35 概念
+   - 约束场方差提升 15-22x (Humor std 0.01→0.22, Conflict std 0.01→0.20)
+   - Constraint R² = 0.52（约束场可从外部特征预测）
+2. **LLM 月度叙事摘要**：微博热搜 + 活跃梗 + Trends 异常 → NL 描述
+   - 周报现在包含 LLM 生成的完整叙事分析
+3. **8 种秩序形态**含约束维度："混沌释放·虚无退却·Identity·分散"(40%)
+4. **混沌轴仍是随机游走**：确认"与混沌共存"哲学——个别月不可预测，但秩序形态有结构
 
-- 两个吸引子盆地 100% 鲁棒验证 → 真吸引子
-- 2021年混沌轴 -0.88 漂移 + 预测力 0.722→0.389 → 结构性相变（GPT: 可能是吸引子重构）
-- 留一验证 chaos MAE=0.186 (2.7x随机基线)
-- 解构自嘲类情感熵最高(0.713)，攻击发泄最靠近绝对混沌(-0.62)
+### 预测输出
 
-## 外部审查
+- 6-12 个月秩序形态预测（含约束场 profile + 置信度）
+- 混沌轴趋势区间
+- 类别分布 + HHI + 叙事熵
+- **LLM 生成的月度集体叙事摘要**（NL，3-5 句深度分析）
 
-- GPT：模因相图=核心IP，2021相变=论文主线
-- Gemini：贡献 bilibili_pipeline.py
-- 审查记录：CODE_REVIEW_FINDINGS.md
+### 文件
 
-## 当前卡点
+| 文件 | 用途 |
+|------|------|
+| `src/models/order_form_predictor.py` | 主预测器 (v0.2) |
+| `src/constraint/llm_concept_scorer.py` | LLM 概念打分器 (48/48 成功) |
+| `src/data/monthly_narrative.py` | LLM 月度叙事摘要生成器 |
+| `data/processed/llm_concept_scores.json` | 已打分的概念矩阵 |
+| `data/processed/monthly_narratives.jsonl` | 历史月度叙事摘要 |
+| `data/processed/order_form_report.txt` | 最新预测报告 |
 
-- B站22个视频字幕转文字中 → 接入可得到第一个真实R₀
-- ABM/Attractor/Calibrator 缺 formal tests
-- 跨平台验证未开始
+## 服务器部署 (mote-home) — 项目主阵地
+
+> **服务器是项目的主运行环境。本地仅用于查看结果和精细建模。**
+
+- **位置**: SSD `~/MemeticChaos/`
+- **Python**: `~/miniconda3/envs/MemeticChaos/bin/python`
+- **cron 任务**:
+  - 每小时 17 分: 微博热搜采集 (`scraper.py`)
+  - 每天 2:37: B站时间序列采集 (`bilibili_timeseries.py`)
+  - 每天 4:47: 实时管线更新 (`live_pipeline.py`)
+  - **每周日 4:50**: LLM 月度叙事摘要 (`monthly_narrative.py`)
+  - **每周日 5:00**: 秩序形态预测报告 (`order_form_predictor.py --forecast 12`)
+- **数据同步到本地**: `bash sync_from_server.sh`（拉取 scraper 数据 + 预测报告）
+- **数据同步到服务器**: `bash sync_to_server.sh`（推送 Google Trends 数据 + 叙事）
+- **本地任务**: Google Trends 通过飞鸟代理每日拉取 (`trends_loader.py`) + 叙事生成 (`narrative_from_trends.py`)
+
+## 已完成
+
+- 24/24 测试 + 38/38 系统完整性验证
+- FNN 标准 Kennel / 连续 R₀ / S₀ 参数 / R₀ 扰动鲁棒性 / 盲聚类
+- 集体混沌轴 127 月数据，10 次检测到系统级相变
+- 数据自动补充：服务器 24/7 + 本地 Google Trends
+- **FR19 v0.1**: 秩序形态预测模型上线，每周自动预测
+
+## 下一步 (Step 3 — Dashboard)
+
+1. **Dashboard**：交互式 Web 界面（相图 + 时间轴 + 活跃梗列表 + NL 摘要 + 精细建模查询入口）
+2. **精细建模 API**：服务器端查询接口，支持"对某个具体话题做深度分析"
+3. **知乎 API 修复**：实时采集数据源补充

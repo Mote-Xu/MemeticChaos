@@ -1,0 +1,27 @@
+{
+  "meme_name": "南方小土豆",
+  "peak_month": "2024-01",
+  "peak_value": 89,
+  "spread_phases": [
+    {
+      "phase": "emergence",
+      "time_range": "2019-10至2023-10",
+      "description": "梗在2019年10月首次出现，但关注度极低，随后长期沉寂，直到2023年底才重新被激活。"
+    },
+    {
+      "phase": "peak",
+      "time_range": "2024-01",
+      "description": "2024年1月关注度急剧攀升至峰值89，形成脉冲式爆发，可能与冬季旅游或社交媒体热点事件相关。"
+    },
+    {
+      "phase": "decay",
+      "time_range": "2024-01之后",
+      "description": "峰值后迅速衰退，数据未提供后续月份，但根据脉冲形态可推断关注度快速回落。"
+    }
+  ],
+  "curve_shape": "脉冲",
+  "estimated_duration_months": 4,
+  "resurgence_detected": false,
+  "narrative_summary": "该梗经历长期潜伏后，在2024年1月突然爆发达到高峰，随后迅速消退，属于典型的脉冲式传播。",
+  "social_context_hint": "2024年1月峰值可能关联冬季哈尔滨旅游热潮中‘南方小土豆’称呼的广泛使用，以及社交媒体对南北差异话题的放大效应。"
+}

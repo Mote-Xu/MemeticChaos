@@ -1,0 +1,68 @@
+{
+  "meme_name": "刘慈欣还是留了一手",
+  "origin": {
+    "time": null,
+    "platform": null,
+    "trigger_event": "网友看到一些过于甜蜜、不真实的恋爱或情侣互动视频，觉得比科幻小说还离谱",
+    "precursor": null
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽",
+      "time_range": null,
+      "description": "网友在B站等平台看到一些展示极端甜蜜或女方对男方极好的情侣视频，感到不真实，开始用'刘慈欣还是留了一手'来调侃这类视频比科幻还科幻",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": null
+    },
+    {
+      "phase": "爆发",
+      "time_range": null,
+      "description": "该调侃句式被大量复制，用于评论各种夸张的情侣秀恩爱内容，并衍生出'三体还是写得太保守'、'这才是真正的科幻片'等变体",
+      "key_platforms": [
+        "B站"
+      ],
+      "key_figures": null
+    }
+  ],
+  "mutations": [
+    {
+      "variant_name": "三体还是写得太保守",
+      "time": null,
+      "relationship": "衍生"
+    },
+    {
+      "variant_name": "这才是真正的科幻片",
+      "time": null,
+      "relationship": "衍生"
+    },
+    {
+      "variant_name": "科幻片是建立在合理逻辑上的，这种应该算玄幻片",
+      "time": null,
+      "relationship": "衍生"
+    }
+  ],
+  "social_context": {
+    "triggers": [
+      "对网络上过度美化、不真实的情侣视频的质疑和调侃",
+      "对现实恋爱关系与网络虚构内容之间巨大反差的幽默表达"
+    ],
+    "target_audience": "B站用户、科幻爱好者、对网络秀恩爱内容持怀疑态度的年轻网民",
+    "political_sensitivity": "无",
+    "backlash_events": null
+  },
+  "semantic_drift": {
+    "original_meaning": "调侃某些情侣视频内容过于夸张、不真实，比刘慈欣的科幻小说还离谱",
+    "current_meaning": "泛指任何过于理想化、不切实际的内容（不限于情侣视频），用来表达'这比科幻还科幻'的讽刺",
+    "drift_direction": "从具体的情侣视频调侃泛化为对一切不真实内容的讽刺"
+  },
+  "narrative_quality": {
+    "information_richness": "低",
+    "key_insight": "该梗的核心逻辑是：用'刘慈欣还是留了一手'来讽刺某些情侣视频比科幻小说更不真实，甚至应该归为'玄幻片'"
+  },
+  "raw_llm_output": "```json\n{\n  \"meme_name\": \"刘慈欣还是留了一手\",\n  \"origin\": {\n    \"time\": null,\n    \"platform\": null,\n    \"trigger_event\": \"网友看到一些过于甜蜜、不真实的恋爱或情侣互动视频，觉得比科幻小说还离谱\",\n    \"precursor\": null\n  },\n  \"spread_phases\": [\n    {\n      \"phase\": \"萌芽\",\n      \"time_range\": null,\n      \"description\": \"网友在B站等平台看到一些展示极端甜蜜或女方对男方极好的情侣视频，感到不真实，开始用'刘慈欣还是留了一手'来调侃这类视频比科幻还科幻\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": null\n    },\n    {\n      \"phase\": \"爆发\",\n      \"time_range\": null,\n      \"description\": \"该调侃句式被大量复制，用于评论各种夸张的情侣秀恩爱内容，并衍生出'三体还是写得太保守'、'这才是真正的科幻片'等变体\",\n      \"key_platforms\": [\"B站\"],\n      \"key_figures\": null\n    }\n  ],\n  \"mutations\": [\n    {\n      \"variant_name\": \"三体还是写得太保守\",\n      \"time\": null,\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"这才是真正的科幻片\",\n      \"time\": null,\n      \"relationship\": \"衍生\"\n    },\n    {\n      \"variant_name\": \"科幻片是建立在合理逻辑上的，这种应该算玄幻片\",\n      \"time\": null,\n      \"relationship\": \"衍生\"\n    }\n  ],\n  \"social_context\": {\n    \"triggers\": [\n      \"对网络上过度美化、不真实的情侣视频的质疑和调侃\",\n      \"对现实恋爱关系与网络虚构内容之间巨大反差的幽默表达\"\n    ],\n    \"target_audience\": \"B站用户、科幻爱好者、对网络秀恩爱内容持怀疑态度的年轻网民\",\n    \"political_sensitivity\": \"无\",\n    \"backlash_events\": null\n  },\n  \"semantic_drift\": {\n    \"original_meaning\": \"调侃某些情侣视频内容过于夸张、不真实，比刘慈欣的科幻小说还离谱\",\n    \"current_meaning\": \"泛指任何过于理想化、不切实际的内容（不限于情侣视频），用来表达'这比科幻还科幻'的讽刺\",\n    \"drift_direction\": \"从具体的情侣视频调侃泛化为对一切不真实内容的讽刺\"\n  },\n  \"narrative_quality\": {\n    \"information_richness\": \"低\",\n    \"key_insight\": \"该梗的核心逻辑是：用'刘慈欣还是留了一手'来讽刺某些情侣视频比科幻小说更不真实，甚至应该归为'玄幻片'\"\n  }\n}\n```",
+  "video_name": "刘慈欣还是留了一手是什么梗【梗指南】 - 1.刘慈欣还是留了一手是什么梗【梗指南】(Av559582992,P1)",
+  "transcript_chars": 589,
+  "duration_sec": 108.608
+}
