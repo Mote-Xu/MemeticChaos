@@ -1038,6 +1038,28 @@ def main():
         f.write(report)
     print(f"[报告] 已保存 → {report_path}")
 
+    # Save clean JSON state for dashboard
+    latest = states[-1]
+    state_json = {
+        "month": latest.month,
+        "chaos_axis": float(latest.chaos_axis),
+        "total_attention": float(latest.total_attention),
+        "active_meme_count": latest.active_meme_count,
+        "attention_hhi": float(latest.attention_hhi),
+        "cat_entropy": float(latest.cat_entropy),
+        "dominant_category": latest.dominant_cat,
+        "constraint": {CONSTRAINT_LABELS[i]: float(latest.constraint[i]) for i in range(5)},
+        "cat_dist": {CATEGORY_NAMES[i]: float(latest.cat_dist[i]) for i in range(5)},
+        "forecasts": forecasts,
+        "order_forms": predictor._order_forms["names"] if predictor._order_forms else [],
+        "backtest": backtest_results,
+        "generated_at": datetime.now().isoformat(),
+    }
+    state_path = PROCESSED_DIR / "dashboard_state.json"
+    with open(state_path, "w", encoding="utf-8") as f:
+        json.dump(state_json, f, ensure_ascii=False, indent=2)
+    print(f"[Dashboard状态] 已保存 → {state_path}")
+
     # Save model if requested
     if args.save_model:
         import pickle

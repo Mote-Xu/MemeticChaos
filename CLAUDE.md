@@ -117,8 +117,8 @@ LLM约束历史 (5维×6月) ──→ RidgeCV 残差 ──→│
   - 每小时 17 分: 微博热搜采集 (`scraper.py`)
   - 每天 2:37: B站时间序列采集 (`bilibili_timeseries.py`)
   - 每天 4:47: 实时管线更新 (`live_pipeline.py`)
-  - **每周日 4:50**: LLM 月度叙事摘要 (`monthly_narrative.py`)
-  - **每周日 5:00**: 秩序形态预测报告 (`order_form_predictor.py --forecast 12`)
+  - **Dashboard**: http://chaos.mote-pal.xyz (Flask :8931 + cloudflared tunnel)
+  - **systemd**: `memeticchaos-dashboard.service` (enabled, auto-restart)
 - **数据同步到本地**: `bash sync_from_server.sh`（拉取 scraper 数据 + 预测报告）
 - **数据同步到服务器**: `bash sync_to_server.sh`（推送 Google Trends 数据 + 叙事）
 - **本地任务**: Google Trends 通过飞鸟代理每日拉取 (`trends_loader.py`) + 叙事生成 (`narrative_from_trends.py`)
@@ -131,8 +131,8 @@ LLM约束历史 (5维×6月) ──→ RidgeCV 残差 ──→│
 - 数据自动补充：服务器 24/7 + 本地 Google Trends
 - **FR19 v0.1**: 秩序形态预测模型上线，每周自动预测
 
-## 下一步 (Step 3 — Dashboard)
+## 下一步
 
-1. **Dashboard**：交互式 Web 界面（相图 + 时间轴 + 活跃梗列表 + NL 摘要 + 精细建模查询入口）
-2. **精细建模 API**：服务器端查询接口，支持"对某个具体话题做深度分析"
-3. **知乎 API 修复**：实时采集数据源补充
+1. **知乎 API 修复**：实时采集数据源补充
+2. **实时信号 pipeline 优化**：微博信号 → 自动触发叙事抽取 → 更新约束场
+3. **Dashboard 增强**：更多交互图表 + 历史回放

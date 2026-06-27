@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MemeticChaos — 集体情感系统 Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; background:#0f0f14; color:#e0e0e0; }
+.header { background:linear-gradient(135deg, #1a1a2e, #16213e); padding:16px 24px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #2a2a3e; }
+.header h1 { font-size:1.4em; color:#64b5f6; }
+.header .updated { font-size:0.8em; color:#888; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:16px; max-width:1600px; margin:0 auto; }
+.card { background:#1a1a2e; border-radius:8px; padding:16px; border:1px solid #2a2a3e; }
+.card h2 { font-size:1.1em; color:#90caf9; margin-bottom:12px; border-bottom:1px solid #2a2a3e; padding-bottom:8px; }
+.full-width { grid-column:1 / -1; }
+.chart { width:100%; height:350px; }
+.chart-lg { height:400px; }
+.state-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(120px,1fr)); gap:10px; }
+.state-item { text-align:center; padding:10px; background:#16213e; border-radius:6px; }
+.state-item .label { font-size:0.75em; color:#888; }
+.state-item .value { font-size:1.3em; font-weight:bold; margin-top:4px; }
+.value.positive { color:#64b5f6; }
+.value.negative { color:#ef5350; }
+.value.neutral { color:#ffb74d; }
+.bar-container { margin:4px 0; display:flex; align-items:center; gap:8px; }
+.bar-label { width:90px; font-size:0.8em; text-align:right; }
+.bar-track { flex:1; height:16px; background:#16213e; border-radius:8px; overflow:hidden; }
+.bar-fill { height:100%; border-radius:8px; transition:width 0.5s; }
+.meme-list { max-height:300px; overflow-y:auto; }
+.meme-row { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #1a1a2e; font-size:0.85em; }
+.meme-row .name { color:#90caf9; }
+.meme-row .count { color:#888; }
+.narrative-text { line-height:1.7; font-size:0.9em; color:#ccc; max-height:200px; overflow-y:auto; }
+.forecast-table { width:100%; border-collapse:collapse; font-size:0.85em; }
+.forecast-table th { background:#16213e; padding:8px; text-align:left; color:#90caf9; }
+.forecast-table td { padding:8px; border-bottom:1px solid #1a1a2e; }
+.query-box { display:flex; gap:8px; margin-bottom:12px; }
+.query-box input { flex:1; padding:10px 14px; background:#16213e; border:1px solid #2a2a3e; border-radius:6px; color:#e0e0e0; font-size:0.95em; }
+.query-box button { padding:10px 20px; background:#1976d2; border:none; border-radius:6px; color:white; cursor:pointer; font-size:0.95em; }
+.query-box button:hover { background:#1565c0; }
+.hot-topics { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+.hot-tag { padding:6px 14px; background:#16213e; border:1px solid #2a2a3e; border-radius:16px; cursor:pointer; font-size:0.85em; color:#90caf9; transition:all 0.2s; }
+.hot-tag:hover { background:#1976d2; color:white; border-color:#1976d2; }
+.analysis-result { margin-top:12px; padding:12px; background:#16213e; border-radius:6px; line-height:1.7; font-size:0.9em; display:none; }
+.loading { text-align:center; color:#888; padding:20px; }
+.error { color:#ef5350; }
+@media (max-width:800px) { .grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🌀 MemeticChaos — 中国互联网集体情感系统</h1>
+  <span class="updated" id="updateTime">加载中...</span>
+</div>
+
+<div class="grid">
+
+  <!-- 当前状态 -->
+  <div class="card">
+    <h2>📍 当前状态</h2>
+    <div class="state-grid" id="currentState">
+      <div class="loading">加载中...</div>
+    </div>
+  </div>
+
+  <!-- 约束场 -->
+  <div class="card">
+    <h2>🎯 集体约束场</h2>
+    <div id="constraintBars">
+      <div class="loading">加载中...</div>
+    </div>
+  </div>
+
+  <!-- 混沌轴时间线 -->
+  <div class="card full-width">
+    <h2>📈 集体混沌轴 2015-2025</h2>
+    <div class="chart chart-lg" id="chaosChart"></div>
+  </div>
+
+  <!-- 相空间轨迹 -->
+  <div class="card">
+    <h2>🗺️ 秩序形态相空间</h2>
+    <div class="chart" id="phaseChart"></div>
+  </div>
+
+  <!-- 未来预测 -->
+  <div class="card">
+    <h2>🔮 未来 6 个月预测</h2>
+    <div id="forecastTable">
+      <div class="loading">加载中...</div>
+    </div>
+  </div>
+
+  <!-- 活跃梗 -->
+  <div class="card">
+    <h2>🔥 活跃模因信号 (7天)</h2>
+    <div class="meme-list" id="memeList">
+      <div class="loading">加载中...</div>
+    </div>
+  </div>
+
+  <!-- LLM 叙事摘要 -->
+  <div class="card">
+    <h2>🤖 LLM 月度叙事摘要</h2>
+    <div class="narrative-text" id="narrativeText">
+      <div class="loading">加载中...</div>
+    </div>
+  </div>
+
+  <!-- 精细建模查询 -->
+  <div class="card full-width">
+    <h2>🔍 精细建模查询</h2>
+    <div class="hot-topics" id="hotTopics">
+      <div class="loading">加载热门话题...</div>
+    </div>
+    <div class="query-box">
+      <input type="text" id="topicInput" placeholder="输入话题名称，如：躺平、后浪、内卷、润...">
+      <button onclick="analyzeTopic()">深度分析</button>
+    </div>
+    <div class="analysis-result" id="analysisResult"></div>
+  </div>
+
+</div>
+
+<script>
+// ═══════════════════════════════════════
+// API helpers
+// ═══════════════════════════════════════
+
+const API = '/api';
+
+async function fetchJSON(url) {
+  const resp = await fetch(url);
+  return resp.json();
+}
+
+// ═══════════════════════════════════════
+// Render functions
+// ═══════════════════════════════════════
+
+async function renderCurrentState() {
+  const data = await fetchJSON(API + '/state');
+  const el = document.getElementById('currentState');
+  if (data.error) { el.innerHTML = '<div class="error">加载失败</div>'; return; }
+
+  const chaos = data.chaos_axis || 0;
+  const cls = chaos > 0.1 ? 'positive' : chaos < -0.15 ? 'negative' : 'neutral';
+
+  el.innerHTML = `
+    <div class="state-item">
+      <div class="label">月份</div>
+      <div class="value neutral">${data.month || '?'}</div>
+    </div>
+    <div class="state-item">
+      <div class="label">混沌轴</div>
+      <div class="value ${cls}">${chaos.toFixed(3)}</div>
+    </div>
+    <div class="state-item">
+      <div class="label">主导类别</div>
+      <div class="value neutral">${data.dominant_category || '?'}</div>
+    </div>
+    <div class="state-item">
+      <div class="label">活跃梗数</div>
+      <div class="value neutral">${data.active_meme_count || 0}</div>
+    </div>
+    <div class="state-item">
+      <div class="label">注意力 HHI</div>
+      <div class="value neutral">${(data.attention_hhi || 0).toFixed(3)}</div>
+    </div>
+    <div class="state-item">
+      <div class="label">叙事熵</div>
+      <div class="value neutral">${(data.cat_entropy || 0).toFixed(3)}</div>
+    </div>
+  `;
+}
+
+async function renderConstraintBars() {
+  const data = await fetchJSON(API + '/state');
+  const el = document.getElementById('constraintBars');
+  if (!data.constraint) { el.innerHTML = '<div class="error">无数据</div>'; return; }
+
+  const colors = ['#64b5f6','#ffb74d','#ef5350','#66bb6a','#ce93d8'];
+  const entries = Object.entries(data.constraint);
+  el.innerHTML = entries.map(([label, val], i) => `
+    <div class="bar-container">
+      <span class="bar-label">${label}</span>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:${val*100}%;background:${colors[i]}"></div>
+      </div>
+      <span style="font-size:0.8em;width:40px">${val.toFixed(2)}</span>
+    </div>
+  `).join('');
+}
+
+async function renderCharts() {
+  const history = await fetchJSON(API + '/history');
+  if (history.error || !history.months.length) return;
+
+  const months = history.months;
+  const chaos = history.chaos_axis;
+  const hhi = history.hhi || [];
+  const entropy = history.entropy || [];
+
+  // Chaos axis chart
+  const chaosChart = echarts.init(document.getElementById('chaosChart'));
+  chaosChart.setOption({
+    tooltip: { trigger: 'axis' },
+    grid: { left: 50, right: 20, top: 20, bottom: 40 },
+    xAxis: { type:'category', data: months, axisLabel:{fontSize:9,rotate:45},
+      splitLine:{show:false} },
+    yAxis: { name:'混沌轴', axisLabel:{fontSize:10},
+      splitLine:{lineStyle:{color:'#2a2a3e'}} },
+    visualMap: { show:false, dimension:1, pieces:[
+      {lt:0, color:'#ef5350'}, {gte:0, color:'#64b5f6'}
+    ]},
+    series: [{
+      type:'line', data: chaos, smooth: true, lineStyle:{width:1.5},
+      areaStyle:{opacity:0.15},
+      markLine:{ silent:true, symbol:'none', data:[{yAxis:0}],
+        lineStyle:{color:'#555',type:'dashed'} }
+    }]
+  });
+
+  // Phase space chart (chaos × HHI × entropy as bubble size)
+  const phaseChart = echarts.init(document.getElementById('phaseChart'));
+  // Scatter with year coloring
+  const yearData = {};
+  months.forEach((m, i) => {
+    const yr = m.substring(0,4);
+    if (!yearData[yr]) yearData[yr] = [];
+    yearData[yr].push([chaos[i] || 0, (hhi[i] || 0.1) * 100, entropy[i] || 0, m]);
+  });
+  const colors = ['#64b5f6','#ffb74d','#ef5350','#66bb6a','#ce93d8','#4dd0e1','#ff8a65','#7986cb','#4db6ac','#f06292','#ba68c8'];
+  const series = Object.entries(yearData).map(([yr, pts], idx) => ({
+    name: yr, type:'scatter', data: pts,
+    symbolSize: d => Math.max(5, d[2] * 5),
+    itemStyle: { color: colors[idx % colors.length], opacity: 0.7 },
+  }));
+  phaseChart.setOption({
+    tooltip: { trigger:'item', formatter: d => `${d.value[3]}<br/>混沌:${d.value[0].toFixed(3)}<br/>HHI:${(d.value[1]/100).toFixed(3)}` },
+    grid: { left:50, right:20, top:20, bottom:30 },
+    xAxis: { name:'混沌轴', splitLine:{lineStyle:{color:'#2a2a3e'}} },
+    yAxis: { name:'HHI × 100', splitLine:{lineStyle:{color:'#2a2a3e'}} },
+    legend: { bottom:0, textStyle:{color:'#888',fontSize:9} },
+    series: series,
+  });
+
+  window.addEventListener('resize', () => { chaosChart.resize(); phaseChart.resize(); });
+}
+
+async function renderForecast() {
+  const data = await fetchJSON(API + '/forecast');
+  const el = document.getElementById('forecastTable');
+  if (!data.forecasts || !data.forecasts.length) {
+    el.innerHTML = '<div class="loading">暂无预测数据</div>'; return;
+  }
+
+  let html = '<table class="forecast-table"><tr><th>月份</th><th>混沌轴</th><th>秩序形态</th><th>HHI</th><th>主导类别</th></tr>';
+  data.forecasts.forEach(f => {
+    const chaos = f.chaos_axis ? f.chaos_axis.toFixed(3) : '?';
+    const cls = f.chaos_axis > 0.1 ? 'positive' : f.chaos_axis < -0.15 ? 'negative' : 'neutral';
+    html += `<tr>
+      <td>${f.month}</td>
+      <td class="${cls}">${chaos}</td>
+      <td style="font-size:0.8em">${f.order_form?.name || '?'}</td>
+      <td>${f.hhi?.toFixed(3) || '?'}</td>
+      <td>${f.dominant_cat || '?'}</td>
+    </tr>`;
+  });
+  html += '</table>';
+  el.innerHTML = html;
+}
+
+async function renderMemes() {
+  const data = await fetchJSON(API + '/memes');
+  const el = document.getElementById('memeList');
+  if (!data.memes || !data.memes.length) {
+    el.innerHTML = '<div class="loading">暂无实时信号</div>'; return;
+  }
+
+  el.innerHTML = data.memes.map(m => `
+    <div class="meme-row">
+      <span class="name">${m.name}</span>
+      <span class="count">${m.signal_count} 次 | ${(m.platforms||[]).join(',')}</span>
+    </div>
+  `).join('');
+}
+
+async function renderNarrative() {
+  const data = await fetchJSON(API + '/narrative');
+  const el = document.getElementById('narrativeText');
+  const summary = data.summary || '暂无叙事摘要';
+  el.innerHTML = summary;
+}
+
+async function renderHotTopics() {
+  const data = await fetchJSON(API + '/hot_topics');
+  const el = document.getElementById('hotTopics');
+  if (!data.topics || !data.topics.length) {
+    el.innerHTML = '<span style="color:#888">暂无热门话题</span>'; return;
+  }
+
+  el.innerHTML = data.topics.map(t => `
+    <span class="hot-tag" onclick="quickAnalyze('${t.name}')">${t.name} (${t.count||t.attention||'?'})</span>
+  `).join('');
+}
+
+// ═══════════════════════════════════════
+// Fine-grained analysis
+// ═══════════════════════════════════════
+
+function quickAnalyze(topic) {
+  document.getElementById('topicInput').value = topic;
+  analyzeTopic();
+}
+
+async function analyzeTopic() {
+  const topic = document.getElementById('topicInput').value.trim();
+  const el = document.getElementById('analysisResult');
+  if (!topic) { el.style.display='none'; return; }
+
+  el.style.display = 'block';
+  el.innerHTML = '<div class="loading">分析中...</div>';
+
+  try {
+    const data = await fetchJSON(API + '/analyze?topic=' + encodeURIComponent(topic));
+    if (data.error) {
+      el.innerHTML = `<div class="error">${data.error}</div>`;
+      return;
+    }
+
+    let html = `<h3 style="color:#90caf9;margin-bottom:8px">🔍 ${data.topic} — 深度分析</h3>`;
+
+    if (data.category) {
+      html += `<p><strong>类别:</strong> ${data.category}</p>`;
+    }
+
+    if (Object.keys(data.constraint_profile).length) {
+      html += '<p><strong>约束场 profile:</strong></p>';
+      for (const [k,v] of Object.entries(data.constraint_profile)) {
+        html += `<span style="display:inline-block;margin:2px 8px;font-size:0.85em">${k}: ${v.toFixed(2)}</span>`;
+      }
+    }
+
+    if (data.trends_summary && data.trends_summary.data) {
+      html += '<p><strong>注意力趋势:</strong> ' +
+        `峰值 ${data.trends_summary.peak_value.toFixed(0)} @ ${data.trends_summary.peak_month}, ` +
+        `趋势: ${data.trends_summary.trend}</p>`;
+      // Mini chart
+      html += '<div id="miniTrendChart" style="width:100%;height:120px;margin:8px 0"></div>';
+    }
+
+    if (data.similar_memes && data.similar_memes.length) {
+      html += '<p><strong>同类梗:</strong> ' +
+        data.similar_memes.map(m => m.name).join(', ') + '</p>';
+    }
+
+    if (data.deep_analysis) {
+      html += `<div style="margin-top:12px;padding:12px;background:#1a1a2e;border-radius:6px;line-height:1.8">
+        <strong>🤖 LLM 深度解读:</strong><br>${data.deep_analysis}
+      </div>`;
+    }
+
+    el.innerHTML = html;
+
+    // Render mini trend chart
+    if (data.trends_summary && data.trends_summary.data) {
+      setTimeout(() => {
+        const chartEl = document.getElementById('miniTrendChart');
+        if (!chartEl) return;
+        const c = echarts.init(chartEl);
+        const d = data.trends_summary.data;
+        c.setOption({
+          grid: { left:40, right:10, top:5, bottom:20 },
+          xAxis: { type:'category', data: d.map(x=>x.month), axisLabel:{fontSize:8,rotate:45}, show:false },
+          yAxis: { splitLine:{lineStyle:{color:'#2a2a3e'}}, axisLabel:{fontSize:8} },
+          series: [{ type:'line', data: d.map(x=>x.value), smooth:true,
+            lineStyle:{color:'#ffb74d',width:1.5}, areaStyle:{color:'rgba(255,183,77,0.15)'} }]
+        });
+      }, 100);
+    }
+  } catch(e) {
+    el.innerHTML = `<div class="error">请求失败: ${e.message}</div>`;
+  }
+}
+
+// Enter key triggers analysis
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('topicInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') analyzeTopic();
+  });
+});
+
+// ═══════════════════════════════════════
+// Init
+// ═══════════════════════════════════════
+
+async function init() {
+  await Promise.all([
+    renderCurrentState(),
+    renderConstraintBars(),
+    renderCharts(),
+    renderForecast(),
+    renderMemes(),
+    renderNarrative(),
+    renderHotTopics(),
+  ]);
+  document.getElementById('updateTime').textContent =
+    '更新: ' + new Date().toLocaleString('zh-CN');
+}
+
+init();
+// Auto-refresh every 5 minutes
+setInterval(init, 300000);
+</script>
+</body>
+</html>
