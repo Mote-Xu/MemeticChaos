@@ -163,13 +163,61 @@ body { font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; background:#0f
 <script>
 const API = '/api';
 let historyData = null;
-let playbackTimer = null;
-let playbackIdx = 0;
-let playbackSpeed = 200;
 
 async function fetchJSON(url) {
   const resp = await fetch(url);
   return resp.json();
+}
+
+// ── Playback state ──
+let playbackIdx = 0;
+let playbackTimer = null;
+let playbackSpeed = 200;
+
+function updatePlayback(idx) {
+  if (!historyData) return;
+  const n = historyData.months.length;
+  idx = Math.max(0, Math.min(n - 1, idx));
+  playbackIdx = idx;
+  const m = historyData.months[idx];
+  const c = historyData.chaos_axis[idx] || 0;
+  document.getElementById('playbackMonth').textContent = m;
+  document.getElementById('pbChaos').textContent = `混沌: ${c.toFixed(3)}`;
+  document.getElementById('pbCat').textContent = `类别: ${historyData.dominant_category?.[idx] || '?'}`;
+  document.getElementById('pbHHI').textContent = `HHI: ${(historyData.hhi?.[idx]||0).toFixed(3)}`;
+  document.getElementById('pbEntropy').textContent = `熵: ${(historyData.entropy?.[idx]||0).toFixed(3)}`;
+  document.getElementById('scrubber').value = idx;
+}
+
+function playbackControl(action, value) {
+  if (!historyData) return;
+  const n = historyData.months.length;
+  if (action === 'play') {
+    const btn = document.getElementById('playBtn');
+    if (playbackTimer) {
+      clearInterval(playbackTimer); playbackTimer = null;
+      btn.textContent = '▶'; btn.classList.remove('active');
+      return;
+    }
+    btn.textContent = '⏸'; btn.classList.add('active');
+    if (playbackIdx >= n - 1) playbackIdx = 0;
+    playbackTimer = setInterval(() => {
+      playbackIdx++; if (playbackIdx >= n) playbackIdx = 0;
+      updatePlayback(playbackIdx);
+    }, playbackSpeed);
+  } else if (action === 'prev') {
+    if (playbackTimer) { clearInterval(playbackTimer); playbackTimer = null; document.getElementById('playBtn').textContent = '▶'; document.getElementById('playBtn').classList.remove('active'); }
+    updatePlayback(playbackIdx - 1);
+  } else if (action === 'next') {
+    if (playbackTimer) { clearInterval(playbackTimer); playbackTimer = null; document.getElementById('playBtn').textContent = '▶'; document.getElementById('playBtn').classList.remove('active'); }
+    updatePlayback(playbackIdx + 1);
+  } else if (action === 'scrub') {
+    if (playbackTimer) { clearInterval(playbackTimer); playbackTimer = null; document.getElementById('playBtn').textContent = '▶'; document.getElementById('playBtn').classList.remove('active'); }
+    updatePlayback(parseInt(value));
+  } else if (action === 'speed') {
+    playbackSpeed = parseInt(value);
+    if (playbackTimer) { clearInterval(playbackTimer); playbackTimer = null; playbackControl('play'); }
+  }
 }
 
 // ═══════════════════════════════════════
@@ -220,10 +268,7 @@ async function renderCharts() {
   const categories = historyData.dominant_category || [];
 
   playbackIdx = months.length - 1;
-
-  // Build cursor data: all null except current position
-  const cursorData = new Array(months.length).fill(null);
-  cursorData[months.length - 1] = chaos[months.length - 1];
+  updatePlayback(playbackIdx);
 
   window._chaosChart = echarts.init(document.getElementById('chaosChart'));
   window._chaosChart.setOption({
@@ -233,15 +278,11 @@ async function renderCharts() {
     yAxis: { name:'混沌轴', axisLabel:{fontSize:9}, splitLine:{lineStyle:{color:'#2a2a3e'}} },
     series: [
       { name:'chaos', type:'line', data:chaos, smooth:true, lineStyle:{width:1.5,color:'#64b5f6'},
+        markLine:{silent:true,symbol:'none',data:[{yAxis:0}],lineStyle:{color:'#555',type:'dashed'}},
         areaStyle:{color:{type:'linear',x:0,y:0,x2:0,y2:1,colorStops:[
-          {offset:0,color:'rgba(100,181,246,0.15)'},{offset:1,color:'rgba(239,83,80,0.05)'}]}} },
-      { name:'cursor', type:'scatter', data:cursorData, symbol:'pin', symbolSize:30,
-        itemStyle:{color:'#ffb74d',borderColor:'#fff',borderWidth:1} },
-      { name:'zero', type:'line', data:[], lineStyle:{color:'#555',type:'dashed',width:0.5},
-        markLine:{silent:true,symbol:'none',data:[{yAxis:0}],lineStyle:{color:'#555',type:'dashed'}} }
+          {offset:0,color:'rgba(100,181,246,0.15)'},{offset:1,color:'rgba(239,83,80,0.05)'}]}} }
     ]
   });
-  window._cursorSeries = 1; // index of cursor series
 
   // Phase chart
   window._phaseChart = echarts.init(document.getElementById('phaseChart'));
@@ -269,7 +310,6 @@ async function renderCharts() {
   const scrubber = document.getElementById('scrubber');
   scrubber.max = months.length - 1;
   scrubber.value = months.length - 1;
-  updatePlaybackInfo(months.length - 1);
 
   window.addEventListener('resize', () => {
     window._chaosChart?.resize();
@@ -277,72 +317,32 @@ async function renderCharts() {
   });
 }
 
-function updatePlaybackInfo(idx) {
-  if (!historyData) return;
-  const m = historyData.months[idx];
-  const c = historyData.chaos_axis[idx];
-  const cats = historyData.dominant_category?.[idx] || '?';
-  const hhi = historyData.hhi?.[idx] || 0;
-  const ent = historyData.entropy?.[idx] || 0;
-
-  document.getElementById('playbackMonth').textContent = m;
-  document.getElementById('pbChaos').textContent = `混沌: ${c?.toFixed(3)||'?'}`;
-  document.getElementById('pbCat').textContent = `类别: ${cats}`;
-  document.getElementById('pbHHI').textContent = `HHI: ${hhi.toFixed(3)}`;
-  document.getElementById('pbEntropy').textContent = `熵: ${ent.toFixed(3)}`;
-  document.getElementById('scrubber').value = idx;
-
-  // Update cursor point on chaos chart
-  if (window._chaosChart) {
-    const n = historyData.months.length;
-    const cursorData = new Array(n).fill(null);
-    cursorData[idx] = historyData.chaos_axis[idx];
-    window._chaosChart.setOption({
-      series: [{}, { data: cursorData }]
-    });
-  }
-}
-
 function playbackControl(action, value) {
   if (!historyData) return;
   const n = historyData.months.length;
 
   if (action === 'play') {
-    const btn = document.getElementById('playBtn');
-    if (playbackTimer) {
-      clearInterval(playbackTimer); playbackTimer = null;
-      btn.textContent = '▶'; btn.classList.remove('active');
-      return;
-    }
-    btn.textContent = '⏸'; btn.classList.add('active');
-    if (playbackIdx >= n - 1) playbackIdx = 0;
-    playbackTimer = setInterval(() => {
-      playbackIdx++;
-      if (playbackIdx >= n) { playbackIdx = 0; }
-      updatePlaybackInfo(playbackIdx);
-    }, playbackSpeed);
+    if (playbackRAF) { stopPlayback(); return; }
+    if (playbackIdx >= n - 1) { playbackIdx = 0; playbackT = 0; }
+    startPlayback();
   } else if (action === 'prev') {
     stopPlayback();
     playbackIdx = Math.max(0, playbackIdx - 1);
-    updatePlaybackInfo(playbackIdx);
+    playbackT = 0;
+    snapToIndex(playbackIdx);
   } else if (action === 'next') {
     stopPlayback();
     playbackIdx = Math.min(n - 1, playbackIdx + 1);
-    updatePlaybackInfo(playbackIdx);
+    playbackT = 0;
+    snapToIndex(playbackIdx);
   } else if (action === 'scrub') {
     stopPlayback();
     playbackIdx = parseInt(value);
-    updatePlaybackInfo(playbackIdx);
+    playbackT = 0;
+    snapToIndex(playbackIdx);
   } else if (action === 'speed') {
     playbackSpeed = parseInt(value);
-    if (playbackTimer) { stopPlayback(); playbackControl('play'); }
   }
-}
-
-function stopPlayback() {
-  if (playbackTimer) { clearInterval(playbackTimer); playbackTimer = null; }
-  const btn = document.getElementById('playBtn');
-  if (btn) { btn.textContent = '▶'; btn.classList.remove('active'); }
 }
 
 // ═══════════════════════════════════════
