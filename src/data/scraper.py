@@ -104,14 +104,16 @@ def fetch_zhihu_hot_list() -> list[dict]:
     """
     import urllib.request, urllib.error, re, os
 
-    cookie = os.environ.get("ZHIHU_COOKIE", "")
+    cookie_val = os.environ.get("ZHIHU_COOKIE", "")
+    if cookie_val and not cookie_val.startswith("z_c0="):
+        cookie_val = f"z_c0={cookie_val}"
 
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
         "Accept": "application/json",
     }
-    if cookie:
-        headers["Cookie"] = cookie
+    if cookie_val:
+        headers["Cookie"] = cookie_val
 
     # API endpoint (needs auth)
     api_url = "https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=50"
