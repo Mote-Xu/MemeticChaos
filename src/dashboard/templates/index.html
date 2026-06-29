@@ -216,7 +216,12 @@ function playbackControl(action, value) {
     btn.textContent = '⏸'; btn.classList.add('active');
     if (playbackIdx >= n - 1) playbackIdx = 0;
     playbackTimer = setInterval(() => {
-      playbackIdx++; if (playbackIdx >= n) playbackIdx = 0;
+      playbackIdx++;
+      if (playbackIdx >= n - 1) {
+        clearInterval(playbackTimer); playbackTimer = null;
+        document.getElementById('playBtn').textContent = '▶';
+        document.getElementById('playBtn').classList.remove('active');
+      }
       updatePlayback(playbackIdx);
     }, playbackSpeed);
   } else if (action === 'prev') {
@@ -329,34 +334,6 @@ async function renderCharts() {
     window._chaosChart?.resize();
     window._phaseChart?.resize();
   });
-}
-
-function playbackControl(action, value) {
-  if (!historyData) return;
-  const n = historyData.months.length;
-
-  if (action === 'play') {
-    if (playbackRAF) { stopPlayback(); return; }
-    if (playbackIdx >= n - 1) { playbackIdx = 0; playbackT = 0; }
-    startPlayback();
-  } else if (action === 'prev') {
-    stopPlayback();
-    playbackIdx = Math.max(0, playbackIdx - 1);
-    playbackT = 0;
-    snapToIndex(playbackIdx);
-  } else if (action === 'next') {
-    stopPlayback();
-    playbackIdx = Math.min(n - 1, playbackIdx + 1);
-    playbackT = 0;
-    snapToIndex(playbackIdx);
-  } else if (action === 'scrub') {
-    stopPlayback();
-    playbackIdx = parseInt(value);
-    playbackT = 0;
-    snapToIndex(playbackIdx);
-  } else if (action === 'speed') {
-    playbackSpeed = parseInt(value);
-  }
 }
 
 // ═══════════════════════════════════════
