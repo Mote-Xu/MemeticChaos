@@ -965,6 +965,96 @@ def generate_report(
 # Main Entry
 # ═══════════════════════════════════════════════
 
+def _estimate_current_from_scraper(meme_trends: dict, narratives: dict,
+                                    current_month: str,
+                                    last_state: MonthlyState) -> Optional[MonthlyState]:
+    """用 scraper 数据估算当前月的集体状态."""
+    signal_path = ROOT / "data/scraped/signal_history.jsonl"
+    if not signal_path.exists():
+        signal_path = ROOT / "data/collector/signal_history.jsonl"
+    if not signal_path.exists():
+        return None
+
+    # Count active memes in signal history
+    meme_signals = defaultdict(float)
+    platform_set = defaultdict(set)
+    with open(signal_path, "r", encoding="utf-8") as f:
+        for line in f:
+            try:
+                sig = json.loads(line.strip())
+                name = sig.get("meme_name", "")
+                rank = sig.get("rank", 50)
+                platform = sig.get("platform", "?")
+                # Weight: lower rank = higher attention
+                weight = 1.0 / max(1, rank)
+                meme_signals[name] += weight
+                platform_set[name].add(platform)
+            except json.JSONDecodeError:
+                continue
+
+    if not meme_signals:
+        return None
+
+    # Map signals to categories and compute attention-weighted chaos
+    chaos_sum = 0.0
+    weight_sum = 0.0
+    cat_sum = np.zeros(5)
+    active_count = 0
+
+    # Reuse the constraint lookup
+    llm_scores = _load_llm_scores()
+    constraint_sum = np.zeros(5)
+
+    for name, weight in meme_signals.items():
+        weight_sum += weight
+        active_count += 1
+
+        # Category & chaos
+        cat = "纯粹娱乐"  # default
+        for trend_kw, (meme_name, c) in TREND_TO_MEME.items():
+            if name in meme_name or meme_name in name:
+                cat = c
+                break
+        if cat in CATEGORY_NAMES:
+            cat_idx = CATEGORY_NAMES.index(cat)
+            cat_sum[cat_idx] += weight
+        chaos_sum += CATEGORY_CHAOS.get(cat, 0.0) * weight
+
+        # Constraint
+        c = get_meme_constraint(name, name, narratives, llm_scores)
+        constraint_sum += c * weight
+
+    chaos = chaos_sum / weight_sum if weight_sum > 0 else last_state.chaos_axis
+    constraint = constraint_sum / weight_sum if weight_sum > 0 else last_state.constraint
+    cat_dist = cat_sum / cat_sum.sum() if cat_sum.sum() > 0 else last_state.cat_dist
+
+    # HHI from signal distribution
+    if weight_sum > 0:
+        shares = [w / weight_sum for w in meme_signals.values()]
+        hhi = sum(s**2 for s in shares)
+    else:
+        hhi = last_state.attention_hhi
+
+    # Category entropy
+    p = cat_dist[cat_dist > 0]
+    cat_entropy = float(-np.sum(p * np.log(p))) if len(p) > 0 else last_state.cat_entropy
+
+    dom_cat = CATEGORY_NAMES[int(np.argmax(cat_dist))]
+
+    return MonthlyState(
+        month=current_month,
+        ext_field=last_state.ext_field,  # reuse last known external field
+        chaos_axis=float(chaos),
+        constraint=constraint,
+        cat_dist=cat_dist,
+        total_attention=float(weight_sum),
+        active_meme_count=active_count,
+        attention_hhi=float(hhi),
+        cat_entropy=cat_entropy,
+        dominant_cat=dom_cat,
+    )
+
+
 def main():
     import argparse
     sys.stdout.reconfigure(encoding="utf-8")
@@ -990,7 +1080,9 @@ def main():
         all_months.update(d.keys())
     for d in meme_trends.values():
         all_months.update(d.keys())
-    months = sorted(m for m in all_months if "2015" <= m[:4] <= "2025")
+    # Extend to current year-month
+    current_year_month = datetime.now().strftime("%Y-%m")
+    months = sorted(m for m in all_months if "2015" <= m[:4] <= current_year_month[:4])
 
     print(f"\n[数据]")
     print(f"  外部场: {len(ext_field)} 关键词")
@@ -1003,9 +1095,20 @@ def main():
     states = build_monthly_states(ext_field, meme_trends, narratives, months)
     print(f"  构建了 {len(states)} 个月度状态")
 
+    # ── Extend with scraper-based current month ──
+    current_month = datetime.now().strftime("%Y-%m")
+    if states and states[-1].month < current_month:
+        scraper_state = _estimate_current_from_scraper(
+            meme_trends, narratives, current_month, states[-1]
+        )
+        if scraper_state:
+            states.append(scraper_state)
+            print(f"  补入 scraper 当前月: {current_month}")
+
     # Quick sanity checks
     chaos_vals = [s.chaos_axis for s in states]
     print(f"  混沌轴范围: [{min(chaos_vals):+.3f}, {max(chaos_vals):+.3f}]")
+    print(f"  最新月份: {states[-1].month}")
     non_zero_months = sum(1 for s in states if s.active_meme_count > 0)
     print(f"  有活跃梗的月份: {non_zero_months}/{len(states)}")
 
