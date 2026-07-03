@@ -1,0 +1,61 @@
+{
+  "meme_name": "广西科目三",
+  "origin": {
+    "trigger_event": "广西地区将舞蹈与驾照考试类比，形成‘科目三’指代舞蹈的民间说法",
+    "platform": "抖音、快手等短视频平台",
+    "precursor": "路易十三舞蹈（2010年代广西柳州）"
+  },
+  "social_context": {
+    "triggers": "短视频平台舞蹈挑战、配乐《一笑江湖DJ版》的病毒式传播",
+    "target_audience": "Z世代年轻人、短视频创作者、跨文化网民",
+    "political_sensitivity": "中台文化互动（‘舞统台湾’说法）引发两岸舆论关注",
+    "backlash_events": "中年人对年轻人舞蹈的疑惑目光被记录并传播，形成代际文化冲突讨论"
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽期",
+      "time_range": "2010年代",
+      "description": "广西柳州出现‘路易十三’舞蹈原型，地方性传播",
+      "key_figures": "未知名地方舞者"
+    },
+    {
+      "phase": "首次爆火",
+      "time_range": "2022年",
+      "description": "以‘科目三’或‘丝滑变速舞’为名，配乐《向某人DJ版》在短视频平台走红",
+      "key_figures": "多位抖音博主"
+    },
+    {
+      "phase": "二次爆发",
+      "time_range": "2023年",
+      "description": "配乐改为《一笑江湖DJ版》，出现续谋、粉丝等代表性舞者，热度席卷大陆",
+      "key_figures": "续谋、粉丝等抖音创作者"
+    },
+    {
+      "phase": "全球扩散",
+      "time_range": "2023-2024年",
+      "description": "传播至台湾（被戏称‘舞统台湾’）及海外（如英区将军爱美丽），出现‘人传人’现象",
+      "key_figures": "英区将军爱美丽等海外博主"
+    }
+  ],
+  "mutations": [
+    {
+      "name": "丝滑变速舞",
+      "time": "2022年",
+      "relationship": "早期别名，强调舞蹈动作的流畅变速"
+    },
+    {
+      "name": "舞统台湾",
+      "time": "2023年",
+      "relationship": "政治化变异，用于描述该舞蹈在台湾的流行现象"
+    }
+  ],
+  "semantic_drift": {
+    "original_meaning": "广西驾照考试中的路考项目（科目三）",
+    "current_meaning": "一种上下身分工摇摆的舞蹈类型，常配《一笑江湖DJ版》",
+    "drift_direction": "从现实考试术语转向网络舞蹈梗，再扩展为跨文化传播符号"
+  },
+  "narrative_summary": "广西科目三从地方驾照考试术语演变为全球流行的舞蹈梗，经历多次配乐和传播阶段，最终成为代际与文化碰撞的互联网现象。",
+  "social_context_hint": "梗的传播反映了Z世代通过短视频创造集体身份认同，同时引发代际误解和两岸文化互动，具有低政治敏感但高社会能见度的特点。",
+  "_source": "corrected_video_transcript",
+  "_regenerated_at": "2026-07-03T23:40:53.209742"
+}

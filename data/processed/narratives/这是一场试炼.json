@@ -1,0 +1,60 @@
+{
+  "meme_name": "托比欧脱衣变身",
+  "origin": {
+    "trigger_event": "《JOJO的奇妙冒险：黄金之风》第33集中，迪亚波罗的第二人格托比欧在切换回迪亚波罗人格前说出台词“这是一场试炼”，随后脱掉上衣完成人格转换。",
+    "platform": "Bilibili、抖音、Twitter等视频与社交平台",
+    "precursor": "JOJO系列已有的“替身觉醒”“人格切换”类名场面，以及“脱衣”作为角色变身标志的动漫传统"
+  },
+  "social_context": {
+    "triggers": "任何动画或影视作品中角色在脱衣瞬间被剪辑替换为托比欧脱衣画面，形成“脱衣即变身”的恶搞联想",
+    "target_audience": "JOJO粉丝、动漫爱好者、短视频二创用户、梗文化传播者",
+    "political_sensitivity": "低，不涉及政治议题",
+    "backlash_events": "少数JOJO原作粉丝认为过度滥用会稀释原场景的戏剧张力，但未形成大规模争议"
+  },
+  "spread_phases": [
+    {
+      "phase": "起源期",
+      "time_range": "2019年（动画播出后）",
+      "description": "原场景在JOJO粉丝圈内被截取为表情包和GIF，用于表现“人格切换”或“认真模式”",
+      "key_figures": "JOJO动画制作组、早期粉丝剪辑者"
+    },
+    {
+      "phase": "爆发期",
+      "time_range": "2020-2021年",
+      "description": "B站UP主开始制作“万物皆可托比欧脱衣”的混剪视频，将其他动漫角色脱衣瞬间替换为托比欧，形成固定模板",
+      "key_figures": "B站UP主“梗指南”“动漫剪辑师”等"
+    },
+    {
+      "phase": "泛化期",
+      "time_range": "2022年至今",
+      "description": "梗脱离JOJO语境，用于现实脱衣（如健身、换装）或游戏角色换装动画，成为“脱衣即名场面”的通用梗",
+      "key_figures": "抖音短视频创作者、Twitter meme账号"
+    }
+  ],
+  "mutations": [
+    {
+      "name": "试炼台词前置版",
+      "time": "2021年",
+      "relationship": "在脱衣前加入“这是一场试炼”台词，强化原场景的仪式感"
+    },
+    {
+      "name": "反向脱衣版",
+      "time": "2022年",
+      "relationship": "将穿衣动作倒放为脱衣，再接入托比欧画面，制造错位幽默"
+    },
+    {
+      "name": "多角色接力版",
+      "time": "2023年",
+      "relationship": "多个角色依次脱衣，最后全部切换为托比欧，形成连锁反应"
+    }
+  ],
+  "semantic_drift": {
+    "original_meaning": "托比欧通过脱衣完成人格切换，象征迪亚波罗的觉醒与力量释放",
+    "current_meaning": "任何脱衣动作都被戏谑地视为“变身”或“进入认真模式”的搞笑符号",
+    "drift_direction": "从严肃的剧情转折点向无厘头、万能替换的模因模板漂移"
+  },
+  "narrative_summary": "源自《JOJO》中托比欧脱衣切换人格的经典场景，被互联网二创为“任何脱衣动作都可替换为托比欧”的万能梗，用于制造反差幽默。",
+  "social_context_hint": "该梗的流行反映了Z世代对动漫名场面的解构式消费习惯，以及短视频平台对“瞬间替换”类剪辑模板的偏好，同时体现了JOJO系列在中文互联网中持续的高热度与模因化潜力。",
+  "_source": "corrected_video_transcript",
+  "_regenerated_at": "2026-07-03T23:44:33.414158"
+}

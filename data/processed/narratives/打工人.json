@@ -1,0 +1,60 @@
+{
+  "meme_name": "打工人",
+  "origin": {
+    "trigger_event": "打工仔变体经抽象带蓝子传播",
+    "platform": "抽象带蓝子（网络社区）",
+    "precursor": "打工仔、社畜"
+  },
+  "social_context": {
+    "triggers": "职场压力、加班文化、自嘲式抵抗",
+    "target_audience": "中国城市上班族、年轻劳动者",
+    "political_sensitivity": "低（自嘲为主，不直接挑战体制）",
+    "backlash_events": "无显著官方打压，偶有批评消极心态"
+  },
+  "spread_phases": [
+    {
+      "phase": "萌芽期",
+      "time_range": "2010s中期",
+      "description": "打工仔一词在珠三角农民工中流行，后经网络抽象文化改造",
+      "key_figures": "抽象带蓝子"
+    },
+    {
+      "phase": "爆发期",
+      "time_range": "2020-2021",
+      "description": "短视频平台大量‘早安打工人’段子涌现，形成病毒式传播",
+      "key_figures": "普通用户、搞笑博主"
+    },
+    {
+      "phase": "沉淀期",
+      "time_range": "2022至今",
+      "description": "成为日常用语，衍生出打工魂、人上人等变体，融入职场文化",
+      "key_figures": "无特定关键人物"
+    }
+  ],
+  "mutations": [
+    {
+      "name": "打工魂",
+      "time": "2020",
+      "relationship": "强调精神认同，与打工人互为变体"
+    },
+    {
+      "name": "人上人",
+      "time": "2020",
+      "relationship": "反讽式升华，与打工人形成对比"
+    },
+    {
+      "name": "提肛操",
+      "time": "2020",
+      "relationship": "健康梗，与打工人段子结合"
+    }
+  ],
+  "semantic_drift": {
+    "original_meaning": "对底层劳动者的自嘲称呼，强调被剥削",
+    "current_meaning": "广泛用于所有上班族的自嘲与身份认同，带幽默和励志色彩",
+    "drift_direction": "从消极自嘲转向积极自嘲，弱化阶级对立，强化群体共鸣"
+  },
+  "narrative_summary": "打工人梗从打工仔和社畜演变而来，经抽象文化传播，成为上班族自嘲与身份认同的流行符号，衍生出打工魂等变体，语义从消极转向幽默励志。",
+  "social_context_hint": "反映中国职场高强度竞争与加班文化下，年轻人通过自嘲缓解压力、构建群体归属感的社会心理，同时避免直接政治敏感话题。",
+  "_source": "corrected_video_transcript",
+  "_regenerated_at": "2026-07-03T23:40:07.614077"
+}

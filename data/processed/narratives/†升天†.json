@@ -1,0 +1,56 @@
+{
+  "meme_name": "升天",
+  "origin": {
+    "trigger_event": "游戏《主播女孩重度依赖》中角色“炒天将”在直播结束语中频繁使用“升天”一词",
+    "platform": "Bilibili、抖音等视频平台",
+    "precursor": "游戏内主播语癖文化、天使/升天隐喻"
+  },
+  "social_context": {
+    "triggers": "游戏热播、网友对阴间视频或高能片段的调侃需求",
+    "target_audience": "游戏玩家、二次元文化爱好者、弹幕活跃用户",
+    "political_sensitivity": "低，无直接政治关联",
+    "backlash_events": "暂无显著争议事件"
+  },
+  "spread_phases": [
+    {
+      "phase": "游戏内起源",
+      "time_range": "2022年初",
+      "description": "《主播女孩重度依赖》游戏中，角色炒天将下播时习惯说“升天”，形成个人语癖",
+      "key_figures": [
+        "游戏开发者（Waku Waku Games）",
+        "角色炒天将"
+      ]
+    },
+    {
+      "phase": "弹幕扩散",
+      "time_range": "2022年中至今",
+      "description": "网友在阴间视频或高能片段弹幕中刷“升天”，表达“这段让我升天”或赞赏之意",
+      "key_figures": [
+        "游戏主播",
+        "B站UP主",
+        "弹幕文化参与者"
+      ]
+    }
+  ],
+  "mutations": [
+    {
+      "name": "升天（赞赏版）",
+      "time": "2022年中",
+      "relationship": "从原意“下播告别”转为对视频内容的强烈正面反馈，类似KKSK"
+    },
+    {
+      "name": "升天（阴间版）",
+      "time": "2022年末",
+      "relationship": "专门用于恐怖、诡异或高能片段，强化“升天”的死亡/超脱隐喻"
+    }
+  ],
+  "semantic_drift": {
+    "original_meaning": "游戏角色下播时的告别语，暗示天使回归天上",
+    "current_meaning": "网友对视频片段（尤其是阴间或高能内容）表达极致感受或赞赏的弹幕用语",
+    "drift_direction": "从具体游戏内语癖向泛化网络感叹词演变，语义从“告别”转向“体验极致”"
+  },
+  "narrative_summary": "“升天”源自游戏《主播女孩重度依赖》中角色炒天将的下播语癖，后经弹幕文化扩散，成为网友对阴间或高能视频片段表达极致感受的流行梗。",
+  "social_context_hint": "该梗的流行反映了二次元游戏文化与弹幕亚文化的深度融合，以及网友对“死亡/超脱”隐喻的戏谑化再创作，属于低政治敏感度的娱乐性模因。",
+  "_source": "corrected_video_transcript",
+  "_regenerated_at": "2026-07-03T23:39:55.035114"
+}

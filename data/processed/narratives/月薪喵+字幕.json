@@ -1,0 +1,63 @@
+{
+  "meme_name": "月薪猫",
+  "origin": {
+    "trigger_event": "博主月薪猫参照自家薄猫制作表情包，因花费一个月薪水接猫回家而得名",
+    "platform": "微博/微信表情包平台",
+    "precursor": "Hawk的曲子《Scoopa Duke》及《怪奇物语》热度，以及胡尼克GIF图的外网传播"
+  },
+  "social_context": {
+    "triggers": "清新画风、可爱跳舞动作、接地气的表情内容，以及捏鼻子扇风动作的魔性传播",
+    "target_audience": "年轻网民、表情包爱好者、宠物文化圈",
+    "political_sensitivity": "低，无政治敏感元素",
+    "backlash_events": "无显著争议事件"
+  },
+  "spread_phases": [
+    {
+      "phase": "创作期",
+      "time_range": "2025年初",
+      "description": "博主月薪猫开始绘制自家薄猫和母亲收养的橘猫喵喵的表情包",
+      "key_figures": [
+        "月薪猫"
+      ]
+    },
+    {
+      "phase": "出圈期",
+      "time_range": "2025年中至近期",
+      "description": "捏鼻子扇风动作因《怪奇物语》热度加持，结合胡尼克GIF图外网传播，在国内被广泛使用",
+      "key_figures": [
+        "月薪猫",
+        "网友"
+      ]
+    },
+    {
+      "phase": "泛化期",
+      "time_range": "近期",
+      "description": "表情包被用于各种‘去味’场景，衍生出‘三位舞’‘迷和手书’等变体，成为泛用性表情包",
+      "key_figures": [
+        "网友",
+        "二次创作者"
+      ]
+    }
+  ],
+  "mutations": [
+    {
+      "name": "胡尼克扇风GIF",
+      "time": "外网传播期",
+      "relationship": "借鉴了相同舞蹈动作，形成跨角色恶搞"
+    },
+    {
+      "name": "三位舞/迷和手书",
+      "time": "国内传播期",
+      "relationship": "对原舞蹈动作的二次创作和命名变体"
+    }
+  ],
+  "semantic_drift": {
+    "original_meaning": "博主记录自家猫咪可爱日常的表情包",
+    "current_meaning": "用于回应或‘去味’任何网图的万能表情包，强调魔性可爱和泛用性",
+    "drift_direction": "从具体宠物记录向抽象社交回应符号转变"
+  },
+  "narrative_summary": "月薪猫表情包源于博主以一个月薪水接猫回家的故事，凭借清新画风和魔性扇风动作，在《怪奇物语》等文化热度助推下出圈，演变为网民用于‘去味’各类网图的万能表情包。",
+  "social_context_hint": "该梗反映了中国互联网对宠物可爱内容的高接受度，以及表情包从个人创作向集体社交工具转化的典型路径，低政治敏感性使其能快速泛化传播。",
+  "_source": "corrected_video_transcript",
+  "_regenerated_at": "2026-07-03T23:40:38.459791"
+}

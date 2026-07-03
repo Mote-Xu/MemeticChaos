@@ -1,0 +1,55 @@
+{
+  "meme_name": "我的刀盾",
+  "origin": {
+    "trigger_event": "国外视频平台上的搞笑印象视频，原句为英文'what the dog doing'的空耳",
+    "platform": "国外视频平台（如YouTube、TikTok）",
+    "precursor": "Chimes角色形象，后加入砍刀和盾牌，经AI二创形成刀盾外形"
+  },
+  "social_context": {
+    "triggers": "无厘头搞笑、洗脑台词、可爱外形与暴力元素的反差",
+    "target_audience": "中文互联网年轻用户，尤其是猫Meme小剧场和AI二创爱好者",
+    "political_sensitivity": "低，无明显政治关联",
+    "backlash_events": "无显著争议或抵制事件"
+  },
+  "spread_phases": [
+    {
+      "phase": "起源期",
+      "time_range": "2023年-2024年初",
+      "description": "国外视频中'what the dog doing'空耳被中文用户捕捉，并引入猫Meme小剧场",
+      "key_figures": "早期Meme创作者"
+    },
+    {
+      "phase": "二创爆发期",
+      "time_range": "2024年中",
+      "description": "AI工具（如生成式模型）大量创作刀盾角色视频，台词'我的刀盾'成为洗脑梗",
+      "key_figures": "AI二创博主、短视频创作者"
+    },
+    {
+      "phase": "广泛传播期",
+      "time_range": "2024年末至今",
+      "description": "梗在B站、抖音等平台扩散，成为猫Meme小剧场固定角色，衍生出多种场景",
+      "key_figures": "普通用户、Meme搬运账号"
+    }
+  ],
+  "mutations": [
+    {
+      "name": "刀盾角色形象固定化",
+      "time": "2024年中",
+      "relationship": "从Chimes原型经AI二创形成持刀盾的卡通形象"
+    },
+    {
+      "name": "台词场景泛化",
+      "time": "2024年末",
+      "relationship": "从原视频空耳扩展到各种无厘头对话和课堂、战斗等场景"
+    }
+  ],
+  "semantic_drift": {
+    "original_meaning": "英文'what the dog doing'的空耳，字面意为'这条狗在做什么'",
+    "current_meaning": "无厘头搞笑台词，搭配刀盾角色出现，强调突然插入的幽默效果",
+    "drift_direction": "从具体疑问句转向抽象洗脑梗，语义弱化，强调形式搞笑而非内容"
+  },
+  "narrative_summary": "源自国外'what the dog doing'空耳的'我的刀盾'梗，经猫Meme小剧场和AI二创演变为持刀盾的可爱角色，以无厘头洗脑台词在中文互联网病毒式传播。",
+  "social_context_hint": "梗的流行反映了中文互联网对无厘头、反差萌和AI生成内容的偏好，传播环境宽松，无政治敏感因素，主要依赖短视频平台和Meme文化圈层扩散。",
+  "_source": "corrected_video_transcript",
+  "_regenerated_at": "2026-07-03T23:43:05.964102"
+}
