@@ -1,0 +1,83 @@
+{
+  "source": "counterfactual_test.py",
+  "results": [
+    {
+      "leave_out_groups": [
+        "AI"
+      ],
+      "n_keywords_modified": 0,
+      "pre_reset_mean_drift": 0.0,
+      "post_reset_mean_drift": 0.0,
+      "drift_ratio": 1.93,
+      "r2_centroid_shift": 0.0,
+      "mean_pairwise_distance": 0.0,
+      "significant": false,
+      "verdict": "AI/Tech 有 WEAK CAUSAL 效应. 抹平后 z(t) 有移动但不够显著. 可能 AI 是部分 driver, 但不是唯一."
+    },
+    {
+      "leave_out_groups": [
+        "经济"
+      ],
+      "n_keywords_modified": 0,
+      "pre_reset_mean_drift": 0.0,
+      "post_reset_mean_drift": 0.0,
+      "drift_ratio": 1.42,
+      "r2_centroid_shift": 0.0,
+      "mean_pairwise_distance": 0.0,
+      "significant": false,
+      "verdict": "AI/Tech 是 TIME PROXY. 抹平后 z(t) 几乎不变 (漂移比 = 1.4x, R2 移动 = 0.0000). 真正的 control driver 是其他慢变量 (经济/政策/人口)."
+    },
+    {
+      "leave_out_groups": [
+        "政策"
+      ],
+      "n_keywords_modified": 0,
+      "pre_reset_mean_drift": 0.0,
+      "post_reset_mean_drift": 0.0,
+      "drift_ratio": 5.77,
+      "r2_centroid_shift": 0.0,
+      "mean_pairwise_distance": 0.0,
+      "significant": true,
+      "verdict": "AI/Tech 是 CAUSAL DRIVER. 抹平后 z(t) 显著移动 (R2 质心移动 0.0000 > 10% 平均距离 0.0000). 重置后漂移比 = 5.8x."
+    },
+    {
+      "leave_out_groups": [
+        "平台"
+      ],
+      "n_keywords_modified": 0,
+      "pre_reset_mean_drift": 0.0,
+      "post_reset_mean_drift": 0.0,
+      "drift_ratio": 16.52,
+      "r2_centroid_shift": 0.0,
+      "mean_pairwise_distance": 0.0,
+      "significant": false,
+      "verdict": "AI/Tech 有 WEAK CAUSAL 效应. 抹平后 z(t) 有移动但不够显著. 可能 AI 是部分 driver, 但不是唯一."
+    },
+    {
+      "leave_out_groups": [
+        "文化"
+      ],
+      "n_keywords_modified": 0,
+      "pre_reset_mean_drift": 0.0,
+      "post_reset_mean_drift": 0.0,
+      "drift_ratio": 11.57,
+      "r2_centroid_shift": 0.0,
+      "mean_pairwise_distance": 0.0,
+      "significant": false,
+      "verdict": "AI/Tech 有 WEAK CAUSAL 效应. 抹平后 z(t) 有移动但不够显著. 可能 AI 是部分 driver, 但不是唯一."
+    },
+    {
+      "leave_out_groups": [
+        "国际"
+      ],
+      "n_keywords_modified": 0,
+      "pre_reset_mean_drift": 0.0,
+      "post_reset_mean_drift": 0.0,
+      "drift_ratio": 1.31,
+      "r2_centroid_shift": 0.0,
+      "mean_pairwise_distance": 0.0,
+      "significant": true,
+      "verdict": "AI/Tech 是 TIME PROXY. 抹平后 z(t) 几乎不变 (漂移比 = 1.3x, R2 移动 = 0.0000). 真正的 control driver 是其他慢变量 (经济/政策/人口)."
+    }
+  ]
+}

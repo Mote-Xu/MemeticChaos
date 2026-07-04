@@ -35,9 +35,15 @@ NARRATIVE_DIRS = [
 # ── Epistemic guard thresholds ──
 # 校准: paraphrase-multilingual-MiniLM-L12-v2 对中文跨域文本
 # 余弦相似度范围: 自检(同域) mean=0.95, 跨域用户文本 0.42-0.57, 纯噪声 ~0.25
-FREE_NOISE_THRESHOLD = 0.30    # max cosine sim below this → 真噪声, 无耦合
+FREE_NOISE_THRESHOLD = 0.30    # max cosine sim below this → 真噪声, 无耦合 (Type C)
 AMBIGUITY_MARGIN = 0.03        # top2 gap below this → 跨节点边界, 拒绝选边
-LOW_SIGNAL_THRESHOLD = 0.40    # below this → WEAK_SIGNAL 而非 SUPPORTED
+PARTIAL_THRESHOLD = 0.40       # max_sim in [0.30, 0.40] → weak signal, could be Type B
+KNOWN_THRESHOLD = 0.45         # max_sim > 0.45 + gap > 0.03 → Type A (校准于6个实测case)
+
+# ── OOD detection thresholds ──
+# 触发条件: Observation 层连续 N 月超出历史 3σ, 或数据源覆盖骤降
+OOD_CONSECUTIVE_MONTHS = 3
+OOD_SIGMA = 3.0
 
 
 class PersonaEncoder:
@@ -209,6 +215,131 @@ class PersonaEncoder:
                 "非心理学推断. 不表征个体心理状态或人格特质. "
                 "仅描述用户文本在当前互联网叙事图中的投影位置."
             ),
+        }
+
+    # ═══════════════════════════════════════════════
+    # Five-state cognitive model (FORMALISM §11.6)
+    # ═══════════════════════════════════════════════
+
+    def assess(self, user_text: str, macro_state: dict = None,
+               ood_check: bool = True) -> dict:
+        """五态认知模型: KNOWN / PARTIAL / UNKNOWN / AMBIGUOUS / OOD.
+
+        调用 project(), 然后根据相似度 + 宏观状态 + OOD 检测,
+        将结果映射到五种认知状态之一.
+
+        Args:
+            user_text: 用户文本
+            macro_state: 宏观指标 dict (可选, 用于 OOD 检测)
+            ood_check: 是否执行 OOD 检测
+
+        Returns:
+            {cognitive_state, projection, macro_overlay, interpretation}
+        """
+        proj = self.project(user_text)
+
+        # ── Map projection status to cognitive state ──
+        if proj["status"] == "MELTDOWN":
+            if proj.get("reason") == "FREE_NOISE":
+                cognitive = "UNKNOWN"
+                interp = (
+                    "Type C — 你的情境在集体叙事数据中无对应结构. "
+                    "FR31 对此不做推导. 请基于你自己的判断."
+                )
+            elif proj.get("reason") == "AMBIGUOUS_COMPETITION":
+                cognitive = "AMBIGUOUS"
+                interp = (
+                    "你的情境同时触碰多个叙事节点, 无法区分. "
+                    "这不是测量精度不足 — 是情境本身具有真实的多义性. "
+                    "FR31 拒绝强行选边."
+                )
+            else:
+                cognitive = "UNKNOWN"
+                interp = "无法确定."
+        else:
+            max_sim = proj["distribution"]["top_nodes"][0]["cosine_similarity"]
+            gap = (proj["distribution"]["top_nodes"][0]["cosine_similarity"] -
+                   proj["distribution"]["top_nodes"][1]["cosine_similarity"]
+                   if len(proj["distribution"]["top_nodes"]) > 1 else 0)
+
+            if max_sim > KNOWN_THRESHOLD and gap > AMBIGUITY_MARGIN:
+                cognitive = "KNOWN"
+                interp = (
+                    f"Type A — 你的情境在叙事图上有清晰的投影 "
+                    f"({proj['distribution']['top_nodes'][0]['node']}, "
+                    f"sim={max_sim:.3f}). 宏观叙事系统对此有充分信息."
+                )
+            elif max_sim > FREE_NOISE_THRESHOLD:
+                cognitive = "PARTIAL"
+                interp = (
+                    f"Type B — 你的情境有宏观信号 (top={proj['distribution']['top_nodes'][0]['node']}, "
+                    f"sim={max_sim:.3f}), 但个体层面的关键变量不在集体数据覆盖域内. "
+                    f"FR31 可以描述宏观地形, 但不能替你回答'该不该'."
+                )
+            else:
+                cognitive = "UNKNOWN"
+                interp = "信号过弱, 无法归类."
+
+        # ── OOD check ──
+        if ood_check and macro_state:
+            ood = self._check_ood(macro_state)
+            if ood["is_ood"]:
+                cognitive = "OOD"
+                interp = (
+                    f"⚠ 模型失效域 — {ood['reason']}. "
+                    f"当前媒介环境可能已发生结构性变化, "
+                    f"历史统计关系的适用前提可能不成立."
+                )
+
+        result = {
+            "cognitive_state": cognitive,
+            "interpretation": interp,
+            "projection": proj,
+        }
+
+        # ── Add macro overlay if available ──
+        if macro_state:
+            result["macro_overlay"] = {
+                "inertia": macro_state.get("inertia"),
+                "resilience": macro_state.get("resilience"),
+                "sensitivity": macro_state.get("sensitivity"),
+                "regime": macro_state.get("regime"),
+            }
+
+        return result
+
+    def _check_ood(self, macro_state: dict) -> dict:
+        """检测是否进入模型失效域 (OOD).
+
+        检查宏观指标是否连续超出历史范围,
+        以及数据源覆盖是否骤降.
+        """
+        # Simplified OOD check: if multiple indicators are at extremes
+        alerts = []
+        ood_score = 0
+
+        inertia = macro_state.get("inertia", 0.5)
+        resilience = macro_state.get("resilience", 0.5)
+        sensitivity = macro_state.get("sensitivity", 0.5)
+
+        # Extreme values
+        if inertia > 0.85:
+            alerts.append(f"Inertia={inertia:.2f} 极端高")
+            ood_score += 1
+        if resilience < 0.15:
+            alerts.append(f"Resilience={resilience:.2f} 极端低")
+            ood_score += 1
+        if sensitivity > 0.70:
+            alerts.append(f"Sensitivity={sensitivity:.2f} 极端高")
+            ood_score += 1
+
+        is_ood = ood_score >= 2
+
+        return {
+            "is_ood": is_ood,
+            "ood_score": ood_score,
+            "alerts": alerts,
+            "reason": "; ".join(alerts) if alerts else "无异常",
         }
 
     def benchmark(self) -> dict:
