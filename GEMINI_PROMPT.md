@@ -1,6 +1,6 @@
 # MemeticChaos 项目现状（给外部 AI 的求助）
 
-> 最后更新：2026-07-05 (counterfactual: 平台>AI + 五态模型 + Stella 管道验证)
+> 最后更新：2026-07-05 (第五轮外部 AI 审查完成 — 共识: MS-AR 优先, 平台=operator mixture)
 
 ## 一句话
 
@@ -245,38 +245,56 @@ Skill 放到了正确位置 (`workspace/skills/fr31-advisor/`, 项目专属).
 重启 gateway 后验证通过: 用户问 "现在互联网叙事什么状态" →
 Stella 读 STATE.md → 白话回复.
 
-## 核心困惑（更新后）
+### 第五轮外部 AI 审查共识 (2026-07-05)
 
-### Q1: AI/Tech → 已解决 ✅ 平台是 primary driver
+**双方一致**:
+1. MS-AR 是 Dynamics 层最高优先级 (已有 regime, N=127 刚好够)
+2. Counterfactual 结论有效, 但平台需拆为三类算子 (快扩散/慢沉淀/模因复制)
+3. Graph λ₂ 需等边稳定后再做, 当前人工边不可靠
+4. 五态模型的 confidence 映射方式合理, 避免硬阈值
 
-Counterfactual: 平台组漂移比 16.5x, AI 仅 1.9x.
-修正: 平台生态 (B站/知乎/小红书/抖音/微博/快手) 是 primary control driver.
-AI 是平台变化的副产品, 非独立 driver.
-**新问题**: 平台组的 6 个关键词中, 哪个子集贡献了 16.5x?
-不同平台 (短视频 vs 图文 vs 问答) 的效应方向是否相反?
+**GPT 新增建议**:
+- 新增第六态: LATENT STRUCTURAL DOMAIN (弱集体信号但个体结构强, 聚合会破坏信号)
+- R2 应视为 hysteresis basin (滞回势垒), 非普通 cluster
+- 平台 = mixture of dynamical operators, 不是 covariate
+- 逃逸需三条件同时满足: z(t)方向反转 + 平台权重重排 + 语义记忆失活
 
-### Q2: R2 逃逸条件?
+**Gemini 新增建议**:
+- platform 内部拆解: 短视频(势阱加深剂) vs 图文问答(流形边界定义者)
+- 二阶 counterfactual: 分别抹平 [抖音,快手] 和 [知乎,小红书], 看谁维持锁定 vs 谁定义边界
+- 伪 KNOWN 态风险: 宏观高饱和度叙事可能是虚假意识, 需加生存周期校验
 
-当前锁死 37 月 (2× 中位驻留)。Time-Reversal 说动力学对称—
-逃逸需要 z(t) 方向反转, 而非系统内部变异。反转的量级阈值待定。
+## 核心困惑 (更新后)
 
-### Q3: Dynamics 层的建模优先级?
+### Q1: 平台内部结构 → 二阶 counterfactual 待做
 
-MS-AR vs GARCH vs Fokker-Planck.
-127 月小样本下, MS-AR 可能是唯一可行的第一步。
+16.5x 不可能均匀分摊。需拆为三类算子:
+- 短视频(抖音/快手): 快扩散, 势阱加深剂 → 维持 R2 锁定
+- 图文问答(知乎/B站): 慢沉淀, 流形边界定义者 → 定义相区边界
+- 社区模因(小红书/微博): 结构记忆, 影响不可逆性
+二阶 counterfactual: 分别抹平 [抖音,快手] 和 [知乎,小红书], 看效应分离.
 
-### Q4: FR19→FR31 边界是否完整? (新)
+### Q2: R2 逃逸条件 → 升级为三条件
 
-已定义 FR31 不可触达域: 个人结构常数在集体数据中无信号
-(如"表白无益处"——无梗、无热搜、违背主流话语,
-但在个人现实中可能是反复验证的结构性事实)。
-这个边界是否完备? 有没有遗漏的情况?
-特别是"有微弱集体信号但信噪比极低"的个体规律应归入哪侧?
+GPT: R2 是 hysteresis basin (滞回势垒), 非普通 cluster.
+逃逸需同时满足: z(t)方向反转 + 平台权重重排 + 语义记忆失活.
+单靠 u(t) 逆转不够.
 
-### Q5: Graph λ₂ 什么时候做?
+### Q3: Dynamics → MS-AR 优先 (双方共识)
 
-GPT 反对在人工边上做谱分析 (会测到建图规则而非动力学)。
-等 scraper 积累多少真实动态边才够? 判断标准是什么?
+MS-AR → GARCH(残差) → Fokker-Planck(远期).
+有了 regime + transition matrix, 直接升级为 Markov operator with z(t) modulation.
+
+### Q4: 边界 → 新增 LATENT STRUCTURAL DOMAIN? (待定)
+
+GPT 建议第六态: 集体信号极弱但个体结构强且稳定,
+聚合会破坏信号 (如"表白无效性"). 不是 UNKNOWN — 是 aggregation-anti-invariant.
+是否需要加入五态模型?
+
+### Q5: Graph λ₂ → 先冻结 edge rule v1.0
+
+等边定义稳定 ≥3 regime cycles + platform dominance corrected 后再做.
+当前人工边不可靠.
 
 ## 技术栈
 
