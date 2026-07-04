@@ -76,6 +76,7 @@ src/
 │   └── templates/index.html           # ECharts 前端 (回放/拖拽/倍速/移动端)
 ├── advisor/
 │   ├── persona.py                     # 个体画像模型 (FR31 Layer 2)
+│   ├── metrics.py                     # ★ FR31 三指标: Inertia/Resilience/Position
 │   └── (engine.py — 待建)
 └── meme_inspector.py
 tests/
@@ -233,14 +234,15 @@ FR31 应该达到：虹姐的战术精度 + 用户的认知深度。
 - 三数据源: 微博+百度+知乎
 - Level 1 硬事实提取 — Stage/Mutation/Institutionalized/SemanticDrift 月度序列 (2026-07-04)
 - Level 2 表示学习 — PCA d90=10, H1b REJECTED (随机游走), H1a SUPPORTED (低维) (2026-07-04)
+- FR31 三指标接口 — Inertia/Resilience/Position 可查询 (2026-07-04)
 
 ## 当前待办
 
 | 优先级 | 任务 |
 |:--:|------|
-| P0 | FR31: 情感约束场顾问 — 从 FR19 集体规律→个体层推理 |
-| P1 | Level 2+: 非线性模型评估 (UMAP, Autoencoder), 若线性够用则跳过 |
-| P1 | FR31 接口: Inertia / Resilience / Position 三指标 |
+| P0 | FR31: 情感约束场顾问 — persona.py + engine.py, 对接 Stella |
+| P1 | OpenClaw skill: 三指标 → 企微自动回复 |
+| P1 | Level 2+: 非线性模型评估 (UMAP), 若线性够用则跳过 |
 | P2 | Schema 3.0: 图动力学前置支持 (边定义 + 邻接矩阵) |
 | P2 | Level 3: 后验解释 — 特征载荷 → 叙事语义 |
 | P3 | Dashboard 增强 — 信号报警, 约束场突变预警 |
