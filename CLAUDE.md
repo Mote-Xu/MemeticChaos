@@ -213,7 +213,7 @@ FR31 应该达到：虹姐的战术精度 + 用户的认知深度。
   - 每天 4:47: 实时管线更新 (`live_pipeline.py` + `signal_pipeline.py`)
   - 每周日 4:50: LLM 月度叙事摘要 (`monthly_narrative.py`)
   - 每周日 5:00: 12月预测报告 + Dashboard 状态刷新 (`order_form_predictor.py`)
-- **Dashboard**: https://chaos.mote-pal.xyz/?token=DASHBOARD_TOKEN_REMOVED (Flask :8931 + cloudflared tunnel)
+- **Dashboard**: https://chaos.mote-pal.xyz/?token=<TOKEN> (Flask :8931 + cloudflared tunnel)
 - **systemd**: `memeticchaos-dashboard.service` (enabled, auto-restart)
 - **数据同步到本地**: `bash sync_from_server.sh`
 - **数据同步到服务器**: `bash sync_to_server.sh`

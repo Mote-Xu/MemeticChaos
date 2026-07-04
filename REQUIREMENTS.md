@@ -112,7 +112,7 @@ systemd:
 
 - **服务器**: `ssh mote@100.118.10.0`, 项目 `/mnt/data/MemeticChaos/` → symlink `~/MemeticChaos/`
 - **Python**: `~/miniconda3/envs/MemeticChaos/bin/python` (PYTHONNOUSERSITE=1)
-- **Dashboard**: https://chaos.mote-pal.xyz/?token=DASHBOARD_TOKEN_REMOVED
+- **Dashboard**: https://chaos.mote-pal.xyz/?token=<TOKEN>
 - **本地**: Google Trends 通过飞鸟代理拉取, conda 环境 `MemeticChaos` (`C:\anaconda3\envs\MemeticChaos`)
 
 ## 项目结构

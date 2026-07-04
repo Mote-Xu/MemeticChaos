@@ -14,7 +14,7 @@
 
 ## 项目当前状态
 
-- Dashboard 在服务器上跑着：chaos.mote-pal.xyz (token: DASHBOARD_TOKEN_REMOVED)
+- Dashboard 在服务器上跑着：chaos.mote-pal.xyz (token: <TOKEN>)
 - 数据管线正常：每小时采集 130 条热搜，每天自动更新
 - **FR19 v0.2 已退役** —— 混沌轴是人工编的、约束场是静态的、内部层从未激活
 - **v4.0 目标**：将 FR19 从一个预测器转变为一个关于 Narrative Dynamics 的可检验科学假说
