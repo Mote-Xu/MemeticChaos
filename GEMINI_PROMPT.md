@@ -1,6 +1,6 @@
 # MemeticChaos 项目现状（给外部 AI 的求助）
 
-> 最后更新：2026-07-04 (v4.1 全部交付 — Stella 企微管道已通)
+> 最后更新：2026-07-05 (v4.1 收敛 — 外部 AI 共识: 停建新模块, 做四层理论统一)
 
 ## 一句话
 
@@ -185,6 +185,21 @@ src/
 
 集成方式: DM agent 专属 TOOLS.md + STATE.md, 不污染群聊和其他项目.
 失败尝试: OpenClaw plugin skill (需要 MCP, 不支持), 全局 TOOLS.md (污染风险).
+
+### 外部 AI 第三轮反馈共识 (2026-07-05)
+
+**双方共识**: 不要再堆新模块。系统已经进入理论收敛阶段。下一步不是写代码,
+是定义 State/Observation/Control/Dynamics 四层形式化框架。
+
+**关键判断分歧与收束**:
+- R1/R3 合并: 双方 + RQA 都支持 → **确定合并为单一 Origin manifold**
+- AI/Tech 因果性: Gemini 确定因果, GPT 质疑可能是 time proxy → **需要 counterfactual test**
+- Graph λ₂: Gemini 推到立即做, GPT 反对 (边是人工的, λ₂ 测到的是建图规则不是互联网动力学) → **先不做, 等 scraper 累计真实动态边**
+- FR31 的 Measurement vs Policy 分层: GPT 强调必须分开, 否则从"测量"滑向"爹味建议" → **采纳, 写进 skill**
+
+**GPT 的核心建议 (被采纳为下一步)**:
+定义四层形式化框架——State / Observation / Control / Dynamics.
+这一步不做, 后面所有新模块都会让系统越来越散.
 
 ## 核心困惑（请你帮忙想的）
 
