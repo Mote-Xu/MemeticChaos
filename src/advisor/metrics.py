@@ -1,14 +1,16 @@
 """
-FR31 三指标接口 — Inertia / Resilience / Position
+FR31 四指标接口 — Inertia / Resilience / Position / Sensitivity
 
-从 FR19 的 10 维 Narrative State x(t) 计算三个控制论指标,
+从 FR19 的 10 维 Narrative State x(t) 计算四个控制论指标,
 供 FR31 顾问或 OpenClaw (Stella) 查询。
 
-- Inertia (惯性): 系统自持性 — "踩刹车也停不下来"的程度
+- Inertia (惯性):     系统自持性 — "踩刹车也停不下来"的程度
 - Resilience (恢复力): 冲击后回到吸引子的速度
-- Position (图位置): 当前状态在叙事演化图中的拓扑位置
+- Position (图位置):   当前状态在叙事演化图中的拓扑位置
+- Sensitivity (敏感性): 系统对微小扰动的放大系数 — "一点就炸"
 
 这是 FR19 → FR31 的桥梁。不预测值——描述结构。
+Sensitivity 是 GPT 建议新增的第四指标 (2026-07-04)。
 
 AlphaGo 原则: 指标定义完全由数据的统计属性决定,不导入人类叙事理论。
 
@@ -23,16 +25,18 @@ import json, sys, os, argparse
 from pathlib import Path
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
 from scipy import stats
 
 ROOT = Path(__file__).parent.parent.parent
 
 STATE_PATH = ROOT / "data/processed/representation_state.json"
 LEVEL1_PATH = ROOT / "data/processed/level1_hard_facts.json"
+EXTERNAL_PATH = ROOT / "data/collector/external_field_2015_2025.json"
 
 
 class NarrativeMetrics:
-    """FR31 三指标计算引擎."""
+    """FR31 四指标计算引擎."""
 
     def __init__(self):
         with open(STATE_PATH, "r", encoding="utf-8") as f:
@@ -52,15 +56,53 @@ class NarrativeMetrics:
 
         self.n = len(self.months)
 
+        # Load external field for sensitivity computation
+        self.u = self._load_external_field()
+
         # Precompute derived quantities
         self._precompute()
 
+    def _load_external_field(self) -> np.ndarray:
+        """加载外部场并做 PCA 降维, 对齐到 L1 月份."""
+        with open(EXTERNAL_PATH, "r", encoding="utf-8") as f:
+            ef = json.load(f)
+
+        data = ef["data"]
+        keywords = sorted(data.keys())
+        ext_months_set = set()
+        for kw_series in data.values():
+            ext_months_set.update(kw_series.keys())
+        ext_months = sorted(m for m in ext_months_set if "2015" <= m[:4] <= "2025")
+
+        # Build raw matrix
+        raw = np.zeros((len(ext_months), len(keywords)))
+        for j, kw in enumerate(keywords):
+            for i, m in enumerate(ext_months):
+                raw[i, j] = data[kw].get(m, 0.0)
+
+        # PCA to 8 dims
+        pca = PCA(n_components=8)
+        u_ext = pca.fit_transform(raw)
+
+        # Align to self.months
+        month_to_idx = {m: i for i, m in enumerate(ext_months)}
+        u_aligned = np.zeros((self.n, 8))
+        for i, m in enumerate(self.months):
+            if m in month_to_idx:
+                u_aligned[i] = u_ext[month_to_idx[m]]
+            else:
+                u_aligned[i] = u_aligned[i - 1] if i > 0 else 0.0
+
+        return u_aligned  # n × 8
+
     def _precompute(self):
-        """预计算: 状态变化幅度, 滚动统计量."""
+        """预计算: 状态变化幅度, 滚动统计量, 敏感性输入."""
         # Month-to-month state change magnitude
         self.dx_magnitude = np.zeros(self.n)
+        self.du_magnitude = np.zeros(self.n)
         for i in range(1, self.n):
             self.dx_magnitude[i] = float(np.linalg.norm(self.x[i] - self.x[i - 1]))
+            self.du_magnitude[i] = float(np.linalg.norm(self.u[i] - self.u[i - 1]))
 
         # Shock threshold: 2σ of dx
         self.shock_threshold = float(2.0 * np.std(self.dx_magnitude[1:]))
@@ -73,9 +115,12 @@ class NarrativeMetrics:
 
         # Rolling autocorrelation (12-month window)
         self.rolling_lag1_corr = np.full(self.n, np.nan)
+        self.rolling_variance = np.full(self.n, np.nan)
+        self.rolling_perturbation_gain = np.full(self.n, np.nan)
+
         for i in range(13, self.n):
             window = self.x[i - 12:i]
-            # Correlation between consecutive pairs
+            # Autocorrelation
             if len(window) >= 3:
                 pairs = [(window[j], window[j + 1]) for j in range(len(window) - 1)]
                 a = np.array([p[0] for p in pairs]).ravel()
@@ -84,6 +129,34 @@ class NarrativeMetrics:
                     self.rolling_lag1_corr[i] = float(np.corrcoef(a, b)[0, 1])
                 else:
                     self.rolling_lag1_corr[i] = 0.0
+
+            # Variance: mean of per-dimension variance in window
+            self.rolling_variance[i] = float(np.mean(np.var(window, axis=0)))
+
+            # Perturbation gain: ∥Δx∥ / ∥Δu∥ in window
+            dx_window = self.dx_magnitude[i - 11:i + 1]
+            du_window = self.du_magnitude[i - 11:i + 1]
+            mean_dx = np.mean(dx_window)
+            mean_du = np.mean(du_window)
+            if mean_du > 1e-10:
+                self.rolling_perturbation_gain[i] = float(mean_dx / mean_du)
+            else:
+                self.rolling_perturbation_gain[i] = 0.0
+
+        # Baseline stats for critical slowing down
+        if self.n > 36:
+            baseline_var = np.mean([self.rolling_variance[i]
+                                     for i in range(13, min(37, self.n))
+                                     if not np.isnan(self.rolling_variance[i])])
+            baseline_gain = np.mean([self.rolling_perturbation_gain[i]
+                                      for i in range(13, min(37, self.n))
+                                      if not np.isnan(self.rolling_perturbation_gain[i])])
+        else:
+            baseline_var = 0.1
+            baseline_gain = 1.0
+
+        self.baseline_variance = max(baseline_var, 1e-10)
+        self.baseline_gain = max(baseline_gain, 1e-10)
 
         # Equilibrium reference: mean state over last 24 months
         self.equilibrium = np.mean(self.x[max(0, self.n - 24):], axis=0)
@@ -346,17 +419,102 @@ class NarrativeMetrics:
         }
 
     # ═══════════════════════════════════════════════
+    # Sensitivity (敏感性)
+    # ═══════════════════════════════════════════════
+
+    def sensitivity(self, month: str | None = None) -> dict:
+        """计算系统对外部扰动的敏感性.
+
+        高 sensitivity = 系统处于临界态, 微小输入可能触发巨大响应.
+        "一点就炸" — 这是 FR31 顾问最重要的预警指标之一.
+
+        三个分量:
+        - critical_slowing: 方差 × 自相关 — 接近相变点的经典预警信号
+        - perturbation_gain: ∥Δx∥ / ∥Δu∥ — 外部场单位变化引起的状态响应
+        - directional: 当前哪几个维度最不稳定 (最容易"跳")
+        """
+        idx = self._get_index(month)
+        window = 12
+
+        # ── 1. Critical slowing down ──
+        cur_var = self.rolling_variance[idx]
+        cur_ac = self.rolling_lag1_corr[idx]
+
+        if np.isnan(cur_var):
+            cur_var = float(np.mean(np.var(self.x[max(0, idx - window):idx + 1], axis=0)))
+        if np.isnan(cur_ac) or cur_ac < 0:
+            cur_ac = 0.0
+
+        var_ratio = cur_var / self.baseline_variance
+        csi = float(np.clip(var_ratio * max(0.0, cur_ac), 0, 3))  # critical slowing index
+
+        # ── 2. Perturbation amplification ──
+        cur_gain = self.rolling_perturbation_gain[idx]
+        if np.isnan(cur_gain):
+            cur_gain = 0.0
+        gain_ratio = cur_gain / self.baseline_gain
+        amp = float(np.clip(gain_ratio, 0, 3))
+
+        # ── 3. Directional sensitivity ──
+        recent_x = self.x[max(0, idx - window):idx + 1]
+        per_dim_var = np.var(recent_x, axis=0)
+        baseline_dim_var = np.var(self.x[:min(36, self.n)], axis=0)
+        dim_ratios = per_dim_var / np.maximum(baseline_dim_var, 1e-10)
+
+        directional = []
+        pc_names = [f"PC{i+1}" for i in range(min(10, self.x.shape[1]))]
+        for j in np.argsort(-dim_ratios)[:3]:
+            directional.append({
+                "dimension": pc_names[j] if j < len(pc_names) else f"dim_{j}",
+                "variance_ratio": round(float(dim_ratios[j]), 2),
+                "alert": dim_ratios[j] > 2.0,  # >2x baseline variance
+            })
+
+        # ── Composite ──
+        composite = float(np.clip(
+            0.35 * min(csi / 1.5, 1.0) + 0.35 * min(amp / 2.0, 1.0)
+            + 0.30 * (sum(1 for d in directional if d["alert"]) / 3.0), 0, 1))
+
+        # ── Interpretation ──
+        if composite > 0.60:
+            label = "高敏感性 — 系统处于临界态边缘, 微小扰动可能触发大规模相变"
+            risk = "⚠ 当前不是轻举妄动的时机。FR31: 建议降低个体暴露面, 避免触发敏感话题"
+        elif composite > 0.35:
+            label = "中等敏感性 — 系统有一定弹性, 但仍可能被持续性压力推开"
+            risk = None
+        else:
+            label = "低敏感性 — 系统稳健, 外部扰动被有效吸收, 不易引发级联"
+            risk = None
+
+        return {
+            "metric": "sensitivity",
+            "month": self.months[idx],
+            "value": round(composite, 4),
+            "components": {
+                "critical_slowing_index": round(float(min(csi / 1.5, 1.0)), 4),
+                "variance_ratio": round(float(var_ratio), 2),
+                "autocorrelation": round(float(cur_ac), 4),
+                "perturbation_gain": round(float(min(amp / 2.0, 1.0)), 4),
+                "gain_ratio": round(float(gain_ratio), 2),
+            },
+            "directional_sensitivity": directional,
+            "interpretation": label,
+            "risk_warning": risk,
+        }
+
+    # ═══════════════════════════════════════════════
     # Dashboard summary
     # ═══════════════════════════════════════════════
 
     def summary(self, month: str | None = None) -> dict:
-        """三指标综合报告."""
+        """四指标综合报告."""
         idx = self._get_index(month)
         return {
             "month": self.months[idx],
             "inertia": self.inertia(month),
             "resilience": self.resilience(month),
             "position": self.position(month),
+            "sensitivity": self.sensitivity(month),
             "raw_state": {
                 "active_memes": int(self.active_count[idx]),
                 "total_traffic": round(float(self.total_traffic[idx]), 1),
@@ -371,7 +529,7 @@ class NarrativeMetrics:
     # ═══════════════════════════════════════════════
 
     def history(self) -> list[dict]:
-        """全历史三指标序列."""
+        """全历史四指标序列."""
         results = []
         for i in range(self.n):
             m = self.months[i]
@@ -379,6 +537,7 @@ class NarrativeMetrics:
                 "month": m,
                 "inertia": round(self._inertia_scalar(i), 4),
                 "resilience": round(self._resilience_scalar(i), 4),
+                "sensitivity": round(self._sensitivity_scalar(i), 4),
                 "active_count": int(self.active_count[i]),
                 "dominant_stage": self.stage_names[int(np.argmax(self.stage[i]))],
             })
@@ -396,6 +555,21 @@ class NarrativeMetrics:
         base = float(np.std([np.linalg.norm(self.x[i] - self.equilibrium)
                               for i in range(max(0, idx - 24), idx + 1)]))
         return float(np.clip(1.0 - eq_dist / max(base, 1e-10) / 3.0, 0, 1))
+
+    def _sensitivity_scalar(self, idx: int) -> float:
+        """Sensitivity 的快速标量版."""
+        var_ratio = (self.rolling_variance[idx] / self.baseline_variance
+                     if not np.isnan(self.rolling_variance[idx]) else 1.0)
+        ac = self.rolling_lag1_corr[idx]
+        if np.isnan(ac) or ac < 0:
+            ac = 0.0
+        csi = min(var_ratio * ac / 1.5, 1.0)
+
+        gain_ratio = (self.rolling_perturbation_gain[idx] / self.baseline_gain
+                      if not np.isnan(self.rolling_perturbation_gain[idx]) else 1.0)
+        amp = min(gain_ratio / 2.0, 1.0)
+
+        return float(np.clip(0.5 * csi + 0.5 * amp, 0, 1))
 
     # ── Helpers ──
 
@@ -427,11 +601,11 @@ def main():
         if args.json:
             print(json.dumps(hist, ensure_ascii=False, indent=2))
         else:
-            print(f"{'Month':<10s} {'Inertia':>8s} {'Resilience':>10s} {'Active':>6s} {'Dominant':>12s}")
-            print("-" * 52)
+            print(f"{'Month':<10s} {'Inertia':>8s} {'Resil':>6s} {'Sens':>6s} {'Active':>6s} {'Dominant':>12s}")
+            print("-" * 54)
             for h in hist[-24:]:  # last 24 months
-                print(f"{h['month']:<10s} {h['inertia']:>8.3f} {h['resilience']:>10.3f} "
-                      f"{h['active_count']:>6d} {h['dominant_stage']:>12s}")
+                print(f"{h['month']:<10s} {h['inertia']:>8.3f} {h['resilience']:>6.3f} "
+                      f"{h['sensitivity']:>6.3f} {h['active_count']:>6d} {h['dominant_stage']:>12s}")
         return
 
     summary = metrics.summary(args.month)
@@ -441,7 +615,7 @@ def main():
         return
 
     print("═" * 56)
-    print(f"  FR31 三指标报告 — {summary['month']}")
+    print(f"  FR31 四指标报告 — {summary['month']}")
     print("═" * 56)
 
     # Inertia
@@ -471,6 +645,22 @@ def main():
     print(f"     {p['summary']}")
     print(f"     PC 投影: ({p['pc_projection']['pc1']:.3f}, {p['pc_projection']['pc2']:.3f})")
     print(f"     叙事温度: {p['narrative_temperature']:.3f}")
+
+    # Sensitivity
+    se = summary["sensitivity"]
+    print(f"\n  ⚡ Sensitivity (敏感性): {se['value']:.3f}")
+    print(f"     {se['interpretation']}")
+    if se["risk_warning"]:
+        print(f"     ⚠ {se['risk_warning']}")
+    print(f"     Critical Slowing: {se['components']['critical_slowing_index']:.3f}  "
+          f"Perturbation Gain: {se['components']['perturbation_gain']:.3f}")
+    print(f"     方差比={se['components']['variance_ratio']:.1f}x  "
+          f"自相关={se['components']['autocorrelation']:.3f}  "
+          f"增益比={se['components']['gain_ratio']:.1f}x")
+    if se["directional_sensitivity"]:
+        alerts = [d for d in se["directional_sensitivity"] if d["alert"]]
+        if alerts:
+            print(f"     ⚡ 敏感维度: {', '.join(d['dimension'] for d in alerts)}")
 
     # Raw
     raw = summary["raw_state"]
