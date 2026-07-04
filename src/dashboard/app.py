@@ -222,6 +222,66 @@ def api_state():
     return jsonify(state)
 
 
+# ═══════════════════════════════════════════════
+# FR31 v4.1 Unified API — for Stella (OpenClaw)
+# ═══════════════════════════════════════════════
+
+_fr31_engine = None
+
+
+def _get_engine():
+    global _fr31_engine
+    if _fr31_engine is None:
+        sys.path.insert(0, str(ROOT / "src"))
+        from advisor.engine import FR31Engine
+        _fr31_engine = FR31Engine()
+    return _fr31_engine
+
+
+@app.route("/api/fr31")
+def api_fr31():
+    """FR31 统一宏观状态 (Stella 主查询入口).
+
+    Returns: inertia, resilience, sensitivity, regime,
+             control manifold position, risk summary.
+    """
+    engine = _get_engine()
+    result = engine.query(mode="macro")
+    return jsonify(result)
+
+
+@app.route("/api/fr31/persona", methods=["POST"])
+def api_fr31_persona():
+    """FR31 个体投影 (Stella persona 查询).
+
+    POST body: {"text": "用户输入文本"}
+    Returns: P(meme|text) 分布 + epistemic status + macro overlay.
+    """
+    data = request.get_json(silent=True) or {}
+    text = data.get("text", "")
+
+    if not text:
+        return jsonify({"status": "error", "error": "missing 'text' field"}), 400
+
+    engine = _get_engine()
+    result = engine.query(mode="persona", text=text)
+    return jsonify(result)
+
+
+@app.route("/api/fr31/stella", methods=["POST"])
+def api_fr31_stella():
+    """FR31 Stella 自然语言摘要 (直接可发给企微).
+
+    POST body: {"text": "用户输入文本 (可选)"}
+    Returns: plain text NL summary.
+    """
+    data = request.get_json(silent=True) or {}
+    text = data.get("text", "")
+    engine = _get_engine()
+    summary = engine.stella_prompt(text if text else None)
+    return jsonify({"status": "ok", "summary": summary})
+
+
 @app.route("/api/forecast")
 def api_forecast():
     """最新预测."""
