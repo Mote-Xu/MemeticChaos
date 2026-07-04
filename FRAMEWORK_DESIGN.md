@@ -33,8 +33,8 @@ F 的具体形式由数据决定。第一阶段 VARX/Ridge 作基线，不成立
 
 ## 三层渐进式特征工程（AlphaGo 原则）
 
-- **Level 1**：仅提取硬事实（Stage / Mutation_Occurred / Institutionalized / Semantic_Drift_Distance）。不在代码里写任何理论定义。
-- **Level 2**：Representation Learning。算法（PCA/UMAP/Autoencoder/VAE/Graph Embedding）由数据决定。
+- **Level 1** ✅ (2026-07-04)：已提取硬事实 → `data/processed/level1_hard_facts.json`。127 月 × 4 特征序列 (Stage/Mutation/Inst/Drift)。脚本: `src/data/narrative_hard_facts.py`。
+- **Level 2** 🔜：Representation Learning。算法（PCA/UMAP/Autoencoder/VAE/Graph Embedding）由数据决定。
 - **Level 3**：后验解释。训练完成后分析特征载荷。
 
 ## Narrative 是动态图
