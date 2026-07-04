@@ -158,7 +158,7 @@ def generate_narrative_for_candidate(title: str, trends_info: Optional[dict]) ->
     # No trends data: generate from title only
     from openai import OpenAI
     client = OpenAI(
-        api_key="DEEPSEEK_API_KEY_REMOVED",
+        api_key=os.environ.get("DEEPSEEK_API_KEY", ""),
         base_url="https://api.deepseek.com",
     )
 

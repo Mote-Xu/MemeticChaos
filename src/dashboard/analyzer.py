@@ -9,7 +9,7 @@
 - LLM 深度解读: 用 DeepSeek 生成针对性分析
 """
 
-import json, sys
+import json, sys, os
 from pathlib import Path
 from collections import defaultdict
 import numpy as np
@@ -171,7 +171,7 @@ def _llm_deep_analysis(topic: str, data: dict) -> str:
     try:
         from openai import OpenAI
         client = OpenAI(
-            api_key="DEEPSEEK_API_KEY_REMOVED",
+            api_key=os.environ.get("DEEPSEEK_API_KEY", ""),
             base_url="https://api.deepseek.com",
         )
 

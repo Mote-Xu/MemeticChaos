@@ -18,7 +18,7 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 # API
 client = OpenAI(
-    api_key="DEEPSEEK_API_KEY_REMOVED",
+    api_key=os.environ.get("DEEPSEEK_API_KEY", ""),
     base_url="https://api.deepseek.com",
 )
 

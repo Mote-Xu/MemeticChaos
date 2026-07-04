@@ -22,7 +22,7 @@ from openai import OpenAI
 sys.stdout.reconfigure(encoding="utf-8")
 
 # API config
-DEEPSEEK_API_KEY = "DEEPSEEK_API_KEY_REMOVED"
+DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 DEEPSEEK_BASE_URL = "https://api.deepseek.com"
 client = OpenAI(api_key=DEEPSEEK_API_KEY, base_url=DEEPSEEK_BASE_URL)
 
