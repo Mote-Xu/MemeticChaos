@@ -1,0 +1,72 @@
+{
+  "source": "irreversibility_test.py",
+  "combined_verdict": "WEAK_IRREVERSIBILITY",
+  "recurrence_analysis": {
+    "method": "Recurrence Quantification Analysis",
+    "epsilon": 1.8377,
+    "epsilon_pct_of_mean_dist": 5.0,
+    "cross_regime_recurrence_raw": {
+      "R0→R1": 0,
+      "R0→R2": 0,
+      "R0→R3": 0,
+      "R1→R0": 0,
+      "R1→R2": 0,
+      "R1→R3": 10,
+      "R2→R0": 0,
+      "R2→R1": 0,
+      "R2→R3": 0,
+      "R3→R0": 0,
+      "R3→R1": 10,
+      "R3→R2": 0
+    },
+    "cross_regime_recurrence_norm": {
+      "R0→R1": 0.0,
+      "R0→R2": 0.0,
+      "R0→R3": 0.0,
+      "R1→R0": 0.0,
+      "R1→R2": 0.0,
+      "R1→R3": 0.4167,
+      "R2→R0": 0.0,
+      "R2→R1": 0.0,
+      "R2→R3": 0.0,
+      "R3→R0": 0.0,
+      "R3→R1": 0.0694,
+      "R3→R2": 0.0
+    },
+    "r2_to_r1_recurrence_count": 0,
+    "r2_to_r3_recurrence_count": 0,
+    "r2_ever_returns": false,
+    "min_distance_r2_to_past_regimes": 4.2978,
+    "inter_regime_min_distance": {
+      "R0↔R1": 5.6452,
+      "R0↔R2": 7.1888,
+      "R0↔R3": 4.5039,
+      "R1↔R2": 2.2384,
+      "R1↔R3": 1.1821,
+      "R2↔R3": 3.3752
+    },
+    "verdict": "不可逆 — R2 从不回归 R1/R3, R1/R3 也从不进入 R2 的 ε-邻域. Fixation lock 在状态空间中是真实的分离结构, 非聚类 artifact."
+  },
+  "time_reversal_test": {
+    "method": "Time-Reversal Symmetry Test (Directional)",
+    "drift_test": {
+      "drift_magnitude": 0.0778,
+      "n_significant_dims": 0,
+      "significant_dims": []
+    },
+    "permutation_test": {
+      "original_mean_step": 2.4621,
+      "permuted_mean_step": 5.3661,
+      "p_value": 1.0,
+      "n_permutations": 500
+    },
+    "cosine_alignment": {
+      "mean_cosine": -0.2856,
+      "p_value": 1.0,
+      "significant": false,
+      "n_step_pairs": 125
+    },
+    "half_drift_alignment": -0.1254,
+    "verdict": "对称 — 未检测到统计显著的时间反演不对称. 在步长/方向/置换三个测试上, 时间反演对称性均成立."
+  }
+}
