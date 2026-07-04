@@ -1,10 +1,10 @@
 # MemeticChaos 项目现状（给外部 AI 的求助）
 
-> 最后更新：2026-07-05 (四层形式化完成 + FR19→FR31 边界定义)
+> 最后更新：2026-07-05 (counterfactual: 平台>AI + 五态模型 + Stella 管道验证)
 
 ## 一句话
 
-中国互联网集体情感的混沌属性建模。当前阶段不再是"预测器"——是**刻画互联网集体意识相变结构的动力系统模型**。H1b 的否定结果（VARX R²=-0.32 < lag-1 R²=+0.44）是两年来最具科学含金量的发现：月度尺度上，点预测是逆物理学的。系统本质是**流形上的密度演化 + 相变边界**，而非轨迹外推。RQA确认R2为真实结构分离; Time-Reversal表明无内禀时间箭头; Control Manifold推翻"u(t)极端→R2"假说, 修正为"u(t)沿AI/Tech轴单调漂移→系统滑入R2盆地被困". persona.py已实现P(meme|text)概率投影, 双熔断.
+中国互联网集体情感的混沌属性建模。当前阶段不再是"预测器"——是**刻画互联网集体意识相变结构的动力系统模型**。H1b 的否定结果（VARX R²=-0.32 < lag-1 R²=+0.44）是两年来最具科学含金量的发现：月度尺度上，点预测是逆物理学的。系统本质是**流形上的密度演化 + 相变边界**，而非轨迹外推。RQA确认R2为真实结构分离; Time-Reversal表明无内禀时间箭头; Counterfactual检验发现平台(16.5x)>AI(1.9x), 修正"AI/Tech轴主导"为"平台生态是primary control driver". persona.py已升级五态模型(KNOWN/PARTIAL/UNKNOWN/AMBIGUOUS/OOD). Stella企微管道验证通过.
 
 ## 数据资产
 
@@ -208,12 +208,52 @@ FR31 的正确行为是说"不知道", 不是硬推导。
 
 完整的形式化文档见 `FORMALISM.md`。
 
+### Counterfactual Test (2026-07-05)
+
+Leave-one-group-out: 抹平每个关键词组在 2023 后的流量, 重跑 Diffusion Map.
+
+| Group | 漂移比 | 判定 |
+|------|:--:|------|
+| **平台** (B站/知乎/小红书/抖音/微博/快手) | **16.5x** | Primary driver |
+| 文化 (二次元) | 11.6x | 仅1关键词, 待扩展 |
+| 政策 (体制内) | 5.8x | 仅1关键词 |
+| AI (AI/ChatGPT) | 1.9x | Weak causal |
+| 经济 (房价/就业/消费等7词) | 1.4x | Time proxy |
+| 国际 (美国/日本/韩国/俄罗斯) | 1.3x | Time proxy |
+
+**关键修正**: 之前认为"AI/Tech轴主导控制流形"是错误的.
+真正的 primary control driver 是**平台生态系统** (六大平台的此消彼长).
+AI/ChatGPT 话语是平台变化的副产品, 非独立 driver.
+
+### Persona 五态模型 (2026-07-05)
+
+`persona.py` 新增 `assess()` 方法, 输出五种认知状态:
+- **KNOWN**: Type A, 集体数据充分覆盖 → 直接回答
+- **PARTIAL**: Type B, 宏观有信号但个体变量缺 → 提供地形, 标注边界
+- **UNKNOWN**: Type C, 集体数据无信号 → 说不知道
+- **AMBIGUOUS**: 多节点竞争, gap<0.03 → 拒绝选边
+- **OOD**: ≥2个指标极端 → 模型可能失效, 历史规律不可外推
+
+分界方式: 不用硬阈值 (0.45 vs 0.50 vs 0.xx), 用 project() 的 confidence 三级
+(HIGH/MEDIUM/LOW) 映射到五态. 避免假装有精确分界线. 阈值需外部验证数据校准.
+**请外部 AI 评审**: 这种映射方式是否合理? confidence 的判定条件
+(max_sim>0.55+gap>0.06→HIGH, max_sim>0.40+gap>0.03→MEDIUM) 是否需要调整?
+
+### Stella 集成修复
+
+Skill 放到了正确位置 (`workspace/skills/fr31-advisor/`, 项目专属).
+重启 gateway 后验证通过: 用户问 "现在互联网叙事什么状态" →
+Stella 读 STATE.md → 白话回复.
+
 ## 核心困惑（更新后）
 
-### Q1: AI/Tech 是因果 driver 还是 time proxy?
+### Q1: AI/Tech → 已解决 ✅ 平台是 primary driver
 
-z₁ 与时间高度共线。需要 counterfactual test 区分。
-这是 Control 层最关键的待验证问题。
+Counterfactual: 平台组漂移比 16.5x, AI 仅 1.9x.
+修正: 平台生态 (B站/知乎/小红书/抖音/微博/快手) 是 primary control driver.
+AI 是平台变化的副产品, 非独立 driver.
+**新问题**: 平台组的 6 个关键词中, 哪个子集贡献了 16.5x?
+不同平台 (短视频 vs 图文 vs 问答) 的效应方向是否相反?
 
 ### Q2: R2 逃逸条件?
 

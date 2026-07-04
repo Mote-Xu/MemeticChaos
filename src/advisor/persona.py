@@ -38,7 +38,8 @@ NARRATIVE_DIRS = [
 FREE_NOISE_THRESHOLD = 0.30    # max cosine sim below this → 真噪声, 无耦合 (Type C)
 AMBIGUITY_MARGIN = 0.03        # top2 gap below this → 跨节点边界, 拒绝选边
 PARTIAL_THRESHOLD = 0.40       # max_sim in [0.30, 0.40] → weak signal, could be Type B
-KNOWN_THRESHOLD = 0.45         # max_sim > 0.45 + gap > 0.03 → Type A (校准于6个实测case)
+# KNOWN/PARTIAL 不使用硬阈值分界 — 由 project() 的 confidence (HIGH/MEDIUM/LOW) 映射.
+# 避免假装有精确分界线. 阈值需要外部验证数据 (虹姐语料) 才能校准.
 
 # ── OOD detection thresholds ──
 # 触发条件: Observation 层连续 N 月超出历史 3σ, 或数据源覆盖骤降
@@ -257,26 +258,23 @@ class PersonaEncoder:
                 cognitive = "UNKNOWN"
                 interp = "无法确定."
         else:
-            max_sim = proj["distribution"]["top_nodes"][0]["cosine_similarity"]
-            gap = (proj["distribution"]["top_nodes"][0]["cosine_similarity"] -
-                   proj["distribution"]["top_nodes"][1]["cosine_similarity"]
-                   if len(proj["distribution"]["top_nodes"]) > 1 else 0)
+            conf = proj.get("confidence", "LOW")
+            top_node = proj["distribution"]["top_nodes"][0]["node"]
 
-            if max_sim > KNOWN_THRESHOLD and gap > AMBIGUITY_MARGIN:
+            if conf == "HIGH":
                 cognitive = "KNOWN"
                 interp = (
                     f"Type A — 你的情境在叙事图上有清晰的投影 "
-                    f"({proj['distribution']['top_nodes'][0]['node']}, "
-                    f"sim={max_sim:.3f}). 宏观叙事系统对此有充分信息."
+                    f"({top_node}). 宏观叙事系统对此有充分信息."
                 )
-            elif max_sim > FREE_NOISE_THRESHOLD:
+            elif conf == "MEDIUM":
                 cognitive = "PARTIAL"
                 interp = (
-                    f"Type B — 你的情境有宏观信号 (top={proj['distribution']['top_nodes'][0]['node']}, "
-                    f"sim={max_sim:.3f}), 但个体层面的关键变量不在集体数据覆盖域内. "
+                    f"Type B — 你的情境有宏观信号 ({top_node}), "
+                    f"但个体层面的关键变量不在集体数据覆盖域内. "
                     f"FR31 可以描述宏观地形, 但不能替你回答'该不该'."
                 )
-            else:
+            else:  # LOW
                 cognitive = "UNKNOWN"
                 interp = "信号过弱, 无法归类."
 
