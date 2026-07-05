@@ -1,8 +1,9 @@
 # 需求文档
 
 > 方向：Hassabis 猜想驱动的集体情感混沌属性建模。
-> 两层架构：外部环境场 + 内部叙事混沌层 → 秩序形态演化。
+> 四层形式化：State / Observation / Control / Dynamics。
 > 不是论文，是功能系统。AlphaGo 范式：不灌输人类套路。
+> 最后更新：2026-07-06
 
 ## 功能需求
 
@@ -16,61 +17,67 @@
 | FR6 | 相变检测 | 验证层 | ✅ |
 | FR7 | 情感弧线分类 | 训练数据 | ✅ |
 | FR8 | 个体校准器 (贝叶斯后验) | 验证层 | ✅ |
-| FR9 | 模因相图 (5相区+2盆地+状态机) | 验证层 | ✅ |
+| FR9 | 模因相图 | 验证层 | ✅ |
 | FR10 | 历史回测 + R₀扰动 + 盲聚类 | 验证层 | ✅ |
 | FR11 | B站拼音+SIRS-M拟合 | 已跑通 | ⚠️ |
 | FR12 | LLM叙事抽取 (22 B站视频) | 数据源 | ✅ |
-| FR13 | MemeTrajectory 构建 (29条, Schema 2.1) | 数据结构 | ✅ |
-| FR14 | 实时爬虫 — 微博+百度+知乎 | 实时采集 | ✅ |
+| FR13 | MemeTrajectory 构建 (Schema 2.1) | 数据结构 | ✅ |
+| FR14 | 实时爬虫 v2.0 — 微博+百度+知乎, 全量 embedding | 实时采集 | ✅ |
 | FR15 | 采集→更新→报告管线 (live_pipeline) | 自动化 | ✅ |
 | FR16 | Google Trends 十年数据 (51外场+43梗) | 数据源 | ✅ |
-| FR17 | 叙事扩充 (87条: 22视频+36曲线+29策展) | 数据源 | ✅ |
-| FR18 | 集体动力学分析 (127月混沌轴, 10次相变) | 分析 | ✅ |
-| FR19 | 三层预测模型 (外部场→叙事生态→秩序形态转移) | ★核心 | 🔄 v4.0: Level 1 ✅, Level 2 🔜 |
-| FR20 | LLM 概念打分 (48条 narrative × 35维) | 内部层 | ✅ |
-| FR21 | LLM 月度叙事摘要 (微博+Trends→NL) | 报告 | ✅ |
-| FR22 | 新梗自动发现 (signal_pipeline, 每天) | 自动化 | ✅ |
+| FR17 | 叙事档案 (57条: 22 B站+36 曲线) | 数据源 | ✅ |
+| FR18 | 集体动力学分析 (127月) | 分析 | ✅ |
+| FR19 | Narrative Dynamics — 相变结构刻画 + H1 验证 | ★核心 | ✅ v4.1 |
+| FR20 | LLM 概念打分 (57条 narrative × 35维) | 内部层 | ✅ |
+| FR21 | LLM 月度叙事摘要 | 报告 | ✅ |
+| FR22 | 新梗自动发现 (signal_pipeline) | 自动化 | ✅ |
 | FR23 | Dashboard — ECharts 前端 + Flask API | 展示 | ✅ |
-| FR24 | 精细建模查询 (/api/analyze?topic=) | 交互 | ✅ |
+| FR24 | 精细建模查询 (/api/analyze) | 交互 | ✅ |
 | FR25 | Dashboard 密码保护 (token + cookie) | 安全 | ✅ |
 | FR26 | Dashboard 历史回放 (播放/拖拽/倍速) | 交互 | ✅ |
 | FR27 | 知乎 API 修复 (cookie 认证) | 实时采集 | ✅ |
 | FR28 | 跨平台注意力流动框架 | 分析 | ✅ |
-| FR29 | 叙事无监督聚类 (机器发现3类, ARI=0.27) | 分析 | ✅ |
-| FR30 | 当前月份 scraper 状态注入 | 预测 | ✅ |
+| FR29 | 叙事无监督聚类 (ARI=0.27) | 分析 | ✅ |
+| FR30 | Regime Map — GMM 4 相区 + 转移矩阵 | Dynamics | ✅ |
+| FR31 | FR31 统一引擎 + 四指标 + 五态输出 | 顾问层 | ✅ |
+| FR32 | RQA 不可逆性检验 + Time-Reversal | Dynamics | ✅ |
+| FR33 | Control Manifold — u(t)→z(t) 控制轴 | Control | ✅ |
+| FR34 | MS-AR 第一刀 — z(t) 调控 regime 转移 | Dynamics | ✅ |
+| FR35 | Scraper v2.0 — 全量 headline embedding + 日语义聚合 | 实时采集 | ✅ |
 
-## 数据资产 (截至 2026-06-29)
+## 数据资产 (截至 2026-07-06)
 
 ```
-外部层:      51 关键词, 5217 月数据点 (2015-2025)
-内部层:      43 梗, 1048 月数据点
-叙事:        87 条 (22 B站 + 36 曲线生成 + 29 策展)
-LLM 概念分数: 57 条叙事 × 35 维
-集体混沌轴:  133 个月 (2015-01 → 2026-06, 含 scraper 当前月)
-实时采集:     微博50 + 百度50 + 知乎30 = 130条/小时
-信号历史:     8 条 (鸡你太美 4 + 情绪价值 4)
+外部场:       51 关键词 × 132 月 Google Trends (2015-2025)
+叙事档案:     57 条 (22 B站 + 36 曲线, 含 spread_phases/mutations/semantic_drift)
 Level 1 硬事实: 127 月 × 4 特征 (Stage/Mutation/Inst/Drift)
-约束场:       5 维 (v4.0 已退役)
-秩序形态:     8 种 (v4.0 已退役)
+Level 2 表示:   127 月 × 10 维 Narrative State x(t) (PCA d90=10)
+Regime Map:     4 观测簇 → 3 物理相区 + 转移矩阵
+Control:        3 维控制轴 z(t) (Diffusion Map)
+Persona:        57节点叙事图 → P(meme|text) 概率分布, 五态输出
+实时采集 v2.0:  微博50 + 百度50 + 知乎30 → 130条/小时 → 全量 384 维 embedding
+日级聚合:       梗语义相似度 + 注意力集中度 + 语义新颖度
 ```
 
 ## 核心发现
 
-1. **混沌轴 = 随机游走**：月间预测 MAE 比 lag-1 差 ~22%。确认"与混沌共存"不是妥协，是实证。
-2. **秩序形态有结构**：注意力结构 R²=0.79。可预测的不是每月混沌值，是系统的形态配置。
-3. **机器见 3 类叙事，非人类 5 类**：ARI=0.27。数据自己说了不同的话。
-4. **约束场方差 22x 提升**：LLM 概念打分替代软匹配后, Humor std 0.01→0.22, Conflict 0.01→0.20。
-5. **内部叙事层贡献仍是 0**：约束场方差有了，架构有了，还没转化成预测能力。
-6. **H1b REJECTED (2026-07-04)**：PCA 降维到 10 维后，VARX test R²=-0.32 < lag-1 R²=+0.44。Narrative State 是近似随机游走。短期预测不可行，转预测转移概率/相变。
+1. **H1a ✅, H1b ❌**：叙事状态存在低维表示 (d90=10), 但月度点预测在物理上不可行 (VARX R²=-0.32)。确认"与混沌共存"不是妥协，是实证。
+2. **R2 Fixation 是真实结构分离**：RQA 零跨相区复发, Time-Reversal 对称。当前锁死 37 月 (中位 ×2)。
+3. **注意力结构可预测 (R²=0.79)**：可预测的不是每月状态值，是系统的结构配置。
+4. **机器见 3 类叙事，非人类 5 类**：ARI=0.27。数据自己说了不同的话。
+5. **内部叙事层贡献仍是 0**：叙事被偷换成约束向量，从未真正参与预测。
+6. **z(t) 在 regime 内部形变状态**：R2 内 PC4/PC5 与 z1 强相关 (r=±0.85), 方差放大 2.31×。切换不聚集在特定 z1 (仅 14 次切换, 统计效力不足)。
+7. **Scraper v2.0 已建但未接入**：日级语义管道产出了 embedding 聚合, 但下游分析层未接。2026 年数据悬空。
+8. **信号源是叙事化反应，非现实结构**：采集的数据测量的是人群对现实结构的叙事化反应。叙事化倾向本身是要测量的对象，不能预设。
 
-## FR19 全面审计 (2026-07-04)
+## FR19 全面审计 (2026-07-04, 仍适用)
 
 **结构性问题**：
 
 | # | 当前状态 | 本应是什么 |
 |---|---------|----------|
 | 1 | 约束场是静态标签 | 应随时间变化（同一梗爆发期 vs 消退期不同） |
-| 2 | 内部层用的是 5D 约束向量，不是叙事 | 应用叙事结构（传播阶段/变异/漂移） |
+| 2 | 内部层用的是约束向量，不是叙事 | 应用叙事结构（传播阶段/变异/漂移） |
 | 3 | 五类别互斥，不能多标签 | 一个梗可同时属于多个类别 |
 
 **数据质量问题**：
@@ -78,32 +85,28 @@ Level 1 硬事实: 127 月 × 4 特征 (Stage/Mutation/Inst/Drift)
 | # | 问题 |
 |---|------|
 | 4 | 概念打分平均 16/35 为零，24% 梗超过 20 个零 |
-| 5 | Dashboard 当前月混沌轴基于 2 个梗 8 条信号，样本太小 |
+| 5 | Dashboard 当前月基于 2 个梗 8 条 signal — v2.0 scraper 已修复此问题 |
 
-**实证结论（非 bug）**：
-- 混沌轴 = 随机游走（预测比 lag-1 差 ~22%）→ v4.0 废除混沌轴
-- 注意力结构可预测（R²=0.79）
-- 叙事聚类 ARI=0.27（机器见 3 类，非人工 5 类）
-
-**v4.0 重构方向（外部 AI 共识）**：
-1. 杀混沌轴，数据驱动 State Space → Attractor
-2. 三层架构：叙事是 Mediator，不是残差修正器
-3. 叙事层 = Stage Occupancy（Origin/Peak/Mutation/Decay 月度占比）
-4. 预测转移概率，不预测值
+**v4.1 重构方向 (已完成)**：
+1. 杀混沌轴 → 用数据驱动的 State Space
+2. 预测转移概率/相变，不预测值
+3. 四层形式化：State / Observation / Control / Dynamics
 
 ## 服务器 (mote-home)
 
 ```
 mote-home cron:
-  每小时 :17    scraper.py          → 微博50 + 百度50 + 知乎30
-  每天 4:47     live_pipeline.py    → 更新轨迹 + 新梗发现
-  周日 4:50     monthly_narrative   → LLM 月度叙事摘要
-  周日 5:00     order_form_predictor → 12月预测 + Dashboard 刷新
+  每小时 :17    scraper.py v2.0       → 微博50 + 百度50 + 知乎30 + 全量 embedding
+  每小时 :20    refresh_stella_state  → Stella 状态刷新
+  每天 23:57    scraper --aggregate   → 日级语义聚合
+  每天 2:37     bilibili_timeseries   → B站时间序列
+  每天 4:47     live_pipeline + signal_pipeline → 轨迹更新 + 新梗发现
+  周日 4:50     monthly_narrative     → LLM 月度叙事摘要
+  周日 5:00     order_form_predictor  → 12月预测 + Dashboard 刷新
 
 systemd:
   memeticchaos-dashboard  → Flask :8931 (always on)
   cloudflared             → chaos.mote-pal.xyz (token auth)
-  scraper (cron)          → Weibo + Baidu + Zhihu
 
 数据同步:
   sync_to_server.sh    → 本地 → 服务器 (Google Trends + 叙事)
@@ -113,37 +116,46 @@ systemd:
 - **服务器**: `ssh mote@100.118.10.0`, 项目 `/mnt/data/MemeticChaos/` → symlink `~/MemeticChaos/`
 - **Python**: `~/miniconda3/envs/MemeticChaos/bin/python` (PYTHONNOUSERSITE=1)
 - **Dashboard**: https://chaos.mote-pal.xyz/?token=<TOKEN>
-- **本地**: Google Trends 通过飞鸟代理拉取, conda 环境 `MemeticChaos` (`C:\anaconda3\envs\MemeticChaos`)
+- **本地**: Google Trends 通过飞鸟代理拉取, conda 环境 `MemeticChaos`
 
 ## 项目结构
 
 ```
 src/
 ├── data/
-│   ├── scraper.py                     # 实时采集 (微博+百度+知乎, 每小时)
-│   ├── live_pipeline.py               # 采集→更新→报告 (每天)
-│   ├── signal_pipeline.py             # 新梗发现→LLM叙事→概念打分 (每天)
-│   ├── monthly_narrative.py           # LLM 月度叙事摘要 (每周)
-│   ├── narrative_extractor.py         # B站视频叙事抽取 (22/22)
-│   ├── narrative_from_trends.py       # Google Trends 曲线→叙事
-│   └── trends_loader.py / trends_weekly.py / rebuild_from_trends.py / curator.py
+│   ├── scraper.py                     # v2.0: 全量 headline embedding
+│   ├── live_pipeline.py               # 采集→更新→报告
+│   ├── signal_pipeline.py             # 新梗发现→LLM叙事→概念打分
+│   ├── monthly_narrative.py           # LLM 月度叙事摘要
+│   ├── narrative_extractor.py         # B站视频叙事抽取
+│   ├── narrative_from_trends.py       # Trends 曲线→叙事
+│   ├── narrative_hard_facts.py         # ★ Level 1 硬事实提取
+│   └── trends_loader.py / trends_weekly.py / curator.py
 ├── constraint/
-│   ├── llm_concept_scorer.py          # LLM 35概念打分 (48/48)
-│   ├── concept_bottleneck.py          # 软匹配概念瓶颈 (弃用, Step 1用)
+│   ├── llm_concept_scorer.py          # LLM 35概念打分
+│   ├── concept_bottleneck.py          # 软匹配概念瓶颈 (弃用)
 │   └── delta_transition.py            # ΔTransition + 3Validator
 ├── models/
-│   ├── order_form_predictor.py        # ★ 两层预测模型 (FR19 v0.2)
-│   └── sir_meme.py / abm_simulation.py / attractor.py / individual_calibrator.py
+│   ├── representation_learning.py     # ★ Level 2: PCA + H1 验证
+│   ├── order_form_predictor.py        # FR19 v0.2 (已退役, 保留参考)
+│   └── sir_meme.py / abm_simulation.py / attractor.py
 ├── analysis/
-│   ├── collective_dynamics.py         # 集体情感系统动力学 (133月)
-│   ├── platform_flow.py               # 跨平台注意力流动
+│   ├── regime_detector.py             # ★ GMM 4 相区 + 转移矩阵
+│   ├── irreversibility_test.py        # ★ RQA + Time-Reversal
+│   ├── control_manifold.py            # ★ u(t)→z(t) 控制轴
+│   ├── ms_ar_first_cut.py             # ★ MS-AR 第一刀
+│   ├── collective_dynamics.py         # 集体系统动力学
 │   ├── narrative_clustering.py        # 叙事无监督聚类
-│   └── phase_diagram.py / backtest.py / lifecycle.py / phase_detect.py
+│   └── platform_flow.py / phase_diagram.py / backtest.py
 ├── dashboard/
-│   ├── app.py                         # Flask API (9个端点, token auth)
+│   ├── app.py                         # Flask API
 │   ├── analyzer.py                    # 精细建模查询
-│   └── templates/index.html           # ECharts 前端 (回放/拖拽/倍速/移动端)
-└── meme_inspector.py                  # 梗分析工具
+│   └── templates/index.html           # ECharts 前端
+├── advisor/
+│   ├── engine.py                      # ★ FR31 统一引擎
+│   ├── persona.py                     # ★ 个体画像, 五态模型
+│   └── metrics.py                     # ★ 四指标
+└── meme_inspector.py
 ```
 
 ## 非功能需求
@@ -157,121 +169,15 @@ src/
 | NFR5 | 服务器 24/7 主阵地, 本地查看结果 | ✅ |
 | NFR6 | 安全 (Dashboard token auth) | ✅ |
 
-## FR31: 情感约束场顾问 — 个体层面约束场建模
-
-> 体系知识底座来源：`E:\Desktop\wctxjx.txt`（用户价值体系完整文档）。
-> ⚠️ AlphaGo 原则：体系知识写入 .md 作为背景参考，**不硬编码进模型逻辑**。
-> 机器从数据中自己发现结构，不被人类总结的套路污染。
-
-### 要解决的问题
-
-市面上的情感咨询机构（如虹姐）提供的外部视角有价值——时机判断、温度检测、
-策略校准。但缺点致命：
-1. 不理解用户的认知框架
-2. 爹味，自认认知高于用户，无法区分"认知"和"个人选择"
-3. 给的建议是通用"泡学"技巧，不与用户自身的认知体系对接
-
-### 核心定位
-
-FR31 不是替用户写回复的工具。是**战略对弈伙伴**——用户给出情境和判断，
-系统给出独立判断，两者交叉验证，找到比独自判断更好的方案。
-
-FR19（集体混沌属性建模）是 FR31 的推理引擎。没有集体层的结构发现
-（信号-动机分离、约束场形变、表白结构亏损），FR31 就是一个更聪明的
-聊天机器人。这两层不是独立的——一个项目的两层。
-
-### 虹姐聊天记录
-
-完整导出已到手：
-- `E:\Desktop\杂🐟项\与虹姐的聊天记录.txt`（17529 行，私聊）
-- `E:\Desktop\杂🐟项\徐子浩服务指导1.29-2.28-群聊聊天记录.txt`（6527 行，群聊）
-
-虹姐的价值：情境化即时战术判断（具体话术、时机校准、情绪减震）。
-虹姐的局限：不理解用户的认知框架、部分判断有爹味。
-
-FR31 定位：虹姐的战术精度 + 用户的认知深度。
-FR31 必须能从集体层规律推导个体层策略——这是 AI 和市面上情感机构都做不到的。
-
-### 三层架构
-
-```
-Layer 1 (参考层): FR19 集体混沌规律
-  — 信号-动机分离、约束场形变、秩序形态
-  — 作为推理前提，不直接做个体判断
-
-Layer 2 (数据层): 对方画像 + 互动历史
-  — 纯数据，不掺杂理论框架
-
-Layer 3 (情境层): 当前聊天上下文 + 情感温度 + 时机约束
-```
-
-### 核心功能
-
-1. **情境推演**：用户给出具体聊天场景 + 自己的判断，系统给出独立判断。
-   两者对质，找到最优方案。不是系统替用户做决定。
-
-2. **时机判断**：不是每次对方发消息都应该回。输出推进/维持/后退的策略建议。
-
-3. **约束场分析**：基于集体层规律推断对方当前承受的结构性压力，
-   由此判断什么策略有效、什么会触发回避。
-
-4. **情感温度检测**：参照用户历史上"系统被劫持"的阈值，预警过热状态。
-
-### 关键约束
-
-- 不替用户做决定。给判断和推理，最终选择永远是用户的。
-- 不变成爹味教练。与用户的关系是"经验知识提供方"，非"认知高位"。
-- 不假装能读心。不知道对方的动机就是不知道。
-- 如实标注不确定性。
-
-### 体系知识底座
-
-FR31 不是通用情感顾问。以下为背景参考，**不硬编码进代码**：
-
-> ⚠️ 用户完整体系见 `wctxjx.txt`（仅作背景参考，不进代码）。
-> 
-> 代码中**唯一可引用**的结构划分：
-> - 小真实 = 感知(输入) + 认知(处理, 含价值判断/偏好) + 体验(存储)
-> - 大真实 = 包含一切的总体宇宙
-> - 现实结构 = 主体小真实以外的大真实中的一切
-> - 行动 = 小真实与外部世界唯一的桥梁，由小真实驱动
-> 
-> 用途：建模**对方小真实的内部结构**，尤其是认知层中代表偏好的混沌属性。
-> 其余理论（核心元定律、价值排序、三种恶意模型、Fi-Te、利益互换等）**一律不进代码**。
-
-### 关键约束
-
-- **不替你做决定**。给你选项和推理，最终选择永远是你的。
-- **不变成爹味教练**。不假装比你更了解你自己或对方。与你的关系是知识/经验提供方，非认知上更高的指导者。
-- **忠实于你的体系**。用你的概念工具（利益互换、三种恶意、小真实/大真实、Fi-Te、
-  逃避型vs策略型延迟）做推理，不译为通用心理学词汇。
-- **如实标注不确定性**。不知道对方的动机就是不知道——量子混沌态恶意不可观测，
-  不假装能读心。
-- **不过度分析对方**。她不一定是策略型人格，不应过度拟合她的行为。她更多是
-  在回应舒适/不舒适，而非执行精密策略。
-- **区分认知与个人选择**。你的某些行为（如断联）是情感劫持下的不得已选择，
-  而非认知不到位。不将其归为"认知问题"。
-- **不追求"善"**。"善"是体系自然运作时的副产品，不是追求的目标。
-  追求"善"会滑向绝对秩序——核心元定律明确反对的敌人之一。
-
-### 与 MemeticChaos 的关系
-
-| 维度 | MemeticChaos | FR31 |
-|------|:--:|:--:|
-| 尺度 | 亿万人/十年 | 两个人/数周-数月 |
-| 观测对象 | 梗的传播 + 平台注意力 | 聊天信号 + 行为模式 |
-| 约束场 | 经济/社会/叙事压力 | 社交结构/心理防御/家庭期待 |
-| 输出 | 秩序形态预测 | 回复建议 + 风险标注 |
-| 核心哲学 | 与混沌共存 | 在混沌中行动但不在混沌中做决定 |
-
 ## 下一步
 
-| 优先级 | 任务 | 状态 |
-|:--:|------|:--:|
-| **P0** | **Level 1 硬事实提取** — Stage/Mutation/Inst/Drift | ✅ DONE (2026-07-04) |
-| **P0** | **Level 2: PCA 表示学习 + H1 验证** | ✅ DONE (2026-07-04) |
-| P1 | FR31: 情感约束场顾问 | 需求已定, 待建 |
-| P1 | Level 2+: 非线性模型评估 (UMAP 等) | 线性已给出明确结论 |
-| P2 | Schema 3.0: 图动力学前置支持 | |
-| P2 | Level 3: 后验解释 — 载荷 → 叙事语义 | |
-| P3 | Dashboard 增强 — 信号报警, 约束场突变预警 | |
+| 优先级 | 任务 | 说明 |
+|:--:|------|------|
+| **P0** | **数据管道闭环** | 日级 embedding → 月度语义状态, 续接 2026 分析链 |
+| **P0** | **MS-AR Phase 2** | R2 内部 p(x\|R2, z1) 势阱形变建模 |
+| P0 | FR31 对接 Stella | engine.py → 企微自动回复 |
+| P1 | micro_burst_detector | 输入替换: 关键词 → 日级 embedding |
+| P1 | 信号质量初始 proxy | 叙事化程度的第一轮近似度量 |
+| P2 | Schema 3.0: 图动力学 | 边定义 + 邻接矩阵 |
+| P2 | Level 3: 后验解释 | 特征载荷 → 叙事语义 |
+| P3 | Dashboard 增强 | 信号报警, 约束场突变预警 |
