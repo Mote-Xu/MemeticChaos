@@ -1,0 +1,1594 @@
+{
+  "source": "monthly_aggregator.py — scraper v2.0",
+  "version": "1.0",
+  "built_at": "2026-07-06T08:22:14.394897",
+  "months": [
+    "2015-01",
+    "2015-02",
+    "2015-03",
+    "2015-04",
+    "2015-05",
+    "2015-06",
+    "2015-07",
+    "2015-08",
+    "2015-09",
+    "2015-10",
+    "2015-11",
+    "2015-12",
+    "2016-01",
+    "2016-02",
+    "2016-03",
+    "2016-04",
+    "2016-05",
+    "2016-06",
+    "2016-07",
+    "2016-08",
+    "2016-09",
+    "2016-10",
+    "2016-11",
+    "2016-12",
+    "2017-01",
+    "2017-02",
+    "2017-03",
+    "2017-04",
+    "2017-05",
+    "2017-06",
+    "2017-07",
+    "2017-08",
+    "2017-09",
+    "2017-10",
+    "2017-11",
+    "2017-12",
+    "2018-01",
+    "2018-02",
+    "2018-03",
+    "2018-04",
+    "2018-05",
+    "2018-06",
+    "2018-07",
+    "2018-08",
+    "2018-09",
+    "2018-10",
+    "2018-11",
+    "2018-12",
+    "2019-01",
+    "2019-02",
+    "2019-03",
+    "2019-04",
+    "2019-05",
+    "2019-06",
+    "2019-07",
+    "2019-08",
+    "2019-09",
+    "2019-10",
+    "2019-11",
+    "2019-12",
+    "2020-01",
+    "2020-02",
+    "2020-03",
+    "2020-04",
+    "2020-05",
+    "2020-06",
+    "2020-07",
+    "2020-08",
+    "2020-09",
+    "2020-10",
+    "2020-11",
+    "2020-12",
+    "2021-01",
+    "2021-02",
+    "2021-03",
+    "2021-04",
+    "2021-05",
+    "2021-06",
+    "2021-07",
+    "2021-08",
+    "2021-09",
+    "2021-10",
+    "2021-11",
+    "2021-12",
+    "2022-01",
+    "2022-02",
+    "2022-03",
+    "2022-04",
+    "2022-05",
+    "2022-06",
+    "2022-07",
+    "2022-08",
+    "2022-09",
+    "2022-10",
+    "2022-11",
+    "2022-12",
+    "2023-01",
+    "2023-02",
+    "2023-03",
+    "2023-04",
+    "2023-05",
+    "2023-06",
+    "2023-07",
+    "2023-08",
+    "2023-09",
+    "2023-10",
+    "2023-11",
+    "2023-12",
+    "2024-01",
+    "2024-02",
+    "2024-03",
+    "2024-04",
+    "2024-05",
+    "2024-06",
+    "2024-07",
+    "2024-08",
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-07"
+  ],
+  "monthly_states": [
+    {
+      "month": "2015-01",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2015-02",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2015-03",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2015-04",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2015-05",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2015-06",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2015-07",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2015-08",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2015-09",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2015-10",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2015-11",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2015-12",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2016-01",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2016-02",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2016-03",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2016-04",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2016-05",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2016-06",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2016-07",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2016-08",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2016-09",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2016-10",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2016-11",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2016-12",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2017-01",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2017-02",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2017-03",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2017-04",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2017-05",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2017-06",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2017-07",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2017-08",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2017-09",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2017-10",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2017-11",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2017-12",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2018-01",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2018-02",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2018-03",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2018-04",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2018-05",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2018-06",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2018-07",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2018-08",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2018-09",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2018-10",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2018-11",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2018-12",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2019-01",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2019-02",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2019-03",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2019-04",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2019-05",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2019-06",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2019-07",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2019-08",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2019-09",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2019-10",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2019-11",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2019-12",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2020-01",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2020-02",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2020-03",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2020-04",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2020-05",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2020-06",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2020-07",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2020-08",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2020-09",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2020-10",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2020-11",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2020-12",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2021-01",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2021-02",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2021-03",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2021-04",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2021-05",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2021-06",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2021-07",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2021-08",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2021-09",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2021-10",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2021-11",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2021-12",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2022-01",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2022-02",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2022-03",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2022-04",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2022-05",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2022-06",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2022-07",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2022-08",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2022-09",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2022-10",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2022-11",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2022-12",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2023-01",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2023-02",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2023-03",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2023-04",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2023-05",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2023-06",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2023-07",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2023-08",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2023-09",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2023-10",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2023-11",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2023-12",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2024-01",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2024-02",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2024-03",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2024-04",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2024-05",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2024-06",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2024-07",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2024-08",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2024-09",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2024-10",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2024-11",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2024-12",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2025-01",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2025-02",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2025-03",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2025-04",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2025-05",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2025-06",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2025-07",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2025-08",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2025-09",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2025-10",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2025-11",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2025-12",
+      "has_scraper_data": false,
+      "state": null
+    },
+    {
+      "month": "2026-07",
+      "has_scraper_data": true,
+      "state": {
+        "version": "1.0",
+        "month": "2026-07",
+        "aggregated_at": "2026-07-06T08:22:14.393898",
+        "n_headlines": 100,
+        "n_days_with_data": 1,
+        "monthly_mean_embedding": [
+          0.041358,
+          0.077977,
+          -0.02342,
+          0.006577,
+          0.02872,
+          -0.022058,
+          0.090044,
+          0.024491,
+          0.057322,
+          -0.009386,
+          0.097842,
+          -0.011084,
+          0.059102,
+          0.026447,
+          -0.051904,
+          0.025201,
+          -0.028594,
+          -0.053364,
+          -0.041914,
+          0.024339,
+          0.002,
+          -0.057731,
+          0.02395,
+          0.043881,
+          0.065765,
+          -0.007487,
+          -0.040248,
+          -0.001302,
+          -0.052092,
+          -0.057953,
+          0.002456,
+          -0.011682,
+          0.016077,
+          0.07237,
+          0.004386,
+          0.020524,
+          0.00354,
+          0.020498,
+          0.013761,
+          -0.006016,
+          -0.011538,
+          0.001004,
+          0.016925,
+          0.043555,
+          0.040775,
+          0.036815,
+          0.042168,
+          0.016284,
+          -0.022888,
+          0.000593,
+          0.031813,
+          0.009045,
+          -0.075695,
+          -0.01118,
+          0.012999,
+          -0.044323,
+          0.075746,
+          0.002483,
+          -0.057345,
+          0.10571,
+          0.0062,
+          0.01963,
+          -0.126867,
+          0.058986,
+          -0.115124,
+          -0.049518,
+          0.007691,
+          -0.060499,
+          -0.043947,
+          0.115586,
+          0.046001,
+          -0.025381,
+          3.1e-05,
+          0.014092,
+          0.029418,
+          0.062852,
+          0.018642,
+          0.040427,
+          -0.008485,
+          -0.081868,
+          0.035357,
+          -0.017355,
+          -0.022883,
+          -0.014043,
+          -0.023371,
+          0.009607,
+          0.009602,
+          0.022691,
+          0.040171,
+          -0.075755,
+          0.017667,
+          -0.079839,
+          0.135891,
+          0.049273,
+          0.06494,
+          0.019823,
+          0.015024,
+          0.007857,
+          -0.012558,
+          0.188905,
+          -0.003498,
+          0.036487,
+          -0.001713,
+          -0.059707,
+          0.027641,
+          -0.004089,
+          0.020764,
+          -0.01809,
+          -0.034543,
+          -0.076118,
+          -0.064992,
+          -0.017499,
+          0.01142,
+          -0.007102,
+          -0.025544,
+          -0.015655,
+          -0.014772,
+          0.030916,
+          -0.098966,
+          0.025378,
+          0.010473,
+          -0.080081,
+          0.0351,
+          -0.032643,
+          -0.001233,
+          -0.130092,
+          -0.002708,
+          0.035796,
+          0.030932,
+          0.002509,
+          -0.004114,
+          0.037866,
+          0.020646,
+          0.01785,
+          -0.033155,
+          -0.021804,
+          0.044392,
+          0.075215,
+          -0.031932,
+          -0.060067,
+          -0.076579,
+          0.069218,
+          0.010172,
+          0.085586,
+          -0.027395,
+          0.00536,
+          -0.027732,
+          -0.033733,
+          0.01186,
+          0.023689,
+          0.021779,
+          -0.010839,
+          0.025195,
+          0.078103,
+          -0.02155,
+          -0.015933,
+          0.041613,
+          0.089253,
+          0.016644,
+          0.021618,
+          0.028109,
+          0.044954,
+          -0.047434,
+          -0.011993,
+          0.035198,
+          0.006894,
+          -0.020868,
+          0.01321,
+          0.023241,
+          0.016932,
+          -0.024031,
+          -0.047973,
+          -0.045492,
+          0.03093,
+          -0.017232,
+          -0.051349,
+          -0.038986,
+          0.045115,
+          -0.035289,
+          0.005263,
+          -0.012858,
+          0.027112,
+          -0.026872,
+          0.029975,
+          -0.009191,
+          0.017434,
+          -0.002071,
+          0.008706,
+          0.069169,
+          -0.034762,
+          -0.03498,
+          0.006595,
+          0.025635,
+          0.004966,
+          0.006267,
+          0.002058,
+          -0.022089,
+          0.029872,
+          0.024634,
+          -0.004366,
+          -0.133278,
+          -0.081568,
+          -0.06429,
+          -0.082226,
+          0.075422,
+          -0.052202,
+          0.042919,
+          -0.066018,
+          -0.043445,
+          0.058045,
+          0.033236,
+          0.002044,
+          0.006165,
+          0.036565,
+          0.073194,
+          -0.03168,
+          -0.082738,
+          0.048676,
+          -0.098118,
+          0.090486,
+          0.056815,
+          -0.093053,
+          -0.016768,
+          -0.197918,
+          -0.009297,
+          -0.023691,
+          -0.032736,
+          0.03575,
+          0.021754,
+          -0.036304,
+          -0.029733,
+          0.095376,
+          -0.019197,
+          -0.017277,
+          -0.117096,
+          -0.055009,
+          0.009042,
+          0.027218,
+          -0.015762,
+          -0.046556,
+          0.04697,
+          -0.028152,
+          -0.043619,
+          0.0265,
+          0.038062,
+          -0.075416,
+          -0.039549,
+          0.088786,
+          -0.038998,
+          0.161374,
+          0.011689,
+          -0.079245,
+          -0.078839,
+          -0.008484,
+          0.013791,
+          0.017114,
+          -0.019687,
+          0.108384,
+          0.003139,
+          0.031569,
+          0.002553,
+          -0.017741,
+          -0.095089,
+          -0.018028,
+          0.014048,
+          -0.053453,
+          -0.049298,
+          0.104699,
+          -0.004024,
+          -0.039249,
+          -0.028876,
+          -0.026211,
+          0.043816,
+          -0.035702,
+          0.093254,
+          -0.027344,
+          -0.038037,
+          0.007962,
+          -0.056461,
+          0.056654,
+          0.010106,
+          -0.063465,
+          0.060507,
+          -0.0384,
+          0.045488,
+          -0.03693,
+          -0.04025,
+          -0.017864,
+          0.032002,
+          0.022717,
+          0.009824,
+          0.095527,
+          0.018539,
+          -0.004097,
+          0.001397,
+          -0.034893,
+          -0.086613,
+          0.030993,
+          0.018503,
+          0.081068,
+          -0.0792,
+          0.008264,
+          0.016011,
+          -0.046368,
+          -0.008458,
+          -0.058793,
+          0.034154,
+          0.056003,
+          0.077926,
+          -0.058746,
+          0.019564,
+          -0.030201,
+          0.020042,
+          0.042284,
+          0.083528,
+          0.026824,
+          0.01605,
+          0.051368,
+          0.063946,
+          -0.220102,
+          -0.001864,
+          -0.054337,
+          -0.036543,
+          0.067796,
+          0.115994,
+          0.048268,
+          0.016651,
+          -0.050588,
+          0.020893,
+          0.004361,
+          -0.004417,
+          0.034462,
+          -0.056782,
+          -0.026354,
+          0.019694,
+          0.022975,
+          -0.082314,
+          0.00337,
+          -0.03613,
+          -0.012686,
+          -0.010317,
+          0.090877,
+          0.020869,
+          -0.075424,
+          -0.0045,
+          0.019456,
+          -0.10399,
+          0.027606,
+          0.010058,
+          0.007788,
+          -0.010652,
+          0.028584,
+          -0.098892,
+          -0.019766,
+          -0.051226,
+          0.021759,
+          -0.014563,
+          0.01716,
+          0.105305,
+          -0.061845,
+          0.06421,
+          -0.054431,
+          -0.00088,
+          0.138435,
+          0.005512,
+          -0.012493,
+          -0.046954,
+          -0.020472,
+          -0.068586,
+          0.042683,
+          0.017221,
+          -0.004232,
+          -0.013039,
+          0.008075,
+          0.03352,
+          -0.092299,
+          0.004917,
+          -0.001042,
+          -0.049694,
+          0.054182,
+          0.055356,
+          -0.024135,
+          -0.008219,
+          0.036841
+        ],
+        "covariance_trace": 1.15198,
+        "distance_distribution": {
+          "median": 1.069266,
+          "p90": 1.217919,
+          "p99": 1.348609,
+          "skewness_ratio": 1.139,
+          "flash_flood_alert": false
+        },
+        "pos_entropy": {
+          "distribution": {
+            "nominal": 0.39448275862068966,
+            "verbal": 0.24,
+            "particle": 0.06896551724137931,
+            "numeral": 0.09517241379310344,
+            "adverbial": 0.034482758620689655,
+            "other": 0.14206896551724138,
+            "adjectival": 0.019310344827586208,
+            "connective": 0.005517241379310344
+          },
+          "entropy": 1.616,
+          "nominal_ratio": 0.3945,
+          "connective_ratio": 0.0055,
+          "adjectival_particle_ratio": 0.0883
+        },
+        "attention_concentration": 0.1765,
+        "daily_aggregates": {
+          "concentration_mean": -0.0082,
+          "concentration_std": 0.0,
+          "novelty_mean": 1.0,
+          "novelty_std": 0.0,
+          "headlines_per_day_mean": 100.0
+        },
+        "platform_jsd": {
+          "pairs": {
+            "baidu_vs_weibo": 0.1743
+          },
+          "mean_cosine_distance": 0.1743,
+          "interpretation": "ambiguous: moderate platform divergence"
+        },
+        "meme_similarities_monthly": {
+          "GO学长瓦学弟": {
+            "mean_max_sim": 0.4115,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4115,
+            "n_days_detected": 1
+          },
+          "狗学长与瓦学弟": {
+            "mean_max_sim": 0.414,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.414,
+            "n_days_detected": 1
+          },
+          "升天": {
+            "mean_max_sim": 0.4595,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4595,
+            "n_days_detected": 1
+          },
+          "打工人": {
+            "mean_max_sim": 0.4783,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4783,
+            "n_days_detected": 1
+          },
+          "发疯文学": {
+            "mean_max_sim": 0.4721,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4721,
+            "n_days_detected": 1
+          },
+          "月薪喵": {
+            "mean_max_sim": 0.3592,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3592,
+            "n_days_detected": 1
+          },
+          "科目三": {
+            "mean_max_sim": 0.4454,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4454,
+            "n_days_detected": 1
+          },
+          "广西科目三": {
+            "mean_max_sim": 0.5557,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.5557,
+            "n_days_detected": 1
+          },
+          "内卷": {
+            "mean_max_sim": 0.4344,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4344,
+            "n_days_detected": 1
+          },
+          "刘慈欣还是留了一手": {
+            "mean_max_sim": 0.3658,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3658,
+            "n_days_detected": 1
+          },
+          "刘慈欣还留了一手": {
+            "mean_max_sim": 0.4047,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4047,
+            "n_days_detected": 1
+          },
+          "后浪": {
+            "mean_max_sim": 0.5688,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.5688,
+            "n_days_detected": 1
+          },
+          "嘉豪": {
+            "mean_max_sim": 0.4988,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4988,
+            "n_days_detected": 1
+          },
+          "家豪": {
+            "mean_max_sim": 0.5058,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.5058,
+            "n_days_detected": 1
+          },
+          "头顶尖尖的": {
+            "mean_max_sim": 0.4132,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4132,
+            "n_days_detected": 1
+          },
+          "脑袋尖尖的": {
+            "mean_max_sim": 0.4552,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4552,
+            "n_days_detected": 1
+          },
+          "孔乙己的长衫": {
+            "mean_max_sim": 0.4366,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4366,
+            "n_days_detected": 1
+          },
+          "小镇做题家": {
+            "mean_max_sim": 0.4385,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4385,
+            "n_days_detected": 1
+          },
+          "我的刀盾": {
+            "mean_max_sim": 0.4253,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4253,
+            "n_days_detected": 1
+          },
+          "摆烂": {
+            "mean_max_sim": 0.4941,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4941,
+            "n_days_detected": 1
+          },
+          "普通却自信": {
+            "mean_max_sim": 0.4356,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4356,
+            "n_days_detected": 1
+          },
+          "寒雨顶流Ting": {
+            "mean_max_sim": 0.4965,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4965,
+            "n_days_detected": 1
+          },
+          "曾经的王": {
+            "mean_max_sim": 0.5199,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.5199,
+            "n_days_detected": 1
+          },
+          "月薪猫": {
+            "mean_max_sim": 0.4328,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4328,
+            "n_days_detected": 1
+          },
+          "轻松绷住": {
+            "mean_max_sim": 0.4129,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4129,
+            "n_days_detected": 1
+          },
+          "躺平": {
+            "mean_max_sim": 0.4826,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4826,
+            "n_days_detected": 1
+          },
+          "托比欧脱衣变身": {
+            "mean_max_sim": 0.4132,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4132,
+            "n_days_detected": 1
+          },
+          "这是一场试炼": {
+            "mean_max_sim": 0.4394,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4394,
+            "n_days_detected": 1
+          },
+          "润": {
+            "mean_max_sim": 0.4266,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4266,
+            "n_days_detected": 1
+          },
+          "RUN / 润": {
+            "mean_max_sim": 0.479,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.479,
+            "n_days_detected": 1
+          },
+          "鸡你太美": {
+            "mean_max_sim": 0.5132,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.5132,
+            "n_days_detected": 1
+          },
+          "citywalk": {
+            "mean_max_sim": 0.3303,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3303,
+            "n_days_detected": 1
+          },
+          "i人 e人": {
+            "mean_max_sim": 0.3691,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3691,
+            "n_days_detected": 1
+          },
+          "不结婚": {
+            "mean_max_sim": 0.3405,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3405,
+            "n_days_detected": 1
+          },
+          "专家建议": {
+            "mean_max_sim": 0.3713,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3713,
+            "n_days_detected": 1
+          },
+          "元宇宙": {
+            "mean_max_sim": 0.5056,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.5056,
+            "n_days_detected": 1
+          },
+          "凡尔赛": {
+            "mean_max_sim": 0.3019,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3019,
+            "n_days_detected": 1
+          },
+          "南方小土豆": {
+            "mean_max_sim": 0.3358,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3358,
+            "n_days_detected": 1
+          },
+          "原生家庭": {
+            "mean_max_sim": 0.342,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.342,
+            "n_days_detected": 1
+          },
+          "吗喽": {
+            "mean_max_sim": 0.3345,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3345,
+            "n_days_detected": 1
+          },
+          "尊嘟假嘟": {
+            "mean_max_sim": 0.367,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.367,
+            "n_days_detected": 1
+          },
+          "情绪价值": {
+            "mean_max_sim": 0.3419,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3419,
+            "n_days_detected": 1
+          },
+          "显眼": {
+            "mean_max_sim": 0.3441,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3441,
+            "n_days_detected": 1
+          },
+          "普信": {
+            "mean_max_sim": 0.3634,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3634,
+            "n_days_detected": 1
+          },
+          "普信男": {
+            "mean_max_sim": 0.3078,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3078,
+            "n_days_detected": 1
+          },
+          "栓Q": {
+            "mean_max_sim": 0.3558,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3558,
+            "n_days_detected": 1
+          },
+          "牛马": {
+            "mean_max_sim": 0.3985,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3985,
+            "n_days_detected": 1
+          },
+          "破防": {
+            "mean_max_sim": 0.3317,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3317,
+            "n_days_detected": 1
+          },
+          "社恐": {
+            "mean_max_sim": 0.3602,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3602,
+            "n_days_detected": 1
+          },
+          "社死": {
+            "mean_max_sim": 0.3455,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3455,
+            "n_days_detected": 1
+          },
+          "精神状态": {
+            "mean_max_sim": 0.3493,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3493,
+            "n_days_detected": 1
+          },
+          "美拉德": {
+            "mean_max_sim": 0.3335,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3335,
+            "n_days_detected": 1
+          },
+          "芭比Q": {
+            "mean_max_sim": 0.3528,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3528,
+            "n_days_detected": 1
+          },
+          "遥遥领先": {
+            "mean_max_sim": 0.4197,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.4197,
+            "n_days_detected": 1
+          },
+          "遥遥领先 华为": {
+            "mean_max_sim": 0.3333,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.3333,
+            "n_days_detected": 1
+          },
+          "雪糕刺客": {
+            "mean_max_sim": 0.2934,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.2934,
+            "n_days_detected": 1
+          },
+          "鼠鼠": {
+            "mean_max_sim": 0.2845,
+            "std_max_sim": 0.0,
+            "peak_max_sim": 0.2845,
+            "n_days_detected": 1
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "total_months": 133,
+    "months_with_scraper": 1,
+    "first_scraper_month": "2026-07",
+    "last_scraper_month": "2026-07",
+    "embedding_dim": 384,
+    "model": "paraphrase-multilingual-MiniLM-L12-v2",
+    "covariance_trace_note": "协方差迹 = 叙事色散度. 高值 → 表达分散, 共识内部多样化. 低值 → 表达统一, 叙事高度集中.",
+    "distance_skewness_note": "距离偏度 = p90 / median. ratio > 2.0 → 存在长尾 '微观闪洪', flash_flood_alert=True.",
+    "pos_entropy_note": "POS 熵 = 词性分布的信息熵. 高 nominal/connective 比例 → 倾向结构分析. 高 adjectival/particle 比例 → 倾向叙事消费.",
+    "platform_jsd_note": "跨平台配对 cosine distance. H1(结构崩塌) → 平台趋同, distance 低. H2(共识收敛) → 平台各说各的, distance 高."
+  }
+}
