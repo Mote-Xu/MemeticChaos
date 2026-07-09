@@ -1,0 +1,48 @@
+{
+  "source": "nyblom_stationarity.py",
+  "target_presupposition": "P2 time-invariance, layer-1 (low-dim parameter constancy)",
+  "method": "Nyblom-Hansen L on AR(1), parametric-bootstrap null",
+  "evidence_grade": "E1/E2 — AR系数恒定性, 非机制不变性",
+  "meta": {
+    "n_months": 127,
+    "r2_gmm_index": 2,
+    "gmm_argmax_vs_stored_label_match": 1.0
+  },
+  "n_bootstrap": 2000,
+  "results": {
+    "PC1": {
+      "L": 0.3258,
+      "null_p95": 0.6822,
+      "null_median": 0.2899,
+      "empirical_p": 0.3915,
+      "drift_evidence": false
+    },
+    "PC2": {
+      "L": 1.4403,
+      "null_p95": 0.6565,
+      "null_median": 0.2708,
+      "empirical_p": 0.0,
+      "drift_evidence": true
+    },
+    "PC3": {
+      "L": 0.3673,
+      "null_p95": 0.6945,
+      "null_median": 0.285,
+      "empirical_p": 0.3145,
+      "drift_evidence": false
+    },
+    "r2_prob": {
+      "L": 0.5185,
+      "null_p95": 1.092,
+      "null_median": 0.3533,
+      "empirical_p": 0.2755,
+      "drift_evidence": false
+    }
+  },
+  "verdict": {
+    "direction": "LOWDIM_NONCONSTANCY_DETECTED_BUT_DEGENERATE",
+    "text": "在 ['PC2'] 上检测到 AR(1) 参数非恒定证据 (E1/E2, 超出恒定参数 AR(1) 的 null)。★关键: 这不能证伪 P2★ —— AR 自相关系数上升同时是 (a) 机制改变 和 (b) 时不变机制在慢控制漂移下逼近分岔 (critical slowing) 的共同signature。Nyblom 分不开这两者。故: 不自动 suspend 挂靠 time-invariance 的 E4; 只把 P2 的'低维层'状态从 UNDERPOWERED 更新为 '可测且非恒定, 但归因简并'。真正的收获: 低维层不是没功率 —— 反驳了'分辨率墙杀死一切'的过宽判断。",
+    "scope_caveat": "仅低维参数恒定性 (第一层); 结果对 P2 简并 —— AR 系数上升 = 机制改变 或 时不变机制逼近分岔(critical slowing), Nyblom 分不开; 高维机制变化月度分辨率下不可辨识",
+    "key_finding": "低维层非无功率 (反驳'分辨率墙杀死一切'); PC2 (churn/mutation 轴) AR 自相关 0.57→0.94, 方差 0.53→2.17, 与 MS-AR R2 方差 2.31× / FR31 Critical Slowing 0.76 三路独立收敛; 但不证伪 P2"
+  }
+}
