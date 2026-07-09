@@ -137,7 +137,7 @@ LLM 概念分数: 57 条叙事 × 35 维
 - `data/processed/regime_map.json` — ★ v4.1: 4 相区 + 转移矩阵 + 驻留时间
 - `data/processed/control_manifold.json` — ★ v4.1: 3 维控制轴 z(t)
 - `data/processed/irreversibility_results.json` — ★ v4.1: RQA + Time-Reversal 结果
-- `data/scraped/hourly/` — 每小时 headline + 384 维 embedding (保留 7 天)
+- `data/scraped/hourly/` — 每小时 headline + 384 维 embedding (永久保留, 不可再生高分辨率资产)
 - `data/scraped/daily/` — 日级语义聚合: 梗相似度 + 注意力集中度 + 新颖度 (永久)
 
 ## 项目结构
@@ -316,6 +316,8 @@ FR19（集体混沌属性建模）是 FR31 的推理引擎。
   - 每天 4:47: 实时管线更新 (`live_pipeline.py` + `signal_pipeline.py`)
   - 每周日 4:50: LLM 月度叙事摘要 (`monthly_narrative.py`)
   - 每周日 5:00: 12月预测报告 + Dashboard 状态刷新 (`order_form_predictor.py`)
+  - 每月 1 号 5:32: 月度语义聚合 + 前向序列 (`monthly_aggregator.py` + `semantic_state_series.py`) → `cron_monthly.log`
+- **hourly 保留**: 永久 (`HOURLY_RETENTION_DAYS=0` 哨兵, `_cleanup_hourly` 跳过)。逐条 embedding 不可再生, 且月度聚合从 hourly 读, 故不清理。
 - **Dashboard**: https://chaos.mote-pal.xyz/?token=<TOKEN> (Flask :8931 + cloudflared tunnel)
 - **systemd**: `memeticchaos-dashboard.service` (enabled, auto-restart)
 - **数据同步到本地**: `bash sync_from_server.sh`

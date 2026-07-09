@@ -74,8 +74,10 @@ MEME_SEARCH_TERMS = {
 EMBEDDING_MODEL_NAME = "paraphrase-multilingual-MiniLM-L12-v2"
 EMBEDDING_DIM = 384
 
-# 保留最近 N 天的 hourly 文件 (7 天后自动清理, daily 永久保留)
-HOURLY_RETENTION_DAYS = 7
+# hourly 文件保留期。逐条 headline embedding 是不可再生的高分辨率原始资产
+# (past 热搜榜无法回爬), 永久保留 —— 用户明确要求不定期清理。
+# 0 = 永不清理 (哨兵值)。存储无压力: ~2MB/天, 数据盘 108GB 空闲。daily 亦永久保留。
+HOURLY_RETENTION_DAYS = 0
 
 
 # ═══════════════════════════════════════════════
@@ -387,7 +389,9 @@ def scrape_all() -> dict:
 
 
 def _cleanup_hourly(keep_days: int = 7):
-    """删除超过 keep_days 天的 hourly 文件."""
+    """删除超过 keep_days 天的 hourly 文件. keep_days <= 0 = 永不清理."""
+    if keep_days <= 0:
+        return  # 哨兵: 永久保留, 逐条 embedding 是不可再生的高分辨率资产
     cutoff = datetime.now() - timedelta(days=keep_days)
     for f in HOURLY_DIR.glob("*.json"):
         try:
