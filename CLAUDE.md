@@ -1,6 +1,6 @@
 # MemeticChaos — 人类集体情感混沌属性建模
 
-> 最后更新：2026-07-06
+> 最后更新：2026-07-09
 
 ## ⚠ 架构推翻史
 
@@ -30,6 +30,19 @@
 前两类可以留。第三类必须等到独立证据——不能同一组数据既用来提出声称又用来验证声称。
 如果分不清某概念属于哪一类，它很可能就是未被意识的预设。
 
+**新增原则：本体离散化才是危险预设 (2026-07-09, 第八轮外部 AI 修正)。**
+最初表述"离散化即预设"太宽 —— 会把所有统计工作打成预设污染。GPT 切三层, 只有第三层危险:
+- **操作离散化** (月/日/PCA10/GMM4): 只为计算, 换算法就变, **无本体承诺** → 安全。
+- **分析离散化** (pre2020/2020-2022/2023+ 时段切分): 是**实验设计** ("若真有变化这样切可能敏感"),
+  不是世界模型 → 安全, 但必须写进 Experimental Design 而非 Theory。
+- **本体离散化** (五阶段 / "情绪 vs 策略 vs 协议"): 开始宣称"世界本来就这样组成" → **危险**。
+引入任何切分/分类时问: "这个边界是**数据给的**(前两层, 标注归属即可), 还是我**替世界宣称了本体**(第三层)?"
+
+**最刺的推论仍成立**: 用来猎杀预设的实验工具, 自身通过设计选择带着**分析离散化** (时段审计硬编码"三段")。
+只要诚实归类为实验设计、不偷渡成理论, 就不算污染。**没有绝对的内部出路** (审计要找边界就得先假设边界范式) ——
+出路是让预设**显式化 + 独立通道交叉验证** (Bayesian prior sensitivity / 多 DAG 求 invariant / 气候 CMIP 多模型
+一致性 / 天体物理 multi-messenger)。现代科学不消灭预设, 只让它显式。
+
 **切当前架构的结果 (2026-07-06)**:
 
 **五个冒充观测的物理声称** (已修正为描述性语言):
@@ -51,7 +64,43 @@
 **三个架构级预设** (最深层的未被意识的前提):
 1. "叙事活动是一个可被降维描述的物理系统" — PCA 发现的结构可能是叙事反应模式的结构, 不是现实结构
 2. "存在时不变的生成机制" — 如果互联网底层逻辑变了, 2015和2025是两个不同系统
+   → **已审计 (2026-07-09): VERDICT=UNDERPOWERED。措辞升级 (GPT): 不是"不可检验", 是
+   `resolution-dependent identifiability` —— "at monthly resolution: not identifiable"。
+   以后日级/小时级若给不同答案, 不是理论变了, 是观测算子变了。**
 3. "宏观可由微观聚合" — 聚合反因性可能系统性缺失了最重要的结构
+4. **"存在唯一正确的物理图景" (2026-07-09, GPT 发现, 我漏掉的更深预设)** —
+   一直在问 R2 到底是 Structure-Collapse / Consensus-Convergence / Communication-Protocol / Narrative-Damper
+   "哪一个"。隐含"只有一个是真的"。但它们可能是**不同统计量对应的不同投影, 未必互斥**:
+   RQA→geometry, embedding→communication protocol, Trends→attention ecology, Persona→strategy。
+   → **对策: Competing Explanatory Layer** —— 观察不立即升级成唯一解释; 多个候选解释并行存活,
+   直到新统计量杀掉其中几个。⚠ Gemini 的"彻底纠正为 ESS 分布"正是此预设的现场犯案 (未验证就抢占唯一答案位)。
+
+**元预设 (2026-07-09)**: "本体离散化才是危险预设" (见方法论原则)。第三层离散化偷渡本体; 前两层安全。
+
+**研究节奏风险 (2026-07-09, GPT 警告 — 非技术)**: 项目持续产出有解释力的新概念
+(Constraint Field / Hysteresis Basin / Narrative Damper / Communication Protocol / Consensus Convergence /
+Semantic Smuggling / 三层离散化), 而**验证工作被持续后移**。必须分账:
+- **方法论资产** (长期保留, 除非内部矛盾): Evidence Ledger、Semantic Smuggling、三层离散化、Competing Explanatory Layer。
+- **解释性假说** (竞争并存, 待证据支持或淘汰): ESS/策略分布、通信协议收敛、叙事阻尼器、结构崩塌、共识收敛。
+下一步优先做**验证/基础设施**, 不再产新概念。
+
+## Evidence Ledger — 证据分级账本 (2026-07-09, 第八轮外部 AI 共识, 建设中)
+
+GPT+Gemini 一致收敛的方法论基础设施。把"四类标注"升级为**带等级 + 假设依赖**的账本:
+当某个底层假设倒了, **只有挂靠它的高等级条目自动失效, 低等级观测继续保留**——项目不会整盘崩。
+
+**等级** (E0→E4, 越高越依赖解释):
+- **E0 原始观测** — headline 文本、Trends 数值。不加任何加工。
+- **E1 统计描述** — "R2 自持 97.3%""方差放大 2.31×""子空间夹角 40.9°"。数据在说什么。
+- **E2 操作结果** — "PCA d90=10""平台 16.5×""GMM 4 簇"。依赖算法/参数选择, 换工具可变。
+- **E3 条件解释** — "R2 是真实 cluster (RQA 零复发)"。有条件的推断, 依赖具体假设。
+- **E4 机制假说** — "R2 是 hysteresis basin""R2 是 consensus convergence"。竞争并存, 待证据淘汰。
+
+**Assumption 列** (每条目挂靠的底层假设): Time-Invariance / Aggregation / Sampling / Stationarity / ...
+→ 예: 所有 E3/E4 若挂 `Time-Invariance`, 则该假设一旦被证伪, 这些条目自动降级/失效; E0/E1/E2 不受影响。
+
+**产出**: `data/processed/evidence_ledger.json` + 生成脚本。每个结论一行, 带 grade + assumptions + source。
+这同时是**假设生命周期**的载体 (一个假说何时出生/升级/降级/退休 —— 目前全靠脑子记, GPT 指出的空缺)。
 
 ## 项目目标
 
@@ -273,6 +322,15 @@ FR19（集体混沌属性建模）是 FR31 的推理引擎。
 - **数据同步到服务器**: `bash sync_to_server.sh`
 - **本地任务**: Google Trends 通过飞鸟代理每日拉取 + 叙事生成
 
+> **⚠ 服务器运维要点 (2026-07-09 踩坑)**:
+> - **代码走 scp/rsync 不走 git**: 服务器 `~/MemeticChaos` 的 git 是 unborn master (零提交、无 remote)。
+>   `git@github.com:Mote-Xu/MemeticChaos.git` 只是本地→GitHub, **push 到 GitHub 到不了服务器**。
+>   部署新脚本用 `scp src/xxx.py mote:~/MemeticChaos/src/xxx/` 或 `sync_to_server.sh`。
+> - **非交互 ssh 无 conda**: 用完整路径 `PYTHONNOUSERSITE=1 ~/miniconda3/envs/MemeticChaos/bin/python`。
+> - **embedding 任务必须 `HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1`**: 否则 sentence-transformers
+>   联网查 HF 更新会卡死 (模型已缓存)。加了之后 6060 条 <45s; 不加会 400s+ 超时。
+> - **长任务用 `nohup ... > /tmp/x.log 2>&1 &`** 服务器端脱离, 避免 ssh 超时中断。
+
 ## 已完成
 
 - 24/24 测试 + 38/38 系统完整性验证
@@ -292,6 +350,9 @@ FR19（集体混沌属性建模）是 FR31 的推理引擎。
 - Persona 五态模型 — KNOWN/PARTIAL/UNKNOWN/AMBIGUOUS/OOD (2026-07-05)
 - MS-AR 第一刀 — z(t) 调控 regime 转移分析 (2026-07-05)
 - Scraper v2.0 — 全量 headline embedding + 日级语义聚合 + 知乎恢复 (2026-07-05)
+- 时段剪切审计 — 三段独立拟合 + 连续区块零假设 → 预设2 VERDICT=UNDERPOWERED (2026-07-09, `temporal_slice_audit.py`)
+- Embedding 回溯 — 227 个 v1.0 scraper 文件 → 6060 headline×384维 → `monthly_semantic_state.json` (2026-06/07) 重建 (2026-07-09, `backfill_v1_embeddings.py`)
+- 修复 `monthly_aggregator.py` 单平台月份 KeyError (mean_cosine_distance 防御性 .get)
 
 ## 关键未解决问题
 
@@ -307,19 +368,49 @@ FR19（集体混沌属性建模）是 FR31 的推理引擎。
 **认知螺旋**: 区分"接近结构分析的讨论"和"纯叙事消费"的标准无法预设，
 必须从数据中迭代发现。结论会反向注入数据提取层。
 
-### 数据管道断裂 (2026-07-05)
+### 数据管道断裂 (2026-07-05, 部分修复 2026-07-09)
 
 Scraper 数据从未进入任何历史分析结论。所有 127 个月的科学产出
 (H1/Regime/RQA/ControlManifold/FR31) 输入只有 Google Trends + Narrative JSON。
-v2.0 已修复采集端, 但下游仍未接入。日级语义状态待接入月度分析层。
+
+**2026-07-09 进展**: 227 个 v1.0 scraper 文件已回溯 embedding (6060 headline×384维),
+`monthly_semantic_state.json` 重建, 2026-06/07 两月真实语义状态已生成 (协方差迹/POS熵/跨平台JSD)。
+**管道打通前半段 (采集→月度语义聚合), 后半段仍未接 (月度语义→月度状态 x(t)→分析链)** ——
+`monthly_semantic_state.json` 目前无任何下游读取。从"完全断裂"推进到"断在下游接口"。
+
+## 时段剪切审计 (2026-07-09 执行完成)
+
+> 注: 一个前序会话 (2026-07-06, 已因上下文换出) 已把本审计的两个方法缺陷+修法推理并写入本节,
+> 但脚本未留存。2026-07-09 从零重建 `src/analysis/temporal_slice_audit.py` 独立命中同样两个坑
+> —— 两次独立推理的收敛, 是对方法的强验证。
+
+**目的**: 检验预设 2（时不变生成机制）—— 三段 (55/36/36 月) 是否同一个系统。
+每段独立从零拟合全套 (scaler/ext-PCA/state-PCA/GMM), 复用全局基=预设时不变=作弊。
+
+**方法自检暴露两个缺陷, 在发布结论前修复**:
+1. 零假设基线采样错误 — 随机散点 vs 连续区块, PCA 稳定性不可比。null 的 max 夹角 p95=89.7° 顶到天花板, 测试被设计废了。改为连续非重叠区块 block-bootstrap + 每窗独立标准化。
+2. KS (10/10 移位) 混淆了两件事 — KS 测**状态分布漂移**不是**机制改变** (时不变系统状态游走也会 KS 显著)。剔出判据。此即 GPT 说的 Semantic Smuggling 实例。
+
+**VERDICT: `UNDERPOWERED_CANNOT_REJECT_P2`** —— 既证伪不了也坐实不了。
+- 三段两两子空间均值夹角 40.9/48.3/52.7°, **全部低于**连续区块噪声 p95=70.7° (真实段比随机窗口更相似)。
+- 交叉重构 gap 0.19~0.34, 全部低于噪声 p95=0.54。
+- **月度分辨率下协方差探针检验力≈0**: 任意两个连续 36 月窗口本身就差 61°、gap 0.46。
+- **结论: 不是"验过没问题", 是"仪器看不见"。历史段 (Google Trends 月度粒度) 可能永久不可检验。**
+
+**★衍生的新预设**: 审计硬编码了"三段"边界 (疫情/ChatGPT 当时代分界) —— **段边界本身是未被意识的
+预设**, 与关键词过滤器逻辑同构 (人替数据定边界)。这是"离散化即预设"元原则的实例, 且撞回同一堵
+分辨率墙 (边界敏感性扫描/连续 changepoint 都需要窗口, 月度窗口无功率)。详见方法论原则 + Q11。
 
 ## 当前待办
 
 | 优先级 | 任务 |
 |:--:|------|
-| **P0** | **数据管道接入: 日级 embedding → 月度语义状态, 续接 2025-12 后的分析链** |
-| P0 | MS-AR Phase 2: R2 内部 p(x\|R2, z1) — 势阱形变建模 |
+| **P0** | **① Evidence Ledger: 建 `evidence_ledger.json` (E0-E4 + Assumption 列), 现有结论全部过一遍分级归档** |
+| **P0** | **② 数据管道接入下游: `monthly_semantic_state.json` 的 cov_trace/各向异性/漂移 三标量 → 缝进 2025-12 后分析链 (aggregator 已算好)** |
+| P0 | MS-AR Phase 2: R2 内部 p(x\|R2, z1) — 势阱形变建模 (条件 KDE 势能面) |
 | P0 | FR31: engine.py 对接 Stella 自动回复 |
+| P1 | 低维 TVP-AR 时不变性检验 (不切段): 对第一 PC / cov_trace 做随机游走系数 AR, 测 σ²_η>0。**必须降到标量/低维才有功率** (全维 TVP-VAR 在 127 月参数爆炸)。独立验证"分辨率墙"判断 |
+| P1 | 第二观察者 (验预设1): 原始文本 embedding KDE 簇 vs GMM R0-R3 拓扑同构。**限制: 原始 embedding 仅 2026-06/07 有, 不能追溯历史段, 只能验新 regime** |
 | P1 | micro_burst_detector: 换输入为日级 embedding (替换关键词命中) |
 | P1 | 信号质量: 叙事化程度的初始 proxy 设计 |
 | P2 | Schema 3.0: 图动力学前置支持 (边定义 + 邻接矩阵) |
