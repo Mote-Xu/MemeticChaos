@@ -31,6 +31,7 @@ Nyblom 参数恒定性检验 — 不切段的低维时不变性检验 (2026-07-0
 import json, sys, argparse
 from pathlib import Path
 import numpy as np
+from scipy import stats
 from sklearn.preprocessing import StandardScaler
 from sklearn.mixture import GaussianMixture
 
@@ -43,49 +44,75 @@ RNG_SEED = 42
 N_BOOT = 2000
 
 
-def nyblom_L(y: np.ndarray) -> float:
-    """AR(1) 参数恒定性的 Nyblom-Hansen L 统计量。
+def _fit_ar(y: np.ndarray, p: int):
+    """OLS 拟合 AR(p): y_t = c + Σ φ_i y_{t-i} + e_t。返回 (X, yt, beta, resid)。"""
+    yt = y[p:]
+    cols = [np.ones(len(yt))] + [y[p - i - 1: len(y) - i - 1] for i in range(p)]
+    X = np.column_stack(cols)
+    beta, *_ = np.linalg.lstsq(X, yt, rcond=None)
+    resid = yt - X @ beta
+    return X, yt, beta, resid
 
-    y_t = β0 + β1·y_{t-1} + e_t, OLS 拟合恒定 β。
-    f_t = X_t·e_t (得分); S_t = Σ_{i≤t} f_i; M = Σ f_t f_t'/T (得分外积, 自归一化)。
+
+def select_ar_order(y: np.ndarray, max_p: int = 4) -> int:
+    """AIC 选 AR 阶数 (防 AR(1) 设定不全 → 高阶自相关漏进残差被误判为漂移)。"""
+    best_p, best_aic = 1, np.inf
+    for p in range(1, max_p + 1):
+        _, yt, beta, resid = _fit_ar(y, p)
+        n = len(yt)
+        sigma2 = np.sum(resid ** 2) / n
+        aic = n * np.log(sigma2 + 1e-12) + 2 * (len(beta) + 1)
+        if aic < best_aic:
+            best_aic, best_p = aic, p
+    return best_p
+
+
+def ljung_box(resid: np.ndarray, lags: int = 10, n_params: int = 2) -> float:
+    """Ljung-Box 白噪声检验, 返回 p 值。p>0.05 = 残差白噪声 (Nyblom 结论可信)。"""
+    n = len(resid)
+    r = resid - resid.mean()
+    c0 = np.sum(r ** 2)
+    Q = 0.0
+    for k in range(1, lags + 1):
+        rk = np.sum(r[k:] * r[:-k]) / c0
+        Q += rk ** 2 / (n - k)
+    Q *= n * (n + 2)
+    df = max(1, lags - n_params)
+    return float(1 - stats.chi2.cdf(Q, df))
+
+
+def nyblom_L(y: np.ndarray, p: int = 1) -> float:
+    """AR(p) 参数恒定性的 Nyblom-Hansen L 统计量。
+
+    f_t = X_t·e_t (得分); S_t = Σ_{i≤t} f_i; M = Σ f_t f_t'/T (自归一化)。
     L = (1/T²) Σ_t S_t' M⁻¹ S_t。
     """
-    yt = y[1:]
-    X = np.column_stack([np.ones(len(yt)), y[:-1]])  # [1, y_{t-1}]
-    T, k = X.shape
-    # OLS
-    beta, *_ = np.linalg.lstsq(X, yt, rcond=None)
-    e = yt - X @ beta
-    # 得分 f_t = X_t · e_t
-    f = X * e[:, None]                    # T × k
-    S = np.cumsum(f, axis=0)              # 累积和
-    M = (f.T @ f) / T                     # 得分外积 (自归一化)
+    X, yt, beta, e = _fit_ar(y, p)
+    T = len(yt)
+    f = X * e[:, None]
+    S = np.cumsum(f, axis=0)
+    M = (f.T @ f) / T
     try:
         Minv = np.linalg.inv(M)
     except np.linalg.LinAlgError:
         Minv = np.linalg.pinv(M)
-    L = np.einsum("tk,kj,tj->", S, Minv, S) / (T ** 2)
-    return float(L)
+    return float(np.einsum("tk,kj,tj->", S, Minv, S) / (T ** 2))
 
 
-def bootstrap_null(y: np.ndarray, n_boot: int) -> np.ndarray:
-    """参数自举 null: 从拟合的恒定参数 AR(1) 生成代理序列 (H0 为真), 重算 L。"""
+def bootstrap_null(y: np.ndarray, p: int, n_boot: int) -> np.ndarray:
+    """参数自举 null: 从拟合的恒定参数 AR(p) 生成代理序列 (H0 为真), 重算 L。"""
     rng = np.random.default_rng(RNG_SEED)
-    yt = y[1:]
-    X = np.column_stack([np.ones(len(yt)), y[:-1]])
-    beta, *_ = np.linalg.lstsq(X, yt, rcond=None)
-    resid = yt - X @ beta
-    b0, b1 = beta
+    X, yt, beta, resid = _fit_ar(y, p)
     T = len(y)
-
     Ls = np.empty(n_boot)
     for b in range(n_boot):
-        e_star = rng.choice(resid, size=T, replace=True)  # 重采残差
+        e_star = rng.choice(resid, size=T, replace=True)
         y_star = np.empty(T)
-        y_star[0] = y[0]
-        for t in range(1, T):
-            y_star[t] = b0 + b1 * y_star[t - 1] + e_star[t]
-        Ls[b] = nyblom_L(y_star)
+        y_star[:p] = y[:p]
+        for t in range(p, T):
+            lag = np.array([1.0] + [y_star[t - i - 1] for i in range(p)])
+            y_star[t] = lag @ beta + e_star[t]
+        Ls[b] = nyblom_L(y_star, p)
     return Ls
 
 
@@ -140,19 +167,26 @@ def main():
     print(f"null: 参数自举 {args.boot}× (从恒定参数 AR(1) 生成)\n")
 
     results = {}
-    print(f"{'目标':<9s} {'L 统计量':>10s} {'null_p95':>10s} {'经验 p':>9s}  判定")
+    print(f"{'目标':<9s} {'AR阶':>4s} {'LB_p':>7s} {'L':>9s} {'null_p95':>9s} {'经验p':>8s}  判定")
     for name, y in targets.items():
         y = np.asarray(y, dtype=float)
-        L = nyblom_L(y)
-        null = bootstrap_null(y, args.boot)
-        p = float(np.mean(null >= L))
+        p = select_ar_order(y, max_p=4)                 # AIC 选阶
+        _, _, _, resid = _fit_ar(y, p)
+        lb_p = ljung_box(resid, lags=10, n_params=p + 1)  # 残差白噪声检验
+        L = nyblom_L(y, p)
+        null = bootstrap_null(y, p, args.boot)
+        pv = float(np.mean(null >= L))
         p95 = float(np.percentile(null, 95))
-        drift = p < 0.05
-        flag = "★漂移证据(p<0.05)" if drift else "无漂移证据"
-        results[name] = {"L": round(L, 4), "null_p95": round(p95, 4),
+        drift = pv < 0.05
+        # LB 不显著(>0.05)=残差白噪声=Nyblom 可信; LB 显著=设定仍不全, 结论存疑
+        resid_ok = lb_p > 0.05
+        flag = ("★漂移" if drift else "无漂移") + ("" if resid_ok else "⚠残差非白噪声")
+        results[name] = {"ar_order": p, "ljung_box_p": round(lb_p, 4),
+                         "residual_white_noise": resid_ok,
+                         "L": round(L, 4), "null_p95": round(p95, 4),
                          "null_median": round(float(np.median(null)), 4),
-                         "empirical_p": round(p, 4), "drift_evidence": drift}
-        print(f"{name:<9s} {L:>10.4f} {p95:>10.4f} {p:>9.4f}  [{flag}]")
+                         "empirical_p": round(pv, 4), "drift_evidence": drift}
+        print(f"{name:<9s} {p:>4d} {lb_p:>7.3f} {L:>9.4f} {p95:>9.4f} {pv:>8.4f}  [{flag}]")
 
     n_drift = sum(1 for r in results.values() if r["drift_evidence"])
     print(f"\n{'─'*66}")
@@ -161,15 +195,15 @@ def main():
         summary = ("在 AR(1) 低维投影下, 未发现参数漂移证据 (E1/E2)。"
                    "注意: AR 系数恒定 ≠ 生成机制时不变 (真实机制若非 AR(1), 此结论不外推)。")
     else:
-        verdict = "LOWDIM_NONCONSTANCY_DETECTED_BUT_DEGENERATE"
+        verdict = "LOWDIM_NONCONSTANCY_DETECTED_ATTRIBUTION_DEGENERATE"
         drifted = [n for n, r in results.items() if r["drift_evidence"]]
         summary = (
-            f"在 {drifted} 上检测到 AR(1) 参数非恒定证据 (E1/E2, 超出恒定参数 AR(1) 的 null)。"
-            "★关键: 这不能证伪 P2★ —— AR 自相关系数上升同时是 (a) 机制改变 和 "
-            "(b) 时不变机制在慢控制漂移下逼近分岔 (critical slowing) 的共同signature。"
-            "Nyblom 分不开这两者。故: 不自动 suspend 挂靠 time-invariance 的 E4; "
-            "只把 P2 的'低维层'状态从 UNDERPOWERED 更新为 '可测且非恒定, 但归因简并'。"
-            "真正的收获: 低维层不是没功率 —— 反驳了'分辨率墙杀死一切'的过宽判断。")
+            f"在 {drifted} 上检测到 AR(p) 参数非恒定证据 (E1, 残差已过 Ljung-Box 白噪声检验, "
+            "非设定不全假象)。★不证伪 P2★ —— 诚实的等级是 E1/E3: 'PC2 的 relaxation 结构改变 / "
+            "persistence 上升', 而**非** E4 的 'critical slowing / 逼近分岔'。同一统计至少三支简并 (GPT): "
+            "(a) 生成机制改变 / (b) 固定机制但工作点移动 / (c) 观测算子改变 (梗'变异'的含义随时代变, 接 Q8)。"
+            "Nyblom 分不开。账本动作: 拆 P2 → P2a(所有低维参数平稳)=对PC2 REJECTED; "
+            "P2b(全局机制平稳)=未决; P2c(观测算子平稳)=未决。不 suspend E4, 三支解释并列 E4-pending。")
     print(f"VERDICT: {verdict}")
     print(f"  {summary}")
     print(f"\n  ⚠ 定位: 只打了三层里的第一层 (低维参数恒定性), 且结果对 P2 简并。")

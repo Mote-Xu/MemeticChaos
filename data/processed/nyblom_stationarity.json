@@ -11,37 +11,49 @@
   "n_bootstrap": 2000,
   "results": {
     "PC1": {
-      "L": 0.3258,
-      "null_p95": 0.6822,
-      "null_median": 0.2899,
-      "empirical_p": 0.3915,
+      "ar_order": 3,
+      "ljung_box_p": 0.2464,
+      "residual_white_noise": true,
+      "L": 0.4552,
+      "null_p95": 1.115,
+      "null_median": 0.5784,
+      "empirical_p": 0.7405,
       "drift_evidence": false
     },
     "PC2": {
-      "L": 1.4403,
-      "null_p95": 0.6565,
-      "null_median": 0.2708,
-      "empirical_p": 0.0,
+      "ar_order": 2,
+      "ljung_box_p": 0.1539,
+      "residual_white_noise": true,
+      "L": 1.2722,
+      "null_p95": 0.9149,
+      "null_median": 0.4465,
+      "empirical_p": 0.0065,
       "drift_evidence": true
     },
     "PC3": {
-      "L": 0.3673,
-      "null_p95": 0.6945,
-      "null_median": 0.285,
-      "empirical_p": 0.3145,
+      "ar_order": 2,
+      "ljung_box_p": 0.2454,
+      "residual_white_noise": true,
+      "L": 0.5728,
+      "null_p95": 0.9056,
+      "null_median": 0.4396,
+      "empirical_p": 0.2975,
       "drift_evidence": false
     },
     "r2_prob": {
-      "L": 0.5185,
-      "null_p95": 1.092,
-      "null_median": 0.3533,
-      "empirical_p": 0.2755,
+      "ar_order": 2,
+      "ljung_box_p": 0.9653,
+      "residual_white_noise": true,
+      "L": 0.6078,
+      "null_p95": 1.3298,
+      "null_median": 0.512,
+      "empirical_p": 0.3745,
       "drift_evidence": false
     }
   },
   "verdict": {
-    "direction": "LOWDIM_NONCONSTANCY_DETECTED_BUT_DEGENERATE",
-    "text": "在 ['PC2'] 上检测到 AR(1) 参数非恒定证据 (E1/E2, 超出恒定参数 AR(1) 的 null)。★关键: 这不能证伪 P2★ —— AR 自相关系数上升同时是 (a) 机制改变 和 (b) 时不变机制在慢控制漂移下逼近分岔 (critical slowing) 的共同signature。Nyblom 分不开这两者。故: 不自动 suspend 挂靠 time-invariance 的 E4; 只把 P2 的'低维层'状态从 UNDERPOWERED 更新为 '可测且非恒定, 但归因简并'。真正的收获: 低维层不是没功率 —— 反驳了'分辨率墙杀死一切'的过宽判断。",
+    "direction": "LOWDIM_NONCONSTANCY_DETECTED_ATTRIBUTION_DEGENERATE",
+    "text": "在 ['PC2'] 上检测到 AR(p) 参数非恒定证据 (E1, 残差已过 Ljung-Box 白噪声检验, 非设定不全假象)。★不证伪 P2★ —— 诚实的等级是 E1/E3: 'PC2 的 relaxation 结构改变 / persistence 上升', 而**非** E4 的 'critical slowing / 逼近分岔'。同一统计至少三支简并 (GPT): (a) 生成机制改变 / (b) 固定机制但工作点移动 / (c) 观测算子改变 (梗'变异'的含义随时代变, 接 Q8)。Nyblom 分不开。账本动作: 拆 P2 → P2a(所有低维参数平稳)=对PC2 REJECTED; P2b(全局机制平稳)=未决; P2c(观测算子平稳)=未决。不 suspend E4, 三支解释并列 E4-pending。",
     "scope_caveat": "仅低维参数恒定性 (第一层); 结果对 P2 简并 —— AR 系数上升 = 机制改变 或 时不变机制逼近分岔(critical slowing), Nyblom 分不开; 高维机制变化月度分辨率下不可辨识",
     "key_finding": "低维层非无功率 (反驳'分辨率墙杀死一切'); PC2 (churn/mutation 轴) AR 自相关 0.57→0.94, 方差 0.53→2.17, 与 MS-AR R2 方差 2.31× / FR31 Critical Slowing 0.76 三路独立收敛; 但不证伪 P2"
   }

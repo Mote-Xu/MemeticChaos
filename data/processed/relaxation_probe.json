@@ -1,0 +1,27 @@
+{
+  "source": "relaxation_probe.py",
+  "role": "掰开 PC2 Nyblom 非恒定性的归因简并 (exploratory)",
+  "evidence_grade": "E1 描述 + E3 倾向 (非 confirmatory, 分辨率受限)",
+  "window": 36,
+  "n_windows": 92,
+  "eff_independent_windows": 2,
+  "rho_trend": {
+    "slope": 0.00797,
+    "corr_with_time": 0.896,
+    "direction": "↑"
+  },
+  "var_trend": {
+    "slope": 0.01215,
+    "corr_with_time": 0.583,
+    "direction": "↑"
+  },
+  "lead_lag": {
+    "contemporaneous_corr": 0.783,
+    "peak_lag": 1,
+    "peak_corr": 0.786,
+    "interpretation": "ρ 领先 var (支持 slowing)"
+  },
+  "lean": "LEAN_SLOWING",
+  "note": "ρ 与 var 同升且同步(ρ不落后) → 倾向 (b) 固定机制逼近分岔/persistence增强。但★仍不排除★ (a)机制改变 / (c)观测算子改变: 三者可产生相似同步。",
+  "caveat": "36月窗高度重叠, 有效自由度极少; 只看趋势方向, 不信 p 值; 三支简并未完全掰开"
+}

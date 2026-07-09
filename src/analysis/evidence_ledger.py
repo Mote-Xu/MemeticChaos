@@ -36,8 +36,15 @@ OUTPUT_PATH = ROOT / "data" / "processed" / "evidence_ledger.json"
 ASSUMPTIONS = {
     "time-invariance": {
         "desc": "存在时不变的生成机制 (2015-2025 同一系统)",
-        "status": "untestable",
-        "note": "时段剪切审计 2026-07-09 = UNDERPOWERED。resolution-dependent identifiability: 月度分辨率下 not identifiable。",
+        "status": "split",
+        "note": ("第九轮拆三层 (GPT): P2a 所有低维参数平稳 = 对 PC2 REJECTED "
+                 "(Nyblom AR(2), 残差白噪声, p=0.0065); P2b 全局机制平稳 = 未决; "
+                 "P2c 观测算子平稳 = 未决。低维层非无功率, 但 PC2 非恒定性对因果三支简并。"),
+    },
+    "obs-operator-stationarity": {
+        "desc": "观测算子时不变 (梗'变异'/'漂移'的含义跨时代不变)",
+        "status": "suspect",
+        "note": "P2c。PC2 载 mutation/semantic_drift; 若含义随时代变(2020真实迁移 vs 2023表达形式), 自相关上升可能是测量变非系统变。接 Q8 (narrative-as-observation)。relaxation_probe 碰不到此支。",
     },
     "regime-discretization": {
         "desc": "状态空间可切成离散相区 (GMM)",
@@ -160,6 +167,26 @@ LEDGER = [
      "statement": "时不变性在月度分辨率下 not identifiable (resolution-dependent)",
      "depends": ["time-invariance"],
      "source": "temporal_slice_audit.py", "status": "active"},
+    {"id": "p2a-rejected-pc2", "grade": "E3", "value": "P2a REJECTED (PC2)",
+     "statement": "低维参数平稳性 (P2a) 对 PC2 被拒: AR(2) 参数在127月内非恒定",
+     "depends": [],
+     "source": "nyblom_stationarity.py", "status": "active",
+     "note": "Nyblom L=1.27, null p95=0.91, p=0.0065; 残差过 Ljung-Box(0.15) 白噪声; 反驳'分辨率墙杀死一切'。"},
+    {"id": "relaxation-weakened", "grade": "E3", "value": "LEAN_SLOWING (exploratory)",
+     "statement": "PC2 relaxation 结构改变: ρ与var同升(corr0.78)、ρ领先var",
+     "depends": ["obs-operator-stationarity"],
+     "source": "relaxation_probe.py", "status": "active",
+     "note": "exploratory (有效独立窗~2, 同分辨率墙); 倾向slowing但排除不了(c)观测算子改变。"},
+
+    # ── E1 (Nyblom 新增) ──
+    {"id": "pc2-ar-nonconstancy", "grade": "E1", "value": "p=0.0065",
+     "statement": "PC2 (churn/mutation轴) AR(2) 参数非恒定 (Nyblom, 残差白噪声)",
+     "depends": [],
+     "source": "nyblom_stationarity.py", "status": "active"},
+    {"id": "pc2-persistence-var-rise", "grade": "E1", "value": "ρ0.57→0.94, var0.53→2.17",
+     "statement": "PC2 AR自相关前半0.57→后半0.94, 方差0.53→2.17",
+     "depends": [],
+     "source": "nyblom_stationarity.py + relaxation_probe.py", "status": "active"},
 
     # ── E4 机制假说 (Competing Explanatory Layer — 并存待淘汰) ──
     {"id": "r2-hysteresis", "grade": "E4", "value": "候选",
@@ -182,6 +209,22 @@ LEDGER = [
      "depends": ["single-picture", "attention-proxy"],
      "source": "第七轮 Gemini", "status": "active",
      "note": "叙事阻尼器图景。"},
+
+    # ── E4 PC2 relaxation 变化的三支归因 (第九轮, 简并并列 pending) ──
+    {"id": "pc2-cause-slowing", "grade": "E4", "value": "候选(倾向)",
+     "statement": "PC2 relaxation 减弱 = 固定机制逼近分岔 (critical slowing)",
+     "depends": ["time-invariance"],
+     "source": "relaxation_probe (LEAN_SLOWING)", "status": "active",
+     "note": "exploratory 支持 (ρ领先var), 但不 confirmatory; 与 WEAK_IRREVERSIBILITY 兼容。"},
+    {"id": "pc2-cause-mechanism", "grade": "E4", "value": "候选",
+     "statement": "PC2 relaxation 变化 = 生成机制真的改变 (F_t≠F)",
+     "depends": [],
+     "source": "Nyblom 简并支(a)", "status": "active"},
+    {"id": "pc2-cause-obsop", "grade": "E4", "value": "候选",
+     "statement": "PC2 变化 = 观测算子改变 (梗'变异'含义随时代变), 非系统变",
+     "depends": ["obs-operator-stationarity"],
+     "source": "Nyblom 简并支(c), GPT 补", "status": "active",
+     "note": "relaxation_probe 碰不到此支; 接 Q8 narrative-as-observation。"},
 ]
 
 GRADE_DESC = {
