@@ -1,0 +1,304 @@
+{
+  "source": "evidence_ledger.py",
+  "principle": "假设倒了只失效挂靠它的高级条目 (E3/E4); E0/E1/E2 保留",
+  "grades": {
+    "E0": "原始观测",
+    "E1": "统计描述",
+    "E2": "操作结果",
+    "E3": "条件解释",
+    "E4": "机制假说"
+  },
+  "assumptions": {
+    "time-invariance": {
+      "desc": "存在时不变的生成机制 (2015-2025 同一系统)",
+      "status": "untestable",
+      "note": "时段剪切审计 2026-07-09 = UNDERPOWERED。resolution-dependent identifiability: 月度分辨率下 not identifiable。"
+    },
+    "regime-discretization": {
+      "desc": "状态空间可切成离散相区 (GMM)",
+      "status": "holds",
+      "note": "操作离散化 (安全)。RQA 支持 R2 真实分离, 但相区数/边界依赖 GMM+BIC。"
+    },
+    "aggregation": {
+      "desc": "宏观状态 = 微观数据聚合, 无反因性损失",
+      "status": "suspect",
+      "note": "架构级预设3。聚合反因性可能塌缩个体强结构 (Q8)。未检验。"
+    },
+    "attention-proxy": {
+      "desc": "Google Trends 月搜索量 = 集体注意力",
+      "status": "holds",
+      "note": "127月历史分析的注意力代理。有3-7天滞后+仅已知关键词。"
+    },
+    "narrative-as-observation": {
+      "desc": "采集数据 = 对现实结构的观测",
+      "status": "falsified",
+      "note": "Q8 翻转: 采集的是人群叙事化反应, 不是现实观测。但叙事化倾向本身是观测目标。"
+    },
+    "markov": {
+      "desc": "x(t+1)=F(x(t),u,y) 一阶马尔可夫, 无长记忆",
+      "status": "suspect",
+      "note": "非线性/长记忆情况从未检验。"
+    },
+    "stage-ontology": {
+      "desc": "五阶段 (origin/emergence/peak/controversy/fixation) 是真实生命周期结构",
+      "status": "suspect",
+      "note": "本体离散化 (危险)。人工阈值划分, 和数据驱动原则矛盾。ARI=0.27: 机器见3类非5类。"
+    },
+    "meme-homogeneous": {
+      "desc": "'梗' 是同质分析单元",
+      "status": "suspect",
+      "note": "'躺平'(3年情绪) 和 '鸡你太美'(2月娱乐) 被当同类数据点。"
+    },
+    "single-picture": {
+      "desc": "存在唯一正确的物理图景",
+      "status": "falsified",
+      "note": "第八轮 GPT: R2 的多个解释可能是不同统计量的不同投影, 未必互斥。→ Competing Explanatory Layer。"
+    }
+  },
+  "entries": [
+    {
+      "id": "r2-persistence",
+      "grade": "E1",
+      "value": "0.973",
+      "statement": "R2 相区自持概率 97.3%",
+      "depends": [
+        "regime-discretization",
+        "time-invariance"
+      ],
+      "source": "regime_detector.py / regime_map.json",
+      "status": "active"
+    },
+    {
+      "id": "r2-variance-inflation",
+      "grade": "E1",
+      "value": "2.31x",
+      "statement": "R2 内部状态方差从 early→late 放大 2.31×",
+      "depends": [
+        "regime-discretization"
+      ],
+      "source": "ms_ar_first_cut.py",
+      "status": "active"
+    },
+    {
+      "id": "r2-pc-coupling",
+      "grade": "E1",
+      "value": "PC4 r=+0.85, PC5 r=-0.87",
+      "statement": "R2 内部 PC4/PC5 与 z1 强相关 (p≈0, Bonferroni 后显著)",
+      "depends": [
+        "regime-discretization"
+      ],
+      "source": "ms_ar_first_cut.py",
+      "status": "active"
+    },
+    {
+      "id": "rqa-zero-recurrence",
+      "grade": "E1",
+      "value": "0 对",
+      "statement": "R2 与 R1/R3 零跨相区 ε-复发 (≥12月间隔)",
+      "depends": [
+        "regime-discretization"
+      ],
+      "source": "irreversibility_test.py",
+      "status": "active"
+    },
+    {
+      "id": "slice-subspace-angles",
+      "grade": "E1",
+      "value": "40.9/48.3/52.7°",
+      "statement": "三时段两两子空间均值夹角, 全低于连续区块噪声 p95=70.7°",
+      "depends": [],
+      "source": "temporal_slice_audit.py",
+      "status": "active"
+    },
+    {
+      "id": "switch-rate",
+      "grade": "E1",
+      "value": "0.111/月",
+      "statement": "regime 切换率 0.111/月 (127月14次), 归一化熵 0.932",
+      "depends": [
+        "regime-discretization"
+      ],
+      "source": "regime_detector.py",
+      "status": "active"
+    },
+    {
+      "id": "pca-d90",
+      "grade": "E2",
+      "value": "d90=10",
+      "statement": "18维特征 PCA 90%方差需 10 维",
+      "depends": [
+        "aggregation"
+      ],
+      "source": "representation_learning.py",
+      "status": "active"
+    },
+    {
+      "id": "counterfactual-platform",
+      "grade": "E2",
+      "value": "16.5x > 1.9x",
+      "statement": "Counterfactual: 平台组漂移比 16.5× > AI 组 1.9×",
+      "depends": [
+        "attention-proxy"
+      ],
+      "source": "control_manifold.py",
+      "status": "active"
+    },
+    {
+      "id": "gmm-regimes",
+      "grade": "E2",
+      "value": "4簇→3相区",
+      "statement": "GMM+BIC 选出 4 观测簇, 合并 3 物理相区",
+      "depends": [
+        "regime-discretization",
+        "aggregation"
+      ],
+      "source": "regime_detector.py",
+      "status": "active"
+    },
+    {
+      "id": "narrative-ari",
+      "grade": "E2",
+      "value": "ARI=0.27",
+      "statement": "叙事聚类 ARI=0.27: 机器见 3 类, 非人工 5 类",
+      "depends": [
+        "stage-ontology",
+        "meme-homogeneous"
+      ],
+      "source": "narrative_clustering.py",
+      "status": "active"
+    },
+    {
+      "id": "structure-r2",
+      "grade": "E2",
+      "value": "R²=0.79",
+      "statement": "注意力结构 (HHI+叙事熵) 可从外部场预测 R²=0.79",
+      "depends": [
+        "attention-proxy"
+      ],
+      "source": "order_form_predictor.py",
+      "status": "active"
+    },
+    {
+      "id": "monthly-semantic-2026",
+      "grade": "E2",
+      "value": "2026-06/07",
+      "statement": "月度语义状态 (cov_trace/各向异性/漂移) 已建, 覆盖 2026-06/07",
+      "depends": [
+        "narrative-as-observation"
+      ],
+      "source": "monthly_aggregator.py / monthly_semantic_state.json",
+      "status": "active"
+    },
+    {
+      "id": "r2-real-cluster",
+      "grade": "E3",
+      "value": "真实分离",
+      "statement": "R2 是状态空间真实结构分离, 非 GMM artifact",
+      "depends": [
+        "regime-discretization",
+        "time-invariance"
+      ],
+      "source": "irreversibility_test.py (RQA)",
+      "status": "active"
+    },
+    {
+      "id": "weak-irreversibility",
+      "grade": "E3",
+      "value": "WEAK",
+      "statement": "不可逆性来自外部场慢漂移, 非系统内禀 (Time-Reversal 对称)",
+      "depends": [
+        "regime-discretization",
+        "time-invariance"
+      ],
+      "source": "irreversibility_test.py",
+      "status": "active"
+    },
+    {
+      "id": "h1a-lowdim",
+      "grade": "E3",
+      "value": "SUPPORTED",
+      "statement": "H1a: 叙事状态存在低维表示",
+      "depends": [
+        "aggregation"
+      ],
+      "source": "representation_learning.py",
+      "status": "active"
+    },
+    {
+      "id": "h1b-rejected",
+      "grade": "E3",
+      "value": "REJECTED",
+      "statement": "H1b: 月度点预测不可行, 状态近似随机游走 (VARX R²=-0.32)",
+      "depends": [
+        "markov"
+      ],
+      "source": "representation_learning.py",
+      "status": "active"
+    },
+    {
+      "id": "p2-underpowered",
+      "grade": "E3",
+      "value": "UNDERPOWERED",
+      "statement": "时不变性在月度分辨率下 not identifiable (resolution-dependent)",
+      "depends": [
+        "time-invariance"
+      ],
+      "source": "temporal_slice_audit.py",
+      "status": "active"
+    },
+    {
+      "id": "r2-hysteresis",
+      "grade": "E4",
+      "value": "候选",
+      "statement": "R2 = hysteresis basin (滞回势阱), 系统被外部约束困住",
+      "depends": [
+        "regime-discretization",
+        "time-invariance",
+        "single-picture"
+      ],
+      "source": "早期物理隐喻",
+      "status": "active",
+      "note": "结构崩塌图景。逃逸需外部冲击。"
+    },
+    {
+      "id": "r2-consensus",
+      "grade": "E4",
+      "value": "候选",
+      "statement": "R2 = consensus convergence, 百万个体独立收敛到同一应对策略",
+      "depends": [
+        "aggregation",
+        "single-picture",
+        "narrative-as-observation"
+      ],
+      "source": "Q9 替代假说",
+      "status": "active",
+      "note": "共识收敛图景。方差放大=同一策略内表达创新。⚠ Gemini 主张彻底采纳=预设犯案。"
+    },
+    {
+      "id": "r2-protocol",
+      "grade": "E4",
+      "value": "候选",
+      "statement": "R2 = communication protocol 收敛 (黑话/梗脱离观点本身)",
+      "depends": [
+        "single-picture",
+        "narrative-as-observation"
+      ],
+      "source": "第七轮 GPT",
+      "status": "active",
+      "note": "通信编码协议图景。"
+    },
+    {
+      "id": "r2-damper",
+      "grade": "E4",
+      "value": "候选",
+      "statement": "R2 = narrative damper, 算法与人群反馈回路相干增强",
+      "depends": [
+        "single-picture",
+        "attention-proxy"
+      ],
+      "source": "第七轮 Gemini",
+      "status": "active",
+      "note": "叙事阻尼器图景。"
+    }
+  ]
+}
