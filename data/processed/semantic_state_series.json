@@ -1,0 +1,49 @@
+{
+  "source": "semantic_state_series.py",
+  "role": "前向分析层数据终点 (forward analysis layer endpoint)",
+  "evidence_grade": "E2 (操作结果)",
+  "depends_on_assumption": [
+    "narrative-as-observation"
+  ],
+  "feature_schema": [
+    "semantic_dispersion",
+    "attention_conc",
+    "flash_skew",
+    "pos_entropy",
+    "platform_divergence",
+    "semantic_drift"
+  ],
+  "disjointness_note": "本序列与历史 127 月特征矩阵在时间上不重叠, 不可拼接 —— 历史段无 embedding, 2026 段无 Level 1/Trends。这是独立前向状态表示, 从 2026-06 起积累, ≥~24 月后可跑自身 PCA/regime 分析 (历史链的高分辨率前向对应物)。",
+  "n_scraper_months": 2,
+  "scraper_months": [
+    "2026-06",
+    "2026-07"
+  ],
+  "months_needed_for_analysis": 22,
+  "series": [
+    {
+      "month": "2026-06",
+      "n_headlines": 2850,
+      "features": {
+        "semantic_dispersion": 1.161,
+        "attention_conc": 0.1771,
+        "flash_skew": 1.1515,
+        "pos_entropy": 1.6206,
+        "platform_divergence": 0.1812,
+        "semantic_drift": null
+      }
+    },
+    {
+      "month": "2026-07",
+      "n_headlines": 3600,
+      "features": {
+        "semantic_dispersion": 1.1845,
+        "attention_conc": 0.1647,
+        "flash_skew": 1.1443,
+        "pos_entropy": 1.635,
+        "platform_divergence": 0.1655,
+        "semantic_drift": 0.0183
+      }
+    }
+  ]
+}
