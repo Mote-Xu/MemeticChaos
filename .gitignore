@@ -30,3 +30,6 @@ data/scraped/
 # OS
 .DS_Store
 Thumbs.db
+
+# Bridge 会话转录 (含私密上下文, 禁止推送公开仓库)
+.bridge/
