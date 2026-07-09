@@ -1,0 +1,562 @@
+{
+  "source": "temporal_slice_audit.py",
+  "target_presupposition": "P2: 存在时不变的生成机制",
+  "method_note": "每段独立拟合全套; null 为连续区块 block-bootstrap; 主判据=均值子空间夹角+交叉重构gap vs 噪声; KS 移位不进判据(测状态漂移非机制); verdict 为假说非证明",
+  "segments": {
+    "pre2020": {
+      "n_months": 55,
+      "n_features": 18,
+      "intrinsic_dim": {
+        "d90": 11,
+        "d95": 12,
+        "evr_top5": [
+          0.1995,
+          0.1443,
+          0.0932,
+          0.0834,
+          0.0756
+        ]
+      },
+      "pc_loadings": {
+        "PC1": [
+          {
+            "feature": "hhi",
+            "loading": 0.5046
+          },
+          {
+            "feature": "entropy",
+            "loading": -0.5003
+          },
+          {
+            "feature": "ext_pc_1",
+            "loading": -0.4341
+          },
+          {
+            "feature": "stage_emergence",
+            "loading": -0.3209
+          },
+          {
+            "feature": "semantic_drift",
+            "loading": -0.2415
+          }
+        ],
+        "PC2": [
+          {
+            "feature": "stage_origin",
+            "loading": 0.5751
+          },
+          {
+            "feature": "stage_peak",
+            "loading": -0.407
+          },
+          {
+            "feature": "ext_pc_3",
+            "loading": -0.3432
+          },
+          {
+            "feature": "ext_pc_2",
+            "loading": 0.335
+          },
+          {
+            "feature": "inst_rate",
+            "loading": -0.3048
+          }
+        ]
+      },
+      "regime_signature": {
+        "reliability": "LOW — n small, diag-cov GMM, 相区身份跨段不可比; 仅签名标量可比",
+        "k_selected": 2,
+        "n_switches": 3,
+        "switch_rate_per_month": 0.0556,
+        "dominant_regime_pct": 0.5455,
+        "max_lock_months": 25
+      }
+    },
+    "2020-2022": {
+      "n_months": 36,
+      "n_features": 18,
+      "intrinsic_dim": {
+        "d90": 10,
+        "d95": 11,
+        "evr_top5": [
+          0.3117,
+          0.1467,
+          0.0935,
+          0.0776,
+          0.0619
+        ]
+      },
+      "pc_loadings": {
+        "PC1": [
+          {
+            "feature": "entropy",
+            "loading": 0.403
+          },
+          {
+            "feature": "stage_origin",
+            "loading": -0.3927
+          },
+          {
+            "feature": "stage_fixation",
+            "loading": 0.3842
+          },
+          {
+            "feature": "hhi",
+            "loading": -0.37
+          },
+          {
+            "feature": "stage_controversy",
+            "loading": 0.31
+          }
+        ],
+        "PC2": [
+          {
+            "feature": "semantic_drift",
+            "loading": 0.5391
+          },
+          {
+            "feature": "inst_rate",
+            "loading": 0.5058
+          },
+          {
+            "feature": "mutation_rate",
+            "loading": 0.404
+          },
+          {
+            "feature": "ext_pc_6",
+            "loading": 0.3376
+          },
+          {
+            "feature": "ext_pc_1",
+            "loading": -0.194
+          }
+        ]
+      },
+      "regime_signature": {
+        "reliability": "LOW — n small, diag-cov GMM, 相区身份跨段不可比; 仅签名标量可比",
+        "k_selected": 2,
+        "n_switches": 1,
+        "switch_rate_per_month": 0.0286,
+        "dominant_regime_pct": 0.5278,
+        "max_lock_months": 19
+      }
+    },
+    "2023-2025": {
+      "n_months": 36,
+      "n_features": 18,
+      "intrinsic_dim": {
+        "d90": 9,
+        "d95": 11,
+        "evr_top5": [
+          0.2576,
+          0.1994,
+          0.1004,
+          0.0881,
+          0.0661
+        ]
+      },
+      "pc_loadings": {
+        "PC1": [
+          {
+            "feature": "stage_fixation",
+            "loading": 0.4127
+          },
+          {
+            "feature": "ext_pc_2",
+            "loading": 0.4087
+          },
+          {
+            "feature": "stage_controversy",
+            "loading": -0.377
+          },
+          {
+            "feature": "mutation_rate",
+            "loading": -0.3378
+          },
+          {
+            "feature": "stage_emergence",
+            "loading": 0.3226
+          }
+        ],
+        "PC2": [
+          {
+            "feature": "inst_rate",
+            "loading": 0.3811
+          },
+          {
+            "feature": "entropy",
+            "loading": -0.3714
+          },
+          {
+            "feature": "hhi",
+            "loading": 0.3575
+          },
+          {
+            "feature": "semantic_drift",
+            "loading": 0.3543
+          },
+          {
+            "feature": "ext_pc_1",
+            "loading": -0.3455
+          }
+        ]
+      },
+      "regime_signature": {
+        "reliability": "LOW — n small, diag-cov GMM, 相区身份跨段不可比; 仅签名标量可比",
+        "k_selected": 3,
+        "n_switches": 3,
+        "switch_rate_per_month": 0.0857,
+        "dominant_regime_pct": 0.5,
+        "max_lock_months": 18
+      }
+    }
+  },
+  "feature_distribution_shift_ks": {
+    "pre2020 vs 2020-2022": {
+      "n_fixed_features": 10,
+      "n_shifted_p05": 9,
+      "shifted": [
+        {
+          "feature": "stage_origin",
+          "ks": 0.705,
+          "p": 0.0,
+          "mean_a": 0.53,
+          "mean_b": 0.392
+        },
+        {
+          "feature": "stage_peak",
+          "ks": 0.659,
+          "p": 0.0,
+          "mean_a": 0.354,
+          "mean_b": 0.26
+        },
+        {
+          "feature": "stage_controversy",
+          "ks": 0.843,
+          "p": 0.0,
+          "mean_a": 0.001,
+          "mean_b": 0.066
+        },
+        {
+          "feature": "stage_fixation",
+          "ks": 0.806,
+          "p": 0.0,
+          "mean_a": 0.0,
+          "mean_b": 0.146
+        },
+        {
+          "feature": "mutation_rate",
+          "ks": 0.788,
+          "p": 0.0,
+          "mean_a": 0.013,
+          "mean_b": 0.188
+        },
+        {
+          "feature": "inst_rate",
+          "ks": 0.853,
+          "p": 0.0,
+          "mean_a": 0.038,
+          "mean_b": 0.255
+        },
+        {
+          "feature": "hhi",
+          "ks": 0.787,
+          "p": 0.0,
+          "mean_a": 0.456,
+          "mean_b": 0.208
+        },
+        {
+          "feature": "entropy",
+          "ks": 0.787,
+          "p": 0.0,
+          "mean_a": 0.935,
+          "mean_b": 1.862
+        },
+        {
+          "feature": "stage_emergence",
+          "ks": 0.309,
+          "p": 0.0235,
+          "mean_a": 0.115,
+          "mean_b": 0.135
+        }
+      ]
+    },
+    "pre2020 vs 2023-2025": {
+      "n_fixed_features": 10,
+      "n_shifted_p05": 10,
+      "shifted": [
+        {
+          "feature": "stage_origin",
+          "ks": 1.0,
+          "p": 0.0,
+          "mean_a": 0.53,
+          "mean_b": 0.258
+        },
+        {
+          "feature": "stage_peak",
+          "ks": 0.872,
+          "p": 0.0,
+          "mean_a": 0.354,
+          "mean_b": 0.109
+        },
+        {
+          "feature": "stage_controversy",
+          "ks": 0.648,
+          "p": 0.0,
+          "mean_a": 0.001,
+          "mean_b": 0.051
+        },
+        {
+          "feature": "stage_fixation",
+          "ks": 1.0,
+          "p": 0.0,
+          "mean_a": 0.0,
+          "mean_b": 0.458
+        },
+        {
+          "feature": "inst_rate",
+          "ks": 0.836,
+          "p": 0.0,
+          "mean_a": 0.038,
+          "mean_b": 0.145
+        },
+        {
+          "feature": "hhi",
+          "ks": 1.0,
+          "p": 0.0,
+          "mean_a": 0.456,
+          "mean_b": 0.123
+        },
+        {
+          "feature": "entropy",
+          "ks": 1.0,
+          "p": 0.0,
+          "mean_a": 0.935,
+          "mean_b": 2.334
+        },
+        {
+          "feature": "mutation_rate",
+          "ks": 0.427,
+          "p": 0.0004,
+          "mean_a": 0.013,
+          "mean_b": 0.058
+        },
+        {
+          "feature": "stage_emergence",
+          "ks": 0.361,
+          "p": 0.0047,
+          "mean_a": 0.115,
+          "mean_b": 0.125
+        },
+        {
+          "feature": "semantic_drift",
+          "ks": 0.332,
+          "p": 0.012,
+          "mean_a": 0.258,
+          "mean_b": 0.213
+        }
+      ]
+    },
+    "2020-2022 vs 2023-2025": {
+      "n_fixed_features": 10,
+      "n_shifted_p05": 10,
+      "shifted": [
+        {
+          "feature": "stage_peak",
+          "ks": 0.778,
+          "p": 0.0,
+          "mean_a": 0.26,
+          "mean_b": 0.109
+        },
+        {
+          "feature": "stage_fixation",
+          "ks": 0.861,
+          "p": 0.0,
+          "mean_a": 0.146,
+          "mean_b": 0.458
+        },
+        {
+          "feature": "inst_rate",
+          "ks": 0.583,
+          "p": 0.0,
+          "mean_a": 0.255,
+          "mean_b": 0.145
+        },
+        {
+          "feature": "mutation_rate",
+          "ks": 0.528,
+          "p": 0.0001,
+          "mean_a": 0.188,
+          "mean_b": 0.058
+        },
+        {
+          "feature": "stage_origin",
+          "ks": 0.5,
+          "p": 0.0002,
+          "mean_a": 0.392,
+          "mean_b": 0.258
+        },
+        {
+          "feature": "entropy",
+          "ks": 0.417,
+          "p": 0.0035,
+          "mean_a": 1.862,
+          "mean_b": 2.334
+        },
+        {
+          "feature": "stage_emergence",
+          "ks": 0.389,
+          "p": 0.0081,
+          "mean_a": 0.135,
+          "mean_b": 0.125
+        },
+        {
+          "feature": "hhi",
+          "ks": 0.389,
+          "p": 0.0081,
+          "mean_a": 0.208,
+          "mean_b": 0.123
+        },
+        {
+          "feature": "semantic_drift",
+          "ks": 0.361,
+          "p": 0.0176,
+          "mean_a": 0.28,
+          "mean_b": 0.213
+        },
+        {
+          "feature": "stage_controversy",
+          "ks": 0.333,
+          "p": 0.0359,
+          "mean_a": 0.066,
+          "mean_b": 0.051
+        }
+      ]
+    }
+  },
+  "null_baseline": {
+    "n_bootstrap": 800,
+    "window_len": 36,
+    "sampling": "contiguous non-overlapping blocks, per-window standardized (matches real segments)",
+    "null_mean_angle_deg": {
+      "median": 61.47,
+      "p95": 70.66
+    },
+    "null_max_angle_deg": {
+      "median": 86.74,
+      "p95": 89.69
+    },
+    "null_xrecon_gap": {
+      "median": 0.4578,
+      "p95": 0.5362
+    }
+  },
+  "subspace_angles_cross_segment": {
+    "pre2020 vs 2020-2022": {
+      "principal_angles_deg": [
+        23.0,
+        28.86,
+        50.29,
+        61.4
+      ],
+      "mean_angle_deg": 40.89,
+      "null_mean_p95_deg": 70.66,
+      "empirical_p": 1.0,
+      "exceeds_null": false
+    },
+    "pre2020 vs 2023-2025": {
+      "principal_angles_deg": [
+        36.4,
+        39.19,
+        43.17,
+        74.57
+      ],
+      "mean_angle_deg": 48.33,
+      "null_mean_p95_deg": 70.66,
+      "empirical_p": 1.0,
+      "exceeds_null": false
+    },
+    "2020-2022 vs 2023-2025": {
+      "principal_angles_deg": [
+        30.32,
+        44.45,
+        59.23,
+        76.81
+      ],
+      "mean_angle_deg": 52.7,
+      "null_mean_p95_deg": 70.66,
+      "empirical_p": 0.9688,
+      "exceeds_null": false
+    }
+  },
+  "cross_reconstruction": {
+    "pre2020-basis on 2020-2022": {
+      "self_r2": 0.6295,
+      "cross_r2": 0.3597,
+      "gap": 0.2698,
+      "null_gap_p95": 0.5362,
+      "gap_empirical_p": 1.0,
+      "exceeds_null": false
+    },
+    "pre2020-basis on 2023-2025": {
+      "self_r2": 0.6455,
+      "cross_r2": 0.316,
+      "gap": 0.3296,
+      "null_gap_p95": 0.5362,
+      "gap_empirical_p": 1.0,
+      "exceeds_null": false
+    },
+    "2020-2022-basis on pre2020": {
+      "self_r2": 0.5205,
+      "cross_r2": 0.331,
+      "gap": 0.1895,
+      "null_gap_p95": 0.5362,
+      "gap_empirical_p": 1.0,
+      "exceeds_null": false
+    },
+    "2020-2022-basis on 2023-2025": {
+      "self_r2": 0.6455,
+      "cross_r2": 0.3037,
+      "gap": 0.3418,
+      "null_gap_p95": 0.5362,
+      "gap_empirical_p": 1.0,
+      "exceeds_null": false
+    },
+    "2023-2025-basis on pre2020": {
+      "self_r2": 0.5205,
+      "cross_r2": 0.3251,
+      "gap": 0.1955,
+      "null_gap_p95": 0.5362,
+      "gap_empirical_p": 1.0,
+      "exceeds_null": false
+    },
+    "2023-2025-basis on 2020-2022": {
+      "self_r2": 0.6295,
+      "cross_r2": 0.3118,
+      "gap": 0.3177,
+      "null_gap_p95": 0.5362,
+      "gap_empirical_p": 1.0,
+      "exceeds_null": false
+    }
+  },
+  "verdict": {
+    "direction": "UNDERPOWERED_CANNOT_REJECT_P2",
+    "label": "HYPOTHESIS — 物理假说, 不可从本数据声称已证明",
+    "text": "证据方向: 无法拒绝预设 2, 但主因是检验力不足。36 月段的协方差结构差异落在连续区块采样噪声内 —— 在月度分辨率下, 本审计无法把'机制改变'从'同机制不同采样'中分离出来。特征分布 KS 大幅移位是真实的, 但它测的是状态分布漂移, 不是机制不变性, 故不进判据。P2 仍未被证伪也未被坐实。",
+    "evidence": {
+      "n_angle_pairs_exceeding_null": 0,
+      "n_gap_pairs_exceeding_null": 0,
+      "n_angle_pairs_total": 3,
+      "n_gap_pairs_total": 6,
+      "max_ks_feature_shift": 10,
+      "ks_note": "KS 不进判据: 测状态分布漂移, 混淆 state-movement 与 mechanism-change",
+      "mean_cross_reconstruction_gap": 0.274
+    },
+    "caveats": [
+      "段边界 2020/2023 是假设, 未做敏感性扫描",
+      "36 月段 GMM 相区身份不可信",
+      "18 维特征定义跨段沿用, 段特异的相关特征不可见",
+      "n=36 检验力低: 无法拒绝 P2 不等于 P2 成立"
+    ]
+  }
+}

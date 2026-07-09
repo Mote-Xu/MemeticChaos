@@ -517,7 +517,7 @@ def main():
         print(f"  距离偏度: {latest['distance_distribution']['skewness_ratio']:.2f}"
               + (" ⚡ FLASH FLOOD" if latest['distance_distribution']['flash_flood_alert'] else ""))
         print(f"  POS 熵: {latest['pos_entropy'].get('entropy', 'N/A')}")
-        if latest['platform_jsd']['mean_cosine_distance'] is not None:
+        if latest['platform_jsd'].get('mean_cosine_distance') is not None:
             print(f"  跨平台 cosine dist: {latest['platform_jsd']['mean_cosine_distance']:.4f}"
                   f" → {latest['platform_jsd']['interpretation']}")
 
@@ -541,9 +541,11 @@ def _print_monthly(state: dict):
               f"adj+part={pos['adjectival_particle_ratio']:.2f})")
     print(f"  注意力集中度: {state['attention_concentration']:.3f}")
     pjsd = state['platform_jsd']
-    if pjsd['mean_cosine_distance'] is not None:
+    if pjsd.get('mean_cosine_distance') is not None:
         print(f"  跨平台 cosine dist: {pjsd['mean_cosine_distance']:.4f}")
         print(f"    → {pjsd['interpretation']}")
+    else:
+        print(f"  跨平台 cosine dist: N/A ({pjsd.get('interpretation', '数据不足')})")
 
 
 if __name__ == "__main__":
