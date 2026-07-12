@@ -47,13 +47,36 @@ ASSUMPTIONS = {
         "note": "P2c。PC2 载 mutation/semantic_drift; 若含义随时代变(2020真实迁移 vs 2023表达形式), 自相关上升可能是测量变非系统变。接 Q8 (narrative-as-observation)。relaxation_probe 碰不到此支。",
     },
     "regime-discretization": {
-        "desc": "状态空间可切成离散相区 (GMM)",
+        "desc": "状态空间可切成离散相区 (GMM) — 母假设, 第十一轮已拆 RD-a/b/c",
+        "status": "split",
+        "note": ("regime_discreteness.py (gap/Jaccard/Silverman + RQA 交叉, 审计层 2026-07-12) 镜像 "
+                 "time-invariance 的 P2a/b/c 拆法, 拆三层: RD-a [[regime-lowdim-structure]] 低维有 label-free "
+                 "结构 = holds; RD-b [[regime-count]] 分成 K 个离散相区 = suspect; RD-c [[r2-basin]] R2 是离散"
+                 "分离盆地 = not-supported。★两头都不获支持★: 4-clean-regimes 与 pure-continuum 皆无支撑——有真"
+                 "低维结构(RD-a, PC1 多峰), 但 4-相区切分不稳(RD-b), R2 盆地vs漂移区 underpowered(RD-c)。"
+                 "挂靠者已改挂对应子假设, 按子假设复核 (suspect/not-supported ≠ falsified, 不自动失效)。"),
+    },
+    "regime-lowdim-structure": {
+        "desc": "RD-a: 低维空间存在 label-free 结构 (非纯连续均匀)",
+        "status": "holds",
+        "note": ("PC1 Silverman 多峰 p=0 (轴由数据定义, 非标签 → 非循环); 功率自检通过 (uni0.37/bi0.0)。"
+                 "这是**反 pure-continuum** 的硬证据 —— 阻止把 RD 读成'纯连续'。"),
+    },
+    "regime-count": {
+        "desc": "RD-b: 状态空间分成 K 个离散相区 (K=4 计数/切分是稳健结构)",
         "status": "suspect",
-        "note": ("regime_discreteness.py 审计 (2026-07-12): gap statistic 最优 k=1 (BIC 只从 k≥3 搜, "
-                 "结构上排除 k=1/2), GMM(4) 全簇自举 Jaccard 0.20-0.56 (R2 亦仅 0.48)。RQA 的 'R2 零复发=分离' "
-                 "可由连续**慢漂移入新区并驻留**解释 (漂走→零复发, 非需要分离盆地)。→ '4 相区' 降级为操作切分; "
-                 "R2 as 分离盆地不获支持, R2 as 高驻留区存活。127×10 稀疏, UNDERPOWERED 不坐实连续。"
-                 "级联: 挂靠本假设的 E1/E3 需按 'R2=漂移驻留区非分离盆地' 复核 (suspect 非 falsified, 不自动失效)。"),
+        "note": ("gap statistic 最优 k=1 (BIC 只从 k≥3 搜, 结构性排除 k=1/2); GMM(4) 全簇自举 Jaccard "
+                 "0.20-0.56 (R2 亦仅 0.48); curation 众数 7、仅 4% 复现 k=4。计数非稳健结构, 是操作切分。"
+                 "★raw E1 统计 (0复发/切换率/方差比) 作为数存活, 仅'跨相区/regime'框定被 flag。★"),
+    },
+    "r2-basin": {
+        "desc": "RD-c: R2 是离散分离盆地 (而非连续流形上的高驻留漂移区)",
+        "status": "not-supported",
+        "note": ("★两读法并存 (Competing Explanatory Layer), 数据分不开 (UNDERPOWERED)★: (I) 连续 drift-dwelling "
+                 "(慢漂入新区并驻留); (II) 真实离散盆地 + 检测 underpowered。二者对同一证据 (RQA 零复发 / weak-irrev "
+                 "/ PC2 持久性升) reconcile 得一样好——而这三路都在 regime 框架内算, 打不破平局。★不 crown "
+                 "drift-dwelling★ (那是给单一图景加冕)。注: R2 as **高驻留区** (无盆地本体承诺) = holds; "
+                 "R2 as **离散分离盆地** = not-supported。R2_axis Silverman 因轴由标签定义=循环, 不作证据。"),
     },
     "aggregation": {
         "desc": "宏观状态 = 微观数据聚合, 无反因性损失",
@@ -101,28 +124,34 @@ LEDGER = [
     # ── E1 统计描述 ──
     {"id": "r2-persistence", "grade": "E1", "value": "0.973",
      "statement": "R2 相区自持概率 97.3%",
-     "depends": ["regime-discretization", "time-invariance"],
-     "source": "regime_detector.py / regime_map.json", "status": "active"},
+     "depends": ["regime-count", "time-invariance"],
+     "source": "regime_detector.py / regime_map.json", "status": "active",
+     "note": "raw E1 (给定分区的自持率是数, 存活); 'R2 是盆地' 框定挂 [[r2-basin]] not-supported。"},
     {"id": "r2-variance-inflation", "grade": "E1", "value": "2.31x",
      "statement": "R2 内部状态方差从 early→late 放大 2.31×",
-     "depends": ["regime-discretization"],
-     "source": "ms_ar_first_cut.py", "status": "active"},
+     "depends": ["regime-count"],
+     "source": "ms_ar_first_cut.py", "status": "active",
+     "note": "raw E1 存活; 方差放大兼容 basin-底变平 与 drift-dwelling-内表达多样化 两读法, 不判偏。"},
     {"id": "r2-pc-coupling", "grade": "E1", "value": "PC4 r=+0.85, PC5 r=-0.87",
      "statement": "R2 内部 PC4/PC5 与 z1 强相关 (p≈0, Bonferroni 后显著)",
-     "depends": ["regime-discretization"],
-     "source": "ms_ar_first_cut.py", "status": "active"},
+     "depends": ["regime-count"],
+     "source": "ms_ar_first_cut.py", "status": "active",
+     "note": "raw E1 存活; R2 分组框定挂 [[regime-count]] suspect。"},
     {"id": "rqa-zero-recurrence", "grade": "E1", "value": "0 对",
      "statement": "R2 与 R1/R3 零跨相区 ε-复发 (≥12月间隔)",
-     "depends": ["regime-discretization"],
-     "source": "irreversibility_test.py", "status": "active"},
+     "depends": ["regime-count"],
+     "source": "irreversibility_test.py", "status": "active",
+     "note": ("★raw E1 (0复发是事实) 存活★; '跨相区分离' 的解释挂 [[r2-basin]] not-supported —— "
+              "连续慢漂移入新区并驻留同样产生零复发, 不独证盆地。")},
     {"id": "slice-subspace-angles", "grade": "E1", "value": "40.9/48.3/52.7°",
      "statement": "三时段两两子空间均值夹角, 全低于连续区块噪声 p95=70.7°",
      "depends": [],
      "source": "temporal_slice_audit.py", "status": "active"},
     {"id": "switch-rate", "grade": "E1", "value": "0.111/月",
      "statement": "regime 切换率 0.111/月 (127月14次), 归一化熵 0.932",
-     "depends": ["regime-discretization"],
-     "source": "regime_detector.py", "status": "active"},
+     "depends": ["regime-count"],
+     "source": "regime_detector.py", "status": "active",
+     "note": "★raw E1 (切换计数是事实) 存活★; 'regime 切换' 框定挂 [[regime-count]] suspect。"},
 
     # ── E2 操作结果 ──
     {"id": "pca-d90", "grade": "E2", "value": "d90=10",
@@ -135,17 +164,23 @@ LEDGER = [
      "source": "control_manifold.py", "status": "active"},
     {"id": "gmm-regimes", "grade": "E2", "value": "4簇→3相区",
      "statement": "GMM+BIC 选出 4 观测簇, 合并 3 物理相区",
-     "depends": ["regime-discretization", "aggregation"],
-     "source": "regime_detector.py", "status": "active"},
-    {"id": "regime-discreteness-weak", "grade": "E2", "value": "gap→k=1; R2 Jaccard 0.48",
-     "statement": ("regime 离散性弱支持: gap statistic 最优 k=1 (BIC 只搜 k≥3), GMM(4) 全簇自举 "
-                   "Jaccard 0.20-0.56 (R2=0.48 亦碎); 唯 PC1 (label-free) Silverman 多峰 p=0"),
-     "depends": ["regime-discretization"],
+     "depends": ["regime-count", "aggregation"],
+     "source": "regime_detector.py", "status": "active",
+     "note": "★'4簇' 计数非稳健 (gap→k=1, Jaccard 全<0.56) → 降级为操作切分, 非世界的相区数。★"},
+    {"id": "regime-discreteness-weak", "grade": "E2", "value": "gap→k=1; R2 Jaccard 0.48; PC1 多峰",
+     "statement": ("regime 离散性审计: gap 最优 k=1 (BIC 只搜 k≥3), GMM(4) 全簇 Jaccard 0.20-0.56 (R2=0.48); "
+                   "唯 PC1 (label-free) Silverman 多峰 p=0; PC2/PC3 单峰"),
+     "depends": [],
      "source": "regime_discreteness.py", "status": "active",
-     "note": ("★resolve RQA-vs-curation 张力★: [[rqa-zero-recurrence]] 的 'R2 零复发=分离' 与连续**慢漂移入新区并驻留**"
-              "兼容 (漂走→零复发, 非需分离盆地), 与 [[weak-irreversibility]](漂移非内禀)+[[pc2-tvp-drift]](持久性升) 同调。"
-              "→ R2 as 高驻留区**存活**, R2 as 离散分离盆地**不获支持**。guardrail: 127×10 稀疏 UNDERPOWERED, "
-              "不坐实连续 (不解构过头); R2_axis Silverman p=0 因轴由标签选=循环, 仅上界。落 E2/E3 刻画, 非证明。")},
+     "note": ("★不 crown 任一极★: 4-clean-regimes 与 pure-continuum 皆不获支持。RD-a 真结构存在 (PC1 多峰, 非循环); "
+              "RD-b 计数脆弱; RD-c R2 盆地 vs 漂移驻留 UNDERPOWERED。★R2_axis Silverman p=0 是循环★ (轴由 GMM "
+              "标签定义再验分离 = 同数据既提又验; 单 Gaussian blob 也 p=0) → 仅上界, 不作证据。resolve "
+              "RQA-vs-curation 张力 (二者分别成立于不同粒度, 非矛盾) 是真进展; 但 basin-vs-drift 平局未破。")},
+    {"id": "pc1-labelfree-multimodal", "grade": "E1", "value": "Silverman p=0",
+     "statement": "PC1 (label-free 轴) Silverman 单峰检验拒绝: p_multimodal=0, 多峰 (功率自检通过)",
+     "depends": [],
+     "source": "regime_discreteness.py", "status": "active",
+     "note": "非循环 (PC1 数据定义, 非标签); 支持 [[regime-lowdim-structure]] holds —— 反 pure-continuum 的硬证据。"},
     {"id": "narrative-ari", "grade": "E2", "value": "ARI=0.27",
      "statement": "叙事聚类 ARI=0.27: 机器见 3 类, 非人工 5 类",
      "depends": ["stage-ontology", "meme-homogeneous"],
@@ -160,14 +195,17 @@ LEDGER = [
      "source": "monthly_aggregator.py / monthly_semantic_state.json", "status": "active"},
 
     # ── E3 条件解释 ──
-    {"id": "r2-real-cluster", "grade": "E3", "value": "真实分离",
+    {"id": "r2-real-cluster", "grade": "E3", "value": "分离 CONTESTED",
      "statement": "R2 是状态空间真实结构分离, 非 GMM artifact",
-     "depends": ["regime-discretization", "time-invariance"],
-     "source": "irreversibility_test.py (RQA)", "status": "active"},
+     "depends": ["r2-basin", "time-invariance"],
+     "source": "irreversibility_test.py (RQA)", "status": "active",
+     "note": ("★RD-c not-supported★: R2 as 真实分离盆地不获支持; R2 as 高驻留区 holds。"
+              "drift-dwelling vs underpowered-basin 竞争未破。active+flag, 非 falsified (suspect≠证伪)。")},
     {"id": "weak-irreversibility", "grade": "E3", "value": "WEAK",
      "statement": "不可逆性来自外部场慢漂移, 非系统内禀 (Time-Reversal 对称)",
-     "depends": ["regime-discretization", "time-invariance"],
-     "source": "irreversibility_test.py", "status": "active"},
+     "depends": ["regime-count", "time-invariance"],
+     "source": "irreversibility_test.py", "status": "active",
+     "note": "在 regime 框架内算; '慢漂入盆地' 同样兼容 → 打不破 basin-vs-drift 平局。active+flag。"},
     {"id": "h1a-lowdim", "grade": "E3", "value": "SUPPORTED",
      "statement": "H1a: 叙事状态存在低维表示",
      "depends": ["aggregation"],
@@ -219,9 +257,17 @@ LEDGER = [
     # ── E4 机制假说 (Competing Explanatory Layer — 并存待淘汰) ──
     {"id": "r2-hysteresis", "grade": "E4", "value": "候选",
      "statement": "R2 = hysteresis basin (滞回势阱), 系统被外部约束困住",
-     "depends": ["regime-discretization", "time-invariance", "single-picture"],
+     "depends": ["r2-basin", "time-invariance", "single-picture"],
      "source": "早期物理隐喻", "status": "active",
-     "note": "结构崩塌图景。逃逸需外部冲击。"},
+     "note": "结构崩塌图景。逃逸需外部冲击。RD-c not-supported 削弱之; E4 竞争层保留, 对手 = [[r2-drift-dwelling]]。"},
+    {"id": "r2-drift-dwelling", "grade": "E4", "value": "候选(与盆地并列)",
+     "statement": "R2 = 连续流形上的高驻留漂移区 (慢漂入新区并驻留), 非离散分离盆地",
+     "depends": ["regime-lowdim-structure"],
+     "source": "regime_discreteness.py (RD-c 竞争读法)", "status": "active",
+     "note": ("反盆地假说: 挂 [[regime-lowdim-structure]] (RD-a holds, 有真实高驻留区可漂入), ★不挂 r2-basin★ "
+              "—— 否则 r2-basin not-supported 时本假说会被误列级联失效 (方向反了)。与 [[r2-hysteresis]](盆地) 是 "
+              "Competing pair, 由 [[r2-basin]] 的 status 区分二者 (basin holds→hysteresis favored; "
+              "not-supported→本读法 favored), 而非 depends 级联。⚠对称约束: 不 crown 本读法也不 crown 盆地。")},
     {"id": "r2-consensus", "grade": "E4", "value": "候选",
      "statement": "R2 = consensus convergence, 百万个体独立收敛到同一应对策略",
      "depends": ["aggregation", "single-picture", "narrative-as-observation"],
@@ -272,18 +318,31 @@ def build_ledger() -> dict:
 
 
 def cascade_query(assumption: str) -> dict:
-    """若某假设被证伪, 哪些条目失效, 哪些保留。"""
+    """若某假设倒了, 三桶分流 (审计层 spec, 2026-07-12):
+
+      invalidated     = 挂靠该假设的 E3/E4 (条件解释/机制假说 — 失效)
+      survive_flagged = 挂靠该假设的 E0/E1/E2 (数存活, 但'挂靠该假设的框定'被 flag)
+      survive_clean   = 未挂靠该假设 (不受影响)
+
+    这样 code 与条目 note 一致: raw E1 (0复发/切换计数/GMM 输出4簇) 是事实 → 存活,
+    只是'跨相区/physical regime' 框定被 flag, 而非笼统'失效'。
+    (两桶版会把 raw E1 误列为失效, 与其 note 'survive' 自相矛盾。)
+    """
     if assumption not in ASSUMPTIONS:
         return {"error": f"未知假设 '{assumption}'。可选: {list(ASSUMPTIONS.keys())}"}
-    invalidated, survive = [], []
+    invalidated, survive_flagged, survive_clean = [], [], []
     for e in LEDGER:
-        (invalidated if assumption in e["depends"] else survive).append(e)
+        if assumption in e["depends"]:
+            (invalidated if e["grade"] in ("E3", "E4") else survive_flagged).append(e)
+        else:
+            survive_clean.append(e)
     return {
         "assumption": assumption,
         "assumption_desc": ASSUMPTIONS[assumption]["desc"],
         "assumption_status": ASSUMPTIONS[assumption]["status"],
         "invalidated": invalidated,
-        "survive": survive,
+        "survive_flagged": survive_flagged,
+        "survive_clean": survive_clean,
     }
 
 
@@ -307,17 +366,18 @@ def print_report():
 
     # 假设健康度
     print(f"\n{'─'*64}\n假设注册表 (底层前提健康度):")
-    icon = {"holds": "✅", "untestable": "❓", "suspect": "⚠️", "falsified": "❌"}
+    icon = {"holds": "✅", "untestable": "❓", "suspect": "⚠️", "falsified": "❌",
+            "split": "🔀", "not-supported": "🚫"}
     for k, a in ASSUMPTIONS.items():
         n_dep = sum(1 for e in LEDGER if k in e["depends"])
-        print(f"  {icon.get(a['status'],'?')} {k:<24s} [{a['status']:<10s}] {n_dep} 条挂靠 — {a['desc']}")
+        print(f"  {icon.get(a['status'],'?')} {k:<24s} [{a['status']:<13s}] {n_dep} 条挂靠 — {a['desc']}")
 
-    # 风险提示: 已证伪/不可检验的假设上还挂着多少高级条目
-    print(f"\n{'─'*64}\n⚠ 脆弱条目 (挂靠 falsified/untestable 假设的 E3/E4):")
+    # 风险提示: 挂靠 falsified/untestable/not-supported 假设的 E3/E4 (flag, 非自动失效)
+    print(f"\n{'─'*64}\n⚠ 脆弱条目 (挂靠 falsified/untestable/not-supported 假设的 E3/E4):")
     for e in LEDGER:
         if e["grade"] in ("E3", "E4"):
             bad = [d for d in e["depends"]
-                   if ASSUMPTIONS[d]["status"] in ("falsified", "untestable")]
+                   if ASSUMPTIONS[d]["status"] in ("falsified", "untestable", "not-supported")]
             if bad:
                 print(f"  [{e['grade']}] {e['id']:<20s} 挂靠 {bad}")
 
@@ -339,12 +399,15 @@ def main():
         print(f"级联失效查询: 若 '{r['assumption']}' 被证伪")
         print(f"  ({r['assumption_desc']}, 当前状态={r['assumption_status']})")
         print("=" * 64)
-        print(f"\n❌ 失效 ({len(r['invalidated'])} 条):")
+        print(f"\n❌ 失效 ({len(r['invalidated'])} 条 E3/E4 — 条件解释/机制假说):")
         for e in r["invalidated"]:
             print(f"  [{e['grade']}] {e['id']}: {e['statement']}")
-        print(f"\n✅ 保留 ({len(r['survive'])} 条, 其中 "
-              f"E0/E1/E2={sum(1 for e in r['survive'] if e['grade'] in ('E0','E1','E2'))} 条观测层不受影响):")
-        for e in r["survive"]:
+        print(f"\n🚩 数存活但框定被 flag ({len(r['survive_flagged'])} 条 E0/E1/E2 — "
+              f"统计量是事实, 挂靠该假设的框定被 flag):")
+        for e in r["survive_flagged"]:
+            print(f"  [{e['grade']}] {e['id']}: {e['statement']}")
+        print(f"\n✅ 完全不受影响 ({len(r['survive_clean'])} 条, 未挂靠该假设):")
+        for e in r["survive_clean"]:
             if e["grade"] in ("E0", "E1", "E2"):
                 print(f"  [{e['grade']}] {e['id']}: {e['statement']}")
         return

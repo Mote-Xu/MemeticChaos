@@ -1,0 +1,110 @@
+{
+  "source": "regime_discreteness.py",
+  "target_presupposition": "regime-discretization (x(t) 分簇 vs 连续流形被切 bin)",
+  "guardrails": {
+    "underpowered_expected": "127×10 稀疏; 全检验配 null; 模糊不读成坐实",
+    "resolves_tension": "掰 RQA(R2分离/离散) vs curation(计数偶然/连续)",
+    "load_bearing": "只刻画离散vs连续, 落 E2/E3; 不证明任一极"
+  },
+  "evidence_grade": "E1/E2 (各检验统计) → E2/E3 (离散vs连续刻画, 依赖算法+分辨率)",
+  "silverman_power_selftest": {
+    "unimodal_control_p": 0.3733,
+    "bimodal_control_p": 0.0
+  },
+  "silverman_powered": true,
+  "gmm_baseline": {
+    "k": 4,
+    "cluster_sizes": {
+      "0": 4,
+      "1": 39,
+      "2": 38,
+      "3": 46
+    },
+    "r2_cluster": 2
+  },
+  "T1_gap_statistic": {
+    "k_range": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "gap": [
+      1.4388,
+      1.3174,
+      1.3072,
+      1.3247,
+      1.343,
+      1.4064
+    ],
+    "sk": [
+      0.0316,
+      0.0271,
+      0.0261,
+      0.0268,
+      0.0255,
+      0.028
+    ],
+    "gap_optimal_k": 1
+  },
+  "T2_cluster_stability_jaccard": {
+    "0": 0.2,
+    "1": 0.4323,
+    "2": 0.4805,
+    "3": 0.5612
+  },
+  "T3_silverman_modality": {
+    "R2_axis": {
+      "h_crit": 0.6706,
+      "p_multimodal": 0.0,
+      "circular": true,
+      "circular_note": "轴=μ_R2−μ_rest 由 GMM 标签定义, 再在该轴测多峰=同数据既提又验 (Semantic Smuggling); 单 Gaussian blob 经 GMM 也切出分离簇均值→照样 p≈0。★仅上界, 剔出裁决★。"
+    },
+    "PC1": {
+      "h_crit": 0.7397,
+      "p_multimodal": 0.0
+    },
+    "PC2": {
+      "h_crit": 0.2876,
+      "p_multimodal": 0.536
+    },
+    "PC3": {
+      "h_crit": 0.3765,
+      "p_multimodal": 0.35
+    }
+  },
+  "X_rqa_crossref": {
+    "available": true,
+    "inter_regime_min_distance": {
+      "R0↔R1": 5.6452,
+      "R0↔R2": 7.1888,
+      "R0↔R3": 4.5039,
+      "R1↔R2": 2.2384,
+      "R1↔R3": 1.1821,
+      "R2↔R3": 3.3752
+    },
+    "cross_regime_recurrence_raw": {
+      "R0→R1": 0,
+      "R0→R2": 0,
+      "R0→R3": 0,
+      "R1→R0": 0,
+      "R1→R2": 0,
+      "R1→R3": 10,
+      "R2→R0": 0,
+      "R2→R1": 0,
+      "R2→R3": 0,
+      "R3→R0": 0,
+      "R3→R1": 10,
+      "R3→R2": 0
+    },
+    "r2_ever_returns": false,
+    "note": "R1↔R3 近(1.18)+10 对复发 = 连成一团; R2 远(2.24/3.38)+0 复发 = 孤立。即 RQA 本身已暗示: 真正分离的是 R2, R1/R3 更像一个 blob。"
+  },
+  "verdict": {
+    "direction": "RD_SPLIT[a=holds,b=suspect,c=underpowered_competing]",
+    "text": "三层拆分, ★两头 (4-clean-regimes / pure-continuum) 都不获支持★: RD-a 低维 label-free 结构=holds (PC1 Silverman p=0.000, 非循环 → 反 pure-continuum); RD-b K 相区计数=suspect (gap 最优 k=1≠4, 全簇 Jaccard<0.6, R2=0.48); RD-c R2 盆地 vs 连续漂移驻留=UNDERPOWERED 竞争 —— 数据分不开: RQA 零复发 / weak-irrev / PC2 持久性升 三路都在 regime 框架内算, '慢漂入盆地' 同样兼容, 打不破平局。",
+    "cascade": "ledger: regime-discretization→split; RD-a=[[regime-lowdim-structure]]holds, RD-b=[[regime-count]]suspect, RD-c=[[r2-basin]]not-supported。r2-real-cluster/r2-hysteresis/r2-drift-dwelling 挂 r2-basin (active+flag, 非 falsified); raw E1 (rqa/switch/方差) 挂 regime-count 作为数存活。"
+  }
+}
