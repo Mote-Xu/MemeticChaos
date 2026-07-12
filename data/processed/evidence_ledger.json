@@ -21,8 +21,8 @@
     },
     "regime-discretization": {
       "desc": "状态空间可切成离散相区 (GMM)",
-      "status": "holds",
-      "note": "操作离散化 (安全)。RQA 支持 R2 真实分离, 但相区数/边界依赖 GMM+BIC。"
+      "status": "suspect",
+      "note": "regime_discreteness.py 审计 (2026-07-12): gap statistic 最优 k=1 (BIC 只从 k≥3 搜, 结构上排除 k=1/2), GMM(4) 全簇自举 Jaccard 0.20-0.56 (R2 亦仅 0.48)。RQA 的 'R2 零复发=分离' 可由连续**慢漂移入新区并驻留**解释 (漂走→零复发, 非需要分离盆地)。→ '4 相区' 降级为操作切分; R2 as 分离盆地不获支持, R2 as 高驻留区存活。127×10 稀疏, UNDERPOWERED 不坐实连续。级联: 挂靠本假设的 E1/E3 需按 'R2=漂移驻留区非分离盆地' 复核 (suspect 非 falsified, 不自动失效)。"
     },
     "aggregation": {
       "desc": "宏观状态 = 微观数据聚合, 无反因性损失",
@@ -161,6 +161,18 @@
       "status": "active"
     },
     {
+      "id": "regime-discreteness-weak",
+      "grade": "E2",
+      "value": "gap→k=1; R2 Jaccard 0.48",
+      "statement": "regime 离散性弱支持: gap statistic 最优 k=1 (BIC 只搜 k≥3), GMM(4) 全簇自举 Jaccard 0.20-0.56 (R2=0.48 亦碎); 唯 PC1 (label-free) Silverman 多峰 p=0",
+      "depends": [
+        "regime-discretization"
+      ],
+      "source": "regime_discreteness.py",
+      "status": "active",
+      "note": "★resolve RQA-vs-curation 张力★: [[rqa-zero-recurrence]] 的 'R2 零复发=分离' 与连续**慢漂移入新区并驻留**兼容 (漂走→零复发, 非需分离盆地), 与 [[weak-irreversibility]](漂移非内禀)+[[pc2-tvp-drift]](持久性升) 同调。→ R2 as 高驻留区**存活**, R2 as 离散分离盆地**不获支持**。guardrail: 127×10 稀疏 UNDERPOWERED, 不坐实连续 (不解构过头); R2_axis Silverman p=0 因轴由标签选=循环, 仅上界。落 E2/E3 刻画, 非证明。"
+    },
+    {
       "id": "narrative-ari",
       "grade": "E2",
       "value": "ARI=0.27",
@@ -290,6 +302,26 @@
       "depends": [],
       "source": "nyblom_stationarity.py + relaxation_probe.py",
       "status": "active"
+    },
+    {
+      "id": "pc2-tvp-drift",
+      "grade": "E1",
+      "value": "σ̂²_η=0.00155, boot_p=0.009",
+      "statement": "PC2 TVP-AR 估到非零系数漂移: q̂=0.0072, σ̂²_η=0.00155, LR=7.77, boot_p=0.009; AR(2) persistence 主根模 |ρ| 0.42→0.86 (Σφ 0.39→0.83) 逐月上升",
+      "depends": [],
+      "source": "tvp_ar_stationarity.py",
+      "status": "active",
+      "note": "Nyblom L (score test, p=0.0065) 的**估计版对应物, 非独立通道** —— 同一 σ²_η=0 假设的检验版 vs 估计版, 两估计器结论一致 (boot_p 0.009 vs Nyblom 0.0065)。增量=漂移的幅度 σ²_η + β(t) 轨迹。★不 resolve P2★: β 时变对归因三支 (机制改变/critical slowing/观测算子改变) 简并, TVP-AR 分不开。★persistence 口径★: PC2 是 AR(2), 用主根模/Σφ (非单 φ1); 与 [[pc2-persistence-var-rise]] relaxation_probe 的 0.57→0.94 是同一定性发现 (PC2 持久性上升) 的不同参数化 (AR2 主根 vs AR1 系数), 非矛盾。"
+    },
+    {
+      "id": "pc1-tvp-underpowered",
+      "grade": "E1",
+      "value": "q̂=0(边界), boot_p=1.0",
+      "statement": "PC1 TVP-AR 未估到漂移 (q̂ 堆在边界 0); 但 H0(恒定系数) 下 MLE 37.5% 堆积在 0",
+      "depends": [],
+      "source": "tvp_ar_stationarity.py",
+      "status": "active",
+      "note": "★σ̂²_η≈0 ≠ 时不变★: N=127 下 σ²_η MLE pile-up-at-zero (真无漂移时也 37.5% 堆 0) + 低功率 (正对照 AR φ 0.2→0.9 有 ~1/6 漏检)。无漂移是 UNDERPOWERED, 不坐实 P2。合成正/负对照已验估计器不假阳。"
     },
     {
       "id": "r2-hysteresis",

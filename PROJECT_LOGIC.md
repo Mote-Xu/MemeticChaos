@@ -164,13 +164,14 @@
 - **MS-AR**:127 月仅 14 次切换;z(t) 不触发切换,而是在 R2 **内部**形变状态分布(PC4/PC5 与 z1 强耦合,方差放大 2.31×)。
 - **时段审计(本会话)**:预设 2 = UNDERPOWERED(月度分辨率下协方差探针检验力≈0)。
 - **Nyblom(本会话)**:PC2(churn/mutation 轴)AR 参数**非恒定**(稳,AR(2) + 残差白噪声,p=0.0065);低维层**不是没功率**。
+- **TVP-AR(2026-07-11,估计版)**:上一条的**估计对应物,不是独立通道**——Nyblom L 就是本状态空间模型 σ²_η=0 处的 score 检验。PC2 σ̂²_η=0.00155(boot_p=0.009,与 Nyblom 0.0065 一致),恢复出 β(t) 持久性轨迹:AR(2) 主根模 |ρ| **0.42→0.86**(Σφ 0.39→0.83)逐月上升(漂移的幅度+形状,这才是估计版的增量;与 relaxation_probe 的 0.57→0.94 是同一定性发现不同参数化,非矛盾);PC1 无漂移。**诚实的边界:H0(真恒定)下 σ²_η MLE 仍有 51.9%(PC2)堆在 0,合成正对照有 ~1/6 漏检 → σ̂²_η≈0 不坐实时不变(UNDERPOWERED)。且不 resolve P2:β 时变对归因三支(机制改变/critical slowing/观测算子改变)简并,同 Nyblom 撞的墙。**
 
 ### 踩在什么上
-🪨 **全是借来的成熟方法**:GMM、RQA、VARX/Ridge、counterfactual ablation、Nyblom-Hansen、block-bootstrap null。作为**统计量(E1/E2)是硬的**。
+🪨 **全是借来的成熟方法**:GMM、RQA、VARX/Ridge、counterfactual ablation、Nyblom-Hansen、block-bootstrap null、TVP 状态空间(Kalman 滤波 + RTS 平滑,Durbin-Koopman)。作为**统计量(E1/E2)是硬的**。
 
 ### 还活着的预设(审计问题)
 数是硬的,但**每个数的"意义"都通过下面几层的预设才成立**:
-- **regime 离散化**:x(t) 空间**真的是分簇**,还是**连续流形被 GMM 切了 bin**?(RQA 零复发支持真实分离,但相区数/边界依赖 GMM+BIC。)
+- **regime 离散化**:x(t) 空间**真的是分簇**,还是**连续流形被 GMM 切了 bin**?→ **已审(2026-07-12,`regime_discreteness.py`)**:gap statistic 最优 **k=1**(而 `regime_detector` 的 BIC 只从 k≥3 搜,结构上排除了 k=1/2),GMM(4) **全簇**自举 Jaccard 0.20–0.56(**R2 亦仅 0.48**,不是稳定锚),仅 PC1(label-free)Silverman 多峰。**RQA 的"R2 零复发=分离"可由连续慢漂移入新区并驻留解释(漂走→零复发,不需分离盆地),与 WEAK_IRREVERSIBILITY + PC2 持久性上升同调。** → **"4 相区"降级为操作切分;R2 as 高驻留区存活,R2 as 离散分离盆地不获支持。** 但 127×10 稀疏,**UNDERPOWERED 不坐实连续**(不解构过头);R2_axis 的多峰因轴由标签选=循环,仅上界。承重后果:regime-discretization 假设 holds→**suspect**,挂靠它的 E1/E3(r2-real-cluster/gmm-regimes/weak-irreversibility…)按"R2=漂移驻留区非盆地"复核。
 - **time-invariance**:本会话拆成了 P2a(所有低维参数平稳)= 对 PC2 **已 REJECTED** / P2b(全局机制平稳)= 未决 / P2c(观测算子平稳)= 未决。
 - **single-picture**:见第 5 层。
 
