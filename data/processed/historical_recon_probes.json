@@ -1,0 +1,63 @@
+{
+  "source": "historical high-resolution acquisition — feasibility reconnaissance probes",
+  "date": "2026-07-12",
+  "scope": "RECON ONLY — real probes to assess feasibility before deciding engineering investment. NOT a crawler.",
+  "environment": {
+    "network": "Bash egress works: DIRECT reaches CN hosts (baidu.com 200); Clash proxy 127.0.0.1:7897 reaches international (web.archive.org). No global proxy set.",
+    "trends_tool": "pytrends present but urllib3 2.7 incompat (method_whitelist removed); worked with retries=0."
+  },
+  "probes": {
+    "google_trends": {
+      "method": "pytrends via Clash proxy, geo=CN, keyword 躺平; measured cadence (median day-step) + point count",
+      "measured": {
+        "window_8mo_2020-06_2021-01": {"n_points": 245, "median_step_days": 1, "cadence": "DAILY"},
+        "window_10yr_2015-2025": {"n_points": 121, "median_step_days": 31, "cadence": "MONTHLY"}
+      },
+      "stitching_noise": {
+        "high_volume_test": {"keyword": "躺平", "overlap_days": 123, "median_rel_residual": 0.000, "note": "two independent 0-100 daily windows align exactly after mean-scaling when the peak (window max) is shared across both windows"},
+        "low_volume_test": "NOT MEASURED (Trends proxy flakiness timed out); expected higher — 0-100 integer quantization loses resolution as daily level → single digits"
+      },
+      "verdict": "FEASIBLE for 10-year DAILY on KNOWN keywords (stitched ≤9mo windows, standard pytrends.dailydata). Solves the TIME wall, NOT the coverage wall (needs a keyword list). Rate-limited (SSL/429 flakes observed under proxy).",
+      "grade": "E1 (measured cadence) + E2 (stitching-noise estimate, high-volume only)"
+    },
+    "wayback_machine": {
+      "method": "CDX API via proxy; collapse=timestamp:8 → count distinct archived DAYS per year 2015-2025; content check on one 2020 Weibo snapshot",
+      "coverage_days_per_year": {
+        "weibo_top_summary":     {"2015":6,  "2016":3,  "2017":45, "2018":67, "2019":59,  "2020":279, "2021":122, "2022":48,  "2023":16, "2024":10, "2025":18, "total":673},
+        "baidu_top":             {"2015":6,  "2016":6,  "2017":4,  "2018":13, "2019":39,  "2020":271, "2021":121, "2022":111, "2023":57, "2024":24, "2025":34, "total":686},
+        "zhihu_hot":             {"2017":1,  "2018":11, "2019":108,"2020":42, "2021":86,  "2022":109, "2023":42, "2024":24,  "2025":30, "total":453},
+        "weibo_realtimehot":     {"2015":13, "2016":16, "2017":55, "2018":43, "2019":35,  "2020":60,  "2021":29, "2022":20,  "2023":21, "2024":70, "2025":20, "total":382}
+      },
+      "content_extractability": {
+        "sample": "20200401 s.weibo.com/top/summary snapshot, 44666 bytes",
+        "hot_search_items_present": true,
+        "evidence": "CSS class 'td-02' (hot-search ranking item) appears 51× ; '热搜' present. Archived pages contain the real top-~50 list, NOT empty JS shells."
+      },
+      "verdict": "OPEN + content extractable, but coverage HEAVILY uneven: 2015-2016 near-empty (3-16 days/yr = unusable for daily), 2020 spike (COVID archiving surge, ~76% of days), 2023-2025 decay (10-57 days/yr). Best asset = 2019-2022 hot-search reconstruction. Solves BOTH walls partially (hot-search = unknown-meme discovery + time) but only where archived.",
+      "grade": "E1 (measured coverage) + E1 (content presence verified)"
+    },
+    "baidu_index": {
+      "method": "direct GET index.baidu.com/api/SearchApi/index (no auth)",
+      "result": {"http": 200, "status_code": 10018, "message": "疑似存在异常访问行为 (anti-crawl / login wall)"},
+      "verdict": "AUTH + ANTI-CRAWL WALLED. Daily data exists (docs: back to ~2011) but requires logged-in account + Cipher-Text request signing + rate-limit handling. Feasible-with-engineering, KNOWN keywords only.",
+      "grade": "E1 (auth wall confirmed) + E3 (span/daily from docs, not tested)"
+    },
+    "weibo_index": {
+      "method": "direct GET data.weibo.com/index (no auth)",
+      "result": {"http": 200, "body": "Sina Visitor System (login redirect)"},
+      "verdict": "LOGIN WALLED. Retrospective span limited (recent years). Auth required.",
+      "grade": "E1 (login wall confirmed)"
+    },
+    "bilibili_search_api": {
+      "method": "direct GET api.bilibili.com/x/web-interface/search/type (video, keyword 躺平)",
+      "result": {"http": 412, "meaning": "Precondition Failed = wbi-signing / risk-control anti-crawl"},
+      "verdict": "ANTI-CRAWL (wbi signature + cookies required). Historical timestamped videos retrievable WITH signing + cookies + rate-limit. Existing scraper.py handles B站 live; historical bulk needs signed requests.",
+      "grade": "E1 (anti-crawl confirmed)"
+    },
+    "weibo_posts": {
+      "method": "not directly probed (s.weibo.com search is login-walled + only ~recent)",
+      "verdict": "Post-level Weibo history heavily restricted (login + short retrospective window + anti-crawl). Wayback of hot-search PAGES is the better route for Weibo history than post search.",
+      "grade": "E3 (from known reality, not freshly probed)"
+    }
+  }
+}
