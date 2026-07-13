@@ -1,0 +1,168 @@
+"""
+Observation Operator Ledger — 观测算子账本 (2026-07-12, 第十二轮观测对象重构)
+
+★核心重构★: 研究对象不再是"中国叙事的唯一 x(t)/流形"。而是:
+  多个观测算子, 每个采一个"由接入机制定义、成分未知"的框;
+  研究对象 = 跨框的不变结构 (invariant) + 框之间的耦合/脱耦 (传播网络)。
+
+★★★ 铁律: 禁止社会范畴投射 ★★★
+  每个算子的 Population 只按"接入机制"定义 + 标已知偏斜 + 其余标 composition-unknown。
+  ★不许★ "精英 / 大众 / 成熟 / 下沉" 这类标签 —— 那是往技术产物上贴社会等级 = 偷渡。
+  例: GoogleTrends-CN = "搜索被 Google 归属到 CN 的人; 由'能否够到 Google'这一技术门槛定义;
+       成分异质、未知" —— ★不是★ "精英 VPN 少数派"。
+  不假设"一个 latent X", 也不假设"两层"。不变 = 稳的证据; 不一致 ≠ 噪声
+  (可能真是不同框看到不同东西 → 脱耦, 同样是硬结果)。
+
+这是 Evidence Ledger 的延伸 (方法论资产)。每个算子一行:
+  source | access_frame (只按接入机制) | measures | known_skew | composition | bias | 时间(span/gran/status)
+
+用法:
+  conda run -n MemeticChaos python src/analysis/operator_ledger.py
+  conda run -n MemeticChaos python src/analysis/operator_ledger.py --json
+"""
+
+import json, sys, argparse
+from pathlib import Path
+
+ROOT = Path(__file__).parent.parent.parent
+OUTPUT_PATH = ROOT / "data" / "processed" / "operator_ledger.json"
+
+# status: available / recon-confirmed / recon-pending / deferred
+# ★composition 一律默认 "heterogeneous, UNKNOWN" —— 只有实测偏斜才写进 known_skew, 不猜社会成分★
+
+OPERATORS = {
+    "GoogleTrends-CN": {
+        "source": "Google Trends, geo=CN (pytrends / 飞鸟代理)",
+        "access_frame": ("搜索事件被 Google 的地理定位归属到 CN。接入门槛 = 查询必须够到 Google "
+                         "(技术可达性: 翻墙/网络路径)。★不推断社会等级★。"),
+        "measures": "关键词的相对搜索兴趣指数 (注意力算子)。月级现成; 日级可回填 (≤9月窗拼接)。",
+        "known_skew": "需绕过网络门槛 → 偏向能/会够到 Google 的查询; 关键词门控 (只见已知词)。",
+        "composition": "heterogeneous, UNKNOWN (禁标'精英/VPN少数')",
+        "bias": "0-100 整数量化 (低频词丢分辨率); 关键词门控; 拼接归一噪声 (音量依赖)。",
+        "temporal": {"span": "2004-now (项目用 2015-2025)", "granularity": "月级(现)→日级(可回填)",
+                     "status": "available"},
+        "grade": "E1 数值 / E2 操作(拼接)",
+    },
+    "Wayback-HotSearch": {
+        "source": "Internet Archive Wayback 存档的 微博/百度/知乎 热搜榜页",
+        "access_frame": ("平台排序算法判为'热'、且某天被 IA 存档的词条。接入门槛 = "
+                         "(a) 平台排序纳入 [已策展/审查], (b) 存档捕获。"),
+        "measures": "被存档那天的 top-~50 排名词条 (平台策展后的注意力 + 文本)。",
+        "known_skew": ("存档生存者偏差 (实测: 微博 2015:6天→2020:279天→2024:10天, 2020 COVID 过采); "
+                       "平台策展/审查 (删除/限流内容永久缺失)。"),
+        "composition": "平台活跃用户, UNKNOWN",
+        "bias": "覆盖极不均 + 审查算子。★单独不许证相变★ (需等密度重采样 + archive-intensity 入模)。",
+        "temporal": {"span": "实测可提取窗: 微博 2019-2021 (td-02 版式); 2015-16 近空; 微博 2022+ "
+                             "存档到登录墙(Sina Visitor)无数据; 百度/知乎版式窗未测",
+                     "granularity": "日级 (被存档的天)",
+                     "status": "recon-confirmed"},
+        "grade": "E1 覆盖/解析实测",
+    },
+    "Baidu-Index-Dump": {
+        "source": "★侦察结论: NOT-FOUND★ (无可引用的 百度指数 日级 2015-2025 broad-keyword dump)",
+        "access_frame": "在百度上的搜索事件。接入门槛 = 用百度作搜索引擎 (国内默认路径)。",
+        "measures": "(本应是) 关键词日级搜索指数 —— 第二个搜索注意力框, 人群路径与 Google-CN 不同。",
+        "known_skew": "百度用户 (国内、免翻墙路径); ★成分未知, 禁标'大众/下沉'★。",
+        "composition": "UNKNOWN",
+        "bias": ("侦察 (agent 核 Zenodo/Mendeley/Kaggle/Tianchi/HF/GitHub): 无现存 dump —— Zenodo=论文PDF, "
+                 "Mendeley=2022-23 COVID only, GitHub 全是自爬工具。Baidu ToS 禁再分发 + 登录墙 → 结构性没有。"
+                 "自爬 = 反爬(10018 实测) + 不可复现 → DEFERRED。"),
+        "temporal": {"span": "N/A", "granularity": "N/A", "status": "deferred"},
+        "grade": "E1 (存在性侦察: NOT-FOUND)",
+    },
+    "DomesticNews-PeoplesDaily": {
+        "source": ("人民日报 date-indexed crawler (caspiankexin/people-daily-crawler-date, 1946-now) "
+                   "+ Kaggle 新闻联播 2016-2018 (第二官媒流)"),
+        "access_frame": ("新闻机构发布的文本。接入门槛 = 编辑/发布流程。★机构叙事场, 非用户人群算子★ —— "
+                         "Population 是机构(党媒), 不是人。"),
+        "measures": "带日期的标题+正文 (机构叙事场, 第三算子)。",
+        "known_skew": "官方/机关报 (党媒), 强机构/官方策展。",
+        "composition": "N/A (机构, 非人群)",
+        "bias": ("★可复现★: 稳定日期 URL + 无反爬 → 确定性重建 (非 deferred 自爬类, 是干净机构源)。"
+                 "⚠ 需验: crawler 实际跑通 + 2015-2025 span 完整性 (agent 未亲验 Kaggle/HF 页, 从搜索元数据)。"),
+        "temporal": {"span": "1946-now (取 2015-2025)", "granularity": "日级(标题时间戳)",
+                     "status": "recon-confirmed"},
+        "grade": "E3 (候选已定位, 待跑通验证)",
+    },
+    "GDELT": {
+        "source": "GDELT (Global Database of Events, Language, and Tone)",
+        "access_frame": ("被 GDELT 监控的媒体 (主要国际 + 官方/外宣) 对中国的报道。"
+                         "接入门槛 = GDELT 的源选择。"),
+        "measures": "事件/语调日级。★角色 = 外部控制变量 (external control), 不进系统内部状态★。",
+        "known_skew": "国际 + 国家/官方媒体倾斜 (外宣视角, 非国内人群)。",
+        "composition": "N/A (媒体源, 非人群)",
+        "bias": ("源选择偏斜; 作外生协变量用, 不作内部 x(t)。⚠ agent 核: GKG 存 URL+元数据+语调, "
+                 "★标题文本仅 ~2019-09 起★ (PAGE_TITLE 字段); 2015-2018 只有 URL (多已死链)。免费 BigQuery。"),
+        "temporal": {"span": "2015-02-now (元数据日级; 标题文本 2019-09+)", "granularity": "日级",
+                     "status": "available (external)"},
+        "grade": "E2 (外生控制变量)",
+    },
+    "Scraper-Forward": {
+        "source": "本项目 scraper v2.0 (微博+百度+知乎, 每小时, 2026-06 起)",
+        "access_frame": "实时抓取的热搜/标题。接入门槛 = 抓取时点在榜 + 反爬可过。",
+        "measures": "384 维 headline embedding + 注意力集中度 (F 侧前向监测)。",
+        "known_skew": "同 Wayback 的平台策展, 但无存档生存者偏差 (主动抓)。",
+        "composition": "平台活跃用户, UNKNOWN",
+        "bias": "仅 2026-06 起 (无历史); 平台策展。",
+        "temporal": {"span": "2026-06-now", "granularity": "小时级", "status": "available"},
+        "grade": "E1",
+    },
+}
+
+# 跨框实验 (item 5): 一旦第二个搜索框 (Baidu-Index-Dump) 到手, 在重叠窗口同喂
+# Trends 框 vs Baidu 框, 跑 nyblom_stationarity.py 对照, 测机制漂移是否共振。
+CROSS_FRAME_EXPERIMENT = {
+    "name": "cross-frame Nyblom resonance",
+    "tool": "nyblom_stationarity.py (现成)",
+    "design": ("重叠窗口内, 同一低维投影分别用不同框构造, 各跑 Nyblom。共振 (都测到/都没测到漂移) → "
+               "跨框鲁棒 (结论泛化); 不共振 → 跨框脱耦 (不同框看到不同东西, 同样是硬结果, 非噪声)。"),
+    "status": "revised — ideal 第二搜索框 (Baidu) NOT-FOUND",
+    "note": ("★原计划 Trends-搜索框 vs Baidu-搜索框 已被 recon 否掉★ (无可引用 Baidu dump, 不自爬)。"
+             "改为跨**算子类型**对照 (更贴重构核心问题): Trends(搜索注意力) vs Wayback-HotSearch(平台排名) "
+             "vs PeoplesDaily(机构叙事) —— 测的是跨算子不变/脱耦, 不是两个同类搜索框。重叠窗口受限于各框可用段 "
+             "(Wayback 2019-2021 / Trends 全 / News 2015+)。"),
+}
+
+
+def build():
+    return {
+        "source": "operator_ledger.py",
+        "principle": ("研究对象 = 跨接入定义框的不变结构 + 框间耦合/脱耦。★禁止社会范畴投射★: "
+                      "Population 只按接入机制定义, 成分默认 UNKNOWN。不假设唯一 latent X。"),
+        "operators": OPERATORS,
+        "cross_frame_experiment": CROSS_FRAME_EXPERIMENT,
+    }
+
+
+def main():
+    ap = argparse.ArgumentParser(description="Observation Operator Ledger")
+    ap.add_argument("--json", action="store_true")
+    args = ap.parse_args()
+    sys.stdout.reconfigure(encoding="utf-8")
+
+    print("=" * 70)
+    print("Observation Operator Ledger — 观测算子账本 (禁止社会范畴投射)")
+    print("=" * 70)
+    icon = {"available": "✅", "recon-confirmed": "🔎", "recon-pending": "⏳", "deferred": "🅿️"}
+    for k, o in OPERATORS.items():
+        t = o["temporal"]
+        st = t["status"].split()[0]
+        print(f"\n{icon.get(st,'?')} [{k}] {t['status']}")
+        print(f"   接入框: {o['access_frame']}")
+        print(f"   测: {o['measures']}")
+        print(f"   已知偏斜: {o['known_skew']}")
+        print(f"   成分: {o['composition']}  |  跨度: {t['span']} @ {t['granularity']}")
+        print(f"   偏差: {o['bias']}")
+    print(f"\n{'─'*70}\n跨框实验: {CROSS_FRAME_EXPERIMENT['name']} — {CROSS_FRAME_EXPERIMENT['status']}")
+    print(f"  {CROSS_FRAME_EXPERIMENT['design']}")
+
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(build(), f, ensure_ascii=False, indent=2)
+    print(f"\n已保存 → {OUTPUT_PATH}")
+    if args.json:
+        print(json.dumps(build(), ensure_ascii=False, indent=2))
+
+
+if __name__ == "__main__":
+    main()
