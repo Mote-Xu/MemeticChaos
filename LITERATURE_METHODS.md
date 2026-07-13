@@ -4,11 +4,27 @@
 > 会话: MemeticChaos 文献参考 (67da905a)
 > 方法论铁律: **对象是新的, 方法必须踩已验证的成熟石头, 别自制方法。** 某方法无成熟先例 → 诚实标"无成熟方法 (UNDERPOWERED)"。
 
+> ★★★ **Auditor Takeaway (2026-07-13 复核)**: 零件都是成熟石头 — Problem B 有"天文选择函数"+"计量 MNAR"两个独立传统, 强; Hawkes/SIR/RQA/Scheffer/Gap/Silverman/Meredith 个个是学界验证过的。**但"跨算子交叉验证叙事状态"这个装配 = 无成熟先例 = 最高风险 = 人类审计最该盯的地方。** 不要因为每个零件盖了章就觉得整车安全; 装配逻辑本身是新的。
+
+> **⚠ 核实状态**: 经典奠基文献 (Heckman79/Nyblom89/Tibshirani01/Scheffer09/Hawkes71/Bikhchandani92/Meredith93/Hotelling36/Malmquist22/Schmidt68) 已确认真实。部分应用论文/SSRN/arXiv 引用标"⚠待核实" — 发布前必须逐条查证 LLM 生成的引用是否真实存在。
+
 ---
 
 ## 1. 信息性采样 / MNAR / 选择偏差校正
 
 > 用途: Wayback 存档密度混杂 (密度是信号的函数) — 被存档多的时期≠更活跃, 可能是更"值得存档"。
+
+### 1.0 缺失数据机制的奠基定义 (MCAR / MAR / MNAR)
+
+**Rubin, D.B. (1976).** "Inference and Missing Data." *Biometrika*, 63(3), 581–592. ⭐ **MCAR/MAR/MNAR 三分法的原始论文**。
+
+- **核心**: 将缺失数据机制分为三类 — MCAR (完全随机缺失, missingness 与数据完全无关), MAR (随机缺失, missingness 依赖观测到的数据但非缺失值本身), MNAR (非随机缺失, missingness 依赖缺失值本身)。**这是所有选择偏差校正方法的地基** — Heckman 处理 MNAR, IPW 假设 MAR, Rosenbaum/E-value 检验 MNAR 的严重程度。
+
+**Little, R.J.A. & Rubin, D.B. (2019).** *Statistical Analysis with Missing Data* (3rd ed.). Wiley. ⭐ **缺失数据的圣经教材** (初版 1987, 三版 2019)。
+
+- **给我们什么**: 全书覆盖 MCAR/MAR/MNAR 的定义、检验、校正方法 (EM, 多重插补, selection model, pattern-mixture model, IPW, 敏感性分析)。**对本项目最关键的概念**: pattern-mixture model vs selection model 的区别 — selection model 建模 P(missing|data), pattern-mixture 建模 P(data|missing pattern)。Wayback 的存档行为更接近 selection model (存档概率依赖叙事能量), 但若存档门槛未知, 可能需要 sensitivity analysis with pattern-mixture as bound。
+
+- **成熟度**: 经典 (Rubin 1976 奠定框架; Little & Rubin 是公认圣经)。局限: 无不可检验的假设 — MNAR 模型永远不能从数据本身验证 (需要外部信息)。
 
 ### 1.1 Heckman 两阶段 (样本选择模型)
 
@@ -53,6 +69,28 @@
 - **给我们什么**: 比 Rosenbaum Γ 更直观 — E-value = "一个未测量混杂因子需要同时与 exposure 和 outcome 至少有多强关联 (risk ratio 尺度), 才能解释掉观测到的效应"。**E-value 低 (如 1.3) = 脆弱; 高 (5+) = 稳健。**
 
 - **成熟度**: 主流 (流行病学新标准, 2017 年后广泛采用)。局限: 基于风险比尺度; 对连续暴露/结局需做二分化或参数化扩展。
+
+### 1.5 Informative Observation Times — 观测时机本身是信号的函数
+
+> 比通用 Heckman/IPW 更精确对应 Wayback 存档的偏差结构: **被存档 ≠ 随机缺失, 存档发生的时点本身就是叙事活动的函数。**
+
+**Huang, C.Y., Wang, M.C. & Zhang, Y. (2006).** "Analysing Panel Count Data with Informative Observation Times." *Biometrika*, 93(4), 763–775. ⭐ **informative observation times 的经典论文**。
+
+- **核心**: 当观测时机 (observation times) 和事件过程 (event process) 共享一个未观测的潜变量 (frailty) 时, 两个过程条件依赖。用共享 frailty 的联合建模 + 条件似然估计, 避免将观测密度直接当作事件密度。
+
+**Sun, J., Tong, X. & He, X. (2007).** "Regression Analysis of Panel Count Data with Dependent Observation Times." *Biometrics*, 63(4), 1053–1059. ⭐ 联合建模的另一个经典 — EM 算法估计共享潜变量。
+
+**Lin, D.Y., Scharfstein, D.O. & Rosenheck, R.A. (2004).** "Analysis of Longitudinal Data with Irregular, Outcome-Dependent Follow-up." *JRSS-B*, 66(3), 791–813. ⭐ 形式化 outcome-dependent observation processes — 用 IPW 估计方程处理不规则、依赖结果的观测时机。
+
+**Buzkova, P. (2010).** "Panel Count Data Regression with Informative Observation Times." *International Journal of Biostatistics*, 6(1), Article 30. 扩展到**时变**依赖 (不只是时不变 frailty) — 用 inverse-intensity-rate-ratio (IIRR) 加权。
+
+- **给我们什么**:
+  1. **Wayback 存档的精确类比**: 存档密度不是"缺失数据", 是"informative observation times" — 叙事事件 (梗爆发) 和存档事件 (Wayback 快照) 共享驱动因素 (公众注意力)。
+  2. **不要这样建模**: 月度 archive_count 作为叙事密度的 proxy → 这是混淆观测密度与事件密度。
+  3. **应该这样建模**: 把 archive 事件建模为一个独立的点过程 (Hawkes 或 Poisson with frailty), 和叙事事件过程联合估计, 共享潜变量 (叙事能量)。
+  4. **当 archive density 信息不可用时**: 至少对"什么时期不被观测"做显式标注 (censoring gap), 而不是对缺失插值。
+
+- **成熟度**: 主流 (生物统计, 20 年)。局限: 共享 frailty 假设 (一个潜变量同时驱动两个过程) 强 — 如果 archive 密度还受其他因素 (crawler schedule, 网站存活状态) 驱动, 模型需要额外的噪声项或放宽到 correlated random effects (Liu et al. 2008)。
 
 ---
 
@@ -102,7 +140,7 @@
 
 ### 3.1 日级数据拼接方法
 
-**Medic, D. & Schuster, T. (2019).** "Knitting Daily Google Trends." SSRN 3126324. ⭐ **专门讨论日级拼接方法的论文** — 利用 pytrends 的 `dailydata` 功能, 通过不同长度的时间窗口查询再将每日数据归一化拼接 (重叠窗口锚定)。
+**Bleher, J. & Dimpfl, T. (2019).** ⚠待核实 "Today I Got a Million, Tomorrow, I Don't Know: On the Predictability of Cryptocurrencies by Means of Google Search Volume." *International Review of Financial Analysis*, 63, 147–159. (SSRN 3126324, 2018 工作论文题为 "Knitting Daily Google Trends — With an Application to Augur Cryptocurrency Returns")。⭐ **日级拼接方法的可查证论文** — 用 210 天重叠窗口的 backward splicing (OLS 估计块间线性缩放关系) 将多个独立归一化的日级 Trends 块拼接成多年连续日序列。验证: 与原始 (2011 前) 未归一化数据的 correlation 0.97–0.99; 聚合到周级后 R²>98.9% vs Google 原生周数据。
 
 - **给我们什么**: 直接可用的日级拼接工程方法: 分月查询 → 选取锚定窗口归一 → 拼接长序列。自带方法约束 (采样误差、锚定窗口选择敏感性)。
 
@@ -204,6 +242,14 @@
 
 - **成熟度**: 经典 (40+ 年)。局限: 对高维 (>2D) 需降至低维; bootstrap null 单峰假设在非单峰定义上有歧义。
 
+**Hartigan, J.A. & Hartigan, P.M. (1985).** "The Dip Test of Unimodality." *Annals of Statistics*, 13(1), 70–84. ⭐ **另一个 canonical 多峰检验** — 与 Silverman 互补。
+
+- **核心**: 不依赖 KDE 带宽。测 CDF 到"最接近的单峰 CDF"的最大距离 (dip statistic) — dip 大 = 数据多峰。非参数 (无分布假设), 对小样本和离群值比 Silverman 稳健。
+
+- **给我们什么**: Silverman 的交叉验证工具。Silverman 依赖带宽选择且 bootstrap null 在高维有歧义; dip test 是分布自由的多峰判据。**本项目若引入 `diptest` R/Python 包, 可对 PC1 做 dip test 作为 Silverman 结论的平行检验**。两者一致 → 强证据; 不一致 → 需解释原因 (样本大小? 带宽敏感性? 双峰的不对称性?)。
+
+- **成熟度**: 经典 (40 年)。局限: 对 1D 最有效; 多维需对每个维度分别检验 (或对 PC1 标量做, 这正是本项目的使用场景)。
+
 ### 5.3 Bootstrap 簇稳定性
 
 **Hennig, C. (2007).** "Cluster-wise Assessment of Cluster Stability." *Computational Statistics & Data Analysis*, 52(1), 258–271. ⭐ 核心论文。
@@ -278,11 +324,13 @@
 
 ### 7.1 SIR 流行病模型 → 梗扩散
 
-**Wang, L. & Wood, B.C. (2011).** "An Epidemiological Approach to Model the Viral Propagation of Memes." *Applied Mathematical Modelling*, 35(11), 5442–5447.
+**Wang, L. & Wood, B.C. (2011).** ⚠待核实 "An Epidemiological Approach to Model the Viral Propagation of Memes." *Applied Mathematical Modelling*, 35(11), 5442–5447.
 
 - **给我们什么**: 直接对"梗"用 SIR 建模的先例。S=susceptible (未接触), I=infected (在传播), R=recovered (已遗忘)。对多梗竞争场景需扩展到 SIS/SIRS (可重复感染)。
 
-**Lonnberg, A., Xiao, P. & Wolfinger, K. (2020).** "The Growth, Spread, and Mutation of Internet Phenomena: A Study of Memes." *Results in Applied Mathematics*, 6, 100092. ⭐ SIR 随机微分方程 (SDE) 对梗扩散建模, 包含突变。
+**Lonnberg, A., Xiao, P. & Wolfinger, K. (2020).** ⚠待核实 "The Growth, Spread, and Mutation of Internet Phenomena: A Study of Memes." *Results in Applied Mathematics*, 6, 100092. SIR 随机微分方程 (SDE) 对梗扩散建模, 包含突变。
+
+**Weng, L., Flammini, A., Vespignani, A. & Menczer, F. (2012).** "Competition among Memes in a World with Limited Attention." *Scientific Reports*, 2, 335. ⭐ **最贴本项目对象的梗论文** — 用 Twitter hashtag 数据 + agent-based 模型证明: 有限注意力容量下, 梗之间的竞争导致少数梗爆发、大量梗死亡 (亚临界→超临界的竞争筛选)。**"有限注意力 = 叙事生态系统的 carrying capacity"** — 直接接本项目 Inertia 和 R2 Fixation 概念。
 
 **Mussumeci, E. & Coelho, F.C. (2017).** "Modeling News Spread as an SIR Process over Temporal Networks." arXiv:1701.07853. NLP (Word2Vec+TF-IDF) 构建时序传播网 + SIR 近似。
 
@@ -304,7 +352,7 @@
 
 **Rizoiu, M.A. et al. (2018).** "SIR-Hawkes: Linking Epidemic Models and Hawkes Processes to Model Diffusions in Finite Populations." *WWW 2018*. ⭐ **桥梁论文** — 证明 SIR 和 Hawkes 在边缘化掉恢复事件后数学等价。给出有限人口版本 (HawkesN) 和级联大小分布 (Borel 分布)。
 
-**Kong, Q. et al. (2020).** "Describing and Predicting Online Items with Reshare Cascades via Dual Mixture Self-Exciting Processes." *CIKM 2020*. 双混合自激过程, 区分极右/阴谋论/正规新闻的扩散模式 (F1=0.945)。
+**Kong, Q. et al. (2020).** ⚠待核实 "Describing and Predicting Online Items with Reshare Cascades via Dual Mixture Self-Exciting Processes." *CIKM 2020*. 双混合自激过程, 区分极右/阴谋论/正规新闻的扩散模式 (F1=0.945)。
 
 - **给我们什么**:
   1. Hawkes 比 SIR 更强: 不需要同质混合假设, 自然处理级联的幂律大小分布, 可调参 (μ=基线强度, α=分支因子/传染力, θ=记忆衰减)。
@@ -396,27 +444,28 @@
 
 - **核心**: 给定两视图 X₁ 和 X₂ (如 Trends 51 维 vs Scraper 384 维 embedding), 找投影方向 w₁, w₂ 使投影后的 corr(X₁w₁, X₂w₂) 最大化。可推广到 >2 视图 (Generalized CCA / MCCA)。
 
-**Bach, F.R. & Jordan, M.I. (2005).** "A Probabilistic Interpretation of Canonical Correlation Analysis." *UC Berkeley Technical Report 688*. ⭐ 概率 CCA — 两视图条件独立给定共享潜变量 z。这直接等同于"不同观测算子测量同一潜状态"的概率模型。
+**Bach, F.R. & Jordan, M.I. (2005).** "A Probabilistic Interpretation of Canonical Correlation Analysis." *UC Berkeley Technical Report 688*. ⭐ 概率 CCA — 两视图条件独立给定共享潜变量 z。这直接等同于"不同观测算子测量同一潜状态"的概率模型。★★★ **⚠ 致命预设警告: pCCA 的生成假设 (共享潜变量 z + 给定 z 条件独立) 正是本项目杀掉的第四预设"存在唯一真实叙事状态/一个 latent X"。因此 pCCA 在本项目中只能用作存在性检验 (ρ 低=反对共享 X, 支持 Competing Explanatory Layer), 严禁用作建模假设直接假设共享 X 存在然后估计它。**
 
 **Foster, D.P., Kakade, S.M. & Zhang, T. (2008).** "Multi-View Dimensionality Reduction via Canonical Correlation Analysis." *TTI Technical Report TR-2008-4*. 两视图下 CCA 的维度约简保证: 若视图条件独立于潜状态 H, CCA 恢复 H 张成的子空间。
 
 - **给我们什么**:
-  1. 概率 CCA (Bach & Jordan) 是"跨算子测量同一状态"的直接概率模型— 如果 X_trends 和 X_scraper 确实条件独立于共享叙事状态 x(t), 则 CCA 能恢复 x(t)。
+  1. 概率 CCA (Bach & Jordan) 是"跨算子测量同一状态"的直接概率模型 — **但它的核心假设 (给定共享潜状态 z 后两视图条件独立 + 存在唯一共享 z) 正是本项目杀掉的预设**: "存在唯一正确的物理图景/唯一真实叙事状态"。★★★ **因此 pCCA 对本项目的正确用法是检验工具而非建模假设**: 用它测存在性 (ρ 高=不排除共享 X; ρ 低=反对共享 X), **严禁用它直接假设共享 X 存在然后建模**。若 ρ₁ 低 → 不存在单一共同潜变量 → 多算子测的是不同投影, 不是同一 X 的不同视角 → 支持 Competing Explanatory Layer 框架。
   2. 规范相关值 ρ (canonical correlation) 本身是"两视图共享多少信息"的度量 — ρ 若接近 1 说明两个算子高度一致; ρ 接近 0 说明它们测不同东西 → 可能不存在单一的共同潜变量。
   3. **可操作的检验**: 对不同算子对的 CCA 第一规范相关 → 若都不高, 则"跨算子测量同一系统"的预设被质疑; 若对某些对高、某些低 → 某些算子本质上测不同侧面, 应分到不同潜变量。
+  4. **条件独立假设本身也是待检验的, 不是免费给的前提**: 两个观测算子 (如 Trends 和 Scraper) 可能因为共享数据源 (如都受微博热搜影响) 而在给定 z 后仍不条件独立 → 违反 pCCA 的生成假设 → 即使 ρ 高也可能不是"一个真实 z"而是"共享污染源"。
 
 - **成熟度**: 经典 (Hotelling 1936) / 主流 (概率 CCA 2005)。局限: 假设线性关系; 对高维 sparse 数据需 regularized/sparse CCA; 条件独立假设强 (在测量共享底层机制时可能不成立)。
 
 ### 8.3 跨算子不变性 — 本项目专用整合
 
-**没有标准论文** (因为"多观测算子交叉验证叙事状态"这个具体问题没有教科书解决方案)。但上述两个成熟框架 + 本项目已经有的工具可以搭建:
+**没有标准论文** (因为"多观测算子交叉验证叙事状态"这个具体问题没有教科书解决方案)。但上述两个成熟框架 + 本项目已经有的工具可以搭建。**关键纪律**: pCCA 测存在性 (ρ 高=不排除; ρ 低=反对), Meredith 测不变性层级 (Configural→Metric→Scalar), 两者都"不预设共享 X 存在"—— 它们检验"如果有, 它是什么样子", 而不是"因为有, 所以去估计它"。
 
-| 检验 | 对应方法 | 问的问题 |
-|------|---------|---------|
-| **Operational Consistency** | CCA ρ₁ (第一规范相关) | 两算子共享多少一维结构? |
-| **Structural Equivalence** | Meredith Metric Invariance (因子载荷相等) | 共享结构中的"因子负载"在算子间是否一致? |
-| **Rank Stability** | Cross-operator 状态排序的 Spearman ρ / Kendall τ | 月级状态的排序在不同算子间是否一致? |
-| **Disagreement Structure** | CCA 残差 vs 时间/事件 | 两算子分歧时 — 什么时候分歧大? (噪声特征? 选择性覆盖差异?) |
+| 检验 | 对应方法 | 问的问题 | 假设了什么 |
+|------|---------|---------|---------|
+| **Operational Consistency** | CCA ρ₁ (第一规范相关) | 两算子共享多少一维结构? | ★仅检验存在性,不假设共享 X 存在;条件独立本身也可疑 |
+| **Structural Equivalence** | Meredith Metric Invariance (因子载荷相等) | 共享结构中的"因子负载"在算子间是否一致? | Configural 已满足;线性因子-指标关系 |
+| **Rank Stability** | Cross-operator 状态排序的 Spearman ρ / Kendall τ | 月级状态的排序在不同算子间是否一致? | 无参数假设;仅检验单调一致性 |
+| **Disagreement Structure** | CCA 残差 vs 时间/事件 | 两算子分歧时 — 什么时候分歧大? (噪声特征? 选择性覆盖差异?) | 分歧可被外部事件/时间解释 |
 
 - **成熟度**: **无成熟先例 (针对本项目的具体问题)** — 上述框架的拼接是新组合, 引用 Meredith (1993) + Bach & Jordan (2005) 作为各构件的方法背书。**诚实标注: 跨算子交叉验证在"叙事状态"的上下文中是 UNDERPOWERED/方法先行 — 数据还不够 (不同算子的时间重叠窗口短)。**
 
@@ -447,7 +496,7 @@
 
 **Multi-Domain False News Dataset**
 
-- **论文**: 发表于 *Information Processing & Management* (2022)。
+- **论文**: ⚠待核实 发表于 *Information Processing & Management* (2022)。
 - **数据**: 44,728 帖, 9 领域, 40,215 用户, 340 万转发。2009–2019 (10 年)。
 - **获取**: [GitHub](https://github.com/ICTMCG/Characterizing-Weibo-Multi-Domain-False-News)。
 - **给我们什么**: 10 年跨度的虚假信息扩散网络 — 可作为"叙事污染"的标记。
@@ -523,4 +572,4 @@
 
 ---
 
-> **状态**: 全部 9 题初稿完成 (§1–9)。最后更新: 2026-07-13。
+> **状态**: v2 — auditor 复核 PASS (§1-6 引用核对, §1.0/§1.5/§7 Weng 补充, §8 pCCA 纪律锐化, ⚠待核实标注已加)。全部 9 题初稿完成 (§1–9)。最后更新: 2026-07-13。
