@@ -45,9 +45,9 @@
       "note": "架构级预设3。聚合反因性可能塌缩个体强结构 (Q8)。未检验。"
     },
     "attention-proxy": {
-      "desc": "Google Trends 月搜索量 = 集体注意力",
+      "desc": "Google Trends 月搜索量 = [Operator: GoogleTrends-CN] 接入定义框的注意力",
       "status": "holds",
-      "note": "127月历史分析的注意力代理。有3-7天滞后+仅已知关键词。"
+      "note": "★观测算子重构 (2026-07-12): 不是'集体/大众注意力', 是'搜索被 Google 归属到 CN 的查询'的注意力 —— 由'能否够到 Google'技术门槛定义, 成分异质 UNKNOWN (禁标精英/VPN少数)。127月 H 侧结论全部 conditional on 此框。★历史段无干净'国内大众个体'算子 (见 operator_ledger honesty_ceiling)★。3-7天滞后 + 仅已知关键词; 可回填日级但只给注意力、给不了叙事特征 → 拼不出日级 x(t), 不重跑 regime。"
     },
     "narrative-as-observation": {
       "desc": "采集数据 = 对现实结构的观测",

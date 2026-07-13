@@ -111,17 +111,33 @@ OPERATORS = {
 
 # 跨框实验 (item 5): 一旦第二个搜索框 (Baidu-Index-Dump) 到手, 在重叠窗口同喂
 # Trends 框 vs Baidu 框, 跑 nyblom_stationarity.py 对照, 测机制漂移是否共振。
+# 跨框实验 (item 5): 拆两种对照 (审计 flag 2: 别混不同类可观测量)
 CROSS_FRAME_EXPERIMENT = {
-    "name": "cross-frame Nyblom resonance",
+    "name": "cross-frame Nyblom resonance (拆两类可观测量)",
     "tool": "nyblom_stationarity.py (现成)",
-    "design": ("重叠窗口内, 同一低维投影分别用不同框构造, 各跑 Nyblom。共振 (都测到/都没测到漂移) → "
-               "跨框鲁棒 (结论泛化); 不共振 → 跨框脱耦 (不同框看到不同东西, 同样是硬结果, 非噪声)。"),
-    "status": "revised — ideal 第二搜索框 (Baidu) NOT-FOUND",
-    "note": ("★原计划 Trends-搜索框 vs Baidu-搜索框 已被 recon 否掉★ (无可引用 Baidu dump, 不自爬)。"
-             "改为跨**算子类型**对照 (更贴重构核心问题): Trends(搜索注意力) vs Wayback-HotSearch(平台排名) "
-             "vs PeoplesDaily(机构叙事) —— 测的是跨算子不变/脱耦, 不是两个同类搜索框。重叠窗口受限于各框可用段 "
-             "(Wayback 2019-2021 / Trends 全 / News 2015+)。"),
+    "comparison_a_salience": {
+        "observable": "显著度/注意力轨迹 = '某梗随时间受多少关注' (三框都能给的共同可观测量)",
+        "frames": "Trends 搜索兴趣 vs PeoplesDaily 提及计数 vs Wayback 排名",
+        "power": "★脊梁 = Trends(注意力) vs PeoplesDaily(提及计数), 2015-2025 都全、都日级 = 最好功率★",
+        "note": "Trends 只能进这类 (它给注意力标量, 给不了语义)。",
+    },
+    "comparison_b_semantic": {
+        "observable": "语义状态 (embedding)",
+        "frames": "只文本框: Wayback + PeoplesDaily (★Trends 不进语义跨框测★)",
+        "power": "薄: Wayback 限 2019-2021 → 语义跨框重叠窗小。",
+    },
+    "underpower_caveat": ("★flag 3★: 含 Wayback 的三方重叠仅 2019-2021 (稀疏+2020主导) → Nyblom 大概率 "
+                          "UNDERPOWERED; '没测到共振' 可能只是没功率不是真脱耦, 别过度读 null。"),
+    "status": "pending frames (先 ①Trends日级 + ②PeoplesDaily跑通, ≥2框重叠窗就位再跑)",
 }
+
+# ★★★ 承重的诚实天花板 (审计 flag 1, 必须写进任何历史重建结论) ★★★
+HONESTY_CEILING = (
+    "★历史段没有任何'国内大众个体'算子★。Baidu(国内大众搜索)= NOT-FOUND 已死。剩下的框全都不是干净的"
+    "大众个体: Trends=翻墙可达搜索(非大众) / Wayback=平台策展排名(平台算法+审查决定'热', 非原始大众行为, "
+    "且仅 2019-2021、2020主导) / PeoplesDaily=党媒机构(根本不是人) / GDELT=国际·官媒。"
+    "→ 历史重建够到的是 {翻墙搜索、平台排名、机构叙事}, ★够不到大众个体★。这不是 bug, 是硬边界。"
+)
 
 
 def build():
@@ -129,6 +145,7 @@ def build():
         "source": "operator_ledger.py",
         "principle": ("研究对象 = 跨接入定义框的不变结构 + 框间耦合/脱耦。★禁止社会范畴投射★: "
                       "Population 只按接入机制定义, 成分默认 UNKNOWN。不假设唯一 latent X。"),
+        "honesty_ceiling": HONESTY_CEILING,
         "operators": OPERATORS,
         "cross_frame_experiment": CROSS_FRAME_EXPERIMENT,
     }
@@ -143,6 +160,7 @@ def main():
     print("=" * 70)
     print("Observation Operator Ledger — 观测算子账本 (禁止社会范畴投射)")
     print("=" * 70)
+    print(f"\n★承重诚实天花板★\n{HONESTY_CEILING}\n")
     icon = {"available": "✅", "recon-confirmed": "🔎", "recon-pending": "⏳", "deferred": "🅿️"}
     for k, o in OPERATORS.items():
         t = o["temporal"]
@@ -153,8 +171,12 @@ def main():
         print(f"   已知偏斜: {o['known_skew']}")
         print(f"   成分: {o['composition']}  |  跨度: {t['span']} @ {t['granularity']}")
         print(f"   偏差: {o['bias']}")
-    print(f"\n{'─'*70}\n跨框实验: {CROSS_FRAME_EXPERIMENT['name']} — {CROSS_FRAME_EXPERIMENT['status']}")
-    print(f"  {CROSS_FRAME_EXPERIMENT['design']}")
+    ce = CROSS_FRAME_EXPERIMENT
+    print(f"\n{'─'*70}\n跨框实验: {ce['name']} — {ce['status']}")
+    print(f"  (a) 显著度/注意力: {ce['comparison_a_salience']['frames']}")
+    print(f"      功率: {ce['comparison_a_salience']['power']}")
+    print(f"  (b) 语义: {ce['comparison_b_semantic']['frames']}")
+    print(f"  {ce['underpower_caveat']}")
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:

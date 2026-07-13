@@ -1,0 +1,24 @@
+{
+  "operator": "GoogleTrends-CN",
+  "frame": "接入定义/成分未知; 只注意力非x(t)",
+  "win_days": 250,
+  "step_days": 150,
+  "start": "2019-01-01",
+  "end": "2021-06-01",
+  "results": {
+    "躺平": {
+      "keyword": "躺平",
+      "status": "OK",
+      "n_windows": 6,
+      "n_ok": 6,
+      "n_empty": 0,
+      "n_days": 883,
+      "span": [
+        "2019-01-01",
+        "2021-06-01"
+      ],
+      "monthly_anchor_corr": 0.9681,
+      "seconds": 52.1
+    }
+  }
+}
