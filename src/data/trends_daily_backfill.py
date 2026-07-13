@@ -30,7 +30,7 @@ STEP_DAYS = 150                     # 步长 (重叠 100 天)
 GEO = "CN"
 SLEEP = 2.0                         # 请求间隔 (限速)
 
-PROVE_KEYWORDS = ["躺平", "内卷", "打工人"]
+PROVE_KEYWORDS = ["躺平", "雨女无瓜"]   # flag4: 高音量 + 低音量, 跨音量验 anchor_corr
 
 
 def _trendreq():
@@ -85,6 +85,24 @@ def stitch(series_list):
     return acc
 
 
+def anchor_rescale(daily, anchor):
+    """flag5: stitch 出的是**相对尺度**日级 (不跨词可比、和现有月度外部场0-100不一致)。
+    把每词日级 rescale 到它自己的月级 anchor **绝对水平**: 每月 daily *= anchor_month/daily_month_mean
+    → 保日内形状、锚月度水平 → 与现有月度外部场一致、可接日级 HHI/熵。"""
+    import pandas as pd
+    if anchor is None or len(daily) < 30:
+        return daily, False
+    am = anchor.resample("MS").mean()
+    scaled = daily.astype(float).copy()
+    for m_start, a_val in am.items():
+        m_end = m_start + pd.offsets.MonthBegin(1)
+        mask = (daily.index >= m_start) & (daily.index < m_end)
+        dmean = daily[mask].mean() if mask.any() else 0.0
+        if mask.any() and dmean > 1e-9 and np.isfinite(a_val):
+            scaled[mask] = daily[mask] * (a_val / dmean)
+    return scaled, True
+
+
 def validate_against_monthly(daily, anchor):
     """拼好的日级与独立 anchor 序列各按月聚合后求 Pearson 相关 (拼接忠实度)。
 
@@ -120,11 +138,18 @@ def backfill_keyword(kw, start, end):
     daily = stitch(series)
     monthly = fetch(kw, f"{start.isoformat()} {end.isoformat()}")
     corr = validate_against_monthly(daily, monthly)
+    anchored, did_anchor = anchor_rescale(daily, monthly)   # flag5: 锚到月级绝对水平
+    mean_level = float(monthly.mean()) if monthly is not None else None
+    # flag4: per-keyword 可靠性 (低音量拼接噪声大 → corr 低)。阈值 0.8; 低音量另标。
+    reliable = (corr is not None and corr >= 0.8)
     return {
         "keyword": kw, "status": "OK", "n_windows": len(wins), "n_ok": n_ok, "n_empty": n_empty,
-        "n_days": int(len(daily)), "span": [str(daily.index.min().date()), str(daily.index.max().date())],
+        "n_days": int(len(anchored)),
+        "span": [str(anchored.index.min().date()), str(anchored.index.max().date())],
         "monthly_anchor_corr": round(corr, 4) if corr is not None else None,
-        "daily": {str(d.date()): round(float(v), 2) for d, v in daily.items()},
+        "anchor_mean_level": round(mean_level, 2) if mean_level is not None else None,
+        "daily_reliable": reliable, "anchored_to_monthly": did_anchor,
+        "daily": {str(d.date()): round(float(v), 2) for d, v in anchored.items()},  # 锚定后的日级
     }
 
 
@@ -162,8 +187,11 @@ def main():
         results[kw] = {k: v for k, v in r.items() if k != "daily"}  # 摘要不含全日序列
         results[kw]["seconds"] = round(dt, 1)
         c = r.get("monthly_anchor_corr")
+        rel = r.get("daily_reliable")
+        lvl = r.get("anchor_mean_level")
+        tag = "" if rel else "  ⚠日级不可靠(corr<0.8, 低音量?)"
         print(f"  [{i+1}/{len(kws)}] {kw}: {r['status']} | 窗 {r.get('n_ok')}/{r.get('n_windows')} "
-              f"| {r.get('n_days')} 天 | anchor_corr={c} | {dt:.0f}s")
+              f"| {r.get('n_days')} 天 | 均值水平={lvl} | anchor_corr={c}{tag} | {dt:.0f}s")
         # 存全日序列
         if r["status"] == "OK":
             outp = ROOT / args.out.replace(".json", f"_{kw}.json")

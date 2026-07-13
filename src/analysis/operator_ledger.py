@@ -38,7 +38,9 @@ OPERATORS = {
         "measures": "关键词的相对搜索兴趣指数 (注意力算子)。月级现成; 日级可回填 (≤9月窗拼接)。",
         "known_skew": "需绕过网络门槛 → 偏向能/会够到 Google 的查询; 关键词门控 (只见已知词)。",
         "composition": "heterogeneous, UNKNOWN (禁标'精英/VPN少数')",
-        "bias": "0-100 整数量化 (低频词丢分辨率); 关键词门控; 拼接归一噪声 (音量依赖)。",
+        "bias": ("0-100 整数量化 (低频词丢分辨率); 关键词门控; 拼接归一噪声 (音量依赖)。★日级可靠性 = 音量×时期"
+                 "依赖 (实测: 高音量峰期 anchor_corr 0.97; 低音量期 0.62 / -0.07 = 不可靠)。backfill 逐词逐期标 "
+                 "daily_reliable (corr<0.8 判不可靠) —— 全量 51 词多数在早年低音量段的日级不可用★。"),
         "temporal": {"span": "2004-now (项目用 2015-2025)", "granularity": "月级(现)→日级(可回填)",
                      "status": "available"},
         "grade": "E1 数值 / E2 操作(拼接)",
@@ -79,9 +81,12 @@ OPERATORS = {
         "known_skew": "官方/机关报 (党媒), 强机构/官方策展。",
         "composition": "N/A (机构, 非人群)",
         "bias": ("★可复现★: 稳定日期 URL + 无反爬 → 确定性重建 (非 deferred 自爬类, 是干净机构源)。"
-                 "⚠ 需验: crawler 实际跑通 + 2015-2025 span 完整性 (agent 未亲验 Kaggle/HF 页, 从搜索元数据)。"),
-        "temporal": {"span": "1946-now (取 2015-2025)", "granularity": "日级(标题时间戳)",
-                     "status": "recon-confirmed"},
+                 "★侦察部分坐实 (2026-07-12)★: 源实测 live + 可提取 (2023-06 抽出 4 真标题, 2024-12 200/22KB, "
+                 "无反爬); ★但 URL 版式 era-versioned (≥3 版), 2015-2021 版式未确认 (naive patterns 404, "
+                 "crawler 代码本环境取不到=GitHub/ghproxy 皆不可达)★。全 span 需在可达 GitHub 的机器 (mote-home) "
+                 "跑 caspiankexin crawler 验证 —— E3 未坐实。"),
+        "temporal": {"span": "1946-now; ★验证: 2023/2024 live, 2015-2021 未确认★", "granularity": "日级(标题时间戳)",
+                     "status": "recon-partial"},
         "grade": "E3 (候选已定位, 待跑通验证)",
     },
     "GDELT": {
@@ -161,7 +166,7 @@ def main():
     print("Observation Operator Ledger — 观测算子账本 (禁止社会范畴投射)")
     print("=" * 70)
     print(f"\n★承重诚实天花板★\n{HONESTY_CEILING}\n")
-    icon = {"available": "✅", "recon-confirmed": "🔎", "recon-pending": "⏳", "deferred": "🅿️"}
+    icon = {"available": "✅", "recon-confirmed": "🔎", "recon-partial": "🔶", "recon-pending": "⏳", "deferred": "🅿️"}
     for k, o in OPERATORS.items():
         t = o["temporal"]
         st = t["status"].split()[0]
